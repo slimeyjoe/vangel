@@ -56,6 +56,19 @@ if [ -n "$HAVE_GAME" ] && [ -f "$PAK" ]; then
     else
         echo "teardown: exit $t, not 3"; cat "$BIN/teardown/log"; rc=1
     fi
+    # the game: the console's question, the title, into the story (a save, the prologue's
+    # built-in sequence) until the tick limit
+    echo "== vangel (the game) to --max-ticks: the engine frees everything it allocated"
+    rm -f "$BIN/teardown/game.dat"
+    t=0
+    "$BUILD/vangel" --pak "$PAK" --storage "$BIN/teardown" \
+        --autoplay 'y:wait return:wait' --max-ticks 30000 >/dev/null \
+        2>"$BIN/teardown/log" || t=$?
+    if [ $t -eq 3 ] && [ -f "$BIN/teardown/game.dat" ]; then
+        echo "teardown: ended at the tick limit, a save written, nothing left"
+    else
+        echo "teardown: exit $t (not 3) or no save"; cat "$BIN/teardown/log"; rc=1
+    fi
 else
     skip teardown "needs the game and $PAK (make pack)"
 fi
@@ -74,8 +87,17 @@ if [ -x "$EMU_PY" ] && "$EMU_PY" -c 'import unicorn' 2>/dev/null && [ -n "$HAVE_
     run "$EMU_PY" -I "$HERE/check_input.py" "$BIN/test_text" "$PAK"
     run "$EMU_PY" -I "$HERE/check_text.py" "$BIN/test_text" "$PAK"
     run "$EMU_PY" -I "$HERE/check_menu.py" "$BIN/test_text" "$PAK"
+    run "$EMU_PY" -I "$HERE/check_scb.py" "$BIN/test_vm"
+    run "$EMU_PY" -I "$HERE/check_expr.py" "$BIN/test_vm"
+    run "$EMU_PY" -I "$HERE/check_save.py" "$BIN/test_vm"
+    if "$EMU_PY" -c 'import capstone' 2>/dev/null; then
+        run "$EMU_PY" -I "$HERE/check_vmstep.py" "$BIN/test_vm"
+    else
+        skip check_vmstep "needs capstone in EMU_PYTHON (the 80286 clocks)"
+    fi
 else
-    for c in check_gf check_buf check_pal check_fx check_input check_text check_menu; do
+    for c in check_gf check_buf check_pal check_fx check_input check_text check_menu check_scb \
+             check_expr check_save check_vmstep; do
         skip $c "needs the game, $PAK and a Python with unicorn (EMU_PYTHON)"
     done
 fi
