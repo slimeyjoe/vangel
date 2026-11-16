@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: GPL-3.0-or-later
-"""scb_verify.py - compare re-tools/scb.py with the original scenario loader of M.EXE.
+"""scb_verify.py - compare source/tools/scb.py with the original scenario loader of M.EXE.
 
 Needs unicorn ($EMU_PYTHON).  Runs scb_load (063C:00E8) under re-tools/mcall.py
 on CMD00.SCB and compares, entry by entry, the tables it builds in memory with scb.py's parse:
@@ -15,6 +15,7 @@ import struct
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'source', 'tools'))  # gf, scb, txb
 from mcall import M, ROOT  # noqa: E402
 from scb import Scenario  # noqa: E402
 

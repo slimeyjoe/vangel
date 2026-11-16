@@ -8,12 +8,13 @@
                                               unreachable statements, per-opcode counts
 
 Semantics follow docs/re/scenario-format.md (M.EXE segment 001E handlers).  Messages are
-printed by number; with --txb and re-tools/txb.py present, their first characters are shown.
+printed by number; with --txb and source/tools/txb.py present, their first characters are shown.
 """
 import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'source', 'tools'))  # gf, scb, txb
 from scb import Scenario  # noqa: E402
 
 BIN = {5: '+', 6: '-', 7: '*', 8: '/', 9: '%', 10: '&', 11: '|', 12: '^', 13: '==', 14: '!=',

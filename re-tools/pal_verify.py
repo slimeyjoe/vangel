@@ -14,6 +14,7 @@ import struct
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'source', 'tools'))  # gf, scb, txb
 from unicorn import UC_HOOK_CODE  # noqa: E402
 from gf_verify import GM  # noqa: E402
 import gfx_pal  # noqa: E402

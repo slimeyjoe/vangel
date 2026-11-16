@@ -40,20 +40,20 @@ heap, `int86`, interrupt vectors, 32-bit arithmetic) and 57 internals (buffering
 management, start-up) are left unnamed. `0000:046A` is the expression evaluator's jump table
 mis-read as code.
 
-## Tools (`../../re-tools/`)
+## Tools (`../../re-tools/`; the decoders a build reuses in `../../source/tools/`)
 
 Run Python with `-I`; tools marked † need `$EMU_PYTHON`, a Python with capstone, unicorn,
 pillow, numpy). Listings and outputs go to the git-ignored `resources/derived/`.
 
 | Tool | Purpose | Verification |
 |---|---|---|
-| `d88raw.py`, `human68k.py` | D88 → sector image; Human68k volumes (X68000) | the volumes list cleanly; files match `inventory.tsv` |
+| `human68k.py` | Human68k volumes (X68000); the PC-98 disks are read by lrvne's `diskimg` (`source/tools/gamedata.py`) | the volumes list cleanly; files match `inventory.tsv` |
 | `exeunpack.py` | removes `M.EXE`'s EXEPACK layer | the unpacked image runs to `main` under `mcall.py` |
 | `dis16.py`, `madis.py` † | recursive-descent disassembly; annotated listing with names, DGROUP strings and far globals resolved through the segment-pointer table | — |
 | `mcall.py` † | unicorn harness: the original C start-up to `main` with a Python INT 21h, then any routine callable; VRAM pages, GRCG, palette ports modelled; screenshots | the original loaders, decoders and effects run in it |
-| `scb.py`, `scbdis.py`, `scbsum.py`, `scb_verify.py` † | scenario parser; readable listing (1-based pc, infix expressions, menus); flow/reachability; per-subroutine summary; check against the original loader | `scb.py` consumes both releases' `CMD00.SCB` exactly; `scb_verify.py`: all variables, menus, expression nodes, palettes, 2 034 opcodes and the operands of 1 458 statements equal the original loader's tables, both releases |
-| `txb.py`, `txb_verify.py` †, `text_render.py` † | text decoder and page-layout model; check against the original; renders pages/menus with the original code | all 213 messages / 5 732 lines byte-identical, 1 849 pages laid out identically, both releases |
-| `gf.py`, `gf_verify.py` † | archive and picture decoder, PNG export; check against the original | 54 pictures × 4 decoder variants bit-exact |
+| `scb.py` (in `source/tools`), `scbdis.py`, `scbsum.py`, `scb_verify.py` † | scenario parser; readable listing (1-based pc, infix expressions, menus); flow/reachability; per-subroutine summary; check against the original loader | `scb.py` consumes both releases' `CMD00.SCB` exactly; `scb_verify.py`: all variables, menus, expression nodes, palettes, 2 034 opcodes and the operands of 1 458 statements equal the original loader's tables, both releases |
+| `txb.py` (in `source/tools`), `txb_verify.py` †, `text_render.py` † | text decoder and page-layout model; check against the original; renders pages/menus with the original code | all 213 messages / 5 732 lines byte-identical, 1 849 pages laid out identically, both releases |
+| `gf.py` (in `source/tools`), `gf_verify.py` † | archive and picture decoder, PNG export; check against the original | 54 pictures × 4 decoder variants bit-exact |
 | `gfx_fx.py`, `gfx_pal.py`, `gfx_fx_verify.py` †, `pal_verify.py` † | models of the transitions and palette fades; checks | 136 transition cases (every VRAM write in order, waits), 20 palette sequences |
 | `sndcall.py` †, `pmdinfo.py`, `pmdemu.py` †, `pmd_capture.py` † | the sound layer against a fake PMD/PPSDRV; song structure table; the real PMD.COM under emulation → VGM | every INT 60h/64h call of the engine traced per driver; 21 songs recorded on a 26K |
 | `x68dis.py` †, `vagd_compare.py` †, `ibm_bmp_compare.py` | X68000 `M.X` disassembly; Graphic Disk BMPs vs the `.gf` pictures and palettes | — |

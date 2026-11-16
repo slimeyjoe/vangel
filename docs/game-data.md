@@ -25,8 +25,7 @@ inventory's md5 is equivalent.
   each is an MS-DOS FAT12 volume (BPB at the start of sector 0: 1024 bytes/sector, 1 sector per
   cluster, 2 FATs of 2 sectors, 192 root entries, 1232 sectors, media FEh). Disk A also carries
   the NEC MS-DOS 3.3 system (`IO.SYS`, `MSDOS.SYS`, `COMMAND.COM`; Epson boot sector) and boots
-  into `GAME.BAT`. `re-tools/d88raw.py IMAGE.d88 OUT.img` writes the plain sector image;
-  `mcopy -n -m -i OUT.img '::*' DIR` (mtools) extracts the files.
+  into `GAME.BAT`. lrvne's `diskimg` reads them (`make data`, below).
 * **X68000 disk**: DIM image = 256-byte header ("DIFC HEADER") + the same 1232 × 1024-byte
   geometry. The volume is Human68k's FAT12 variant with a Hudson boot sector whose BPB is
   big-endian at offset 12h; mtools cannot read it, `re-tools/human68k.py IMG OUTDIR` can
@@ -39,7 +38,7 @@ inventory's md5 is equivalent.
 
 | File | Size | Role | Document |
 |---|---|---|---|
-| `M.EXE` | 54 504 | the engine (Microsoft C, EXEPACK; `re-tools/exeunpack.py` unpacks it) | [re/README.md](re/README.md) |
+| `M.EXE` | 54 504 | the engine (Microsoft C, EXEPACK; lrvne `exepack` or `re-tools/exeunpack.py` unpacks it); also a source of data for the pack | [re/README.md](re/README.md) |
 | `CMD00.SCB` | 19 430 | compiled scenario "CRSC" (program, menus, expressions, palettes) | [re/scenario-format.md](re/scenario-format.md) |
 | `CMD00.TXB` | 106 376 | message text "CRTX" | [re/text.md](re/text.md) |
 | `GDATA.LIB` (disk B) | 969 441 | 54 pictures "GA00"/"GF0" | [re/graphics.md](re/graphics.md) |
@@ -55,9 +54,26 @@ inventory's md5 is equivalent.
 | `IO.SYS`, `MSDOS.SYS`, `COMMAND.COM`, `OPENING.SYS` | | NEC MS-DOS 3.3 | — |
 
 What a reimplementation needs from the PC-98 release: `CMD00.SCB`, `CMD00.TXB`, `GDATA.LIB`,
-the songs (and, for the PCM-capable boards, `VA_PCM__.PPC` / `VA_PPS.PPS`), `ANNOUNCE.TXT`.
-`M.EXE` is needed only as a reference for verification. The kanji glyphs come from the PC-98's
-kanji ROM, not from the release ([re/text.md](re/text.md)).
+the songs (and, for the PCM-capable boards, `VA_PCM__.PPC` / `VA_PPS.PPS`), `ANNOUNCE.TXT`, and
+**`M.EXE`**, which holds data as well as code: the text dictionary, the half-width font, the
+texts and palettes of the built-in sequences (prologue, staff roll, music mode), the default
+palette. `PMD.COM` gives its SSG-effect table (the drums of part K). The kanji glyphs come from
+the PC-98's kanji ROM, not from the release ([re/text.md](re/text.md)); the engine draws them
+from a free font of the same size.
+
+## Importing your copy
+
+    cd source
+    make data SRC="path/to/the/disks-or-their-archive ..."     # or LRVNE_MEDIA=dir make data
+    make pack
+
+`make data` (`source/tools/gamedata.py`) looks through what it is given (D88 images, archives
+of them, directories), takes the files whose name and md5 are in `resources/inventory.tsv` into
+`resources/original/<release>/`, and unpacks `M.EXE` into `resources/derived/M_unpacked.EXE`
+(checked by md5). Flux images (SCP, MFI, HFE) are not read: use the D88s. The PC-98 release is
+required; the X68000 release (not read yet: no DIM reader) and the Graphic Disk are optional.
+`make pack` builds `build/virginangel.pak` from it (`source/tools/mkpack.py` lists what it
+holds).
 
 `CMD00.SCB`, `CMD00.TXB` and `GDATA.LIB` of the X68000 release are the same files except for
 palette #1 in the scenario (never referenced) and a few bytes of the text

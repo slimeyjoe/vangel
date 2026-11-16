@@ -28,7 +28,7 @@ import struct
 import sys
 import zlib
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 LIB = os.path.join(ROOT, 'resources/original/pc98/GDATA.LIB')
 TRANSPARENT = 8          # colour skipped by op 31 with flag 1 (015A:09D6 cmp al,80h)
 # pictures always drawn opaque (op 31 flag 0), where colour 8 is a real colour

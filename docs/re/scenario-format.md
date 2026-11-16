@@ -9,7 +9,7 @@ from it is in [script-catalog.md](script-catalog.md).
 
 Addresses are `SEG:OFF` of the unpacked `M.EXE` (image-relative segments, as
 `re-tools/madis.py` prints them). **Verified** = checked against the original code: the file
-format by `re-tools/scb.py`, which consumes the file exactly (19 430 of 19 430 bytes, PC-98 and
+format by `source/tools/scb.py`, which consumes the file exactly (19 430 of 19 430 bytes, PC-98 and
 X68000 copies), and by the original loader `063C:00E8` run under `re-tools/mcall.py`
 (`re-tools/scb_verify.py`: header, counts and every table entry compared, both releases); semantics by reading the handlers.
 

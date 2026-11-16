@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: GPL-3.0-or-later
-"""gf_verify.py - check re-tools/gf.py against M.EXE's own picture loader under unicorn (mcall).
+"""gf_verify.py - check source/tools/gf.py against M.EXE's own picture loader under unicorn (mcall).
 
 For every member of GDATA.LIB the original op 31 routine (0315:070D -> 00DD:0216 -> 015A:xxxx)
 is called with an operand block like the scenario's, and the target planes are compared with
@@ -19,6 +19,7 @@ import sys
 import time
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'source', 'tools'))  # gf, scb, txb
 from mcall import M  # noqa: E402
 import gf  # noqa: E402
 

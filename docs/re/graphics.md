@@ -14,7 +14,7 @@ listing `resources/derived/listing/gfx.asm`. Statement numbers are 1-based, as i
 the 1-based op 30h operand (P = `scb.py` `pal[]` index + 1). **verified** = checked by running the
 original code under `re-tools/mcall.py`, **code** = read in the code, **inferred** = deduced.
 
-Tools: `re-tools/gf.py` (archive, decoder, PNG export, usage table), `re-tools/gfx_fx.py`
+Tools: `source/tools/gf.py` (archive, decoder, PNG export, usage table), `re-tools/gfx_fx.py`
 (op 32h model), `re-tools/gfx_pal.py` (palette model), with the checks `gf_verify.py`,
 `gfx_fx_verify.py`, `pal_verify.py` and `ibm_bmp_compare.py` (§12). PNGs of all pictures:
 `resources/derived/images/` (`gf.py png … --scb CMD00.SCB`).

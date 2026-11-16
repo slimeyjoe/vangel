@@ -22,7 +22,7 @@ As a module: Txb(data, dict_bytes).messages -> [Message(index, offset, length, r
 import os
 import sys
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 EXE = os.path.join(ROOT, 'resources/derived/M_unpacked.EXE')
 DICT_OFF = 0xB850          # 0B85:0000 relative to the start of the load image
 DICT_LEN = 90

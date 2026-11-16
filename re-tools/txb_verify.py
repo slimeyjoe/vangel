@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: GPL-3.0-or-later
-"""txb_verify.py - check re-tools/txb.py against M.EXE's own TXB code under mcall (unicorn).
+"""txb_verify.py - check source/tools/txb.py against M.EXE's own TXB code under mcall (unicorn).
 
 Runs the original txb_load (0724:0018) on CMD00.TXB with the message count of SCB tag 7,
 compares its index (0BA1:003E -> per message {u32 offset, u16 length}) with txb.py, then for
@@ -15,6 +15,7 @@ import struct
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'source', 'tools'))  # gf, scb, txb
 from mcall import M, ROOT  # noqa: E402
 import txb  # noqa: E402
 

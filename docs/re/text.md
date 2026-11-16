@@ -117,7 +117,7 @@ terminating 00h and returns the **source** length + 1 (the 00h included; the cal
 offset B850h of the load image of `M_unpacked.EXE` and offset **B852h** of the packed `M.EXE`.
 They are ordered roughly by descending frequency: `、…のいに　て。たクっをる…` (A0h–DFh) and
 `…ぁ一見言出ど` ending the 26 letter codes. The X68000 `M.X` holds the same table with every
-two-byte pair swapped, at file offset C246h. `re-tools/txb.py` reads the table from the EXE.
+two-byte pair swapped, at file offset C246h. `source/tools/txb.py` reads the table from the EXE.
 
 66 351 of the 106 372 body bytes are dictionary codes; the expanded text is 163 019 bytes.
 
@@ -134,7 +134,7 @@ two-byte pair swapped, at file offset C246h. `re-tools/txb.py` reads the table f
 
 ### 2.6 Export
 
-`re-tools/txb.py CMD00.TXB --tsv resources/derived/scenario/messages.tsv` writes one row per
+`source/tools/txb.py CMD00.TXB --tsv resources/derived/scenario/messages.tsv` writes one row per
 message: index (1-based, = statement 19h operand), file offset of the message's first byte,
 stored length (incl. 1Ah), text with lines joined by `{n}` and control bytes as `{XX}`
 (`{12}`, `{13}`, `{14}`; the final `{1A}` line is implied). `txb.layout(msg)` models the page
@@ -406,7 +406,7 @@ left-aligned; the centring is done with leading ASCII spaces in the data.
 
 ## 6. Verification and tools
 
-* `re-tools/txb.py` (stdlib only): container, dictionary, line expansion, message split,
+* `source/tools/txb.py` (stdlib only): container, dictionary, line expansion, message split,
   `layout()` model of §3.4, TSV export.
 * `re-tools/txb_verify.py [pc98|x68k]` runs the original code under mcall:
   phase 1 — `txb_load`, then for every message `txb_read_msg` and `txb_line` line by line with
