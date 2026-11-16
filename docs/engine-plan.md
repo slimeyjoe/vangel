@@ -2,6 +2,9 @@
 
 **Status (2026-11-16):** M0 done. Import, pack, the engine skeleton with a picture viewer
 (`--view`), and the decoder bit-exact against the original: 54 pictures × 4 cases. M1 is next.
+M1 starts with: lrvne's palette helpers (addition 3); then op 31h into buffers 10/11/12 with the
+window snapshot, op 33h and 18h, op 32h and its effects, palettes and fades; `re-tools/fx_cost.py`
+for the CPU cost of the effects, which sets the profile's `cpu_per_frame` (0 until then).
 
 vangel reimplements `M.EXE`, the engine of Crystal Soft's *Virgin Angel* (PC-98, 1995), on
 [lrvne](https://github.com/slimeyjoe/lrvne). It reproduces the PC-98 release faithfully in

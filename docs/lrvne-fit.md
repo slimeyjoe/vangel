@@ -28,9 +28,9 @@ the OPNA / stereo sound setups and for the X68000 release.
 | # | Gap | Size | Interfaces |
 |---|---|---|---|
 | 1 | Palette helpers: add-and-clamp shift (`pal_shift`), decrement-only step (staff roll) | small | additive |
-| 2 | Font builder: a raw 8x16 glyph array as input (the half-width font is the developers' own, in `M.EXE`, 159 glyphs) | small | additive |
+| 2 | Font builder: a raw 8x16 glyph array as input (the half-width font is the developers' own, in `M.EXE`, 159 glyphs) | small | **done** (2026-11-16): `xfont` `add_raw` / `--raw` |
 | 3 | Glyph helpers: plain `g \| g<<1` bold (lrvne's keeps the 1-0-1 gap), transparent OR, inverse, outline, double size | small | additive |
-| 4 | EXEPACK unpacker in the tools (`re-tools/exeunpack.py`; another engine of the family has the same) | small | additive |
+| 4 | EXEPACK unpacker in the tools (`re-tools/exeunpack.py`; another engine of the family has the same) | small | **done** (2026-11-16): lrvne `tools/lrvne/exepack.py` |
 | 5 | OPNA (YM2608) core: 6 FM, SSG, ADPCM-B. The vendored ymfm has it; only YM2203 is wrapped | medium | additive as a new ops + queue, or changes `opn.h` / `opnq.h` if they get a bank bit |
 | 6 | A PCM channel in the sound path: 86-PCM (PMD86) and 4-bit SSG-PCM (PPS) | medium | additive |
 | 7 | Stereo end to end (HAL `audio_open`, mixer, every backend) | large | changes interfaces; a mono downmix avoids it |
