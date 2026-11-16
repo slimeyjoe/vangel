@@ -1,5 +1,6 @@
 /* SPDX-License-Identifier: GPL-3.0-or-later */
 /* vg_run: start-up, the game (or the picture viewer), shutdown. */
+#include <setjmp.h>
 #include <stdio.h>
 #include <string.h>
 #include "vg.h"
@@ -129,14 +130,123 @@ static int run_viewer(void)
     return 0;
 }
 
-/* ---- run-time errors of the original's C library (Microsoft C 1995) ---------------------- */
+/* ---- the program's exit ----------------------------------------------------------------- */
 
+void vg_exit(int code)
+{
+    vg.exit_code = code;
+    if (!vg.exit_to)
+        lrv_fatal(vg.hal, "exit %d", code);
+    longjmp(*vg.exit_to, 1);
+}
+
+/* run-time errors of the original's C library (Microsoft C): the message, _exit(255) */
 void vg_runtime_error(int which)
 {
     static const char *const msg[] = { "R6003 - integer divide by 0" };
     (void)which;
-    /* (the exit code is 255 once the interpreter owns the program's exit, M3) */
-    lrv_fatal(vg.hal, "run-time error %s", msg[0]);
+    lrv_log(vg.hal, LRV_LOG_ERROR, "run-time error %s", msg[0]);
+    vg_exit(VG_EXIT_CRT);
+}
+
+/* ---- the game: main (0468:000E) and run_game (001E:0069) ---------------------------------- */
+
+/* the scenario, its text and the interpreter's state; VG_EXIT_OK or the exit code */
+static int game_load(void)
+{
+    const struct lrv_pack_entry *e;
+    uint8_t *data;
+    uint32_t size;
+    int rc;
+
+    /* fopen(argv[1]) fails: exit(1) (the "file not found" is a debug print it no longer
+     * makes) */
+    e = lrv_pack_find(&vg.pak, vg.profile.scenario, VG_PT_SCENARIO);
+    if (!e || !(data = lrv_pack_load(&vg.pak, e, &size))) {
+        lrv_log(vg.hal, LRV_LOG_ERROR, "the pack has no scenario %s", vg.profile.scenario);
+        return VG_EXIT_USAGE;
+    }
+    rc = vg_scb_load(data, size);
+    lrv_pack_free(&vg.pak, data, size);
+    if (rc != VG_EXIT_OK) {
+        lrv_log(vg.hal, LRV_LOG_ERROR, "%s does not load (exit %d)", vg.profile.scenario, rc);
+        return rc;
+    }
+    if (!vg_txb_load(vg.vm.scb.text, vg.vm.scb.n_msg)) {
+        lrv_log(vg.hal, LRV_LOG_ERROR, "%s does not load", vg.vm.scb.text);
+        return VG_EXIT_LOAD;
+    }
+    if (!vg_vm_init(vg_vm_entry()))
+        return VG_EXIT_MEMORY;
+    return VG_EXIT_OK;
+}
+
+static void game_free(void)
+{
+    vg_input_term();
+    vg_vm_free();
+    vg_scb_free();
+    vg_txb_free();
+}
+
+/* the subsystems run_game starts, the interpreter, and their shutdown; the exit code */
+static int game_run(unsigned devices)
+{
+    jmp_buf here;
+    int rc;
+
+    vg.exit_to = &here;
+    if (setjmp(here)) {
+        rc = vg.exit_code;
+    } else {
+        rc = game_load();
+        if (rc == VG_EXIT_OK) {
+            /* timer_init: installed with the machine; mus_init: no driver until M4 */
+            if (!vg_input_init(devices)) {
+                lrv_log(vg.hal, LRV_LOG_ERROR, "input init failed");
+                rc = VG_EXIT_RUN;
+            } else {
+                vg_gfx_init();
+                rc = vg_vm_run(vg.vm.pc);
+            }
+        }
+    }
+    vg.exit_to = NULL;
+    game_free();
+    return rc;
+}
+
+/* the reset key: the program from its start, the mouse's answer kept */
+static void game_reset(void)
+{
+    vg_timer_remove();
+    vg.gfx.ready = 0;
+    vg.gfx.fade_in_last = vg.gfx.fade_out_last = 0;
+    vg.gfx.fx31_last = 0;
+    vg.text.skip = 0;
+    vg.text.menu_last = 0;
+    vg.text.menu_choice = 0;
+    memset(&vg.input, 0, sizeof vg.input);
+    lrv_screen_clear_access(&vg.screen);
+    vg_timer_install();
+}
+
+static int run_game(void)
+{
+    unsigned devices = VG_DEV_KBD | VG_DEV_MOUSE | VG_DEV_JOY;     /* DS:0110 */
+    int rc;
+
+    if (!vg_console_init())
+        devices &= ~(unsigned)VG_DEV_MOUSE;
+    if (lrv_sys_quitting(&vg.sys))
+        return 0;
+    for (;;) {
+        rc = game_run(devices);
+        if (!lrv_sys_resetting(&vg.sys))
+            return rc;
+        lrv_sys_reset_done(&vg.sys);
+        game_reset();
+    }
 }
 
 /* ---- the engine --------------------------------------------------------------------------- */
@@ -196,10 +306,7 @@ void vg_machine_open(const struct lrv_hal *hal, const struct lrv_run_cfg *cfg)
     vg_gfx_load_builtin();
     vg_text_load_fonts();
     vg_timer_install();
-    /* the devices: the keyboard, and the mouse unless the profile says no (the console's
-     * question comes with the interpreter, M3) */
-    if (!vg_input_init(VG_DEV_KBD | (lrv_name_eq(vg.profile.mouse, "off") ? 0 : VG_DEV_MOUSE)))
-        lrv_fatal(hal, "the input cannot be initialised");
+    /* the input devices are opened by the game (run_game), after the console's question */
 }
 
 void vg_machine_close(void)
@@ -225,9 +332,7 @@ int vg_run(const struct lrv_hal *hal, const struct lrv_run_cfg *cfg,
     if (vg.opt.view) {
         rc = run_viewer();
     } else {
-        /* the game itself comes with the interpreter (docs/engine-plan.md, M3) */
-        lrv_log(hal, LRV_LOG_ERROR, "the game cannot be played yet: only --view works");
-        rc = 1;
+        rc = run_game();
     }
     lrv_sys_trace(&vg.sys, LRV_TR_QUIT, 0, 0, rc, 0, 0, 0);
     vg_machine_close();

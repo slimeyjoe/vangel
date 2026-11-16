@@ -76,6 +76,10 @@ void vg_input_release(unsigned mask);
 /* The frame of a wait loop: lrv_sys_frame_wait. 1 when the player quit or reset meanwhile:
  * the loop must give up (the original has no such exit; the engine unwinds). */
 int  vg_frame(void);
+/* The trace events of a wait (LRV_TR_WAIT, kind enum vg_wait_kind): the test automation's
+ * stops and autoplay's KEY:wait. */
+void vg_wait_begin(int kind);
+void vg_wait_end(int kind);
 
 /* mouse.c: the MSZ driver and the pointer */
 /* mouse_open (0401:001A): resets the driver, hides the pointer; 1 when there is a driver */

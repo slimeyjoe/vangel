@@ -51,6 +51,7 @@ int vg_msg_poll(int block)
 static void msg_wait_key(void)
 {
     int shown = 0, got = 0, h;
+    vg_wait_begin(VG_WAIT_KEY);
     while (!got) {
         vg_icon(shown >= 1);
         h = vg_timer_start(80);
@@ -74,6 +75,7 @@ static void msg_wait_key(void)
         vg_timer_free(h);
         shown = shown < 1;
     }
+    vg_wait_end(VG_WAIT_KEY);
     vg_icon(0);
 }
 
@@ -90,6 +92,7 @@ static int msg_wait_timed(int nbytes)
     h = vg_timer_start(t);
     if (!h)
         return 0;
+    vg_wait_begin(VG_WAIT_TICKS);
     for (;;) {
         if (vg_timer_done(h))
             break;
@@ -103,6 +106,7 @@ static int msg_wait_timed(int nbytes)
             break;
         }
     }
+    vg_wait_end(VG_WAIT_TICKS);
     vg_timer_free(h);
     return cut;
 }

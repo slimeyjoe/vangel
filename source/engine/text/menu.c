@@ -85,10 +85,11 @@ static void menu_loop(struct menu_state *st)
     } else {
         vg_rect_invert(&st->r[st->sel]);
     }
+    vg_wait_begin(VG_WAIT_KEY);
     for (;;) {
         memset(&p, 0, sizeof p);
         if (vg_input_poll(&p) != 1)
-            return;
+            break;
         menu_update(st, &p);
         if (p.kbd.event == 1 && (p.kbd.code & 0x1FF) == VG_KEY_RETURN) {
             vg_input_release(VG_DEV_KBD);
@@ -103,8 +104,9 @@ static void menu_loop(struct menu_state *st)
             done = 1;
         }
         if (done || vg_frame())
-            return;
+            break;
     }
+    vg_wait_end(VG_WAIT_KEY);
 }
 
 int vg_op24(long stmt, const struct vg_menu *m)

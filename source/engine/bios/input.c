@@ -204,6 +204,17 @@ void vg_input_release(unsigned mask)
     }
 }
 
+void vg_wait_begin(int kind)
+{
+    lrv_sys_trace(&vg.sys, LRV_TR_WAIT, 0, 0, kind, 0, 0, 0);
+}
+
+void vg_wait_end(int kind)
+{
+    lrv_sys_trace(&vg.sys, LRV_TR_WAIT, 0, 0, kind, 1,
+                  lrv_sys_quitting(&vg.sys) ? VG_LEAVE_QUIT : VG_LEAVE_KEY, 0);
+}
+
 int vg_frame(void)
 {
     lrv_sys_frame_wait(&vg.sys);

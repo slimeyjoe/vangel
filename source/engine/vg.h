@@ -14,6 +14,7 @@
 #ifndef VG_VG_H
 #define VG_VG_H
 
+#include <setjmp.h>
 #include <stddef.h>
 #include <stdint.h>
 #include "lrvne/app.h"
@@ -30,6 +31,7 @@
 #include "gfx/gfx.h"
 #include "text/text.h"
 #include "vm/timer.h"
+#include "vm/vm.h"
 
 #define VG_NAME "vangel"                /* the program: usage, messages, the saves' directory */
 
@@ -115,6 +117,13 @@ struct vg_state {
 
     /* the message file, the fonts, the skip flag, the menus' memory */
     struct vg_text text;
+
+    /* the scenario and its interpreter */
+    struct vg_vm vm;
+
+    /* the program's exit (vg_exit): where it unwinds to, and its code */
+    jmp_buf *exit_to;
+    int exit_code;
 };
 
 extern struct vg_state vg;
@@ -134,10 +143,17 @@ int  vg_open_pack(const struct lrv_hal *hal, const struct lrv_run_cfg *cfg);
 void vg_machine_open(const struct lrv_hal *hal, const struct lrv_run_cfg *cfg);
 void vg_machine_close(void);
 
-/* game/run.c: a run-time error of the original's C library ends the program as it did: the
- * message on the console, exit code 255 */
+/* game/run.c: the original's exit(code): the program unwinds to vg_exit_to (vg_run, or a
+ * test's own setjmp), which shuts down; fatal when nothing is armed. */
+LRV_NORETURN void vg_exit(int code);
+/* a run-time error of the original's C library ends the program as it did: the message,
+ * exit code 255 */
 enum vg_runtime_error { VG_R6003 };     /* integer divide by 0 */
 LRV_NORETURN void vg_runtime_error(int which);
+
+/* game/console.c: built-in 0 INIT (0504:0004), the DOS console's question whether to use the
+ * mouse, answered by the profile's mouse=on|off or asked (ask). 1 = yes. */
+int  vg_console_init(void);
 
 /* game/profile.c: the defaults, then the pack's "profile" entry; LRV_OK or enum lrv_err */
 int vg_profile_load(struct vg_profile *p, const struct lrv_pack *pk);
