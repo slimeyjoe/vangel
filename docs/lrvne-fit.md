@@ -84,7 +84,8 @@ differs.
   dictionary, the half-width font, and the texts and palettes of the built-in
   sequences (prologue, staff roll, music mode) live in it. It must be
   EXEPACK-unpacked when the pack is built. `docs/game-data.md` says otherwise
-  and needs correcting.
+  and needed correcting. *Done (M0): the pack takes the dictionary and the
+  font from it; `game-data.md` corrected.*
 - **CPU-speed transitions:** effects 10, 20, 30, 32, 33, 34 run at CPU speed
   (only 31 waits for VSYNC). `lrv_sys_cpu` models this, but the reference
   machine's speed (`cpu_per_frame`) was never measured. *Open.*
@@ -98,10 +99,10 @@ differs.
   `date` to `mtime` and prefix names with the release, since PC-98 and X68000
   files share names.
 - **Duplicates to drop when the engine starts:** `re-tools/d88raw.py` and the
-  mtools extraction (lrvne `diskimg`, `source`).
+  mtools extraction (lrvne `diskimg`, `source`). *Done (M0): `source/tools/gamedata.py`.*
 - **Doc inconsistency:** `other-versions.md` §2.4.4 says the PC-98 uses text
   VRAM for some screens; `graphics.md` §8 and `text.md` §5.1 (text GDC off,
-  everything drawn into graphics VRAM) contradict it and look authoritative.
+  everything drawn into graphics VRAM) contradict it and look authoritative. *Fixed (M0).*
 
 ## Open questions
 

@@ -1,6 +1,7 @@
 # vangel — engine plan
 
-**Status (2026-11-16):** M0 started — repository in place; the engine skeleton, import and pack come next.
+**Status (2026-11-16):** M0 done. Import, pack, the engine skeleton with a picture viewer
+(`--view`), and the decoder bit-exact against the original: 54 pictures × 4 cases. M1 is next.
 
 vangel reimplements `M.EXE`, the engine of Crystal Soft's *Virgin Angel* (PC-98, 1995), on
 [lrvne](https://github.com/slimeyjoe/lrvne). It reproduces the PC-98 release faithfully in
@@ -73,10 +74,12 @@ mask, and the colour 15 → 8 step.
   - the game files: SCB, TXB, LIB, the 21 songs, `ANNOUNCE.TXT`;
   - `ssgtab`, from `PMD.COM`;
   - `txbdict` and `ank8`, the embedded font;
-  - `builtin`, md5-checked regions of `M.EXE`: prologue pages, staff strings and their copy records, the music-mode table, prompts, built-in palettes, the effect-31 order;
+  - `builtin`, md5-checked regions of `M.EXE`: prologue pages, staff strings and their copy records, the music-mode table, prompts, built-in palettes, the effect-31 order. These are packed with the milestones that use them (M1, M2, M5), not in M0;
   - `font16`, `font8`, `profile`.
 - **Correction.** `game-data.md` is corrected: `M.EXE` is a pack input.
 - **Test.** `check_gf.py`: 54 pictures × 4 decoder variants against the original `gf_load`.
+- **Viewer.** `--view [PICTURE]` shows the library's pictures. The pictures carry no palette, so
+  the pack's META `viewer` gives each one the scenario palette it appears with.
 
 ### M1 — graphics and palettes
 

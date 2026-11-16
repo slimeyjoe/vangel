@@ -186,8 +186,9 @@ pointer table (C78Ah) may supply a built-in 8×16 glyph — entries 01h, 02h and
 (01h is a raised comma-like mark). Each set bit is drawn as colour 15 at x and x−1 (doubled
 horizontally) with colour 0 one pixel down-right (t06288 onwards: a bold face with a drop
 shadow). `IOCS _SYMBOL` is used for some screens (t0434C, t048D4…, t06774). The menu, announce
-and music-mode screens use the **text plane** (`_B_PUTMES`, `_B_CLR_ST`, `_TPALET`) — PC-98
-uses its text VRAM for the same screens ([platform.md](platform.md) §5).
+and music-mode screens use the **text plane** (`_B_PUTMES`, `_B_CLR_ST`, `_TPALET`). The
+PC-98 build does not: its text GDC stays off and those screens are drawn into graphics VRAM like
+everything else ([graphics.md](graphics.md) §8, [text.md](text.md) §5.1).
 
 #### 2.4.5 Memory probe and the TVRAM fallback (verified)
 

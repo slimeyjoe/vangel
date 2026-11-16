@@ -15,11 +15,15 @@ first; our own Polish and English translations follow.
   before changing a documented behaviour.
 - `docs/lrvne-fit.md` — what lrvne covers for this port, its gaps, what the engine must plan for.
 - `docs/game-data.md` — releases, media, files; `resources/inventory.tsv` — every file + md5.
-- `re-tools/` — `d88raw.py`, `human68k.py` (media); `exeunpack.py` (EXEPACK); `dis16.py`,
+- `re-tools/` — `human68k.py` (X68000 media); `exeunpack.py` (EXEPACK); `dis16.py`,
   `madis.py` (disassembly); `mcall.py` (unicorn harness: the original's C start-up to `main`,
-  then any routine callable; VRAM/GRCG/palette modelled); `scb.py`, `scbdis.py`, `scbsum.py`
-  (scenario); `txb.py` (text); `gf.py` (pictures); sound and X68000 tools; `*_verify.py`
-  compare the decoders with the original code under emulation.
+  then any routine callable; VRAM/GRCG/palette modelled); `scbdis.py`, `scbsum.py`
+  (scenario); sound and X68000 tools; `*_verify.py` compare the decoders with the original
+  code under emulation.
+- `source/` — the engine: `engine/` (C, on lrvne), `tools/` (stdlib Python: import, pack, and
+  the decoders `scb.py`, `txb.py`, `gf.py` the research tools also use), `tests/` (`run.sh`,
+  `test_*.c`, `check_*.py`), `lrvne/` (the submodule). `make data SRC=...`, `make pack`,
+  `make test` (`EMU_PYTHON` for the checks against the original under emulation).
 
 ## Rules
 
