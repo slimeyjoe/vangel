@@ -27,7 +27,7 @@ the OPNA / stereo sound setups and for the X68000 release.
 
 | # | Gap | Size | Interfaces |
 |---|---|---|---|
-| 1 | Palette helpers: add-and-clamp shift (`pal_shift`), decrement-only step (staff roll) | small | additive |
+| 1 | Palette helpers: add-and-clamp shift (`pal_shift`), decrement-only step (staff roll) | small | **done** (2026-11-16): `lrv_pal_shift`, `lrv_pal_step_down` |
 | 2 | Font builder: a raw 8x16 glyph array as input (the half-width font is the developers' own, in `M.EXE`, 159 glyphs) | small | **done** (2026-11-16): `xfont` `add_raw` / `--raw` |
 | 3 | Glyph helpers: plain `g \| g<<1` bold (lrvne's keeps the 1-0-1 gap), transparent OR, inverse, outline, double size | small | additive |
 | 4 | EXEPACK unpacker in the tools (`re-tools/exeunpack.py`; another engine of the family has the same) | small | **done** (2026-11-16): lrvne `tools/lrvne/exepack.py` |
@@ -88,7 +88,9 @@ differs.
   font from it; `game-data.md` corrected.*
 - **CPU-speed transitions:** effects 10, 20, 30, 32, 33, 34 run at CPU speed
   (only 31 waits for VSYNC). `lrv_sys_cpu` models this, but the reference
-  machine's speed (`cpu_per_frame`) was never measured. *Open.*
+  machine's speed (`cpu_per_frame`) was never measured. *Decided (M1):* the unit is
+  the 80286 clock of the original's instructions, the reference an 80286 at 10 MHz
+  (177 242 per frame); see `engine-plan.md`, decisions.
 - **Busy-poll of the measure counter** (statement 35h, the opening): the VM
   must charge CPU work per statement or yield, otherwise the music never
   advances in headless and push-audio modes.

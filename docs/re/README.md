@@ -55,6 +55,7 @@ pillow, numpy). Listings and outputs go to the git-ignored `resources/derived/`.
 | `txb.py` (in `source/tools`), `txb_verify.py` †, `text_render.py` † | text decoder and page-layout model; check against the original; renders pages/menus with the original code | all 213 messages / 5 732 lines byte-identical, 1 849 pages laid out identically, both releases |
 | `gf.py` (in `source/tools`), `gf_verify.py` † | archive and picture decoder, PNG export; check against the original | 54 pictures × 4 decoder variants bit-exact |
 | `gfx_fx.py`, `gfx_pal.py`, `gfx_fx_verify.py` †, `pal_verify.py` † | models of the transitions and palette fades; checks | 136 transition cases (every VRAM write in order, waits), 20 palette sequences |
+| `m286.py` †, `fx_cost.py` † | `mcall.py` with time: 80286 clocks per executed instruction (Intel's table, no wait states), a VSYNC every frame's worth, the spin loops jumping to what they wait for; the clocks of op 32h's parts and the transitions' durations, the engine's `gfx/fx_clk.h` | the engine's transitions match the original's clock at every write (`source/tests/check_fx.py`) |
 | `sndcall.py` †, `pmdinfo.py`, `pmdemu.py` †, `pmd_capture.py` † | the sound layer against a fake PMD/PPSDRV; song structure table; the real PMD.COM under emulation → VGM | every INT 60h/64h call of the engine traced per driver; 21 songs recorded on a 26K |
 | `x68dis.py` †, `vagd_compare.py` †, `ibm_bmp_compare.py` | X68000 `M.X` disassembly; Graphic Disk BMPs vs the `.gf` pictures and palettes | — |
 | `sjstrings.py` | Shift-JIS strings with offsets | — |
@@ -64,7 +65,8 @@ pillow, numpy). Listings and outputs go to the git-ignored `resources/derived/`.
 * Section tags 0Bh (199) and 0Ch (61) of the scenario: stored, never read; what the compiler
   counted is unknown.
 * The rule behind effect 30 vs 32 (only a tendency is visible), the real-machine duration of the
-  transitions that run at CPU speed (only effect 31 waits for VSYNC).
+  transitions that run at CPU speed (only effect 31 waits for VSYNC; their cost in 80286 clocks
+  is measured, the machine's speed and wait states are not).
 * MSZ's INT 33h functions FDh/FFh; INT 18h AX=1B01h before text lines; port 68h ← 08h.
 * PMD86/PMDB2 behaviour is read from the binaries, not run; the PCM sample rates are assumed;
   no reference recording of the 86 / Speak Board versions.

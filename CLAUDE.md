@@ -17,7 +17,9 @@ first; our own Polish and English translations follow.
 - `docs/game-data.md` — releases, media, files; `resources/inventory.tsv` — every file + md5.
 - `re-tools/` — `human68k.py` (X68000 media); `exeunpack.py` (EXEPACK); `dis16.py`,
   `madis.py` (disassembly); `mcall.py` (unicorn harness: the original's C start-up to `main`,
-  then any routine callable; VRAM/GRCG/palette modelled); `scbdis.py`, `scbsum.py`
+  then any routine callable; VRAM/GRCG/palette modelled); `m286.py` (mcall with time: 80286
+  clocks, the VSYNC, the spin loops); `fx_cost.py` (op 32h's clocks: the engine's
+  `gfx/fx_clk.h`, the transitions' durations); `scbdis.py`, `scbsum.py`
   (scenario); sound and X68000 tools; `*_verify.py` compare the decoders with the original
   code under emulation.
 - `source/` — the engine: `engine/` (C, on lrvne), `tools/` (stdlib Python: import, pack, and

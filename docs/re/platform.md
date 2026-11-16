@@ -173,7 +173,8 @@ The prologue: four pages of centred text on a black screen; the scenario then sh
   entry's three components by 1 while above 0, set each frame with `0315:0144`.
 * Skip: input at any time sets the flag and returns at once (the screen is left as is).
 * On normal or skipped exit: `0315:04E2(0, 100)` (fade to black in 1 s, = op 1Ah) and
-  `screen_clear` (`0315:0132`: page 0 cleared, window state reset).
+  `screen_clear` (`0315:0132`: both VRAM pages cleared by `vram_clear` `00DD:00E3`, the
+  window's background zeroed).
 
 ### 5.3 ENDING (2) and ENDING2 (5) — `0504:0568`, `0504:05CA`; statements 1939, 1920
 

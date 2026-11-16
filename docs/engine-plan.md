@@ -1,10 +1,11 @@
 # vangel — engine plan
 
-**Status (2026-11-16):** M0 done. Import, pack, the engine skeleton with a picture viewer
-(`--view`), and the decoder bit-exact against the original: 54 pictures × 4 cases. M1 is next.
-M1 starts with: lrvne's palette helpers (addition 3); then op 31h into buffers 10/11/12 with the
-window snapshot, op 33h and 18h, op 32h and its effects, palettes and fades; `re-tools/fx_cost.py`
-for the CPU cost of the effects, which sets the profile's `cpu_per_frame` (0 until then).
+**Status (2026-11-16):** M0 and M1 done. M0: import, pack, the engine skeleton with a picture
+viewer (`--view`), the decoder bit-exact against the original (54 pictures × 4 cases). M1: the
+three buffers, ops 31h/33h/18h and the window's background, op 32h with every transition, the
+palettes and fades, on the VSYNC timer. Against the original under emulation: every write of
+136 op 32h cases at the same 80286 clock (`check_fx`), 319 DAC loads on the same frames
+(`check_pal`), the buffer statements (`check_buf`). M2 (text, menus, input) is next.
 
 vangel reimplements `M.EXE`, the engine of Crystal Soft's *Virgin Angel* (PC-98, 1995), on
 [lrvne](https://github.com/slimeyjoe/lrvne). It reproduces the PC-98 release faithfully in
@@ -22,7 +23,7 @@ engine is built from it and how each part is checked against the original.
 | Translations | ours, from the Japanese: Polish first, then English; a keyed runtime lookup with reflow into the original window |
 | Latin text | the game's own 8x16 half-width font (from `M.EXE`), plus our own Polish letters, quotes and dashes drawn to match; lrvne `latin8` as fallback |
 | Extras | all opt-in, faithful by default: the message-5 typo fix, a CG gallery from the Graphic Disk, skipping of text already read |
-| CPU-bound transitions | effects 10/20/30/32/33/34 charge `lrv_sys_cpu` at a V30/286-class `cpu_per_frame`, a profile key. The costs are fitted from instruction counts of the original loops; correctable once real hardware is measured |
+| CPU-bound transitions | effects 10/20/30/32/33/34 charge `lrv_sys_cpu` with the clocks of the original's instructions on an 80286 without wait states (Intel's clock counts: `re-tools/m286.py`; instruction counts were rejected, as one `rep movsw` copies a whole line). The reference machine is an 80286 at 10 MHz: `cpu_per_frame` = 177 242, a profile key, correctable once real hardware is measured |
 
 ## Layout
 
@@ -84,15 +85,25 @@ mask, and the colour 15 → 8 step.
 - **Viewer.** `--view [PICTURE]` shows the library's pictures. The pictures carry no palette, so
   the pack's META `viewer` gives each one the scenario palette it appears with.
 
-### M1 — graphics and palettes
+### M1 — graphics and palettes (done)
 
 - **Pictures and transitions:**
   - op 31 (buffers 10/11/12, transparency, the −1 rule, the window snapshot), op 33, op 18;
   - op 32 with effects 10/20/30/31/32/33/34, pixel-exact.
 - **Palettes:** ops 30h/1Ah/2Fh, `t·564/1000`, the no-free-timer rule, DAC loads at retrace.
 - **Tests:**
-  - `check_fx.py`: 136 cases, plus per-frame snapshots cut at the same instruction budget;
-  - `check_pal.py`: every DAC load and its frame.
+  - `check_fx.py`: 136 cases; every write to the destination, in order, at the same clock
+    (so the same picture at every frame for any `cpu_per_frame`), run at 177 242 and at 997
+    clocks per frame; effect 31 by frame and clock at both speeds;
+  - `check_pal.py`: every DAC load and its frame;
+  - `check_buf.py`: ops 31h/32h/33h/18h and `screen_clear` on the three buffers and the
+    window's background.
+- **Done (2026-11-16).** The clocks: `re-tools/m286.py` (the 80286 table and a timed machine
+  over `mcall`); `re-tools/fx_cost.py consts` makes `engine/gfx/fx_clk.h`. Not charged yet:
+  op 31h's decoding (its time depends on the data; a later milestone), the palette code
+  between its waits (far below a frame), `vram_clear`. The pointer's hiding in ops 31h/32h
+  comes with the mouse (M2). Op 2Fh with t < 2 ends the program with R6003, as the original
+  does (`vg_runtime_error`; exit code 255 once the VM owns the exit, M3).
 
 ### M2 — text, menus, input
 
@@ -227,7 +238,7 @@ The same pipeline and the same story bible, translated from the Japanese.
 ## Risks and open items
 
 - `text.md` §3.5's timer units ("80 ms", "150 ms") disagree with `platform.md` §2 (hundredths of a second). Settle it from the listing before M2.
-- The `cpu_per_frame` value is assumed. The e2e syncs on state at input waits, not on frame numbers.
+- The `cpu_per_frame` value (an 80286 at 10 MHz, no wait states) is assumed. The e2e syncs on state at input waits, not on frame numbers.
 - The speed of the whole-machine harness: mitigated by the statement-level fast path, parallel segments and a result cache.
 - MSZ functions FDh/FFh and the pointer shape.
 - Pixel tests hold only with the same kanji-ROM stand-in on both sides.

@@ -219,7 +219,29 @@ with the given mask m per 8-pixel byte; bit 7 = left pixel):
 
 **Timing.** Only effect 31 waits for VSYNC; 10, 20, 30, 32, 33 and 34 run as fast as the CPU
 writes VRAM, so their visible speed depends on the machine (a full-screen effect 30 is
-4 × 400 × 4 × 40 masked word read-modify-writes of VRAM). **code**
+4 × 400 × 4 × 40 masked word read-modify-writes of VRAM). **code** Their cost in 80286 clocks
+(Intel's table, no wait states) is measured by `re-tools/fx_cost.py` on the original under
+`re-tools/m286.py`; on the reference machine of the engine (10 MHz, 177 242 clocks per VSYNC,
+`fx_cost.py time`; random planes):
+
+| Effect | Rectangle | Clocks | Frames | Seconds |
+|---|---|---|---|---|
+| 10 | 11 → 12, full screen | 365 292 | 2.1 | 0.04 |
+| 30 | full screen | 8 289 171 | 46.8 | 0.83 |
+| 30 | the background window (320 × 200) | 2 185 971 | 12.3 | 0.22 |
+| 32 | full screen | 6 566 979 | 37.1 | 0.66 |
+| 33 | full screen | 371 378 | 2.1 | 0.04 |
+| 20 | full screen | 12 431 356 | 70.1 | 1.24 |
+| 34 | #1899's 480 × 322 | 4 055 508 | 22.9 | 0.41 |
+
+Effect 20's cost depends on the picture (one clock less per colour-8
+pixel, fewer for a byte without any); the others' only on the rectangle. Every op 32h ends with
+`win_snapshot`, about 50 000 clocks.
+
+Edge cases the scenario never reaches: the word routines (10, 30, 31, 33) take a width of 8 or
+less as 0 words, which `rep movsw` copies none of but the `loop` of effects 30 and 31 takes as
+65 536; a height of 0 is 65 536 lines everywhere; effect 33 with h = 1 and effect 34 with
+fewer than 2 lines or 16 pixels count down from 0 as well. **code**
 
 **Which transition when** (the notes' "ある法則"): no exact rule is visible. Tracking buffer
 contents through the statements in file order (`gf.gf_usage`), effect 32 is used for 32 of its 54
@@ -281,6 +303,9 @@ runs for k = 0 .. K−1, K = max(⌊t·564/1000⌋, 1). Divisions truncate towar
 * Example: op 30h t = 100 to a palette whose brightest component is 15 → 56 VSYNCs (≈ 0.99 s),
   d = −15, −14, …, 0 (each held 3–4 frames), 16 fade loads + 2 final loads.
 * If no timer slot is free the fade is skipped and the palette set at once.
+* Op 2Fh with t < 2 (t / 2 = 0) ends the program: the fade in divides by its time, and the C
+  library prints `run-time error R6003 - integer divide by 0` and exits with code 255
+  (**verified** for t = 1, 0, −1). The scenario uses t = 30 only.
 
 Scenario use: op 30h ×81 (t ∈ {0, 1, 30, 40, 56, 100, 150, 160}), op 1Ah ×86 (t 0–180, to white
 ×8), op 2Fh ×2 (t = 30). All of this: **verified** — `gfx_pal.py` reproduces every DAC load of 20
@@ -448,6 +473,9 @@ equals (high nibbles) the scenario palette the game uses with that picture** (th
 | `gfx_fx_verify.py` | the original op 32h for effects 10, 15, 20, 30–35 on 6 rectangles (odd heights, widths not multiples of 16), src/dst 12→10, 11→12, 10→12: every byte written to VRAM in order, final planes, the 64 waits of effect 31 | 136/136 (`gfx_fx_verify.txt`) |
 | `pal_verify.py` | 20 op 30h/1Ah/2Fh calls with scenario palettes, VSYNC simulated: every DAC load (port order and values) | 20/20 (`pal_verify.txt`) |
 | `ibm_bmp_compare.py` | BMPs vs decoded pictures and palettes | §11 |
+| `source/tests/check_fx.py` | the engine's op 32h against the original's on `gfx_fx_verify.py`'s 136 cases: every write, in order, with its 80286 clock (`re-tools/m286.py`) | 136/136 (272 runs) |
+| `source/tests/check_pal.py` | the engine's ops 30h/1Ah/2Fh on 34 statements (no free timer slot among them): every DAC load and the VSYNC it follows | 319 loads |
+| `source/tests/check_buf.py` | the engine's ops 31h/32h/33h/18h, `screen_clear`: the three buffers and the window's background | 7/7 |
 
 ## 13. Open questions
 
