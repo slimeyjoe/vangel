@@ -31,6 +31,9 @@ n=$("$BUILD/vangel" --present-test-mode pc98 | grep -c '"ev":"snap"') || rc=1
 [ "${n:-0}" -gt 0 ] && echo "present-test: $n snapshots" ||
     { echo "present-test: no snapshots"; rc=1; }
 
+# the keyboard as the engine models it from lrvne's keys
+run "$BIN/test_input"
+
 # ---- with the imported game ----------------------------------------------------------------
 if $PY -I "$HERE/../tools/gamedata.py" check >/dev/null 2>&1; then
     HAVE_GAME=1
@@ -68,8 +71,11 @@ if [ -x "$EMU_PY" ] && "$EMU_PY" -c 'import unicorn' 2>/dev/null && [ -n "$HAVE_
     else
         skip check_fx "needs capstone in EMU_PYTHON (the 80286 clocks)"
     fi
+    run "$EMU_PY" -I "$HERE/check_input.py" "$BIN/test_text" "$PAK"
+    run "$EMU_PY" -I "$HERE/check_text.py" "$BIN/test_text" "$PAK"
+    run "$EMU_PY" -I "$HERE/check_menu.py" "$BIN/test_text" "$PAK"
 else
-    for c in check_gf check_buf check_pal check_fx; do
+    for c in check_gf check_buf check_pal check_fx check_input check_text check_menu; do
         skip $c "needs the game, $PAK and a Python with unicorn (EMU_PYTHON)"
     done
 fi
