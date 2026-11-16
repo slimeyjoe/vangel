@@ -9,8 +9,8 @@
  *   library=NAME         ... and the picture library
  *   sound=pmd26k|none    the sound setup (GAME.BAT's choice: PMD on a 26K board, or none)
  *   mouse=ask|on|off     the start-up question whether to use the mouse: asked, or answered
- *   cpu_per_frame=N      the reference machine: instructions per VSYNC (0: what runs at CPU
- *                        speed takes no time) */
+ *   cpu_per_frame=N      the reference machine: 80286 clocks per VSYNC (re-tools/m286.py;
+ *                        0: what runs at CPU speed takes no time) */
 #include <string.h>
 #include "vg.h"
 

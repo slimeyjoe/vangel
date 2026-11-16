@@ -129,6 +129,16 @@ static int run_viewer(void)
     return 0;
 }
 
+/* ---- run-time errors of the original's C library (Microsoft C 1995) ---------------------- */
+
+void vg_runtime_error(int which)
+{
+    static const char *const msg[] = { "R6003 - integer divide by 0" };
+    (void)which;
+    /* (the exit code is 255 once the interpreter owns the program's exit, M3) */
+    lrv_fatal(vg.hal, "run-time error %s", msg[0]);
+}
+
 /* ---- the engine --------------------------------------------------------------------------- */
 
 int vg_open_pack(const struct lrv_hal *hal, const struct lrv_run_cfg *cfg)
@@ -183,10 +193,13 @@ void vg_machine_open(const struct lrv_hal *hal, const struct lrv_run_cfg *cfg)
         lrv_fatal(hal, "the pack has no picture library %s", vg.profile.library);
     if (gf_lib_open(&vg.lib, hal, &vg.pak, e) != LRV_OK)
         lrv_fatal(hal, "%s is not a picture library", vg.profile.library);
+    vg_gfx_load_palettes();
+    vg_timer_install();
 }
 
 void vg_machine_close(void)
 {
+    vg_timer_remove();
     gf_lib_close(&vg.lib);
     vg.hal->video_close();
     lrv_screen_free(&vg.screen);

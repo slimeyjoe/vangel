@@ -9,6 +9,9 @@ Addresses are SEG:OFF of the load image (image-relative segments), as in docs/re
   Image.far(seg, off)      the far pointer stored at SEG:OFF, as an image offset
   text_dictionary(img)     the 90 two-byte Shift-JIS characters of the TXB coding (0B85:0000,
                            docs/re/text.md §2.4), 180 bytes
+  palettes(img)            the built-in palettes, 48 bytes R[16] G[16] B[16] each, by pack name:
+                           pal.black 0AA8:0000, pal.white 0AA8:0060, pal.default 0AA8:0030
+                           (the one gfx_init sets; docs/re/graphics.md §7.1)
   ank_font(img)            the half-width font: {code: 16 rows} for all 256 codes, read through
                            the far-pointer table at 0ABB:07C0 (text.md §3.2); codes without a
                            glyph of their own point at the blank glyph
@@ -41,6 +44,21 @@ class Image:
 
 def text_dictionary(img):
     return img.at(DICT[0], DICT[1], DICT_SIZE)
+
+
+PALETTES = (('pal.black', 0x0000), ('pal.default', 0x0030), ('pal.white', 0x0060))
+
+
+def palettes(img):
+    out = {}
+    for name, off in PALETTES:
+        p = img.at(0x0AA8, off, 48)
+        if max(p) > 15:
+            raise ValueError('%s at 0AA8:%04X is not a palette' % (name, off))
+        out[name] = p
+    if set(out['pal.black']) != {0} or set(out['pal.white']) != {15}:
+        raise ValueError('the black and white palettes are not where M.EXE 1995-03-01 has them')
+    return out
 
 
 def ank_font(img):

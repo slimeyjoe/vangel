@@ -8,7 +8,7 @@ Per game:
               lang (the language of the original text), the scenario and picture library the
               original's command line names (GAME.BAT: m cmd00.scb b:\\gdata.lib), the sound
               setup, the mouse question, and cpu_per_frame (the reference machine's speed in
-              instructions per VSYNC, the time base of the transitions that run at CPU speed)
+              80286 clocks per VSYNC, the time base of the transitions that run at CPU speed)
   languages   {tag: name} of the languages the original has
   release     the inventory's release of the game; `optional` the other releases, which only
               extras and the research use
@@ -33,9 +33,9 @@ GAMES = {
             'library': 'GDATA.LIB',
             'sound': 'pmd26k',
             'mouse': 'ask',
-            # not yet measured: set in M1 from the instruction counts of the effect loops
-            # (docs/engine-plan.md, decisions)
-            'cpu_per_frame': 0,
+            # an 80286 at 10 MHz (a PC-9801VX-class machine), 10 000 000 / 56.42 Hz: the
+            # clocks are re-tools/m286.py's (docs/engine-plan.md, decisions)
+            'cpu_per_frame': 177242,
         },
         'languages': {'ja': '日本語'},
         'release': 'pc98',

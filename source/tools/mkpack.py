@@ -15,7 +15,9 @@ tools/vgpak.py):
   SONG     the 21 songs (VA_Mnn.M / .N) under their file names, byte-exact
   FILE     "ANNOUNCE.TXT", byte-exact
   BLOB     (lrvne's) "ssgtab": PMD.COM's SSG-effect table (lrvne pmd), the drums of part K;
-           "txbdict": M.EXE's text dictionary (tools/mexe.py)
+           "txbdict": M.EXE's text dictionary (tools/mexe.py); M.EXE's built-in palettes
+           "pal.black", "pal.white", "pal.default" (48 bytes R[16] G[16] B[16]: 0AA8:0000,
+           0AA8:0060, 0AA8:0030, the one gfx_init sets)
   FONT     "ank8": M.EXE's own half-width font, all 256 codes, as stored (the engine
            emboldens); "font16" (JIS X 0208, 16x16) and "font8" (JIS X 0201, 8x16) stand in
            for the kanji ROM, from lrvne's xfont (--no-bold), given in --fonts as k16.xfnt and
@@ -147,7 +149,9 @@ def main():
     img = read_engine(game)
     pk.add('txbdict', xpak.T_BLOB, mexe.text_dictionary(img))
     pk.add('ank8', xpak.T_FONT, ank8_table(img))
-    counts['blob'] += 2
+    for name, data in mexe.palettes(img).items():
+        pk.add(name, xpak.T_BLOB, data)
+    counts['blob'] += 5
     pk.add('viewer', xpak.T_META, viewer_palettes(a.original, game['release'], img))
     counts['fonts'] += 1
     for lang, lname in game['languages'].items():

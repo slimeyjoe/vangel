@@ -61,8 +61,17 @@ fi
 if [ -x "$EMU_PY" ] && "$EMU_PY" -c 'import unicorn' 2>/dev/null && [ -n "$HAVE_GAME" ] &&
    [ -f "$PAK" ]; then
     run "$EMU_PY" -I "$HERE/check_gf.py" "$BIN/test_gf" "$PAK"
+    run "$EMU_PY" -I "$HERE/check_buf.py" "$BIN/test_buf" "$PAK"
+    run "$EMU_PY" -I "$HERE/check_pal.py" "$BIN/test_pal" "$PAK"
+    if "$EMU_PY" -c 'import capstone' 2>/dev/null; then
+        run "$EMU_PY" -I "$HERE/check_fx.py" "$BIN/test_fx"
+    else
+        skip check_fx "needs capstone in EMU_PYTHON (the 80286 clocks)"
+    fi
 else
-    skip check_gf "needs the game, $PAK and a Python with unicorn (EMU_PYTHON)"
+    for c in check_gf check_buf check_pal check_fx; do
+        skip $c "needs the game, $PAK and a Python with unicorn (EMU_PYTHON)"
+    done
 fi
 
 if [ $rc -eq 0 ]; then echo "ALL TESTS PASSED"; else echo "TESTS FAILED"; fi

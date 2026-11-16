@@ -26,6 +26,8 @@
 #include "lrvne/profile.h"
 #include "lrvne/sys.h"
 #include "gfx/gf.h"
+#include "gfx/gfx.h"
+#include "vm/timer.h"
 
 #define VG_NAME "vangel"                /* the program: usage, messages, the saves' directory */
 
@@ -77,12 +79,10 @@ struct vg_profile {
     char library[16];                   /* ... and the picture library */
     char sound[16];                     /* the sound setup: pmd26k, none */
     char mouse[8];                      /* the console question "use the mouse?": ask, on, off */
-    /* the reference machine: instructions per VSYNC, the time base of what the original runs
-     * at CPU speed (most transitions); 0 = such loops take no time */
+    /* the reference machine: 80286 clocks per VSYNC (re-tools/m286.py), the time base of
+     * what the original runs at CPU speed (most transitions); 0 = such loops take no time */
     int cpu_per_frame;
 };
-
-#define VG_PAL_BYTES (16 * 3)           /* a palette: 16 colours x {R, G, B}, 0..15 a gun */
 
 /* ---- the state ----------------------------------------------------------------------------- */
 struct vg_state {
@@ -101,6 +101,12 @@ struct vg_state {
 
     /* the picture library GDATA.LIB */
     struct gf_lib lib;
+
+    /* the VSYNC timer: the frame counter and the 16 timer slots */
+    struct vg_timers timers;
+
+    /* the buffers' state, the palettes, the window's background */
+    struct vg_gfx gfx;
 };
 
 extern struct vg_state vg;
@@ -119,6 +125,11 @@ int vg_run(const struct lrv_hal *hal, const struct lrv_run_cfg *cfg,
 int  vg_open_pack(const struct lrv_hal *hal, const struct lrv_run_cfg *cfg);
 void vg_machine_open(const struct lrv_hal *hal, const struct lrv_run_cfg *cfg);
 void vg_machine_close(void);
+
+/* game/run.c: a run-time error of the original's C library ends the program as it did: the
+ * message on the console, exit code 255 */
+enum vg_runtime_error { VG_R6003 };     /* integer divide by 0 */
+LRV_NORETURN void vg_runtime_error(int which);
 
 /* game/profile.c: the defaults, then the pack's "profile" entry; LRV_OK or enum lrv_err */
 int vg_profile_load(struct vg_profile *p, const struct lrv_pack *pk);
