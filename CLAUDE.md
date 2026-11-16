@@ -26,6 +26,16 @@ first; our own Polish and English translations follow.
   the decoders `scb.py`, `txb.py`, `gf.py` the research tools also use), `tests/` (`run.sh`,
   `test_*.c`, `check_*.py`), `lrvne/` (the submodule). `make data SRC=...`, `make pack`,
   `make test` (`EMU_PYTHON` for the checks against the original under emulation).
+- `source/tests/` — `check_*.py` run the original under emulation and the engine's `test_*`
+  program on the same input, and compare; the original's results are cached by
+  `refcache.py` (`REFCACHE=on|off|refresh|verify`). `check_gf`/`check_buf`/`check_pal`/
+  `check_fx` (M0/M1; `check_fx` times in 80286 clocks with `re-tools/m286.py`);
+  `check_text`/`check_menu`/`check_input` (M2) share `textrig.py`: the kanji ROM answered
+  from the pack's fonts, INT 33h from a script, the original's own VSYNC and INT 09h handlers
+  delivered as interrupts, time passing only at the end of a wait loop's turn that found
+  nothing (its FRAME_POINTS, as the engine's loops end such a turn with a frame); the input
+  is decided while the original runs and replayed into `test_text`. `test_input` (no data):
+  the keyboard model.
 
 ## Rules
 
