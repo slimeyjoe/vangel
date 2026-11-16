@@ -56,6 +56,7 @@ pillow, numpy). Listings and outputs go to the git-ignored `resources/derived/`.
 | `gf.py` (in `source/tools`), `gf_verify.py` † | archive and picture decoder, PNG export; check against the original | 54 pictures × 4 decoder variants bit-exact |
 | `gfx_fx.py`, `gfx_pal.py`, `gfx_fx_verify.py` †, `pal_verify.py` † | models of the transitions and palette fades; checks | 136 transition cases (every VRAM write in order, waits), 20 palette sequences |
 | `m286.py` †, `fx_cost.py` † | `mcall.py` with time: 80286 clocks per executed instruction (Intel's table, no wait states), a VSYNC every frame's worth, the spin loops jumping to what they wait for; the clocks of op 32h's parts and the transitions' durations, the engine's `gfx/fx_clk.h` | the engine's transitions match the original's clock at every write (`source/tests/check_fx.py`) |
+| `vm_cost.py` † | the clocks of the interpreter (vm_step's paths, expr_eval's nodes) on the 80286 of `m286.py`: the engine's `vm/vm_clk.h` | the engine's charge equals the original's clocks at every statement of four routes (`source/tests/check_vmstep.py`) |
 | `sndcall.py` †, `pmdinfo.py`, `pmdemu.py` †, `pmd_capture.py` † | the sound layer against a fake PMD/PPSDRV; song structure table; the real PMD.COM under emulation → VGM | every INT 60h/64h call of the engine traced per driver; 21 songs recorded on a 26K |
 | `x68dis.py` †, `vagd_compare.py` †, `ibm_bmp_compare.py` | X68000 `M.X` disassembly; Graphic Disk BMPs vs the `.gf` pictures and palettes | — |
 | `sjstrings.py` | Shift-JIS strings with offsets | — |

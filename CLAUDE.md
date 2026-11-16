@@ -19,11 +19,12 @@ first; our own Polish and English translations follow.
   `madis.py` (disassembly); `mcall.py` (unicorn harness: the original's C start-up to `main`,
   then any routine callable; VRAM/GRCG/palette modelled); `m286.py` (mcall with time: 80286
   clocks, the VSYNC, the spin loops); `fx_cost.py` (op 32h's clocks: the engine's
-  `gfx/fx_clk.h`, the transitions' durations); `scbdis.py`, `scbsum.py`
+  `gfx/fx_clk.h`, the transitions' durations); `vm_cost.py` (the interpreter's clocks:
+  `vm/vm_clk.h`); `scbdis.py`, `scbsum.py`
   (scenario); sound and X68000 tools; `*_verify.py` compare the decoders with the original
   code under emulation.
-- `source/` — the engine: `engine/` (C, on lrvne), `tools/` (stdlib Python: import, pack, and
-  the decoders `scb.py`, `txb.py`, `gf.py` the research tools also use), `tests/` (`run.sh`,
+- `source/` — the engine: `engine/` (C, on lrvne), `tools/` (stdlib Python: import, pack,
+  `saves.py` (GAME.DAT in and out), and the decoders `scb.py`, `txb.py`, `gf.py` the research tools also use), `tests/` (`run.sh`,
   `test_*.c`, `check_*.py`), `lrvne/` (the submodule). `make data SRC=...`, `make pack`,
   `make test` (`EMU_PYTHON` for the checks against the original under emulation).
 - `source/tests/` — `check_*.py` run the original under emulation and the engine's `test_*`
@@ -36,6 +37,14 @@ first; our own Polish and English translations follow.
   nothing (its FRAME_POINTS, as the engine's loops end such a turn with a frame); the input
   is decided while the original runs and replayed into `test_text`. `test_input` (no data):
   the keyboard model.
+  `check_scb`/`check_expr`/`check_save`/`check_vmstep` (M3) share `vmrig.py` and
+  `test_vm`: the original's loader, `expr_eval`, `save_slot`/`load_slot` and `vm_step` under
+  mcall (a fresh machine after any `exit()`: unicorn delivers no second divide error);
+  `check_vmstep` replaces every subsystem entry with `INT n; RETF` and a Python stand-in, its
+  explorer answers waits, messages, menus, sequences and 35h while the original runs, the
+  engine replays the answers; four routes under m286 compare each statement's clocks with
+  `vm/vm_clk.h` (`re-tools/vm_cost.py consts` makes it). The statements reach the
+  subsystems through `vg.vm.io`; a test replaces it.
 
 ## Rules
 

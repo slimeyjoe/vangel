@@ -79,8 +79,9 @@ sequences also count frames directly by zeroing DS:109E and polling it. **Verifi
 | 4 | joystick | `0401:0004`: always fails (a stub) | `0401:0008`: zeros |
 
 The mouse bit is decided by `sys_init` (`0504:0004`, built-in 0 `INIT`), before the graphics
-start, on the DOS console: it prints `マウスを使用しますか?[Y/N]` and reads keys (via the DOS
-console, `0504:0B7E`) until one of `Y`, `y`, `ﾝ` (DDh, the Y key in kana mode) — mouse on — or
+start, on the DOS console: it prints `マウスを使用しますか?[Y/N]` (DOS AH=09h) and reads keys
+through the keyboard BIOS (`0504:0B7E`: INT 18h AH=03h, initialise, then AH=00h, the next key's
+character code; no echo) until one of `Y`, `y`, `ﾝ` (DDh, the Y key in kana mode) — mouse on — or
 `N`, `n`, `ﾐ` (D0h) — mouse off; prints `マウスを使用します` / `マウスを使用しません` and
 `プログラムのロード中です...`. If the mouse driver is missing, opening fails (INT 33h AX=0 returns
 0) and the mouse simply stays off. If no device opens at all, `input_init` fails and the program
@@ -139,7 +140,11 @@ The `atexit` handlers registered by `run_game` run in reverse order: graphics (`
 input (`043A:0066`: restore INT 05h/06h/09h, hide the pointer), sound (`04E4:0021`), timer
 (`0752:0019` → `075A:0080`). Exit codes: 0 after statement 2Eh; 1 usage/graphics failure;
 2 scenario or text load error; 3 out of memory while loading; 4 run-time error of the
-interpreter (bad opcode, bad expression, call stack, timer/input init).
+interpreter (bad opcode, bad expression, call stack, timer/input init); 255 a run-time error of
+the C library (R6003, an integer divide error, from statements 1Eh–23h, op 2Fh), which ends
+with `_exit`: the atexit handlers do not run and the game's interrupt handlers stay installed.
+The interpreter's messages (`Calling nested too much`, `No Calling stack (Invalid RETURN)`) are
+printed with `printf` while the text screen is off: they are seen once the program has left.
 
 ## 5. Built-in sequences (segment 0504)
 

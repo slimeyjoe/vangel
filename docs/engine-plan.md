@@ -1,6 +1,6 @@
 # vangel — engine plan
 
-**Status (2026-11-16):** M0 and M1 done. M0: import, pack, the engine skeleton with a picture
+**Status (2026-11-17):** M0 to M3 done. M0: import, pack, the engine skeleton with a picture
 viewer (`--view`), the decoder bit-exact against the original (54 pictures × 4 cases). M1: the
 three buffers, ops 31h/33h/18h and the window's background, op 32h with every transition, the
 palettes and fades, on the VSYNC timer. Against the original under emulation: every write of
@@ -8,8 +8,13 @@ palettes and fades, on the VSYNC timer. Against the original under emulation: ev
 (`check_pal`), the buffer statements (`check_buf`). M2: the message file, the window and its
 glyphs, statement 19h's page loop and waits, statement 24h's menus, the keyboard latch and the
 mouse; against the original under emulation, frame by frame and pixel by pixel: every page of
-the 213 messages (`check_text`), the 43 menus (`check_menu`), the input layer (`check_input`).
-M3 (the VM, silent) is next.
+the 213 messages (`check_text`), the 43 menus (`check_menu`), the input layer (`check_input`). M3: the scenario's loader, the
+expressions, the interpreter and its 34 statements, `GAME.DAT`, the console's mouse question;
+the game plays from the question through the title into the story, without music and the
+built-in sequences; against the original under emulation: the loader on both releases and
+damaged files (`check_scb`), 800 random expressions (`check_expr`), saves and loads
+(`check_save`), 250 000 statements on 44 routes with every call, the stack and the variables,
+and the 80286 clocks of 10 000 (`check_vmstep`). M4 (music) is next.
 
 vangel reimplements `M.EXE`, the engine of Crystal Soft's *Virgin Angel* (PC-98, 1995), on
 [lrvne](https://github.com/slimeyjoe/lrvne). It reproduces the PC-98 release faithfully in
@@ -139,7 +144,7 @@ mask, and the colour 15 → 8 step.
   overlay; the original's hide/show calls decide when it is seen, also around the buffer copies
   of M1. The menus take their strings from the caller; the scenario's table and the message
   count come with the loader (M3).
-### M3 — the VM, silent
+### M3 — the VM, silent (done)
 
 - **The VM:**
   - the loader checks and exit codes;
@@ -152,6 +157,32 @@ mask, and the colour 15 → 8 step.
 - **Tests:**
   - `check_scb.py`, `check_expr.py`, `check_save.py`;
   - `check_vmstep.py`: the original `vm_run` with its subsystems stubbed, compared statement by statement, plus a coverage report of the 1 947 reachable statements.
+- **Done (2026-11-17).** `engine/vm/` (scb.c expr.c vm.c, vm_clk.h), `engine/game/` (saves.c
+  console.c, run.c: `main` and `run_game`). The game runs: the console's question (drawn as
+  the PC-98's text screen into graphics page 0, Y or N; `mouse=on|off` answer it unseen), the
+  scenario and its text loaded with the original's exit codes (1, 2, 3; 4 for the
+  interpreter's errors, 255 for R6003, through `vg_exit`), the devices, the graphics, the
+  interpreter until 2Eh, a quit or a reset (the program again from `run_game`, the mouse's
+  answer kept). The statements call the subsystems through a table (`struct vg_vm_io`) the
+  tests replace. Until M4 the machine has no sound driver (as `GAME.BAT`'s option 4: 35h reads
+  −1, nothing plays); until M5 statement 25h only logs its sequence. Where the original reads
+  outside its tables (a pc past the statements, variable or message numbers it does not have,
+  a call stack a damaged save left too deep, palettes over the count) the engine ends with
+  exit 4; the loader refuses strings longer than their records and counts whose 16-bit
+  allocation wraps (exit 2). The waits of M2 and M3 now send their trace events (autoplay's
+  `KEY:wait`, the control protocol). **Time:** each statement charges the 80286 clocks the
+  original's interpreter spends on its path (`re-tools/vm_cost.py consts` makes `vm/vm_clk.h`:
+  the fetch, the dispatch, the handler, per expression node; not the subsystems, not the turns
+  of a wait). **Tests** (`tests/test_vm.c`, `tests/vmrig.py`): `check_scb` (the PC-98 file, the
+  X68000 one when given or imported, and 131 damaged copies: the result, every table,
+  the entry); `check_expr` (800 random trees); `check_save` (the whole file after each save,
+  the whole state after each load, the disk's own GAME.DAT); `check_vmstep` (the original's
+  `vm_step` with every subsystem entry replaced by an `INT n; RETF` stand-in, routes chosen by an
+  explorer while the original runs and replayed into the engine: 44 routes, 1 898 statements
+  covered, the remaining 49 are switch defaults no state reaches; four routes under m286 with
+  the clocks of every statement). `re-tools/mcall.py`: a write after a seek past the end of a
+  file now extends it there (it appended). `tools/saves.py` shows a `GAME.DAT`'s slots and
+  copies one into a save directory and out (the storage record `game.dat` is the file itself).
 
 ### M4 — music
 

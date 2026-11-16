@@ -22,7 +22,8 @@ operators. The names of that language are not in the release; the names used her
 `GAME.BAT` runs `m cmd00.scb b:\gdata.lib`. `main` (`0468:000E`):
 
 1. Without the scenario argument (argc < 2): prints `シナリオバイナリ(*.scb)を指定してください`
-   and exits with code 1.
+   and exits with code 1. (This is the one message of `main` that is printed: the others below
+   go through `dbg_print` `0468:000C`, an empty routine, a debug print the release removed.)
 2. `sys_init` (`0504:0004`, built-in 0 "INIT"): the console prompt `マウスを使用しますか?[Y/N]`
    ([platform.md](platform.md) §3), then `プログラムのロード中です...`.
 3. Default file names are set (`0468:0191`): text `scenario.txb` (0BA1:0016), scenario
@@ -30,13 +31,15 @@ operators. The names of that language are not in the release; the names used her
    is kept as a far pointer at 0BA1:006C: the picture library's path
    ([graphics.md](graphics.md) for how it is opened).
 4. `argv[1]` is copied over the scenario name (0BA1:002A) and opened with `fopen(.., "rb")`;
-   failure: `file not found`, exit 1.
-   `scenario reading...` — `scb_load` (`063C:00E8`, §2–§3); failure: `error!`, exit 2.
-5. `text reading...` — `txb_load` (`0724:0018`) loads the text file named by the scenario
-   (section 0Ah, `cmd00.txb`); failure: `error!`, exit 2.
-6. The entry statement (header word, §2.1) must be opcode 2Dh; otherwise
-   `Warning : 開始番地が設定されていません。先頭から実行します` is printed and execution starts at
-   statement 1.
+   failure: exit 1 (`file not found`, not printed).
+   `scb_load` (`063C:00E8`, §2–§3); failure: exit 2 (`scenario reading...`, `error!`, `OK` are
+   not printed).
+5. `txb_load` (`0724:0018`) loads the text file named by the scenario (section 0Ah,
+   `cmd00.txb`; without the section `scenario.txb`); failure: exit 2.
+6. The entry statement (header word, §2.1) must be opcode 2Dh; otherwise execution starts at
+   statement 1 (the warning `開始番地が設定されていません。先頭から実行します` is not printed). The
+   test reads the statement table at the entry's number unchecked: an entry outside the table
+   reads memory that is not the scenario's.
 7. `run_game` (`001E:0069`) initialises the timer (`0752:0002`), sound (`04E4:0004`), input
    (`043A:0008`) and graphics (`0315:000E`) subsystems, registering each one's shutdown with
    `atexit`. A failing timer, input or graphics init prints `タイマーの初期化に失敗しました`,
@@ -44,8 +47,10 @@ operators. The names of that language are not in the release; the names used her
    Then `vm_run(entry)` (`001E:011F`) runs until a statement stops the machine (§5), and the four
    shutdown routines run in reverse order.
 
-All messages above go to the DOS console (the text screen) before the game's graphics start.
-**Verified** (code read; steps 4–6 also run under emulation).
+The console prompt of step 2 is on the DOS console (the text screen) before the game's
+graphics start. **Verified** (code read; steps 4–6 also run under emulation; the loader by
+`source/tests/check_scb.py`, which compares the engine's loader with the original's on both
+releases and on damaged copies of the PC-98 file).
 
 ## 2. File layout
 
@@ -135,31 +140,61 @@ After the last statement the file ends (no trailer). **Verified.**
 | variable number (1Eh) | ≥ 1 |
 | 1Fh targets | both ≥ 0; if the first is 0 the second must be 0 too |
 | 20h | case count 1..15, default ≥ 0 |
-| opcodes 26h–2Ah, 2Ch | always invalid (loader returns NULL) |
+| opcodes 26h–2Ah, 2Ch | always invalid (loader returns NULL); an opcode not in the table (anything below 15h, above 37h, or ≥ 80h, which `scb_getc` sign-extends) too |
+| 1Eh expression, 20h expression, 20h default | also ≥ 0 (a negative one is NULL) |
+| 1Fh, 20h, 23h expression 0 | accepted: `expr_eval(0)` ends the program with exit(4) at run time |
 
-Jump targets are not checked against the statement count; the VM does not check them either
-(an out-of-range pc would read past the pointer table).
+Every failure ends with exit code 2: a check's own `exit(2)`, a loader's NULL (`scb_load_stmts`
+calls `exit(2)`), or `scb_load` returning 0 (`main`). Only a failed `malloc` of a statement record
+(`stmt_alloc` `063C:0012`) exits with 3; the tables' own allocations failing return 0 (exit 2).
+
+What is not checked:
+* jump targets (1Fh, 20h, 21h, 22h, 34h) against the statement count; the VM does not check
+  them either: an out-of-range pc reads past the pointer table (pc 0: entry 0 is NULL, which
+  reads the opcode from 0000:0000);
+* variable numbers (1Eh, and the leaves of expressions) against the variable count; the
+  number 0 is the unused slot (§2.4), a real record;
+* message 0 (19h): the message index's entry 0 is NULL; palettes (30h) above the count, whose
+  pointer is read at load time past the palette table;
+* the strings' lengths: a picture name (31h) has 13 bytes before it overwrites the record's
+  other fields (flag, buffer, x, y, written before it), a song name (1Bh) 19, a menu's strings
+  the menu's `size` word, the text file's name the 20 bytes up to the scenario's name;
+* the counts: each table is allocated with a 16-bit size, (n + 1) × entry size, which wraps for
+  large counts; a negative count reads no entries, but the checks then compare against it.
+
+The end of the file reads as fgetc's −1: the plain readers return it (a tag of −1 fails the
+sections), `scb_getc` adds it to the key like a byte FFh would be added and returns the low byte
+sign-extended, so a file cut short reads on as if FFh bytes followed and fails or loads as such
+bytes decide. A string cut short never ends (the low byte alternates between two values) and
+the loader reads for ever. **Verified** (`check_scb.py`: files cut short at 25 points, among
+others).
 
 ## 4. Expressions (`expr_eval` 0000:0089)
 
 `eval(n)`: n must be 1..count (else `exit(4)`).
 
 * **Leaf** (`expr_leaf` 0000:0000), `kind` bits: 1 = literal, 2 = variable, 4 = integer,
-  8 = boolean.
-  * 5 (literal int): `value`; 9 (literal bool): `value != 0`;
-  * 6 (int variable): `var[value].value`; 10 (bool variable): `var[value].value != 0`;
+  8 = boolean, tested in this order:
+  * bit 1 and bit 4 (5, 7, ...): `value`; bit 1 and bit 8 (9, ...): `value != 0`;
+  * bit 2 and bit 4 (6, ...): `var[value].value`; bit 2 and bit 8 (10, ...):
+    `var[value].value != 0` (a kind of 3 = literal and variable without a type: the variable
+    paths decide);
   * anything else: `exit(4)`.
-  The leaf's kind decides how a variable is read, not the variable's own type.
+  The leaf's kind decides how a variable is read, not the variable's own type. The variable's
+  number is not checked (0 is the unused slot).
 * **Operator node**, `op`:
   * 3: `-eval(left)`; 4: `~eval(left)` (bitwise; `right` unused);
   * 5..16: both operands evaluated, left first (no short-circuit), 16-bit signed:
     5 `+`, 6 `-`, 7 `*` (low word of `imul`), 8 `/` (`idiv`, truncating), 9 `%` (`idiv`
     remainder, sign of the dividend), 10 `&`, 11 `|`, 12 `^`, 13 `==`, 14 `!=`, 15 `>`,
     16 `<` (comparisons give 1 or 0; there are no `>=`/`<=`/logical operators);
-  * other: `exit(4)`. Division by zero raises the CPU's divide exception (the C runtime then
-    prints `R6003 integer divide by 0` and exits).
+  * other: `exit(4)`, after both operands were evaluated. A zero divisor, and −32768 / −1
+    (whose quotient does not fit), raise the CPU's divide exception for 8 and 9 alike; the C
+    runtime prints `run-time error R6003` / `- integer divide by 0` and exits with code 255.
 
-VA uses ops 5, 7, 11, 13, 14, 16 and leaves of kinds 5, 6, 9, 10. **Verified.**
+VA uses ops 5, 7, 11, 13, 14, 16 and leaves of kinds 5, 6, 9, 10. **Verified**
+(`source/tests/check_expr.py`: 800 random trees over random variables, every operator and
+leaf kind, the edges of 16 bits, the exits).
 
 ## 5. The virtual machine
 
@@ -196,11 +231,11 @@ Counts are the number of statements in VA.
 
 | Op | Count | Operands | Semantics (handler) |
 |---|---|---|---|
-| 15h | 29 | `w` time, `b` skippable (≠0) | **wait** `time` hundredths of a second (VSYNC-counted: `frames = time × 564 / 1000`, [platform.md](platform.md) §2). If skippable, a new key press or a held mouse button ends it early, followed by the input "release" step of [platform.md](platform.md) §3. v1 := bool interrupted. If both operands are 0 nothing happens and v1 is unchanged. (`001E:081C`) |
+| 15h | 29 | `w` time, `b` skippable (≠0) | **wait** `time` hundredths of a second (VSYNC-counted: `frames = time × 564 / 1000`, [platform.md](platform.md) §2). If skippable, a new key press or a held mouse button ends it early, followed by the input "release" step of [platform.md](platform.md) §3. The result flag is cleared first; v1 := bool interrupted. If both operands are 0 nothing happens and v1 is unchanged; with no free timer slot the flag is cleared and nothing else happens (v1 unchanged). (`001E:081C`) |
 | 16h | 1 | — | **wait for input**: polls until a new key press or a held mouse button, then the "release" step (`001E:08FB`). v1 unchanged. |
 | 17h | 0 | — | no operation (`001E:095E`) |
 | 18h | 0 | — | erases the text window (restores it from the saved background; `0315:07F5`, [text.md](text.md)) |
-| 19h | 267 | `w` message | **show message** n ([text.md](text.md): window, paging, keys). Clears the result flag first; v1 := bool result flag afterwards (set when a key or click interrupts a timed page, which aborts the rest of the message; text.md) (`001E:0965`) |
+| 19h | 267 | `w` message | **show message** n ([text.md](text.md): window, paging, keys). Clears the result flag first; v1 := bool result flag afterwards (set when a key or click interrupts a timed page, which aborts the rest of the message; text.md) (`001E:0965`). Message 0 passes the index's NULL entry |
 | 1Ah | 86 | `b` to-white (≠0), `w` time | **fade out** the current palette to black (or white) over `time` hundredths of a second; time < 1: at once ([graphics.md](graphics.md), `0315:04E2`) |
 | 1Bh | 21 | `w` volume % (always 100), `s` file | **play song**: the engine picks `.n`/`.s`/`.m` by driver (the script's extension is ignored), copies the file into PMD's buffer and starts it; the volume only sets where a later fade starts ([sound.md](sound.md), `04E4:0034`) |
 | 1Ch | 3 | `w` time (1, 200, 320) | **fade out and stop** over `time` hundredths of a second, linearly, one volume step per VSYNC; **blocking** (the game waits) ([sound.md](sound.md), `04E4:01D8`, `04E4:00F0`) |
@@ -210,9 +245,9 @@ Counts are the number of statements in VA.
 | 20h | 44 | `b` (ignored), `w` expr, `b` n (1..15), `w` default, n × (`w` value, `w` target) | **switch**: first case whose value equals `eval(expr)` → `pc = target`; none → `pc = default` (`001E:0725`) |
 | 21h | 16 | `w` target | **goto** (`001E:07FF`) |
 | 22h | 107 | `w` target | **call**: push pc (the next statement) on the call stack, `pc = target`. Depth 31 before the push → `Calling nested too much`, `exit(4)` (so at most 31 nested calls) (`001E:078A`, `001E:0004`) |
-| 23h | 25 | `w` expr (0 = none) | **return**: with expr, v1 := int eval(expr); without, v1 := bool 1. Then `pc = pop()`; empty stack → `No Calling stack (Invalid RETURN)`, `exit(4)` (`001E:07A1`, `001E:0039`) |
-| 24h | 58 | `w` menu | **menu**: show the choices, v1 := the chosen number ([text.md](text.md); `001E:0A8D`) |
-| 25h | 5 | `b` n | **built-in sequence** n from the table 0AB1:0000 (§8). Clears the result flag, calls the routine, v1 := bool result flag (`001E:0310`) |
+| 23h | 25 | `w` expr (0 = none) | **return**: with expr > 0, v1 := int eval(expr); else v1 := bool 1. Then `pc = pop()`; empty stack → `No Calling stack (Invalid RETURN)`, `exit(4)` (v1 is written first) (`001E:07A1`, `001E:0039`) |
+| 24h | 58 | `w` menu | **menu**: show the choices, v1 := int the chosen number (1 when the loop's choice is outside 1..n) ([text.md](text.md); `001E:0A8D`) |
+| 25h | 5 | `b` n | **built-in sequence** n from the table 0AB1:0000 (§8). Clears the result flag, calls the routine (none for n = 6, the zero row after the table; other numbers read past it), v1 := bool result flag (`001E:0310`) |
 | 26h–2Ah, 2Ch | 0 | — | invalid (load error; would be `exit(4)` at run time) |
 | 2Bh | 93 | — | no operation (the compiler's join point after `if`/`switch`) |
 | 2Dh | 1 | — | no operation; marks the entry statement (§1) |
@@ -223,12 +258,18 @@ Counts are the number of statements in VA.
 | 32h | 235 | `b` src, `w` x, `w` y, `w` w, `w` h, `b` dst, `w` x2, `w` y2, `b` effect | **copy rectangle** between buffers with a transition effect — effects 10 copy, 20 transparent, 30 じわ出し dissolve, 31 ordered dissolve, 32 top/bottom, 33 interlaced, 34 line slide ([graphics.md](graphics.md), `0315:07CB`) |
 | 33h | 56 | `b` buffer | **clear** buffer 10/11/12 (anything else: 10) ([graphics.md](graphics.md), `0315:01BE`) |
 | 34h | 380 | `b` d (signed) | **relative jump**: `pc += d` (from the next statement; d = 0 is a no-op) (`001E:080D`) |
-| 35h | 2 | — | **music position**: v1 := int (PMD's measure count + 1), or −1 when no song plays / no driver ([sound.md](sound.md), `04E4:01E9`) |
+| 35h | 2 | — | **music position**: v1 := int (PMD's measure count + 1), or −1 when no song plays / no driver ([sound.md](sound.md), `04E4:01E9`). The scenario polls it in a loop of statements (1757–1762 until 3, 1889–1893 until 5): the loop waits for nothing but the music, which the VSYNC drives |
 | 36h | 1 | — | **load** from slot v1 (1..3) (`001E:039B`, §7) |
 | 37h | 16 | `b` flag (==1) | mouse pointer: flag 0 → hide and keep hidden; 1 → allow showing again ([platform.md](platform.md) §3; `043A:02B5`) |
 
 Ops 1Ah, 18h, 2Fh, 30h–33h, 1Bh/1Ch/35h and 24h are specified in detail in the subsystem documents; their
-operand encodings above are **verified** from the loaders.
+operand encodings above are **verified** from the loaders. The handlers are **verified** by
+`source/tests/check_vmstep.py`: the original's `vm_step` with the subsystems stood in for, on 44
+routes through the scenario (250 000 statements, 1 898 of the 1 947 reachable ones: the others are
+43 defaults of a menu's switch, which a menu's result never takes, and six defaults and joins
+of switches on values the scenario never produces: 677, 1042, 1235, 1444, 1722, 1730), compared
+statement by statement with the engine; on four routes also the 80286 clocks of each
+statement (`re-tools/vm_cost.py`).
 
 ## 7. Saves (`GAME.DAT`)
 
@@ -245,10 +286,14 @@ Three slots of 132 bytes, slot *k* (1..3) at offset `(k−1) × 132`. Record siz
 | 72 | 60 | 20 × (`type` byte, `value` word) |
 
 **Save** (`save_slot` 001E:042C): `fopen("game.dat", "r+b")`, or `"wb"` if that fails (a new
-file); `fseek` to the slot; write; `fclose`. **Load** (`load_slot` 001E:0577):
+file); `fseek` to the slot (the offset is the low word of size × slot, sign-extended: `imul`,
+then `cwd`); write; `fclose`. A slot past the end of a shorter file extends it (DOS leaves the
+gap's clusters as they were). **Load** (`load_slot` 001E:0577):
 `fopen("game.dat", "rb")` (missing file: nothing happens); `fseek`; the record must start with
 `S`, `D` and size 132, else nothing is loaded; then pc, depth, the 32 stack words and the 20
-variable records are read back. A failed load leaves the machine as it was, so execution simply
+variable records are read back, with nothing checked: past the end of the file every `fgetc`
+is −1, so a type reads FFFFh and a word `(−1 << 8) + −1` = FEFFh (or the byte that is there
+plus FF00h). A depth or pc read so is used as it is. A failed load leaves the machine as it was, so execution simply
 continues with the statement after the load statement (VA's load menu shows message 205
 `不正なセーブデータです` there). A successful load therefore resumes right after the save
 statement that wrote the record, inside the same subroutine nest.
@@ -259,7 +304,9 @@ zero) contents followed by v1..v19; **v20 is never saved or loaded**, and loadin
 first record into the unused slot. In VA v20 is the "requested song" variable (script-catalog.md
 §music), so it keeps its value across a load. The PC-98 `GAME.DAT` on the disk holds three
 slots (pc 06CEh, depth 2, the first record type/value 0). **Verified** (code read; the
-`GAME.DAT` on the disk parses accordingly).
+`GAME.DAT` on the disk parses accordingly; `source/tests/check_save.py` compares the engine's
+file and loads with the original's `save_slot` and `load_slot`, damaged and short files
+included).
 
 ## 8. Built-in sequences (op 25h)
 
