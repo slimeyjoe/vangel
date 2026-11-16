@@ -72,7 +72,7 @@ int vg_pic_load(int buf, int x, int y, int flag, const char *name)
 
     if (!vg.gfx.ready)
         return 0;
-    /* (the pointer is hidden here: the mouse comes with the input, M2) */
+    vg_mouse_hide();
     if (name) {
         if (strlen(name) + 4 > sizeof full)
             return 0;
@@ -104,6 +104,7 @@ void vg_buf_clear(int buf)
         return;
     }
     lrv_screen_set_access(&vg.screen, buf - 10);
+    vg_mouse_hide();
     lrv_screen_clear_access(&vg.screen);
     lrv_screen_set_access(&vg.screen, 0);
 }
@@ -112,9 +113,11 @@ void vg_buf_clear(int buf)
  * the save buffer */
 static void win_blit(int to_screen)
 {
-    struct lrv_surface *pg = lrv_screen_access(&vg.screen);
+    struct lrv_surface *pg;
     int q, l;
 
+    vg_mouse_hide();
+    pg = lrv_screen_access(&vg.screen);
     for (q = 0; q < 4; q++)
         for (l = 0; l < VG_WIN_H; l++) {
             uint8_t *v = pg->plane[q] + VG_WIN_OFF + l * VG_PLANE_STRIDE;

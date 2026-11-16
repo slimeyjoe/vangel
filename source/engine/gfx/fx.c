@@ -424,7 +424,7 @@ int vg_rect_copy(const struct vg_rect_op *op)
 
     if (!vg.gfx.ready)
         return 0;
-    /* (the pointer is hidden here: the mouse comes with the input, M2) */
+    vg_mouse_hide();
     clk(fx_head[kind(op->src)][kind(op->dst)]);
     select_buf(op->src, &svram);
     select_buf(op->dst, &dvram);

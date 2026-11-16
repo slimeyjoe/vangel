@@ -25,8 +25,10 @@
 #include "lrvne/pc98.h"
 #include "lrvne/profile.h"
 #include "lrvne/sys.h"
+#include "bios/bios.h"
 #include "gfx/gf.h"
 #include "gfx/gfx.h"
+#include "text/text.h"
 #include "vm/timer.h"
 
 #define VG_NAME "vangel"                /* the program: usage, messages, the saves' directory */
@@ -105,8 +107,14 @@ struct vg_state {
     /* the VSYNC timer: the frame counter and the 16 timer slots */
     struct vg_timers timers;
 
-    /* the buffers' state, the palettes, the window's background */
+    /* the buffers' state, the palettes, the window's background and work buffer */
     struct vg_gfx gfx;
+
+    /* the keyboard latch, the mouse, the device layer */
+    struct vg_input input;
+
+    /* the message file, the fonts, the skip flag, the menus' memory */
+    struct vg_text text;
 };
 
 extern struct vg_state vg;

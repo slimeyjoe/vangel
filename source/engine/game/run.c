@@ -194,11 +194,19 @@ void vg_machine_open(const struct lrv_hal *hal, const struct lrv_run_cfg *cfg)
     if (gf_lib_open(&vg.lib, hal, &vg.pak, e) != LRV_OK)
         lrv_fatal(hal, "%s is not a picture library", vg.profile.library);
     vg_gfx_load_builtin();
+    vg_text_load_fonts();
     vg_timer_install();
+    /* the devices: the keyboard, and the mouse unless the profile says no (the console's
+     * question comes with the interpreter, M3) */
+    if (!vg_input_init(VG_DEV_KBD | (lrv_name_eq(vg.profile.mouse, "off") ? 0 : VG_DEV_MOUSE)))
+        lrv_fatal(hal, "the input cannot be initialised");
 }
 
 void vg_machine_close(void)
 {
+    vg_input_term();
+    vg_txb_free();
+    vg_text_free_fonts();
     vg_timer_remove();
     gf_lib_close(&vg.lib);
     vg.hal->video_close();

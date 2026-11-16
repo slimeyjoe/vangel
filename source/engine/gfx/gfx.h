@@ -44,6 +44,7 @@ struct vg_gfx {
     uint8_t pal_default[VG_PAL_BYTES];
     uint8_t fx31_order[64];             /* effect 31's cells by step 64..1, 0783:0730 (pack) */
     uint8_t win_save[4][VG_WIN_BYTES];  /* the window's background, 0BA1:0074 */
+    uint8_t win_work[4][VG_WIN_BYTES];  /* the page being composed, 0BA1:0054 */
     uint16_t fx31_last;                 /* DS:172C */
     uint64_t clk;                       /* clocks charged since the start (tests) */
     vg_write_fn *on_write;              /* tests: every write of a transition */
