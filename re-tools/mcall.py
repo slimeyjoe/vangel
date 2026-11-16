@@ -481,6 +481,8 @@ class M:
                 f = self.handles[bx]
                 d = f['data']
                 p = f['pos']
+                if p > len(d):          # written after a seek past the end: DOS extends the
+                    d.extend(bytes(p - len(d)))     # file (the gap here: zeros)
                 d[p:p + len(b)] = b
                 f['pos'] = p + len(b)
             W(UC_X86_REG_AX, cx)

@@ -109,7 +109,7 @@ class Dis:
         if op == 0x34:
             return 'jr %+d  ; -> %d' % (a[0], nxt + a[0]), [nxt + a[0]], ''
         if op == 0x35:
-            return 'music_stop', [nxt], ''
+            return 'v1 = music_pos', [nxt], ''
         if op == 0x36:
             return 'load slot(v1)', [nxt], ''
         if op == 0x37:
