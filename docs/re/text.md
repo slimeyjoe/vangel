@@ -265,17 +265,25 @@ Consequences a renderer must reproduce:
 * **The 14h quirk**: 14h does not skip the line like 12h but runs the text path with the rest
   of the line (empty) as **row 4**: `win_line` refuses it, yet the row counts as shown, so a
   14h directly after a full page or at the start of a message produces a page **with nothing new
-  on it** that is still shown and timed (150 ms minimum); inside speech it consumes the name
+  on it** that is still shown and timed (1.5 s minimum); inside speech it consumes the name
   prefix (`NAME「` counted in `nbytes`, not drawn), so the next page continues **indented and
   without the name** (message 208 shows both cases).
 * Empty lines are blank rows (they count as shown).
 
 ### 3.5 Waits, keys and skipping (**verified**, input details in [platform.md](platform.md) §3)
 
-* **Key wait** (`msg_wait_key`): a blink loop with a timer of 80 ms (`timer_start(80)`): icon
-  off (`msg_icon(0)` restores the cell from the work buffer), poll; 80 ms later icon on, and so
-  on — a 160 ms period starting with the icon hidden. Continues when `msg_poll` reports input;
-  then the icon is erased. If no timer is free the icon is drawn steadily and the poll blocks.
+Times are in **hundredths of a second**, as everywhere `timer_start` is used
+([platform.md](platform.md) §2: `t × 564 / 1000` VSYNC frames). (An earlier version of this
+section read them as milliseconds; the listing settles it: the same `timer_start` (0752:0026)
+takes them.)
+
+* **Key wait** (`msg_wait_key`): a blink loop with a timer of 0.8 s (`timer_start(80)`, 45
+  frames): icon off (`msg_icon(0)` restores the cell from the work buffer), poll; 0.8 s later
+  icon on, and so on — a 1.6 s period starting with the icon hidden. Continues when `msg_poll`
+  reports input; then the icon is erased. If no timer is free the icon is drawn steadily and the
+  poll blocks. The work buffer has been cleared to the background before the wait (`msg_show`
+  calls `win_clear` right after `win_show`), so erasing the icon also erases whatever text of
+  row 3 lay in columns 66–67.
   The **icon** is `vram_ank` glyphs 26h and 27h in transparent mode (bold, OR-ed in colour 15,
   no shadow) at byte columns 72–73, y 369, i.e. the cell (576, 369)–(591, 384) = row 3, columns
   66–67 of the window (it can overlap the end of a long fourth row).
@@ -283,9 +291,10 @@ Consequences a renderer must reproduce:
   (held), or the joystick button (the joystick driver is a stub). The right button does not
   advance. After accepting, the device's release step runs. While polling without blocking the
   pointer is locked hidden (`mouse_lock(1, 0)`); `msg_show` unlocks it at the end.
-* **Timed wait** (mode 1, code 14h): `t = max(150, nbytes × 100 / 12)` ms (integer division;
-  `nbytes` includes speaker prefixes and indentation), i.e. ≈ 8.3 ms per byte, ≈ 16.7 ms per
-  full-width character, converted to VSYNC frames as `t × 564 / 1000`. Skipped when nbytes < 1.
+* **Timed wait** (mode 1, code 14h): `t = max(150, nbytes × 100 / 12)` hundredths of a second
+  (16-bit integer arithmetic; `nbytes` includes speaker prefixes and indentation), i.e. at least
+  1.5 s, ≈ 83 ms per byte, ≈ 0.17 s per full-width character, converted to VSYNC frames as
+  `t × 564 / 1000`. Skipped when nbytes < 1, and when no timer is free.
   **Input during a timed wait aborts the whole message**: the skip flag (byte 0BA1:0000) is set
   and `msg_show` returns at once (text erased). Statement 19h then sets **v1 := 1** (bool), else
   0; the scenario tests it to skip the rest of a sequence (e.g. statement 1786 after message 206).
@@ -420,6 +429,13 @@ left-aligned; the centring is done with leading ASCII spaces in the data.
   `resources/derived/text/` (game imagery, not for docs/). Used to confirm §3.1–§3.3 and §4.1
   geometry, the speech indentation, the clipped `」`, the icon position and the bar inversion;
   the ANNOUNCE and prologue layouts were rendered the same way with their waits patched out.
+
+* `source/tests/check_text.py`, `check_menu.py`, `check_input.py` (with
+  `source/tests/textrig.py`): the original's statements 19h and 24h and its input layer run
+  under mcall with the kanji ROM answered from the pack's fonts, the VSYNC and INT 09h handlers
+  delivered as interrupts and time passing at the turns of the wait loops; every page of every
+  message, the 43 menus and the keyboard handler, frame by frame and pixel by pixel against the
+  engine. They confirm §3.3–§4.2 and the timer units of §3.5.
 
 ## 7. Open questions
 

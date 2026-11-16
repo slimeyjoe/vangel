@@ -127,8 +127,11 @@ holding a button down keeps satisfying a wait.
 After accepting input the callers run `input_release(mask)` (`043A:0236`) for the device that
 fired: keyboard (1) — read again while there is a new key event (drains a pending event; it does
 not wait for the key to be let go, as releases set no event); mouse (2) — read again while the
-reading *changed* and the left button is down (a still mouse with the button held returns at
-once; the right button is not waited for); joystick (4) — while its fields are non-zero.
+left button is down: it **waits for the left button to be let go** (the right button is not
+waited for); joystick (4) — while its fields are non-zero. (An earlier version of this section
+had the mouse's step end on a still mouse; the loop at 043A:025E tests only the left button,
+and `tests/check_input.py` runs it.) A poll of the mouse (`0401:008A`) first shows the pointer
+when it is hidden, unless it is locked.
 
 ## 4. Shutdown
 

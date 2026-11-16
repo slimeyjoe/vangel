@@ -5,7 +5,11 @@ viewer (`--view`), the decoder bit-exact against the original (54 pictures × 4 
 three buffers, ops 31h/33h/18h and the window's background, op 32h with every transition, the
 palettes and fades, on the VSYNC timer. Against the original under emulation: every write of
 136 op 32h cases at the same 80286 clock (`check_fx`), 319 DAC loads on the same frames
-(`check_pal`), the buffer statements (`check_buf`). M2 (text, menus, input) is next.
+(`check_pal`), the buffer statements (`check_buf`). M2: the message file, the window and its
+glyphs, statement 19h's page loop and waits, statement 24h's menus, the keyboard latch and the
+mouse; against the original under emulation, frame by frame and pixel by pixel: every page of
+the 213 messages (`check_text`), the 43 menus (`check_menu`), the input layer (`check_input`).
+M3 (the VM, silent) is next.
 
 vangel reimplements `M.EXE`, the engine of Crystal Soft's *Virgin Angel* (PC-98, 1995), on
 [lrvne](https://github.com/slimeyjoe/lrvne). It reproduces the PC-98 release faithfully in
@@ -58,7 +62,7 @@ source/
 | 1 | `tools/lrvne/exepack.py`: EXEPACK unpacker | M0 |
 | 2 | `xfont.py` raw glyph-array input (`add_raw`, `--raw FILE@OFF:CODES`) | M0 |
 | 3 | palette `lrv_pal_shift` (add and clamp), `lrv_pal_step_down` (decrement only) | M1 (**done**, lrvne 47f114f) |
-| 4 | glyphs: plain `g\|g<<1` bold (8 and 16 bits), transparent OR blit, double size, planar 4-neighbour outline | M2 |
+| 4 | glyphs: plain `g\|g<<1` bold (8 and 16 bits) and a transparent cell (M2, **done**, lrvne 79631d2: `lrv_glyph_bold8_plain` / `16_plain`, `lrv_glyph_blit` with `LRV_GLYPH_CLEAR`); double size and the planar 4-neighbour outline come with the staff roll | M2, M5 |
 | 5 | reflow `lrv_reflow_layout_from(..., first_line)`, plus `tools/lrvne/reflow.py` as the Python reference | M7 |
 
 Engine-specific drawing stays in the engine: the black vertical edge, the prologue's reveal
@@ -105,7 +109,7 @@ mask, and the colour 15 → 8 step.
   comes with the mouse (M2). Op 2Fh with t < 2 ends the program with R6003, as the original
   does (`vg_runtime_error`; exit code 255 once the VM owns the exit, M3).
 
-### M2 — text, menus, input
+### M2 — text, menus, input (done)
 
 - **`msg_show`, line for line:** speech state, the name prefix, timed pages and their abort, the 14h quirk, the 68-column clip.
 - **The window:**
@@ -116,7 +120,25 @@ mask, and the colour 15 → 8 step.
 - **Menus:** bar inversion, same-statement memory, keys and mouse.
 - **Input:** the INT 09h latch, ESC on release, the MSZ mouse model.
 - **Tests:** `check_text.py` (all 1 849 pages, layout and pixels), `check_menu.py` (43 menus), `check_input.py`.
-
+- **Done (2026-11-16).** `engine/text/` (txb.c win.c msg.c menu.c), `engine/bios/` (input.c
+  mouse.c). The checks share `tests/textrig.py`: the original under mcall with INT 18h answered
+  from the pack's font16/font8 as `lrv_font_rom_glyph` reads them, INT 33h from a script, the
+  original's own VSYNC and INT 09h handlers delivered as interrupts, and time passing only at
+  the end of a wait loop's turn that found nothing, as in the engine. The player's input is
+  decided while the original runs (an answer a while after each page) and replayed into the
+  engine (`tests/test_text.c`). Compared: every page shown, the icon on and off, the text
+  erased, the bar inverted (with the window's CRC-32, the page's on erasing), the pointer shown
+  and hidden, each at the same frame, and v1. `check_text`: 223 runs, 1 921 pages (the 1 849
+  of the 213 messages, the timed ones also cut short, all timers taken, keyboard only);
+  `check_menu`: 172 runs; `check_input`: every keyboard byte and 961 results of input_poll and
+  the release steps. The keyboard: lrvne's keys of each poll become PC-98 scan codes (breaks,
+  then makes) through the original's handler (`tests/test_input.c`). Settled from the listing:
+  the timer unit is 1/100 s (`text.md` §3.5 corrected), the mouse's release step waits for the
+  left button (`platform.md` §3.4 corrected). Not charged: the time of drawing text (the BIOS's
+  kanji reads are not emulated). The pointer is an arrow of our own (MSZ's is not known), an
+  overlay; the original's hide/show calls decide when it is seen, also around the buffer copies
+  of M1. The menus take their strings from the caller; the scenario's table and the message
+  count come with the loader (M3).
 ### M3 — the VM, silent
 
 - **The VM:**
@@ -237,7 +259,6 @@ The same pipeline and the same story bible, translated from the Japanese.
 
 ## Risks and open items
 
-- `text.md` §3.5's timer units ("80 ms", "150 ms") disagree with `platform.md` §2 (hundredths of a second). Settle it from the listing before M2.
 - The `cpu_per_frame` value (an 80286 at 10 MHz, no wait states) is assumed. The e2e syncs on state at input waits, not on frame numbers.
 - The speed of the whole-machine harness: mitigated by the statement-level fast path, parallel segments and a result cache.
 - MSZ functions FDh/FFh and the pointer shape.
