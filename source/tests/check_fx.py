@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 """check_fx.py - the engine's op 32h (rectangle copy, transitions) against M.EXE's own.
 
-usage: check_fx.py TEST_FX [EFFECT ...]          (with $EMU_PYTHON: unicorn, capstone)
+usage: check_fx.py TEST_FX PAK [EFFECT ...]          (with $EMU_PYTHON: unicorn, capstone)
 
 136 cases (docs/re/graphics.md §5, as re-tools/gfx_fx_verify.py): effects 10, 15, 20, 30-35
 on six rectangles (full screen, the background window, odd heights, widths not multiples of
@@ -128,8 +128,10 @@ def engine_records(path):
 def main(argv):
     if len(argv) < 2:
         sys.exit(__doc__)
-    test_fx = argv[1]
-    only = {int(a) for a in argv[2:]}
+    if len(argv) < 3:
+        sys.exit(__doc__)
+    test_fx, pak = argv[1], argv[2]
+    only = {int(a) for a in argv[3:]}
     cs = cases(only)
     plan = runs(cs)
     refs = sorted({(c, r) for c, r, _e in plan})
@@ -148,7 +150,7 @@ def main(argv):
                 with open(path, 'wb') as f:
                     f.write(b)
             lines.append('%d %d %d %d %d %d %d %d %d %d %s %s %s %s\n' % (c + (cpf,) + tuple(p)))
-        res = subprocess.run([test_fx], input=''.join(lines), capture_output=True, text=True,
+        res = subprocess.run([test_fx, pak], input=''.join(lines), capture_output=True, text=True,
                              check=False)
         status = res.stdout.split('\n')
         if res.returncode != 0 or len(status) < len(plan):

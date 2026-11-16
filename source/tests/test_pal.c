@@ -61,7 +61,7 @@ int main(int argc, char **argv)
     if (lrv_screen_init(&vg.screen, &hal, &mode, 2, 1, LRV_MEM_ANY) != LRV_OK)
         return 1;
     lrv_sys_init(&vg.sys, &hal, mode.w, mode.h);
-    vg_gfx_load_palettes();
+    vg_gfx_load_builtin();
     vg_timer_install();
     vg.gfx.ready = 1;
     memcpy(vg.gfx.pal_cur, vg.gfx.pal_default, VG_PAL_BYTES);

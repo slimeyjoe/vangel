@@ -12,6 +12,8 @@ Addresses are SEG:OFF of the load image (image-relative segments), as in docs/re
   palettes(img)            the built-in palettes, 48 bytes R[16] G[16] B[16] each, by pack name:
                            pal.black 0AA8:0000, pal.white 0AA8:0060, pal.default 0AA8:0030
                            (the one gfx_init sets; docs/re/graphics.md §7.1)
+  fx31_order(img)          effect 31's 64 cells, 0783:0730 (a permutation of 0..63;
+                           graphics.md §5)
   ank_font(img)            the half-width font: {code: 16 rows} for all 256 codes, read through
                            the far-pointer table at 0ABB:07C0 (text.md §3.2); codes without a
                            glyph of their own point at the blank glyph
@@ -59,6 +61,13 @@ def palettes(img):
     if set(out['pal.black']) != {0} or set(out['pal.white']) != {15}:
         raise ValueError('the black and white palettes are not where M.EXE 1995-03-01 has them')
     return out
+
+
+def fx31_order(img):
+    t = img.at(0x0783, 0x0730, 64)
+    if sorted(t) != list(range(64)):
+        raise ValueError('0783:0730 is not effect 31\'s order (not a permutation of 0..63)')
+    return t
 
 
 def ank_font(img):

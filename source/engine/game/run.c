@@ -193,7 +193,7 @@ void vg_machine_open(const struct lrv_hal *hal, const struct lrv_run_cfg *cfg)
         lrv_fatal(hal, "the pack has no picture library %s", vg.profile.library);
     if (gf_lib_open(&vg.lib, hal, &vg.pak, e) != LRV_OK)
         lrv_fatal(hal, "%s is not a picture library", vg.profile.library);
-    vg_gfx_load_palettes();
+    vg_gfx_load_builtin();
     vg_timer_install();
 }
 

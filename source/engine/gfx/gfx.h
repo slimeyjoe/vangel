@@ -42,6 +42,7 @@ struct vg_gfx {
     uint8_t pal_black[VG_PAL_BYTES];    /* 0AA8:0000, 0AA8:0060, 0AA8:0030 (from the pack) */
     uint8_t pal_white[VG_PAL_BYTES];
     uint8_t pal_default[VG_PAL_BYTES];
+    uint8_t fx31_order[64];             /* effect 31's cells by step 64..1, 0783:0730 (pack) */
     uint8_t win_save[4][VG_WIN_BYTES];  /* the window's background, 0BA1:0074 */
     uint16_t fx31_last;                 /* DS:172C */
     uint64_t clk;                       /* clocks charged since the start (tests) */
@@ -54,10 +55,10 @@ struct vg_gfx {
 
 /* buf.c */
 /* gfx_init (0315:000E): the first call readies the graphics (clears both pages, the window's
- * background), later calls only set the default palette again. The palettes come from the
- * pack (vg_gfx_load_palettes, at start-up). */
+ * background), later calls only set the default palette again. The palettes and effect 31's
+ * order come from the pack (vg_gfx_load_builtin, at start-up; fatal when missing). */
 void vg_gfx_init(void);
-void vg_gfx_load_palettes(void);
+void vg_gfx_load_builtin(void);
 /* The planes of a buffer as op 31h / 33h see them, selecting the access page for 10 and 11;
  * NULL for another number. */
 struct lrv_surface *vg_buffer(int buf);

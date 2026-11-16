@@ -64,7 +64,7 @@ if [ -x "$EMU_PY" ] && "$EMU_PY" -c 'import unicorn' 2>/dev/null && [ -n "$HAVE_
     run "$EMU_PY" -I "$HERE/check_buf.py" "$BIN/test_buf" "$PAK"
     run "$EMU_PY" -I "$HERE/check_pal.py" "$BIN/test_pal" "$PAK"
     if "$EMU_PY" -c 'import capstone' 2>/dev/null; then
-        run "$EMU_PY" -I "$HERE/check_fx.py" "$BIN/test_fx"
+        run "$EMU_PY" -I "$HERE/check_fx.py" "$BIN/test_fx" "$PAK"
     else
         skip check_fx "needs capstone in EMU_PYTHON (the 80286 clocks)"
     fi

@@ -58,7 +58,7 @@ int main(int argc, char **argv)
     if (!e || gf_lib_open(&vg.lib, &hal, &vg.pak, e) != LRV_OK)
         return 1;
     lrv_sys_init(&vg.sys, &hal, mode.w, mode.h);
-    vg_gfx_load_palettes();
+    vg_gfx_load_builtin();
     vg_timer_install();
     vg_gfx_init();
 

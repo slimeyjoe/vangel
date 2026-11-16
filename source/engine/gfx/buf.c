@@ -5,19 +5,19 @@
 #include <string.h>
 #include "vg.h"
 
-static void need_palette(const char *name, uint8_t *pal)
+static void need_blob(const char *name, uint8_t *dst, size_t n)
 {
     const struct lrv_pack_entry *e = lrv_pack_find(&vg.pak, name, LRV_PT_BLOB);
-    if (!e || e->size != VG_PAL_BYTES ||
-        lrv_pack_read(&vg.pak, e, 0, pal, VG_PAL_BYTES) != VG_PAL_BYTES)
-        lrv_fatal(vg.hal, "the pack has no palette %s (make pack)", name);
+    if (!e || e->size != n || lrv_pack_read(&vg.pak, e, 0, dst, n) != n)
+        lrv_fatal(vg.hal, "the pack has no %s (make pack)", name);
 }
 
-void vg_gfx_load_palettes(void)
+void vg_gfx_load_builtin(void)
 {
-    need_palette("pal.black", vg.gfx.pal_black);
-    need_palette("pal.white", vg.gfx.pal_white);
-    need_palette("pal.default", vg.gfx.pal_default);
+    need_blob("pal.black", vg.gfx.pal_black, VG_PAL_BYTES);
+    need_blob("pal.white", vg.gfx.pal_white, VG_PAL_BYTES);
+    need_blob("pal.default", vg.gfx.pal_default, VG_PAL_BYTES);
+    need_blob("fx31.order", vg.gfx.fx31_order, sizeof vg.gfx.fx31_order);
 }
 
 void vg_mark_lines(int page, int y0, int y1)

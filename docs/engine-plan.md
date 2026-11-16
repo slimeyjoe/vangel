@@ -57,7 +57,7 @@ source/
 |---|---|---|
 | 1 | `tools/lrvne/exepack.py`: EXEPACK unpacker | M0 |
 | 2 | `xfont.py` raw glyph-array input (`add_raw`, `--raw FILE@OFF:CODES`) | M0 |
-| 3 | palette `lrv_pal_shift` (add and clamp), `lrv_pal_step_down` (decrement only) | M1 |
+| 3 | palette `lrv_pal_shift` (add and clamp), `lrv_pal_step_down` (decrement only) | M1 (**done**, lrvne 47f114f) |
 | 4 | glyphs: plain `g\|g<<1` bold (8 and 16 bits), transparent OR blit, double size, planar 4-neighbour outline | M2 |
 | 5 | reflow `lrv_reflow_layout_from(..., first_line)`, plus `tools/lrvne/reflow.py` as the Python reference | M7 |
 
@@ -78,7 +78,7 @@ mask, and the colour 15 → 8 step.
   - the game files: SCB, TXB, LIB, the 21 songs, `ANNOUNCE.TXT`;
   - `ssgtab`, from `PMD.COM`;
   - `txbdict` and `ank8`, the embedded font;
-  - `builtin`, md5-checked regions of `M.EXE`: prologue pages, staff strings and their copy records, the music-mode table, prompts, built-in palettes, the effect-31 order. These are packed with the milestones that use them (M1, M2, M5), not in M0;
+  - `builtin`, md5-checked regions of `M.EXE`: prologue pages, staff strings and their copy records, the music-mode table, prompts, built-in palettes, the effect-31 order. These are packed with the milestones that use them (M1, M2, M5), not in M0. M1 packs them as BLOB entries of their own (`tools/mexe.py`, the image's md5 checked): `pal.black`, `pal.white`, `pal.default` and `fx31.order`;
   - `font16`, `font8`, `profile`.
 - **Correction.** `game-data.md` is corrected: `M.EXE` is a pack input.
 - **Test.** `check_gf.py`: 54 pictures × 4 decoder variants against the original `gf_load`.

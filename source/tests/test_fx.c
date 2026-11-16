@@ -1,7 +1,7 @@
 /* SPDX-License-Identifier: GPL-3.0-or-later */
 /* test_fx: the engine's op 32h (engine/gfx/fx.c) for tests/check_fx.py.
  *
- *   test_fx                  reads cases from stdin, one per line:
+ *   test_fx PAK              reads cases from stdin, one per line:
  *                              SRC SX SY W H DST DX DY EFFECT CPF SRCFILE DSTFILE OUT LOG
  *                            loads the planes in SRCFILE into buffer SRC and those in DSTFILE
  *                            into DST (4 x 32000 bytes each, B R G I; a number other than
@@ -79,15 +79,22 @@ static int save(const struct lrv_surface *s, const char *path)
     return ok;
 }
 
-int main(void)
+int main(int argc, char **argv)
 {
     static struct lrv_hal hal;
     struct lrv_video_mode mode = lrv_pc98_video_mode;
     char line[2048];
 
-    th_hal(&hal, "none", NULL, NULL);
+    if (argc != 2) {
+        fprintf(stderr, "usage: test_fx PAK < cases\n");
+        return 2;
+    }
+    th_hal(&hal, argv[1], NULL, NULL);
     memset(&vg, 0, sizeof vg);
     vg.hal = &hal;
+    if (lrv_pack_open(&vg.pak, &hal, LRV_PACK_MAIN) != LRV_OK)
+        return 1;
+    vg_gfx_load_builtin();
     if (lrv_screen_init(&vg.screen, &hal, &mode, 2, 1, LRV_MEM_ANY) != LRV_OK)
         return 1;
     lrv_sys_init(&vg.sys, &hal, mode.w, mode.h);
@@ -138,5 +145,6 @@ int main(void)
     }
     vg_timer_remove();
     lrv_screen_free(&vg.screen);
+    lrv_pack_close(&vg.pak);
     return 0;
 }
