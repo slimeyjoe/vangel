@@ -1,0 +1,78 @@
+# Virgin Angel M.EXE text / message / menu / input names (area: text). SEG:OFF<TAB>name<TAB>comment
+# see docs/re/text.md
+0724:0006	txb_getc	~fgetc(text file): the TXB body is stored inverted
+0724:0119	txb_index_msg	record {u32 offset, u16 length incl. 1Ah} for the next message
+0724:0186	txb_read_msg	fseek to a message, read length+10 decoded bytes into the 2000h buffer DS:108E
+0724:0206	txb_line	expand one 00h-terminated line (dictionary 0B85:0000), max N output bytes; returns source length+1
+0315:07FC	msg_show	op 19: page loop, control codes 10h-1Ah, speaker prefix, waits
+0315:0B7C	msg_poll	poll input (arg 1 = block); 1 = key / left button / pad button; waits for release
+0315:0BD6	msg_wait_key	page wait: blink the return-key icon every 80 ms until msg_poll
+0315:0C4F	menu_draw	op 24: draw the 1-4 choices of a T44 menu into the window, fill hit rects, show
+0315:0CC9	menu_update	mouse hit test / cursor up-down (wraps) / pad: move the inverted bar
+0315:0EA8	menu_erase	restore the screen under the window (0315:07F5)
+0315:0EAD	msg_icon	1: draw the page-wait icon (ANK 26h/27h) at (576,369); 0: restore the cell
+001E:0B2B	menu_loop	op 24 input loop until RETURN / left click / pad button
+02BE:0006	win_alloc	allocate the window buffers 0BA1:0074 (screen save) and 0BA1:0054 (work), 4 planes x 1540h
+02BE:0097	win_restore	far wrapper of 02BE:009C
+02BE:009C	win_restore_screen	window save buffer -> VRAM (erase text window)
+02BE:00AC	win_snapshot	VRAM window area -> save buffer (after every op 32 to the screen)
+02BE:00BC	win_show	work buffer -> VRAM (show the page)
+02BE:00CC	win_clear	save buffer -> work buffer (empty page on the window background)
+02BE:0118	win_zero	zero the save buffer (screen cleared)
+02BE:0144	win_blit	(dir, plane-pointer table) -> 02EC:0154
+02BE:015F	win_line	draw an SJIS/ANK string into the work buffer at (col, row 0-3), cols 0-67
+02BE:020E	menu_choice	draw choice i at row i, set its rect (48, 591, 307+20i, 326+20i)
+02BE:0263	rect_invert	invert all 4 planes of a rect (x0/8 .. x1/8, y0..y1) in VRAM
+02BE:02A1	icon_draw	page-wait icon: ANK 26h at byte 72, 27h at byte 73, y 369, transparent
+02BE:02D0	icon_erase	restore cols 66-67 of row 3 from the work buffer
+02EC:0006	win_kanji	KCG glyph (INT 18h AH=14h) -> bold, black above/below, white, into work buffer
+02EC:00B1	win_ank	ANK glyph (0504:0B52) -> bold, black above/below, white, into work buffer
+02EC:0154	win_blit_raw	copy 68x80 bytes x 4 planes between VRAM offset 5FF6h and a buffer
+02EC:0227	win_restore_cell	copy a 16x16 cell from a work buffer to VRAM
+05C3:005B	vram_invert	NOT all four planes of a byte-aligned rectangle
+05C3:00CD	vram_kanji	16x16 KCG glyph, bold, to VRAM (mode 0 inverse, 1 opaque white, 2 transparent white)
+05C3:01E9	vram_ank	8x16 glyph via callback, bold, to VRAM (modes as vram_kanji)
+05C3:02F9	vram_kanji_wipe	prologue: bold KCG glyph revealed left to right in 16 steps, planes R+G only
+05C3:03A9	vram_kanji_2x	staff roll: KCG glyph doubled to 32x32, colour 15 via GRCG
+05C3:04DB	vram_ank_2x	staff roll: ANK glyph doubled to 16x32, colour 15 via GRCG
+05C3:05E2	vram_outline	staff roll: black outline (dilation) around colour-15 text in a rect
+0504:007C	bi_text_line	direct VRAM text line: col (bytes), row (16 px), string, attr (E1h normal, else inverse)
+0504:0257	bi_wait_any	wait for key / left / right button / pad (ANNOUNCE)
+0504:02C8	prologue_step	callback between wipe steps: half a vsync per step, key -> skip flag
+0504:030E	prologue_fade	fade palette entry 6 (the prologue text colour) to black, 16 steps of 1 vsync
+0504:039C	bi_poll	like msg_poll (key / left button / pad)
+0504:03EC	prologue_show	OPENING text: groups of centered lines from 0ABB:0416
+0504:06FA	staffroll_show	staff roll pages of 4 lines from 0ABB:04B2
+0504:089D	musmode_draw	music mode list (0ABB:0728), selected entry inverse
+0504:0994	musmode_loop	music mode input loop
+0504:0B0F	musmode_run	count the songs, run the loop
+0504:0B52	ank_glyph	copy the 16-byte 8x16 glyph of a byte from the font table 0ABB:07C0
+0504:0B7E	bios_getkey	INT 18h AH=03h, AH=00h: wait for a key (mouse Y/N prompt)
+0504:0B93	dos_print	strcat(s, "$"), INT 21h AH=09h
+0A96:0002	sjis_to_jis	Shift-JIS word -> JIS X 0208 code for the KCG
+0401:0228	kbd_isr	INT 09h: scan = port 41h & 7Fh -> DS:00FE, make flag -> DS:00FF
+0401:0317	kbd_poll	DS:00FF -> pressed, scan -> code 100h ESC 101h RET 102h SPC 103h up 104h left 105h right 106h down
+0401:008A	mouse_poll	INT 33h AX=3: x, y, left (+8), right (+6)
+043A:01DA	input_poll	poll keyboard (+8), mouse (+0Eh) and pad (+2) into an event block; 1 if any changed
+043A:0236	input_wait_release	wait until the given devices (1 kbd, 2 mouse, 4 pad) report no press
+043A:0295	mouse_show
+043A:02A5	mouse_hide
+043A:02B5	mouse_lock	lock (1) / unlock (0) the cursor state, show (1) / hide (0)
+DS:00C0	g_menu_last	far ptr: operands of the last op 24 executed
+DS:00C4	g_menu_choice	1-based result of that menu (initial cursor when the same op 24 runs again)
+DS:00E6	s_quote_open	"「" (81h 75h)
+DS:00E9	s_space	"　" (81h 40h)
+DS:00EC	s_esc_e	"\e": end of a speech block
+DS:00EF	s_quote_close	"」" (81h 76h, bytes taken from 00EFh and 00F3h)
+DS:00FE	g_kbd_scan	last scan code & 7Fh
+DS:00FF	g_kbd_make	1 after a make code (ESC: after its break code)
+DS:108E	g_txb_buf	far ptr: 2000h-byte message buffer (allocated on first use)
+DS:1092	g_txb_file	FILE* of the text file
+DS:109E	g_vsync	vsync counter (prologue / staff roll pacing)
+0BA1:0000	g_msg_skipped	byte: 1 = a key cut a timed (14h) message short; op 19 copies it to var 1
+0BA1:003E	g_txb_index	far ptr: (n_msg+1) far pointers to {u32 offset, u16 length}, 1-based
+0BA1:0052	g_n_msg	SCB section tag 7: number of TXB messages (213)
+0BA1:0054	g_win_work	4 far plane pointers: window work buffer (68 x 80 bytes per plane)
+0BA1:0074	g_win_save	4 far plane pointers: window background saved from VRAM
+0BA1:00D4	g_n_tag0b	SCB section tag 0Bh (199): written, never read
+0BA1:0004	g_n_tag0c	SCB section tag 0Ch (61): written, never read

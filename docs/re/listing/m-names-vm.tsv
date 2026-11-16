@@ -1,0 +1,158 @@
+# VM, platform and built-ins (coordinator)
+0000:0000	expr_leaf	value of a leaf node: kind bits 1 literal/2 variable, 4 int/8 bool (bool -> v!=0)
+0000:0089	expr_eval	evaluate expression node #n (1-based): 0Ah operator node, 0Bh leaf
+001E:0004	call_push	push return statement on the 32-entry call stack 0A9F:0000 (depth DS:005C)
+001E:0039	call_pop	pop the call stack ("No Calling stack (Invalid RETURN)" if empty)
+001E:042C	save_slot	write save slot n (0-2) of game.dat
+001E:0577	load_slot	read save slot n (0-2) of game.dat
+001E:03BE	fputc_	fputc(c, fp)
+001E:03D1	fput_be16	write a word big-endian
+001E:03F4	fgetc_	fgetc(fp)
+001E:0406	fget_be16	read a word big-endian
+0504:0295	bi_opening	built-in 1 OPENING
+0504:0568	bi_ending	built-in 2 ENDING
+0504:0114	bi_announce	built-in 3 ANNOUNCE
+0504:088E	bi_musmode	built-in 4 MUSMODE
+0504:05CA	bi_ending2	built-in 5 ENDING2
+0315:0132	screen_clear	if graphics ready: vram_clear (page 0) and win_zero
+05C3:000A	int18_hook	hook INT 18h with 05C3:004A (old vector kept at 05C3:0006)
+05C3:004A	int18_handler	call the old INT 18h, then unmask IRQ 2 and re-arm VSYNC (port 64h)
+05C3:0030	int18_unhook	restore INT 18h
+05C3:0588	vram_15_to_8	every colour-15 pixel of page 0 becomes colour 8 (planes 0-2 cleared where all 4 are set)
+05C3:0753	vram_fill_black	GRCG RMW, tiles 0: fill (x words, y, w words, h lines) with colour 0
+0504:02FC	op_clear_text	vram_fill_black(2, 59, 36, 284): prologue text area (32,59)-(607,342)
+0504:030E	op_fade_c6	prologue: fade colour 6 of the 0ABB:0566 palette over 16 frames
+0504:038C	op_pal	pal_set(0ABB:0566)
+0504:039C	input_check	poll once; on input: release step, return 1 (arg 1: keep polling while nothing)
+0504:03EC	op_pages	the prologue page loop
+0504:0632	pal_dec_fade	16 steps: decrement working palette towards target, pal_set, 3 VSYNCs each
+0504:06FA	staff_roll	the staff roll (ENDING/ENDING2)
+0504:0994	mus_loop	music mode input loop
+0504:089D	mus_select	music mode: redraw selection
+0504:0B0F	mus_main	music mode entry: driver check, count songs, loop
+0504:007C	text80_line	80-column text line (kanji 05C3:00CD, half-width 05C3:01E9), attr E1h = normal
+015A:0587	gf_core_vram_t	copy of the gf_dec_vram helper of the same name in this decoder variant
+015A:085F	gf_colour_pair_vram_t	copy of the gf_dec_vram helper of the same name in this decoder variant
+015A:0987	gf_mtf_init_vram_t	copy of the gf_dec_vram helper of the same name in this decoder variant
+015A:099B	gf_refill_vram_t	copy of the gf_dec_vram helper of the same name in this decoder variant
+015A:0B59	gf_core_mem	copy of the gf_dec_vram helper of the same name in this decoder variant
+015A:0E31	gf_colour_pair_mem	copy of the gf_dec_vram helper of the same name in this decoder variant
+015A:0F59	gf_mtf_init_mem	copy of the gf_dec_vram helper of the same name in this decoder variant
+015A:0F6D	gf_refill_mem	copy of the gf_dec_vram helper of the same name in this decoder variant
+015A:10C5	gf_core_mem_t	copy of the gf_dec_vram helper of the same name in this decoder variant
+015A:139D	gf_colour_pair_mem_t	copy of the gf_dec_vram helper of the same name in this decoder variant
+015A:14C5	gf_mtf_init_mem_t	copy of the gf_dec_vram helper of the same name in this decoder variant
+015A:14D9	gf_refill_mem_t	copy of the gf_dec_vram helper of the same name in this decoder variant
+00DD:05D2	fx_case_05D2	a case of the op 32 effect dispatcher rect_dispatch (graphics.md §5)
+00DD:0616	fx_case_0616	a case of the op 32 effect dispatcher rect_dispatch (graphics.md §5)
+00DD:065A	fx_case_065A	a case of the op 32 effect dispatcher rect_dispatch (graphics.md §5)
+00DD:069E	fx_case_069E	a case of the op 32 effect dispatcher rect_dispatch (graphics.md §5)
+00DD:06FF	fx_case_06FF	a case of the op 32 effect dispatcher rect_dispatch (graphics.md §5)
+00DD:0743	fx_case_0743	a case of the op 32 effect dispatcher rect_dispatch (graphics.md §5)
+00DD:0786	fx_case_0786	a case of the op 32 effect dispatcher rect_dispatch (graphics.md §5)
+0315:0892	msg_case_0892	a case of msg_show's control-code switch (text.md §3)
+0315:0898	msg_case_0898	a case of msg_show's control-code switch (text.md §3)
+0315:08B4	msg_case_08B4	a case of msg_show's control-code switch (text.md §3)
+0315:08C4	msg_case_08C4	a case of msg_show's control-code switch (text.md §3)
+0315:090A	msg_case_090A	a case of msg_show's control-code switch (text.md §3)
+0315:091C	msg_case_091C	a case of msg_show's control-code switch (text.md §3)
+0823:0000	lib_open_helper	part of lib_open_file (graphics.md §2)
+0823:02B2	lib_name_cmp	part of lib_lookup: entry name compare (graphics.md §2)
+0855:02A8	lib_entry_read	part of lib_read_entries (graphics.md §2)
+0000:0180	op_add	expression operator 5 (case of expr_eval)
+0000:0187	op_sub	6
+0000:018E	op_mul	7
+0000:0197	op_div	8
+0000:019F	op_mod	9
+0000:01A9	op_and	10
+0000:01B0	op_or	11
+0000:01B7	op_xor	12
+0000:01BE	op_eq	13
+0000:01C7	op_ne	14
+0000:01CE	op_gt	15
+0000:01D5	op_lt	16
+0401:0004	joy_open	joystick stub: always fails
+0401:0007	joy_close	stub
+0401:0008	joy_read	stub: zeros
+0401:001A	mouse_open	INT 33h AX=0, hide, AX=FDh BX=1, AX=FFh BX=0Fh (MSZ)
+0401:0082	mouse_close	hide pointer
+0401:00F6	mouse_show	1 = show (AX=1), 0 = hide (AX=2), unless locked
+0401:0154	mouse_lock	(lock, show): statement 37h
+0401:0258	copy_stop_isr	INT 05h/06h: prints "(^-^)" via DOS
+0401:0271	kbd_hook	hook INT 05h, 06h, 09h
+0401:02D1	kbd_unhook	restore INT 05h, 06h, 09h
+0401:030A	kbd_open	
+0401:0312	kbd_close	
+043A:0008	input_init	open the devices of mask DS:0110
+043A:0066	input_term	
+043A:009A	input_mouse	read + changed flag
+043A:011A	input_joy	
+043A:017A	input_kbd	
+0468:000C	dbg_print	empty stub (debug print removed)
+0468:0191	init_names	default file names, clear globals
+0468:0277	stub_0277	empty
+0504:062C	roll_15_to_8	calls vram_15_to_8
+0504:0AA6	mus_key_esc	music mode: leave
+0504:0AAD	mus_key_play	music mode: play
+0504:0AE0	mus_key_up	
+0504:0AE7	mus_key_down	
+0504:0AF0	mus_key_other	release step, continue
+063C:0012	stmt_alloc	allocate a statement record (size+4), opcode at +0
+063C:011E	scb_load_stmts	statement table (1-based)
+063C:078F	chk_menu	1 <= n <= menus else exit(2)
+063C:07B3	chk_expr	0 <= n <= expressions else exit(2)
+063C:07D7	chk_msg	0 <= n <= messages else exit(2)
+06BB:0037	scb_raww	plain word
+06BB:004F	scb_rawd	plain dword
+06BB:0065	scb_raws	plain string
+06BB:00AB	sec_textname	section 0Ah: length 1..13 + name
+06BB:01A4	sec_bad	tags 1-3: fail
+06BB:01A7	sec_end	tag 0
+06DD:0004	scb_load_vars	
+06DD:00D7	scb_var	
+06DD:00F6	scb_load_menus	
+06DD:016C	scb_menu	
+06DD:021B	scb_load_exprs	
+06DD:02CC	scb_leaf	
+06DD:02EB	scb_expr	
+0752:0002	timer_init	
+0752:0019	timer_term	
+0752:0026	timer_start	t in 1/100 s -> target t*564/1000 frames
+0752:0043	timer_free	
+0752:005C	timer_elapsed	
+0752:0076	timer_done	
+075A:0080	vsync_remove	
+0886:0018	crt_start	MS C start-up
+0886:01DD	exit	
+0886:02A0	fclose	
+0886:039A	fopen	
+0886:0530	fputc	
+0886:0560	fgetc	
+0886:05FC	malloc	far heap
+0886:062C	int86	with segment registers
+0886:06B6	fgets	
+0886:0730	fseek	
+0886:094C	printf	
+0886:0C6A	atexit	
+0886:0C9C	_chain_intr	
+0886:0CB8	_dos_getvect	
+0886:0CCA	_dos_setvect	
+0886:0CE0	_aFldiv	32-bit divide
+0886:0D7A	_aFlmul	32-bit multiply
+06BB:008D	sec_count_0	section count reader
+06BB:0092	sec_count_1	section count reader
+06BB:0097	sec_count_2	section count reader
+06BB:009C	sec_count_3	section count reader
+06BB:00A1	sec_count_4	section count reader
+06BB:00A6	sec_count_5	section count reader
+06BB:00ED	sec_count_6	
+06BB:00F2	sec_count_7	
+06BB:011C	sec_tag_4	section tag 4h
+06BB:012A	sec_tag_5	section tag 5h
+06BB:0138	sec_tag_6	section tag 6h
+06BB:0146	sec_tag_7	section tag 7h
+06BB:0154	sec_tag_8	section tag 8h
+06BB:0162	sec_tag_9	section tag 9h
+06BB:0170	sec_tag_A	section tag Ah
+06BB:017E	sec_tag_B	section tag Bh
+06BB:018C	sec_tag_C	section tag Ch

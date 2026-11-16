@@ -1,0 +1,93 @@
+# Virgin Angel X68000 M.X names (area: x68k). Image offsets (text 0..C0A9, data C0AA..CFAB, bss CFAC..). OFF<TAB>name<TAB>comment
+0012	scb_rawc	plain getc from the scenario file
+0022	scb_rawc_w16	little-endian u16 from two raw bytes
+0048	scb_raw_u32	little-endian u32
+00dc	scb_read_sections	section tags 0..0Ch (switch)
+018e	scb_read_header	"CRSC" (string at 0188), 2 bytes, 4 bytes skipped, u32, u32, u16 entry, u8 key
+020c	scb_alloc_stmt	allocate an in-memory statement (u16 opcode + operands)
+023c	scb_getc	decrypting reader: state ^= raw + key
+027a	scb_getw	decrypted little-endian word
+05f4	ld_30	loader op 30: word, palette byte (<=1 -> NULL, else table 58B06[p])
+0736	ld_20	loader op 20 (switch list)
+08ee	puts_con	print a progress string
+099c	main	main(argc, argv): m SCENARIO.SCB [GDATA.LIB]
+0b00	globals_init	scenario.txb / scenario.scb / gdata.lib defaults
+0eac	scb_read_palette	24 bytes -> R[16] (+0), G[16] (+10h), B[16] (+20h), high nibble first
+0f32	txb_load	"CRTX", inverted bytes, message index (<= 1000 messages, <= 1FFFh bytes each)
+10b4	txb_line	expand one line: A0..DF and 41..5A through the byte-swapped dictionary at C206
+11e6	expr_eval	expression tree evaluator (ops 3..16)
+1438	run_game	timer, music, input, graphics init (atexit terms), vm_run, terms
+14fa	vm_run	pc = entry; while (vm_step() == 1)
+150e	vm_step	fetch statement pc++, switch (op - 15h) over 0..22h
+16ee	op_25	
+1738	op_1d	save slot (var1) 1..3
+175e	op_36	load slot (var1) 1..3
+1806	save_slot	GAME.DAT record: "SD", BE16 132, BE16 pc, BE16 depth, 32 x BE16 stack, n_var x (u8, BE16)
+1924	load_slot	inverse of save_slot
+1a36	op_1e	var = expr
+1a7a	op_1f	if
+1aa4	op_20	switch
+1aee	op_22	call
+1b0e	op_23	return
+1b68	op_21	goto
+1b76	op_34	pc += n
+1b8a	op_15	wait(1/100 s, skippable)
+1c5e	op_16	wait for input
+1cae	op_37	
+1cd2	op_17	nop
+1cd4	op_18	restore the message-window area
+1cdc	op_19	show message
+1d26	op_31	load picture
+1d34	op_32	rectangle copy with effect
+1d42	op_33	clear buffer
+1d54	op_1a	fade out
+1d6c	op_2f	flash
+1d7e	op_30	palette
+1d94	op_1b	play music
+1daa	op_1c	fade music (ticks/2!)
+1dce	op_35	music loop count -> var1
+1dec	op_24	menu
+1f52	timer_init	-> 3C3E (needs PMD.X)
+1f82	timer_start	
+1fa0	timer_free	
+1fbe	timer_elapsed	
+1fdc	timer_done	
+1ffa	gfx_init	
+2624	pic_load	op 31 body: name + ".gf", GDATA.LIB lookup, decode
+26a6	rect_copy	op 32 body
+26e8	msg_show	op 19 body: control codes 10h..1Ah (switch at 277E)
+2c9c	input_init	
+2eac	input_poll	
+2fea	music_init	
+302a	music_play	op 1B body: skip if same song is playing
+30f0	music_fade	op 1C body: linear volume ramp over ticks/2
+31a2	music_state	0Ch no driver, 0Bh stopped, 0Ah playing
+31b8	music_loops	PMD work+24h + 1
+36cc	joy_read	IOCS _JOYGET port 1
+372e	mouse_init	_MS_INIT, limit 0..639 x 0..399
+378e	mouse_read	
+38a2	keys_read	_BITSNS matrix: ESC 100h, RETURN/ENTER 101h, SPACE 102h, up 103h, left 104h, right 105h, down 106h; SHIFT 200h, CTRL 400h
+39ac	pmd_vol_hook	trap #0 fn 13h hook: PMD work+23h = (100 - vol) * 254 / 100 + 1
+39f6	pmd_check	trap #0 vector must point to RAM (PMD.X resident); fn 6 buffer, fn 10h work, fn 13h hook
+3a9a	pmd_term	
+3aca	pmd_load_play	read <= 3C00h bytes into the PMD buffer, trap #0 fn 0 (start), fn 2 (d1 = 1)
+3b74	pmd_stop	trap #0 fn 1
+3bde	tmr_isr	trap #0 fn 14h hook, called by PMD.X Timer-D handler at 60.24 Hz: 16 timer slots
+3c3e	tmr_init	clear 16 slots, pmd_check, install tmr_isr
+3ce6	tmr_start	target = arg * 6024 / 10000 ticks (arg in 1/100 s)
+3dbc	tmr_elapsed	count * 10000 / 6024
+4aa8	mem_probe	malloc(96000h): fail -> buffer 12 = TVRAM E00000h, no mouse (flag C374 bit 1 clear)
+5962	crt_init	CRTMOD 10h (768x512 16 col 31 kHz) + CRTC R2/R3/R6/R7 = 24h/74h/60h/1F0h (640x400 window); HELP held: CRTMOD 19h
+58ea	graph_init	HELP key check, malloc(7D000h) = buffer 12 (640x400 words), crt_init
+5a80	graph_term	
+5acc	buf_clear	buffer 10 = C00000h, 11 = D00000h (GVRAM, stride 800h), 12 = memory (stride 500h)
+5b70	pal_set_hw	R,G,B 4-bit -> GRB555+I (v*2, I=1), wait V-DISP, IOCS _GPALET x 16
+5c06	gf_header	"GF0\0" w h x y (LE16)
+5ee8	rect_dispatch	effects 0Ah, 14h, 1Eh, 1Fh, 20h, 21h, 22h (switch at 5FDE), others draw nothing
+60a2	win_save	GVRAM (48,307) 544x80 -> byte buffer 58B3A (movep)
+6108	win_restore	byte buffer -> GVRAM
+6212	glyph_half	8x16 half-width glyph: custom table C78A for codes < 28h, else IOCS _FNTGET
+7cc0	exit	
+7c80	fgetc	
+7d0c	malloc	
+7e02	fopen	

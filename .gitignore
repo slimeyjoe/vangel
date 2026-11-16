@@ -1,0 +1,6 @@
+resources/archives/
+resources/raw/
+resources/original/
+resources/derived/
+__pycache__/
+build/

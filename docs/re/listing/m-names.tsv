@@ -1,0 +1,94 @@
+# M.EXE (PC-98, EXEPACK removed) names: SEG:OFF name comment; DS:OFF = DGROUP 0BAFh
+0468:000E	main	C main(argc, argv): m.exe SCENARIO.SCB GDATA.LIB
+001E:0069	run_game	init subsystems, run interpreter from label, shut down
+063C:00E8	scb_load	load the CRSC scenario: header, tables, statements
+063C:0045	scb_getc	decrypting byte reader: state ^= fgetc()+key; return low byte
+063C:0092	scb_getw	decrypted little-endian word
+063C:00C0	scb_gets	decrypted NUL-terminated string
+063C:01AB	scb_load_stmt	read opcode byte, call its loader from table 0B77:0000
+063C:01E0	scb_find_loader	opcode -> far loader pointer (0B77 table, 6-byte rows)
+06BB:01AB	scb_read_header	"CRSC", version, "DOS ", size, ?, ?, key; then sections
+06BB:00F7	scb_read_sections	tag byte 0..0Ch: counts and the text file name
+06BB:0021	scb_rawc	plain fgetc from the scenario file
+0724:0018	txb_load	load the CRTX text file
+0504:0004	sys_init	
+0504:0063	sys_term	
+063C:025C	ld_25	statement loader (opcode 25h)
+063C:0283	ld_15	statement loader (opcode 15h)
+063C:021B	ld_16	statement loader (opcode 16h)
+063C:022B	ld_19	statement loader (opcode 19h)
+063C:02C1	ld_37	statement loader (opcode 37h)
+063C:02F4	ld_31	statement loader (opcode 31h)
+063C:0355	ld_32	statement loader (opcode 32h)
+063C:03E0	ld_33	statement loader (opcode 33h)
+063C:0407	ld_1a	statement loader (opcode 1Ah)
+063C:0445	ld_2f	statement loader (opcode 2Fh)
+063C:046C	ld_30	statement loader (opcode 30h)
+063C:04DF	ld_1b	statement loader (opcode 1Bh)
+063C:051A	ld_1c	statement loader (opcode 1Ch)
+063C:0541	ld_1e	statement loader (opcode 1Eh)
+063C:0597	ld_1f	statement loader (opcode 1Fh)
+063C:0609	ld_20	statement loader (opcode 20h)
+063C:06E8	ld_21	statement loader (opcode 21h)
+063C:070F	ld_34	statement loader (opcode 34h)
+063C:0737	ld_22	statement loader (opcode 22h)
+063C:06B7	ld_23	statement loader (opcode 23h)
+063C:075E	ld_24	statement loader (opcode 24h)
+063C:000E	ld_26	statement loader (opcode 26h)
+001E:011F	vm_run	loop vm_step until it returns != 1; arg = entry statement
+001E:0133	vm_step	fetch statement[pc++] (pc = DS:005A, 1-based), dispatch on opcode-15h
+001E:01BE	ex_15	executor for opcode 15h
+001E:01CB	ex_16	executor for opcode 16h
+001E:01D8	ex_17	executor for opcode 17h
+001E:01E5	ex_18	executor for opcode 18h
+001E:01F2	ex_19	executor for opcode 19h
+001E:01FF	ex_1a	executor for opcode 1Ah
+001E:020C	ex_1b	executor for opcode 1Bh
+001E:0219	ex_1c	executor for opcode 1Ch
+001E:0226	ex_1d	executor for opcode 1Dh
+001E:0233	ex_1e	executor for opcode 1Eh
+001E:0240	ex_1f	executor for opcode 1Fh
+001E:024D	ex_20	executor for opcode 20h
+001E:025A	ex_21	executor for opcode 21h
+001E:0267	ex_22	executor for opcode 22h
+001E:0274	ex_23	executor for opcode 23h
+001E:0281	ex_24	executor for opcode 24h
+001E:028D	ex_25	executor for opcode 25h
+001E:01B4	ex_26/27/28/29/2a/2c	executor for opcode 26h
+001E:0309	ex_2b/2d	executor for opcode 2Bh
+001E:0299	ex_2e	executor for opcode 2Eh
+001E:029D	ex_2f	executor for opcode 2Fh
+001E:02A9	ex_30	executor for opcode 30h
+001E:02B5	ex_31	executor for opcode 31h
+001E:02C1	ex_32	executor for opcode 32h
+001E:02CD	ex_33	executor for opcode 33h
+001E:02D9	ex_34	executor for opcode 34h
+001E:02E5	ex_35	executor for opcode 35h
+001E:02F1	ex_36	executor for opcode 36h
+001E:02FD	ex_37	executor for opcode 37h
+001E:081C	op_15	opcode 15h semantics (arg: far ptr to operands)
+001E:08FB	op_16	opcode 16h semantics (arg: far ptr to operands)
+001E:095E	op_17	opcode 17h semantics (arg: far ptr to operands)
+001E:095F	op_18	opcode 18h semantics (arg: far ptr to operands)
+001E:0965	op_19	opcode 19h semantics (arg: far ptr to operands)
+001E:0A00	op_1a	opcode 1Ah semantics (arg: far ptr to operands)
+001E:0A3F	op_1b	opcode 1Bh semantics (arg: far ptr to operands)
+001E:0A52	op_1c	opcode 1Ch semantics (arg: far ptr to operands)
+001E:0378	op_1d	opcode 1Dh semantics (arg: far ptr to operands)
+001E:06B2	op_1e	opcode 1Eh semantics (arg: far ptr to operands)
+001E:06FC	op_1f	opcode 1Fh semantics (arg: far ptr to operands)
+001E:0725	op_20	opcode 20h semantics (arg: far ptr to operands)
+001E:07FF	op_21	opcode 21h semantics (arg: far ptr to operands)
+001E:078A	op_22	opcode 22h semantics (arg: far ptr to operands)
+001E:07A1	op_23	opcode 23h semantics (arg: far ptr to operands)
+001E:0A8D	op_24	opcode 24h semantics (arg: far ptr to operands)
+001E:0310	op_25	opcode 25h semantics (arg: far ptr to operands)
+001E:0A16	op_2f	opcode 2Fh semantics (arg: far ptr to operands)
+001E:0A27	op_30	opcode 30h semantics (arg: far ptr to operands)
+001E:09CB	op_31	opcode 31h semantics (arg: far ptr to operands)
+001E:09DD	op_32	opcode 32h semantics (arg: far ptr to operands)
+001E:09EF	op_33	opcode 33h semantics (arg: far ptr to operands)
+001E:080D	op_34	opcode 34h semantics (arg: far ptr to operands)
+001E:0A6D	op_35	opcode 35h semantics (arg: far ptr to operands)
+001E:039B	op_36	opcode 36h semantics (arg: far ptr to operands)
+001E:093F	op_37	opcode 37h semantics (arg: far ptr to operands)

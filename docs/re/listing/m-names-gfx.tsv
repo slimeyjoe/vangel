@@ -1,0 +1,77 @@
+# Virgin Angel M.EXE graphics names (area: gfx; docs/re/graphics.md). SEG:OFF<TAB>name<TAB>comment
+0315:000E	gfx_init	first call: lib_open, gfx_alloc, win_alloc; then palette 0AA8:0030 (again: palette + gfx_mode)
+0315:005F	gfx_term	gfx_textmode if initialised
+0315:0072	lib_open	open the picture archive once (name 0BA1:006C or "gdata.lib"), handle at DS:00DA
+0315:00CE	lib_find	(name, &FILE*, &size, &pos): 0823:012A
+0315:0144	pal_set	copy a 48-byte palette (R[16] G[16] B[16]) to g_pal_cur 0BA1:00A0 and dac_set it
+0315:0176	pal_op30	op 30 (pal far ptr, t): t>0: pal_fade_in; then pal_set
+0315:01BE	gfx_clear	op 33 (buffer): buf_clear(10/11/12, anything else 10)
+0315:0202	pal_shift	(dst, src, d): clamp(src + d) per component; d>14 white table, d<-14 black table
+0315:02DA	pal_is_white	1 if all 48 components of a palette are 15
+0315:031E	pal_fade_in	fade from black (from white if g_pal_cur is all white) to pal over t/100 s, then pal_set
+0315:04E2	pal_fade_out	op 1A (to_white, t): fade g_pal_cur to black/white over t/100 s; t<1: at once
+0315:06C2	pal_flash	op 2F (t): pal_fade_out(white, t/2), pal_fade_in(saved, t/2), pal_set(saved)
+0315:070D	pic_load	op 31 (operand block: name[14], flag@0E, buffer@10, x@12, y@14): name+".gf" -> gf_load
+0315:07CB	rect_copy	op 32 (operand block: src, sx, sy, w, h, dst, dx, dy, effect) -> rect_dispatch
+0315:07F5	op18_win_restore	op 18: win_restore (window save buffer -> VRAM)
+00DD:0006	gfx_alloc	8 KB decoder buffer (0BA1:004E), buffer-12 planes 4 x 7D00h (0BA1:0046..4C), gfx_mode
+00DD:00A4	gfx_mode	analog mode, 400 lines, text GDC off, VRAM cleared, display/access page 0
+00DD:00D0	gfx_textmode	gfx_mode, INT 18h AX=1B00h, text GDC on
+00DD:00E3	vram_clear	GRCG RMW tile 0: both VRAM pages to colour 0
+00DD:0122	buf_clear	12: zero memory planes; 11/10: zero the four planes of VRAM page 1/0
+00DD:01D0	dac_set	wait for the start of VSYNC; out A8h i, AEh B, ACh R, AAh G for i = 0..15
+00DD:0216	gf_load	(FILE*, pos, size, op31 block): header, position, select decoder by buffer and flag
+00DD:0403	gf_header	"GF0\0", w, h, x, y -> DS:1728, 172A, 1724, 1726 (x>639 or y>399 -> 0)
+00DD:04F9	fx31_wait	effect 31 step callback: wait until the VSYNC counter DS:109E moved by >= 2
+00DD:051A	rect_dispatch	plane tables for src/dst (10/11 -> A800.. with A6h page, 12 -> 0BA1:0046), effect switch
+015A:000A	gf_dec_vram	GF decoder, VRAM planes, opaque (flush 015A:0471)
+015A:003D	gf_core	GF decoder core (self-modifying; same code in all four variants)
+015A:0315	gf_colour_pair	two colours, each from the MTF row of its left neighbour
+015A:043D	gf_mtf_init	16 x 16 move-to-front table, row r = r, r-1, ... (as colour << 4)
+015A:0451	gf_refill	INT 21h AH=3Fh: read FD2h bytes to buffer+102Eh
+015A:0471	gf_flush_vram	copy last 2 lines to the history, convert 4 lines to planes A800/B000/B800/E000
+015A:0554	gf_dec_vram_t	GF decoder, VRAM, colour 8 transparent (flush 015A:09BB)
+015A:09BB	gf_flush_vram_t	as gf_flush_vram, pixels of colour 8 keep the destination
+015A:0B0A	gf_dec_mem	GF decoder, memory planes (buffer 12), opaque (flush 015A:0F8D)
+015A:0F8D	gf_flush_mem	as gf_flush_vram, plane segments patched from the arguments
+015A:1076	gf_dec_mem_t	GF decoder, memory planes, colour 8 transparent (flush 015A:14F9)
+015A:14F9	gf_flush_mem_t	transparent flush to memory planes
+0783:0000	fx_copy	plain copy, (w+7)>>4 words per line and plane (effect 10 and all unknown codes)
+0783:007C	fx_masked	effect 20: byte-wise copy, source colour 8 transparent
+0783:0350	fx_dissolve4	effect 30: 4 passes, mask 8888h ror (pass + line)
+0783:0494	fx_interlace_tb	effect 33: even lines from the top, odd lines from the bottom
+0783:05DD	fx_checker_tb	effect 32: h steps, top line i and bottom line h-1-i, masks AAh/55h alternating
+0783:07C0	fx_dissolve64	effect 31: 64 steps of an 8x8 cell order (table 0783:0730), 2 VSYNCs per step
+0783:08DA	fx_slide_lr	effect 34: even lines slide in from the left, odd from the right, 16 px per step
+0823:0026	lib_open_file	fopen, lib_read_dir, keep FILE*, directory, size (4 slots at DS:17CA)
+0823:012A	lib_lookup	case-sensitive "name.ext" search; out FILE*, size(0), pos = offset + (n+2)*16
+0855:000C	lib_read_dir	check "GA00", count = u16 at 8, data base = (count+2)*16
+0855:015F	lib_read_entries	read count+1 16-byte entries; the last must start with FFh
+0855:023C	lib_read_entry	name[8], ext[3] (+1 ignored), u32 offset
+06DD:0347	scb_load_palettes	(n+1) x 48 bytes, pointer table 0BA1:0084 (entry 0 unused)
+06DD:03F5	scb_read_palette	24 bytes -> 48 nibbles, high first; colour i = R, G, B -> +i, +10h+i, +20h+i
+075A:000E	tmr_init	hook INT 0Ah (VSYNC, IRQ 2) -> 075A:00A6, clear 16 timer slots at 0B91:0000
+075A:00A6	tmr_vsync_isr	VSYNC: DS:109E++, every active slot: count++, done when count >= target
+075A:011E	tmr_start	new slot, target = t*564/1000 VSYNCs (t in 1/100 s); returns slot+1
+075A:01B4	tmr_free	free a timer slot
+075A:01F7	tmr_elapsed	count*1000/564 (1/100 s), t once done, -1 for a bad handle
+075A:025E	tmr_done	1 if the slot expired
+DS:00CE	g_gfx_ready	1 after gfx_init
+DS:00DA	g_lib	far pointer: open archive (0823 slot)
+DS:00DE	g_fade_in_last	last fade-in offset (static across calls, 0 at start)
+DS:00E0	g_fade_out_last	last fade-out offset
+DS:00E2	s_gf_ext	".gf"
+DS:00C6	g_vram_planes	A800h, B000h, B800h, E000h
+DS:109E	g_vsync_count	VSYNC counter (075A:00A6)
+DS:1724	g_gf_x	picture x (header, or op 31 operand if not -1)
+DS:1726	g_gf_y	picture y
+DS:1728	g_gf_w	picture width
+DS:172A	g_gf_h	picture height
+DS:172C	g_fx31_last	VSYNC count at the last effect-31 step
+0BA1:0046	g_buf12_planes	data: segments of the four 32000-byte planes of buffer 12
+0BA1:004E	g_gf_buf	data: far pointer, 8 KB decoder work buffer
+0BA1:0084	g_pal_table	data: far pointer to the scenario palette pointer table
+0BA1:00A0	g_pal_cur	data: current palette, 48 bytes R[16] G[16] B[16]
+0AA8:0000	pal_black	data: 48 x 0
+0AA8:0030	pal_default	data: digital-style 16 colours (000 007 700 707 070 077 770 777 aaa 00f f00 f0f 0f0 0ff ff0 fff)
+0AA8:0060	pal_white	data: 48 x 15

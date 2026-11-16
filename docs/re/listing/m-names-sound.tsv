@@ -1,0 +1,43 @@
+# Sound layer (PMD interface 048F, music API 04E4) - docs/re/sound.md
+048F:0008	pmd_init	if PMD resident (INT 60h vector+2 = "PMD"): query driver (pmd_query), state=0Bh, AH=01h stop; ret 1, else 0
+048F:0054	pmd_term	if playing: pmd_stop; drv_present=0, state=0Ch
+048F:0073	pmd_load_play	(name far, vol%): stop if playing; open NAME.n / .s (PMD.COM only) / .m, part masks, fread into PMD buffer, AH=19h vol, AH=00h
+048F:01F7	pmd_stop	if state==0Ah: INT 60h AH=01h, state=0Bh
+048F:0227	pmd_set_vol	(vol% 0-100): INT 60h AH=19h AL=255-trunc(255*vol/100)
+048F:025C	pmd_state	0Ah playing, 0Bh idle, 0Ch no driver
+048F:026B	pmd_measure1	if playing: INT 60h AH=05h measure counter + 1, else 0
+048F:0282	pmd_detect	1 if far ptr at 0000:0180 (INT 60h) points at xx xx 'P' 'M' 'D'
+048F:02B2	pmd_query	AH=06h music buffer, AH=22h buffer KB, AH=09h board type (FFh none), AH=17h PPS flag, PPSDRV probe
+048F:0376	pmd_set_masks	(kind 0 .m / 1 .s / 2 .n) PMD86/PMDB2 only (type 1,2): AH=1Eh AL=0Ah (mask K) or 88h (unmask I), then AH=1Eh AL=89h (unmask J)
+048F:03DD	pmd_read_song	(fp, 0L, len): no board -> 0; fseek 0; fread(PMD music buffer, len, 1, fp)
+048F:0422	pps_probe	INT 64h vector+2 = "PMP" (PPSDRV): INT 64h AH=04h -> DS:DX PPS buffer, CX size (stored, never used)
+048F:0494	pmd_get_measure	INT 60h AH=05h -> AX
+048F:04B3	mk_song_name	(dst, name, ext): copy name up to '.', (SJIS-aware), append '.' ext
+04E4:0004	mus_init	once: pmd_init; g_mus_ok (DS:01CC) = 1 on success
+04E4:0021	mus_term	pmd_term, g_mus_ok = 0
+04E4:0034	mus_play	(name far, vol%) op 1B: if playing and name == g_mus_name: nothing; else stop, strncpy name (19), pmd_load_play
+04E4:00A7	mus_stop	if playing: pmd_stop, g_mus_vol = 0
+04E4:00C9	mus_set_vol	(vol%): if playing: pmd_set_vol, g_mus_vol = vol
+04E4:00F0	mus_fade_stop	(t in 1/100 s) op 1C: blocking linear fade of g_mus_vol to 0 per VSYNC via AH=19h, then vol 0 and stop
+04E4:01D8	mus_state	pmd_state (0Ch if no driver)
+04E4:01E9	mus_measure	op 35: -1 if no driver or not playing, else PMD measure counter + 1
+DS:01B2	g_pmd_present	word, 1 = PMD detected (pmd_init)
+DS:01B4	s_ext_n	"n"
+DS:01B9	s_ext_s	"s" (tried on PMD.COM only; no .s files ship)
+DS:01BE	s_ext_m	"m"
+DS:01C3	s_ext_m2	"m"
+DS:01C8	s_pps_sig	"PMP" (PPSDRV signature at INT 64h vector+2)
+DS:01CC	g_mus_ok	word, music layer initialised
+DS:01CE	g_mus_vol	word, current volume % (op 1B operand; fade start value)
+DS:01D0	g_mus_name	char[19], name of the playing song as given by the script ("none" initially)
+DS:178A	g_pps_size	word, INT 64h AH=04h CX (unused)
+DS:178C	g_pmd_bufsize	word, /M KB * 1024 (unused)
+DS:178E	g_pmd_inregs	REGS for int86x (AL 178E, AH 178F)
+DS:179C	g_pps_buf_off	word, INT 64h AH=04h DX (unused)
+DS:179E	g_pps_buf_seg	word, INT 64h AH=04h DS (unused)
+DS:17A0	g_pmd_musbuf	far ptr (off 17A0, seg 17A2) from AH=06h = .M byte 0
+DS:17A4	g_pmd_board	word, AH=09h AL: 0 PMD.COM, 1 PMDB2, 2 PMD86, -1 no board
+DS:17A6	g_pmd_state	word, 0Ah playing, 0Bh idle, 0Ch no driver
+DS:17A8	g_pmd_outregs	REGS returned by int86x
+DS:17B6	g_pmd_sregs	SREGS (segread) for int86x
+DS:17BE	g_pps_on	word, AH=17h AL==1 and PPSDRV resident (unused)
