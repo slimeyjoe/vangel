@@ -4,3 +4,6 @@ resources/original/
 resources/derived/
 __pycache__/
 build/
+
+# editor support (clangd), machine-local
+source/compile_flags.txt
