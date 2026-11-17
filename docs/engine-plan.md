@@ -1,6 +1,6 @@
 # vangel — engine plan
 
-**Status (2026-11-17):** M0 to M6 done. M0: import, pack, the engine skeleton with a picture
+**Status (2026-11-17):** M0 to M7 done. M0: import, pack, the engine skeleton with a picture
 viewer (`--view`), the decoder bit-exact against the original (54 pictures × 4 cases). M1: the
 three buffers, ops 31h/33h/18h and the window's background, op 32h with every transition, the
 palettes and fades, on the VSYNC timer. Against the original under emulation: every write of
@@ -23,8 +23,13 @@ notice, the music mode); against the original under emulation, 28 runs, 55 239 f
 and the DAC at every VSYNC (`check_builtin`): the whole game plays, with music. First
 playable. M6: the whole game end to end against the original program under emulation
 (`re-tools/va98.py`, `check_vm`): 12 routes through the four endings, every menu, the saves and
-loads, the built-in sequences and the machine without sound, identical at every wait. M7
-(translation-ready) is next.
+loads, the built-in sequences and the machine without sound, identical at every wait. M7:
+translation-ready (`docs/translation.md`). The keys, the translation files and their tools
+(`tl.py`), the pack's string table and fonts, and the engine laying out a translation in
+every place the original prints. With a pseudo-translation of every string (`check_lang`),
+the engine draws every message, menu and built-in as the reference layout does (lrvne's
+reflow in Python over the original's verified page loop), and every route meets its menus in
+the same game state as in Japanese. M8 (Polish) is next.
 
 vangel reimplements `M.EXE`, the engine of Crystal Soft's *Virgin Angel* (PC-98, 1995), on
 [lrvne](https://github.com/slimeyjoe/lrvne). It reproduces the PC-98 release faithfully in
@@ -66,7 +71,9 @@ source/
     bi/          opening.c ending.c announce.c musmode.c
     extras/      gallery.c skip.c
   tools/         gamedata.py games.py mkpack.py vgpak.py mexe.py vgfont.py tl.py saves.py
+                 vgtext.py vglayout.py (the keys and the table; the reference layout)
                  scb.py txb.py gf.py (one copy; re-tools import them)
+  dist/          ReadMe.txt (the player's, in the release archive)
   tests/         run.sh refcache.py check_*.py test_*.c e2e/explore.py
 ```
 
@@ -78,7 +85,7 @@ source/
 | 2 | `xfont.py` raw glyph-array input (`add_raw`, `--raw FILE@OFF:CODES`) | M0 |
 | 3 | palette `lrv_pal_shift` (add and clamp), `lrv_pal_step_down` (decrement only) | M1 (**done**, lrvne 47f114f) |
 | 4 | glyphs: plain `g\|g<<1` bold (8 and 16 bits) and a transparent cell (M2, **done**, lrvne 79631d2: `lrv_glyph_bold8_plain` / `16_plain`, `lrv_glyph_blit` with `LRV_GLYPH_CLEAR`); the staff roll's double size and outline stayed in the engine (M5, `gfx/glyph.c`: the original's GRCG routines with their quirks, not a general facility) | M2 |
-| 5 | reflow `lrv_reflow_layout_from(..., first_line)`, plus `tools/lrvne/reflow.py` as the Python reference | M7 |
+| 5 | reflow `lrv_reflow_layout_from` (M7, **done**, lrvne 7005e36): a text that continues a page from a line and column, a hanging indent, kept indentation; `tools/lrvne/reflow.py` the Python reference | M7 |
 
 Engine-specific drawing stays in the engine: the black vertical edge, the prologue's reveal
 mask, and the colour 15 → 8 step.
@@ -339,38 +346,59 @@ DAC, the pc and the variables (the original asks on the text screen before the s
 loaded). An entry of a route given while a blocking fade runs is gone, on both sides alike:
 the music mode's routes leave 100 frames after each song.
 
-### M7 — translation-ready
+### M7 — translation-ready (done)
 
-**Keys, stable under reflow:**
+All of it is in [translation.md](translation.md); in short:
+
+**Keys, stable because the original never changes:**
 
 | Key | Covers |
 |---|---|
-| `m<NNN>.<L>` | message NNN from source line L: a run of text lines between control lines. Speech is stored without the name and its brackets |
-| `name` (a kind) | speaker names |
-| `menu<MM>.<c>` | menu items |
+| `m<NNN>.<L>` | a passage of message NNN from its line L: the non-empty text lines up to a control line, an empty line or the line that closes a speech (1 954). Speech is stored without the name and its brackets |
+| `name.<NN>`, `quote.open/close` | the 18 speaker names; what follows a name and ends a speech |
+| `menu<MM>.<c>` | menu choices (106) |
 | `bi.prologue.<p>`, `bi.staff.<p>`, `bi.music.*`, `bi.announce.*` | the built-in sequences |
 | `announce.<p>` | `ANNOUNCE.TXT` pages |
-| `con.*` | the console prompts |
+| `con.*` | the console's question and messages |
 
-**Layout.** The original page state machine runs over the original lines. Each unit is laid out at its first line:
-- a hanging indent after the speaker;
+**Layout** (lrvne's reflow, `lrv_reflow_layout_from`). The original page loop runs over the
+original lines; a translated passage is laid out from the row its first line would have taken:
+- the translated name and open quote before it, a hanging indent under them;
+- the close quote after the passage that closes the speech;
 - row 3 ends before the icon cell;
-- overflow adds pages in the current mode;
-- timed pages last in proportion to the text drawn.
+- overflow and `\p` add pages in the current mode;
+- timed pages last by the cells drawn (the original's bytes are its cells), the abort and v1
+  kept.
 
-**Fonts:**
-- ASCII comes from the game's font, except its bar and icon pieces;
-- Polish letters are composed from the game's letters and our own marks;
-- quotes and dashes are our own glyphs;
-- a `wide16` subset is built per language.
+Menu choices are centred on the original's centre where the original is centred. The
+prologue, staff roll and notice are laid out on their areas (72×8, 32×4 double-size, 80×23),
+and an overflow adds pages. Untranslated text is the original's, drawn as it was.
 
-**Tools and packaging.** `tl.py` (template, pseudo, check, layout, view, put, fill, status); `--lang`; saves record the language; `make dist`.
+**Fonts.** `latin8` is built from the game's ASCII. The codes the game draws something else
+for (`# $ % & ' " \`) are replaced by our own glyphs, as are the quotes, dashes and the
+ellipsis. The Polish letters are our own marks on the game's letters (`fonts/vangel-latin.txt`).
+lrvne's 8x16 is the fallback for ISO 8859-1. A `wide16` subset is built per language from
+`font16`.
 
-**Test.** `check_lang.py` with a pseudo-translation:
+**Tools and packaging.**
+- `tl.py`: template, skeleton, pseudo, check, layout, view, put, fill, status, read.
+- `mkpack.py --text`.
+- `--lang`, remembered for the next start. The saves stay the original's `GAME.DAT`, which
+  holds no text, so a save plays in any language.
+- `make dist` (the SDL3 player's archive with `dist/ReadMe.txt`) and `make dist-src`.
+
+**Test.** `check_lang.py`, with a pseudo-translation of every string:
 - the pack round-trips;
-- the C layout equals the Python layout;
-- nothing is drawn out of bounds;
-- the whole route in the translated language reaches every menu in the same VM state as Japanese.
+- the engine's layout of every message (page by page, with the timed pages' cells), menu and
+  built-in equals `tools/vglayout.py`'s. That is lrvne's reflow in Python over the original's
+  page loop, which with no translation is `txb.layout`, verified against the original;
+- the reference keeps its rules (widths, page heights, nothing lost);
+- nothing is drawn under the page-wait icon;
+- every explore plan with `lang=pl` meets its menus in the same state as in Japanese (254
+  menus, 12 519 waits against 8 003).
+
+About one string in ten is left untranslated in the pseudo-translation, so the original's
+passages and names appear next to translated ones.
 
 ### M8 — Polish
 
@@ -404,6 +432,8 @@ The same pipeline and the same story bible, translated from the Japanese.
 - MSZ functions FDh/FFh and the pointer shape.
 - Pixel tests hold only with the same kanji-ROM stand-in on both sides.
 - Translation fit: long speaker names, menus, the prologue's row limit, the 32-column staff roll.
+  The engine takes any length (more pages, cut choices); `tl.py check` lists what does not fit
+  the original's pages.
 - `other-versions.md` §2.4.4 contradicts `graphics.md` §8 and `text.md` §5.1 on text VRAM: fix it in M0.
 
 ## Verification

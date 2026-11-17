@@ -14,6 +14,12 @@ first; our own Polish and English translations follow.
   `resources/derived/listing/`, names in `docs/re/listing/m-names*.tsv`). Read the routine
   before changing a documented behaviour.
 - `docs/lrvne-fit.md` — what lrvne covers for this port, its gaps, what the engine must plan for.
+- `docs/translation.md` — translated text (M7): the keys, the TSV files in `text/translation/`,
+  the layout of every kind of text, the fonts (`fonts/vangel-latin.txt`: our own glyphs and
+  the Polish marks on the game's letters), the pack's table, the engine's side
+  (`engine/text/lang.c`, `layout.c`) and the test. Tools: `source/tools/tl.py` (template,
+  pseudo, check, layout, ...), `vgtext.py` (keys, files, table), `vglayout.py` (the reference
+  layout), `vgfont.py` (latin8, wide16); `mkpack.py --text LANG=FILE`.
 - `docs/game-data.md` — releases, media, files; `resources/inventory.tsv` — every file + md5.
 - `re-tools/` — `human68k.py` (X68000 media); `exeunpack.py` (EXEPACK); `dis16.py`,
   `madis.py` (disassembly); `mcall.py` (unicorn harness: the original's C start-up to `main`,
@@ -66,6 +72,11 @@ first; our own Polish and English translations follow.
   DAC, flags, music, pointer, `game.dat`, the INT 60h calls. The routes come from
   `tests/e2e/explore.py`'s plans played on `test_game` (stdin: it decides at each wait);
   `make e2e-routes` makes them again, `make test` checks that the engine still plays them so.
+  `check_lang` (M7): a pseudo-translation of every string (`tl.py pseudo`) packed; `test_lang`
+  plays every message, menu and built-in in it and prints where it draws each line, which
+  must equal `tools/vglayout.py` (lrvne's reflow in Python over the original's page loop);
+  every explore plan played with `lang=pl` must meet its menus in the same state as in
+  Japanese. The engine's test hooks for it: `vg.text.on_line`, `on_text`, `VG_TEV_PAGE`.
 
 ## Rules
 
@@ -85,6 +96,9 @@ first; our own Polish and English translations follow.
   instruction counts or protocol stops. A busy machine must not fail them.
 - The engine is generic: no game name in `source/engine`; facts about the game live in the
   pack's profile, written by the tools.
+- Translations hold keys and our text only, never the game's Japanese; templates and reading
+  copies made from the pack stay in `build/`. A translation changes only what is printed: with
+  none (or the original's language) the engine draws exactly the original.
 - lrvne is fixed in lrvne, generically and with a test, never worked around in the engine.
 - Licence GPL-3.0-or-later (SPDX header in every own source file).
 - **Public, pseudonymous repository.** Commits carry the repo-local identity only; no personal

@@ -18,6 +18,7 @@ the OPNA / stereo sound setups and for the X68000 release.
 | Sound, 26K | PMD 4.7g on a YM2203 (`sound.md`); `PMD.COM` is the same file another engine of this family already models | `lrv_opn` + `lrv_opnq` + `lrv_mixer`, `render_music`, mixer idle hook so the measure counter runs without a device |
 | Input | own INT 09h latch (last scan code only, ESC on release), INT 33h absolute mouse with level buttons (`platform.md` §3) | neutral keys + `lrvne/pc98.h`; the latch and the ESC-on-release rule are engine code |
 | Text | Shift-JIS, 16x16 from the kanji ROM (`text.md`) | `lrv_font_rom_glyph`, `lrvne/sjis.h` |
+| Translations | UTF-8 text in the pack's language string table, reflowed into the original's places (`translation.md`) | packs with languages, `lrvne/utf8.h`, `lrvne/reflow.h`, `xfont` for the Latin table |
 | Media | D88 2HD, 1024-byte sectors, FAT12; `.LZH` shop masters (`game-data.md`) | `tools/lrvne` diskimg, source |
 | Saves | `GAME.DAT`, 3 x 132 bytes | one storage record |
 | Timing | 16 timer slots counted in VSYNCs (`platform.md` §2) | frame + `LRV_HOOK_TICK` |
@@ -37,6 +38,7 @@ the OPNA / stereo sound setups and for the X68000 release.
 | 8 | X68000 DIM image kind and Human68k FAT12 probe (`re-tools/human68k.py`) | small | additive; X68000 media only |
 | 9 | X68000 machine module: 768x512 mode, keyboard map, YM2151 core, a tick that is not the VSYNC (60.24 Hz from the driver's timer), joystick | large | mostly additive (joystick touches `input.h`) |
 | 10 | PMD 4.7g sequencer shared in lrvne rather than one copy per engine | medium | **done** (2026-11-16): lrvne's PMD module, see below |
+| 11 | Reflow of a translated passage that continues a page: from a line and a column (after the speaker's name), a hanging indent, kept indentation (the staff roll, the notice); a Python reference for the tests | small | **done** (2026-11-17, M7): `lrv_reflow_layout_from`, `tools/lrvne/reflow.py` (lrvne 7005e36) |
 
 1-4 are all the 26K-only PC-98 port needs. 5-7 only for sound setups 2 and 3
 of `GAME.BAT` (86 board, Speak Board). 8-9 only for an X68000 profile.

@@ -12,8 +12,11 @@ specify the original engine `M.EXE` and all its data formats. The engine plays t
 Japanese game with its music (headless and SDL3), each part checked against the original code
 under emulation, and the whole game end to end: routes through all four endings, every menu,
 the saves and loads and the built-in sequences, played on the engine and on the original
-program under emulation, identical at every wait. The translations, the extras and the Amiga
-family come next ([`docs/engine-plan.md`](docs/engine-plan.md)).
+program under emulation, identical at every wait. The engine is ready for translations
+([`docs/translation.md`](docs/translation.md)): a translation is a keyed TSV file, laid out
+in the original's window, menus and built-in sequences with the game's own font and our Polish
+letters. The Polish and English translations, the extras and the Amiga family come next
+([`docs/engine-plan.md`](docs/engine-plan.md)).
 
 **Adults only.** The game contains explicit sexual scenes, some of them non-consensual.
 
@@ -31,6 +34,9 @@ releases, their media and files; `resources/inventory.tsv` lists every file with
   the original's routines under emulation, decoders for every data format and their verifiers.
 * `resources/` — `inventory.tsv` (committed); everything else there (original files, extracted
   and derived data, listings) is git-ignored and rebuilt from your copy.
+* `source/` — the engine (`engine/`), its tools (`tools/`), its tests (`tests/`) and lrvne
+  (`lrvne/`, a submodule); `fonts/` our own glyphs for translated text; `text/` the
+  translations (keys and our text only).
 
 ## Licence
 
