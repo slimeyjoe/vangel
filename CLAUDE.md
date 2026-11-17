@@ -52,6 +52,10 @@ first; our own Polish and English translations follow.
   nothing (its FRAME_POINTS, as the engine's loops end such a turn with a frame); the input
   is decided while the original runs and replayed into `test_text`. `test_input` (no data):
   the keyboard model.
+  The test HAL audits every frame presented (lrvne's `lrv_shot_audit`): the page may change
+  only inside the frame's dirty rectangle, as a display uploads nothing else; lrvne's control
+  mode does the same, and `run.sh` plays the title's pointer through it (moved, hovering,
+  after a reset).
   `check_scb`/`check_expr`/`check_save`/`check_vmstep` (M3) share `vmrig.py` and
   `test_vm`: the original's loader, `expr_eval`, `save_slot`/`load_slot` and `vm_step` under
   mcall (a fresh machine after any `exit()`: unicorn delivers no second divide error);

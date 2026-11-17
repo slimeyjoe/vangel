@@ -82,6 +82,56 @@ if [ -n "$HAVE_GAME" ] && [ -f "$PAK" ]; then
     else
         echo "teardown: exit $t (not 3) or no save"; cat "$BIN/teardown/log"; rc=1
     fi
+    # the pointer on the title, by the control protocol, whose every frame is audited (what
+    # the engine draws must lie in the frame's dirty rectangle, or a display never shows it:
+    # the run would end with code 1). The pointer moves, hovers over the third choice, and
+    # after a reset the same pointer over the same title is the same picture: one pointer,
+    # no trace of an earlier one.
+    echo "== vangel --control: the pointer on the title, moved, and after a reset"
+    t=0
+    "$BUILD/vangel" --control --no-audio --pak "$PAK" --storage "$BIN/teardown" \
+        >"$BIN/teardown/pointer" 2>"$BIN/teardown/log" <<'EOF' || t=$?
+mute all
+run
+press y
+run
+mouse 300 100
+run 3
+snap away
+mouse 40 20
+run 3
+snap moved
+mouse 300 360
+run 3
+snap hover
+mouse 300 100
+run 3
+snap back
+press reset
+run
+mouse 500 100
+run 3
+mouse 300 100
+run 3
+snap again
+quit
+EOF
+    ptr_hash() {
+        sed -n "s/.*\"ev\":\"snap\",\"name\":\"$1\".*\"hash\":\"\\([0-9a-f]*\\)\".*/\\1/p" \
+            "$BIN/teardown/pointer"
+    }
+    if [ $t -eq 0 ] && [ -n "$(ptr_hash away)" ] &&
+       [ "$(ptr_hash away)" != "$(ptr_hash moved)" ] &&
+       [ "$(ptr_hash away)" != "$(ptr_hash hover)" ] &&
+       [ "$(ptr_hash moved)" != "$(ptr_hash hover)" ] &&
+       [ "$(ptr_hash away)" = "$(ptr_hash again)" ]; then
+        echo "pointer: drawn within its dirty rectangle, moves, one pointer after a reset"
+    else
+        echo "pointer: exit $t, or the pictures are not as expected:"
+        grep -o '"ev":"exit".*' "$BIN/teardown/pointer"
+        for n in away moved hover back again; do echo "  $n $(ptr_hash $n)"; done
+        cat "$BIN/teardown/log"; rc=1
+    fi
     # the routes of the end-to-end check: the engine still plays each plan as recorded
     run $PY -I "$HERE/e2e/explore.py" --check "$BIN/test_game" "$PAK"
     # translated text: a pseudo-translation of every string packed, laid out as the reference

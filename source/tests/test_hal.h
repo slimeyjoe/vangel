@@ -2,7 +2,8 @@
 /* A HAL for the test programs, after lrvne's tests/test_hal.h: no display, no audio device, no
  * real time, malloc, messages on stderr. Unlike lrvne's own tests these run on a game's packs,
  * so the packs and the storage are files: lrvne's pack and storage functions on plain files
- * (backends/common/paths.h), told where they are instead of searching. A test replaces the
+ * (backends/common/paths.h), told where they are instead of searching. Every frame presented
+ * is audited: what changed on the page must lie in the frame's dirty rectangle. A test replaces the
  * members it wants to observe (trace, input_poll, frame_wait, ...). */
 #ifndef VG_TESTS_TEST_HAL_H
 #define VG_TESTS_TEST_HAL_H
@@ -12,12 +13,26 @@
 #include <string.h>
 #include "lrvne/hal.h"
 #include "paths.h"
+#include "shot.h"
 
 static uint32_t th_frames;              /* frame_wait calls */
 
 static int th_video_open(const struct lrv_video_cfg *cfg) { (void)cfg; return 0; }
 static void th_video_close(void) {}
-static void th_video_present(const struct lrv_frame *frame) { (void)frame; }
+
+/* No display, but every frame's dirty rectangle is audited (lrvne's shot.h): a change of the
+ * page that was not reported would be missing on a real display, and fails the test here. */
+static void th_video_present(const struct lrv_frame *frame)
+{
+    static struct lrv_shot shown;
+    int col = 0, line = 0;
+    if (lrv_shot_audit(&shown, frame, &col, &line) == 1) {
+        fprintf(stderr, "present: the page changed outside its dirty rectangle (column %d, "
+                "line %d)\n", col, line);
+        exit(1);
+    }
+}
+
 static void th_frame_wait(void) { th_frames++; }
 static void th_input_poll(struct lrv_input *in) { (void)in; }   /* nothing is pressed */
 static void th_input_flush(void) {}

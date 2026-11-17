@@ -14,7 +14,7 @@ the OPNA / stereo sound setups and for the X68000 release.
 | Area | Need (source) | lrvne |
 |---|---|---|
 | Video | 640x400, 16 colours, 4 planes, 56.42 Hz; page 0 displayed only, page 1 and "buffer 12" off-screen; no text layer, scroll, EGC, sprites (`graphics.md` §1, §8) | `lrv_pc98_video_mode`, `lrv_screen` with 2 pages + 1 buffer; the 544x80 window buffers are engine-owned `lrv_surface`s |
-| Pointer | MSZ mouse pointer drawn over the page | screen overlay |
+| Pointer | MSZ mouse pointer drawn over the page | screen overlay: `struct lrv_pointer` |
 | Sound, 26K | PMD 4.7g on a YM2203 (`sound.md`); `PMD.COM` is the same file another engine of this family already models | `lrv_opn` + `lrv_opnq` + `lrv_mixer`, `render_music`, mixer idle hook so the measure counter runs without a device |
 | Input | own INT 09h latch (last scan code only, ESC on release), INT 33h absolute mouse with level buttons (`platform.md` §3) | neutral keys + `lrvne/pc98.h`; the latch and the ESC-on-release rule are engine code |
 | Text | Shift-JIS, 16x16 from the kanji ROM (`text.md`) | `lrv_font_rom_glyph`, `lrvne/sjis.h` |
