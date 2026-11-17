@@ -53,6 +53,38 @@ gags are settled where they first appear:
 
 Translate the twins of a scene together (bible §2.3). Same Japanese, same Polish.
 
+## How a chapter is made
+
+Each part goes through three independent passes and then the editor (a person):
+
+1. **Slices.** The part is cut at message boundaries into slices of about a hundred passages,
+   with the twins of a scene in one slice. A slice file (outside the repository: it holds the
+   Japanese) gives each passage its key, its original, the original's rows and columns, and
+   flags: approved already, the editor's row, tagged or inline speech, a menu choice, a timed
+   page, identical or nearly identical Japanese elsewhere and whether that copy has Polish.
+   With it goes a short brief of the part: its mood, who is in it, the gags it sets or repeats.
+2. **Translator**, from the Japanese, after reading the bible, both guides, the approved Polish
+   and the whole part with its twins.
+3. **Reviewer**, who has not seen the translator's reasoning: every row against the Japanese.
+   Findings have a category (meaning, certainty, voice, address, gender, glossary, names,
+   consistency, naturalness, Polish, format, paging) and a severity.
+4. **Second editor**, who accepts or rejects each finding on its merits, writes the final
+   slice, and passes on two lists: questions only the editor can decide, and what the guide
+   must record for later chapters.
+5. **Merge**: the mechanical checks, the hanging indent of inline speech, then `tl.py put`,
+   `fill`, `check -v` (below). An approved row is never overwritten and the editor's six rows
+   are never written.
+6. **The guide** gets the recorded decisions, from one hand, before the next part starts.
+7. **Commit as a draft.** The editor reads the part's reading copy (Polish only, with keys)
+   and plays it; the fixes are a second commit. What the editor disliked becomes a rule in
+   `TRANSLATION_GUIDE_PL.md` §9, so the next part's translators read it.
+
+Translator and second editor check their own files before handing them on: the right set of
+rows, the allowed characters, identical Japanese with identical Polish, nothing wider than its
+place, no message longer than the original without a reason.
+
+The steps below are the same work by hand, and what the merge runs.
+
 ## One chapter, step by step
 
 1. Read the chapter's whole reading copy first, then translate. Callbacks and twins only make
@@ -95,13 +127,15 @@ leave the prologue alone to see it. The text window is the bottom 100 rows of a 
 
 - **Inline speech is wrapped by hand** (guide §6.2): every line at most 66 columns, so that it
   also fits the window's last row, and each later line indented by as many U+00A0 as the name
-  is long plus three. Write a small script for the batch that does this, outside the
+  is long plus three. Let a script do this for the batch (the merge does), outside the
   repository; do not count columns by eye.
+- **One original starts with a TAB** (`m013.24`), and the template writes it as it is, so that
+  row has one cell more than the header.
 - **Fit the original's rows.** When a passage takes more rows than the original's, the passage
   after it moves to a new page. Tighten the sentence first; split with `\p` only where the
   break helps (`m008.10`).
 - **The fonts.** In the game's font `!` and `"` are the halves of a two-cell symbol, so the
-  translation font has its own. It also has `ō`, drawn for "maska nō". A character the font
+  translation font has its own. It also has `ō`, drawn for the long vowels of names (no capital `Ō` yet). A character the font
   lacks stops the build; for a Latin letter, draw it in `fonts/vangel-latin.txt` as a mark on
   the game's letter.
 
@@ -119,7 +153,9 @@ leave the prologue alone to see it. The text window is the bottom 100 rows of a 
 ## Things already settled (keep them)
 
 `TRANSLATION_GUIDE_PL.md` §0 is the list. The ones every scene meets:
-- **Names:** surname first, as in "Amano Murakumo". Murakumo and Kenzo are not declined.
+- **Names:** surname first, as in "Amano Murakumo". Murakumo and Kenzō are not declined. Long vowels
+  carry the macron (Kenzō, Jōsetsu, Meiji-dōri); names Polish has its own form for do not
+  (Tokio, Hokkaido).
 - **Speech:** `Murakumo: „…”`.
 - **Murakumo's grammatical gender:** always masculine.
 - **Diminutives:** Kenuś, Yukinka (plain "Yuki" from `m083.11`), Mamiś.

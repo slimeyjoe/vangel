@@ -38,13 +38,13 @@ proponował co innego niż pierwsza wersja, redaktor przyjął propozycję przeg
 
 | # | Sprawa | Decyzja |
 |---|---|---|
-| D1 | Zapis imion | Hepburn bez znaków długości: Josetsu, Kenzo, Hyoyoku. **Nazwisko pierwsze**: Amano Murakumo, Kusanagi Ken, Yasaka Yuki, Sasame Josetsu. Tylko w tej kolejności widać Ama-no-Murakumo, nazwę miecza (biblia §6), a kartoteki w grze też podają najpierw nazwisko (`m035.18`, `m062.0`) |
+| D1 | Zapis imion | Hepburn **ze znakiem długości tam, gdzie japoński ma długą samogłoskę**: Jōsetsu, Kenzō, Hyōyoku, Meiji-dōri, nō (decyzja redaktora 2026-11-17, zmienia wcześniejsze „bez znaków długości”). Bez znaku zostają nazwy przyjęte po polsku (Tokio, Hokkaido, szogun) i zdrobnienie „Kenuś”. **Nazwisko pierwsze**: Amano Murakumo, Kusanagi Ken, Yasaka Yuki, Sasame Jōsetsu. Tylko w tej kolejności widać Ama-no-Murakumo, nazwę miecza (biblia §6), a kartoteki w grze też podają najpierw nazwisko (`m035.18`, `m062.0`) |
 | D2 | Honoryfikatywy | **Nie zostawiamy** -san, -chan, -kun ani -sensei. Grzeczność oddają „pan / pani / ty” (§4), ちゃん zdrobnienie (D3) |
 | D3 | ちゃん | **Kenuś** (ケンちゃん), **Yukinka** (ユキちゃん, wołacz „Yukinko”), **Mamiś** (マミちゃん, `m052.31`). Gdzie on porzuca ちゃん (`m083.11`), samo „Yuki” |
 | D4 | Mowa: nawiasy | `quote.open` = `: „` (dwukropek, spacja, „), `quote.close` = `”`. Mowa wpisana w akapit wygląda tak samo: `Murakumo: „Siema!”` |
 | D5 | Wcięcie wielowierszowej mowy w akapicie | kolejne wiersze zaczynamy **twardymi spacjami** (U+00A0) do kolumny za „ (§6.2) |
 | D6 | Toan i Biuro | 首都公安局 = **Stołeczne Biuro Ochrony Publicznej**, w skrócie **Toan** (D. Toanu, Ms. w Toanie); potocznie „Biuro”. **Nigdy** „Urząd Bezpieczeństwa”, „bezpieka”, „SB” |
-| D7 | 局長 | **szef** (Biura), w zwrocie „szefie”. Przezwisko 能面局長 = **szef Maska**; przy pierwszym użyciu „twarz jak maska nō”. „Dyrektor” to 院長 (Kusanagi). „Kamienna gęba” zostaje dla Kenza (顔面岩). Font przekładu ma własne `ō` właśnie dla tego słowa (`m001.47`); potem samo „twarz jak maska” |
+| D7 | 局長 | **szef** (Biura), w zwrocie „szefie”. Przezwisko 能面局長 = **szef Maska**; przy pierwszym użyciu „twarz jak maska nō”. „Dyrektor” to 院長 (Kusanagi). „Kamienna gęba” zostaje dla Kenzō (顔面岩). Font przekładu ma własne `ō` (małe; wielkiego `Ō` nie ma, trzeba je dorysować, gdy będzie potrzebne); potem samo „twarz jak maska” |
 | D8 | ボディ・ドラッグ | **żywy narkotyk** (lm. żywe narkotyki; „przerobić kogoś na żywy narkotyk”) |
 | D9 | コンバット・ドール | **lalka bojowa** (lm. lalki bojowe); typ **Statue 2H**; メタル女 = „metalowa baba” |
 | D10 | バージン・エンジェル | **Virgin Angel** bez tłumaczenia (narkotyk i tytuł gry) |
@@ -57,7 +57,7 @@ proponował co innego niż pierwsza wersja, redaktor przyjął propozycję przeg
 | D17 | Błędy oryginału | poprawiamy: imiona (`name.06`, `name.09`, `name.13`, `m096.16`, `m191.29`), mówiący w `m006.29` (Sasame), podmiot w `m208.15`, ubytek w `m195.5`, literówki z przewodnika ogólnego §3 |
 | D18 | Napisy końcowe i zapowiedź Crystal Soft | role i treść po polsku; **nazwiska** w zapisie oryginału (kanji), dopóki ktoś nie sprawdzi odczytów |
 | D19 | Karty zakończeń (210–213) | zostają **puste**: gra pokazuje własne angielskie `Ｅｎｄｉｎｇ Ｎｏ．１` |
-| D20 | Godziny | w mowie urzędowej (Sasame, raport Kenza, ekrany) **z dwukropkiem**: „00:50”, „22:30”; w narracji i potocznie **z kropką**: „o 23.20” |
+| D20 | Godziny | w mowie urzędowej (Sasame, raport Kenzō, ekrany) **z dwukropkiem**: „00:50”, „22:30”; w narracji i potocznie **z kropką**: „o 23.20” |
 | D21 | 好き / 愛してる | 好き(だ) = **„kocham cię”**; 愛してる **mocniej**: „kocham cię nad życie”, „kocham cię, słyszysz? kocham” (`m188.133`, `m189.6`; Yuki: `m185.76`, `m185.112`, `m196.30`) |
 | D22 | „trasa 137” (`m037.16`) | poprawiamy na **357** |
 | D23 | Mowa katakaną | **wielkie litery**: „ŁADNA DZIŚ POGODA...” (`m019.5`), „ŁADNIE MNIE URZĄDZIŁEŚ” (`m168.18`); dwa słówka Murakumo lżej, sylabami: „Dzię-ku-je-my za trud!” (`m002.13`), „Toan, pro-szę pa-ństwa!” (`m003.13`) |
@@ -109,7 +109,7 @@ przed graczem, ale ciało bohatera jest tematem, o którym każdy ma zdanie.
   wykrzykniki („ojej”, „ach”, „no wiesz”), przeciągnięte samogłoski („Ke-e-nuś”), ☆,
   teatralne didaskalia w nawiasach (§6.5), pieszczotliwe „kochanie”, „skarbie”.
   Nigdy żeńskie formy czasownika.
-- Cudze reakcje zostają takie, jakie są: Kenzo „zniewieściały facet” (`m060.7`), Sasame „choć
+- Cudze reakcje zostają takie, jakie są: Kenzō „zniewieściały facet” (`m060.7`), Sasame „choć
   na twoim przykładzie widać, że z wyglądu nie da się sądzić” (`m006.10` albo `m007.14`,
   zależnie od gałęzi), Yuki
   „Pan jest mężczyzną, prawda?” (`m015.29`).
@@ -148,7 +148,7 @@ imiona zostają w mianowniku („Yuki!”, „Murakumo!”), tytuły idą w woł
 | Murakumo → Sasame | „szefie”, pan, uprzejmie z kpiną | za plecami „Maska” (D7); w `m179` i `m183` gniew bez kpiny; raz アンタ (`m179.18`): na jedno zdanie „ty” |
 | Sasame → Murakumo | ty, „Murakumo” | 〜たまえ = uprzejmy rozkaz („idź, proszę”, „zechciej…”); w `m183.55` krótkie „Idź.”. Samo ムラクモ, gdy rozkazuje: „Murakumo”; ムラクモ君, gdy jest gładki: „mój drogi Murakumo” (`m045.12`, `m178.6`, `m183.37`) |
 | Sasame o innych | „doktor Shinobu”, „Kandori”, „Yasaka Yuki” | 君 przy nazwisku pomijamy |
-| Murakumo ↔ Kenzo | ty | Murakumo: „Kenuś”; Kenzo: 貴様 = „ty draniu”, „ty!” |
+| Murakumo ↔ Kenzō | ty | Murakumo: „Kenuś”; Kenzō: 貴様 = „ty draniu”, „ty!” |
 | Murakumo ↔ Shinobu | ty | ona: „Murakumo”, „ty”. On mówi do niej głównie です/ます z シノブさん; w `m030.45`–`m030.58` i jego mowa, i narracja przechodzą na samo シノブ. Ta zmiana musi być słyszalna: on mówi do niej grzeczniej („Shinobu, proszę cię”, „pani doktor☆”), a w `m030.45`–`m030.58` ostro i bez grzeczności |
 | Yuki, Hinamura → Shinobu | „pani doktor” | |
 | Shinobu → Yuki | ty, „Yukinka” | |
@@ -165,7 +165,7 @@ imiona zostają w mianowniku („Yuki!”, „Murakumo!”), tytuły idą w woł
 
 ## 5. Imiona: zapis i odmiana
 
-**Zapis (D1), nazwisko pierwsze:** Amano Murakumo, Yasaka Yuki, Sasame Josetsu, Tanaka Kenzo,
+**Zapis (D1), nazwisko pierwsze:** Amano Murakumo, Yasaka Yuki, Sasame Jōsetsu, Tanaka Kenzō,
 Yata Shinobu, Hinamura, Takama Reiko, Izumo Fubuki, Kusanagi Ken, Inaba Mami, Misaki Misa,
 Yajima Takao, Kandori, Shikakura, Goryl (ゴリ), Snake (スネーク i スネイク).
 
@@ -173,7 +173,7 @@ Yajima Takao, Kandori, Shikakura, Goryl (ゴリ), Snake (スネーク i スネ�
 
 | Imię | Odmiana |
 |---|---|
-| Murakumo, Kenzo, Amano | **nieodmienne** („z Murakumo”, „Kenzo nie ma”), jak zwykle japońskie imiona męskie na -o |
+| Murakumo, Kenzō, Amano | **nieodmienne** („z Murakumo”, „Kenzō nie ma”), jak zwykle japońskie imiona męskie na -o |
 | Sasame | przymiotnikowo jak nazwiska na wymawiane -e: Sasamego, Sasamemu, z Sasamem, o Sasamem. Zwykle z tytułem: „szefa Sasamego” |
 | Kusanagi | przymiotnikowo: Kusanagiego, Kusanagiemu, z Kusanagim, o Kusanagim |
 | Hinamura, Shikakura, Tanaka | jak rzeczowniki na -a: Hinamury, Hinamurze, Hinamurę, Hinamurą |
@@ -202,7 +202,7 @@ Yajima Takao, Kandori, Shikakura, Goryl (ゴリ), Snake (スネーク i スネ�
 - **W akapicie:** `Imię: „kwestia”` z imieniem z tabeli §7 i tymi samymi nawiasami. Kwestia,
   która w oryginale zajmuje kilka wierszy, łamie się ręcznie (`\n`), a każdy następny wiersz
   zaczyna się twardymi spacjami U+00A0 do kolumny za „ (D5): Murakumo 11, Yuki 7, Sasame 9,
-  Shinobu 10, Kenzo 8, Reiko 8, Kusanagi 11, Hinamura 11, Mami 7, Goryl 8. Przykład (`m013.20`):
+  Shinobu 10, Kenzō 8, Reiko 8, Kusanagi 11, Hinamura 11, Mami 7, Goryl 8. Przykład (`m013.20`):
 
       Murakumo: „Zanim ta rozpustna lekarka sprowadzi ją na manowce,\n
       ␣␣␣␣␣␣␣␣␣␣␣muszę ją poprowadzić prostą ścieżką damsko-męskich\n
@@ -217,7 +217,7 @@ Yajima Takao, Kandori, Shikakura, Goryl (ゴリ), Snake (スネーク i スネ�
   jak w oryginale.
 - **Głos nagrany** (terminal na biurku: `m037`, `m045`; w oryginale `『』`): **« »**, np.
   `Sasame: «Dzień dobry, Murakumo. Znowu spóźniony.»`, a cytaty w nagraniu w „ ”. Bloki
-  zeznań z raportu Kenza (`m037.9`–`m038.3`) też w « ».
+  zeznań z raportu Kenzō (`m037.9`–`m038.3`) też w « ».
 - **Cytat w kwestii** (`『ケンちゃん』`, `『住む世界が違う』`): « », czyli polski cudzysłów
   wewnętrzny: „Przestań mówić do mnie «Kenuś»!”.
 
@@ -278,7 +278,7 @@ Yajima Takao, Kandori, Shikakura, Goryl (ゴリ), Snake (スネーク i スネ�
 | Klucz | JP | PL |
 |---|---|---|
 | `name.00`, `name.09` | ムラクモ, ムラウモ | Murakumo |
-| `name.01` | ケンゾウ | Kenzo |
+| `name.01` | ケンゾウ | Kenzō |
 | `name.02` | ササメ | Sasame |
 | `name.03` | ヒナムラ | Hinamura |
 | `name.04` | ユキ | Yuki |
@@ -333,7 +333,7 @@ Oryginał pisze `ボードをを` (podwójne を). To literówka, której przek�
 | Yuki | Grzecznie, poważnie, ciepło: „Przepraszam!”, „Proszę mi dać dane.”, „Nie mogę darować przestępstw, w których kobiety traktuje się jak narzędzia do seksu.” (`m027.8`; 道具 = „narzędzie”, a 玩具 Reiko = „zabawka”, i te słowa się nie mieszają). Nie dziecinnie: jej przeprosiny to poczucie winy, nie słodycz. Do końca nalotu grzecznie (D12), swobodnie dopiero w epilogu. ずるい zawsze **„nie fair”** („To nie fair...”, `m029.19`, `m118.22`, `m191.37`). |
 | Sasame | Chłodno, dokładnie, pełnymi zdaniami, z suchą ironią: „Twoje zawieszenie skończyło się dziś o 00:00. Zostałeś o tym powiadomiony.” `m008.10`: „Na bezpańskiego psa bez obroży trzeba zapolować.” `m098.29`: „Ciało owszem.” `m183.55`: „Idź. Nie jestem już twoim szefem ani przełożonym. Jestem dla ciebie obcym człowiekiem.” Nigdy ciepło przed `m179` i nigdy złowrogo. |
 | Shinobu | Na przemian ciepło-zaczepnie i szorstko po koleżeńsku: „Żadne «ojej»! Szukam cię po całym Biurze, a ty się wleczesz! Rusz się!” (`m016.5`); do Hinamury „Hinamura! Nic nie widziałeś, jasne?!”. |
-| Kenzo | Głośno, urzędowo, z oburzeniem (cytuje powitanie Murakumo, więc idzie za §6.7): „Murakumo! Jakie «siema»?! Co zawieszony agent robi na miejscu zbrodni?!” Na nagraniu (`m037`) jak protokół: „Świadek zeznaje, co następuje.” |
+| Kenzō | Głośno, urzędowo, z oburzeniem (cytuje powitanie Murakumo, więc idzie za §6.7): „Murakumo! Jakie «siema»?! Co zawieszony agent robi na miejscu zbrodni?!” Na nagraniu (`m037`) jak protokół: „Świadek zeznaje, co następuje.” |
 | Hinamura | Uprzejmie, z przytykiem: „Pan na nadgodzinach? Jutro będzie padać.” Jąkanie: „To... to... to... to...” (`m019.0`). |
 | Reiko (maska) | Lodowato uprzejma sekretarka: „Nazywam się Takama Reiko, jestem sekretarką doktora Kusanagiego Kena.” Drwina pod spodem: „Hm, hm... Partacz z Toanu.” (`m052.48`), „Och, przepraszam, nie zauważyłam. Ohoho...” (`m079.10`). |
 | Reiko (bez maski) | `m134.23`: „Tak. To ja jestem Fubuki Izumo. Doktor Kusanagi przywrócił mnie do życia. I dał mi najsilniejsze ciało, jakie istnieje!” Potem salonowa dominatorka: ☆, „Hi, hi, hi”, piskliwe キャハハ (`m134.46`), a rozkazy w damskich formach: 眺めてらして☆ (`m150.19`), 嘘おっしゃい (`m154.1`), 見えなくてよ (`m154.17`), 御上げ (`m157.12`). Okrucieństwo z salonu, nie szczekanie: „Niechże pan sobie popatrzy☆”, „Proszę nie kłamać!”, „Jakoś nie wygląda pani na zawiedzioną”. Raz mówi jak maszyna (`m168.18`, D23). |
@@ -366,6 +366,14 @@ brzmienie, wpisane tutaj przy pierwszym przekładzie.
   (言い続けたっていい / 言い続けてやる): „Ciebie kocham, rozumiesz?! Jak raz to za mało, mogę to
   powtarzać sto razy, tysiąc razy!” / „…będę to powtarzał sto razy, tysiąc razy!”.
 - `m017.0` = `m057.62`: „Shinobu, ucho! Ucho!! Au! Au! Au! Au! Boli!!”.
+- 薄笑い Sasamego (`m011.8`): „uśmiechnął się półgębkiem”. To jedyna mina szefa Maski i wraca
+  w `m053.56` (能面局長の薄笑いの顔): „uśmiechnięta półgębkiem twarz szefa Maski”.
+- `m022.32` 君の働きに期待している: „...Prawdę mówiąc, wiele sobie obiecuję po twojej pracy.”
+  Te same słowa w `m098.35` („No cóż, wiele sobie obiecuję po twojej pracy.”), bo na nich
+  opiera się podwójne odczytanie kwestii Sasamego (biblia §5).
+- Bliźniaki `m023.8` / `m025.2` różnią się jednym słowem (えらく): „Jakoś tak służbowo się
+  zachowuje.” / „Jakoś strasznie służbowo się zachowuje.”, w obu dalej: „Aż jej z twarzy
+  wyziera, że nie znosi podrywaczy.”
 
 **Śmiechy i okrzyki:**
 
@@ -397,14 +405,14 @@ samej wielkości w tym samym miejscu. Wpisy bez dopisku są zatwierdzone (2026-1
 | Klucze | Oryginał | Polski |
 |---|---|---|
 | `m005.28`–`m005.35` | 穴堀工事 (roboty drogowe) / 穴掘り z rudą | „po drodze aż w trzech miejscach wiercili w jezdni” → „Na twojej trasie nie zaplanowano żadnych robót. A jedyne wiercenie odbyło się z udziałem twoim i pewnej rudej dziewczyny, Murakumo.” (sucha urzędowość Sasamego niesie żart) |
-| `m018.23`, `m042.6` | 暴れん坊将軍 (serial, przydomek penisa) | **„Rozbrykany Szogun”** (暴れん坊 to rozrabiaka); „Rozbrykany Szogun ma dziś zamknięte☆” |
+| `m018.23`, `m042.6` | 暴れん坊将軍 (serial, przydomek penisa) | **„Rozbrykany Szogun”** (暴れん坊 to rozrabiaka); „Rozbrykany Szogun ma dziś zamknięte☆”. W `m018.23` た・ま・ら・ん = „to dopiero jest ob-łęd☆”, podjęte w `m018.26` (その たまらん 唇): „Te obłędne usta”; oba wiersze trzymają ten sam rdzeń |
 | `m021.9` | 天にも昇る天使な気分 | „Czujesz się jak anioł w siódmym niebie.” |
 | `m012.8` | 現場百回 | „Śledczy wraca na miejsce zbrodni sto razy!” (nie bezosobowo: „wraca się na miejsce zbrodni” brzmi jak przysłowie o mordercy) |
 | `m019.5` | イイテンキダナ katakaną | „ŁADNA DZIŚ POGODA...” (D23) |
 | `m036.2`–`m036.5` | 明日は雨だ / 人で天気予報 | „Pan na nadgodzinach? Jutro będzie padać.” – „Nie rób sobie ze mnie barometru.” |
 | `m048.23` | 耳年増 | „stara plotkara” (w kontekście: „wiesz od Yuki” i przytyk do wieku) |
 | `m053.29`, `m053.52` | 叩くとホコリが出る | 叩く i ホコリ zostają: „jak go przetrzepać, poleci kurz” → „Powiedziałem tylko, że jak Kusanagiego przetrzepać, poleci kurz.” – „Czyli mam trzepać, tak?” |
-| `m059.5`–`m060.1` | ホモに目覚めて / お尻を貸せ | „Czyżby Kenzo odkrył w sobie geja?” – „Jestem normalny, Kenuś, tyłka ci nie pożyczę☆” |
+| `m059.5`–`m060.1` | ホモに目覚めて / お尻を貸せ | „Czyżby Kenzō odkrył w sobie geja?” – „Jestem normalny, Kenuś, tyłka ci nie pożyczę☆” |
 | `m063.16`–`m064.2` | お尻 | „Wcale nie patrzyłem na żadne pupy!” – „Na jakie pupy?” |
 | `m074.17`–`m074.26` | 脳味噌まで筋肉増強剤 / スネークより早く抜いても | „Sterydy wstrzykuje sobie nawet do mózgu.” / „Możesz wyciągnąć broń szybciej niż Snake, ale szybciej nie strzelisz.” |
 | `m075.27` | 男を辞めるなら良い医者 | „Jakbyś chciał przestać być facetem, znam dobrego lekarza☆” |
@@ -448,10 +456,13 @@ samej wielkości w tym samym miejscu. Wpisy bez dopisku są zatwierdzone (2026-1
 ## 12. Próbka kalibracyjna
 
 Do przetłumaczenia na próbę, po decyzjach z §0: prolog (`bi.prologue.0`–`3`), rozdział 1
-(`m001`–`m008`: Kenzo, Sasame, narracja, mowa w akapicie i z tagiem) i pierwsze spotkanie z
+(`m001`–`m008`: Kenzō, Sasame, narracja, mowa w akapicie i z tagiem) i pierwsze spotkanie z
 Yuki i Shinobu (`m013`–`m017`). Cel: sprawdzić w grze nawiasy (D4), wcięcia (D5), zdrobnienia
 (D3), ton Murakumo w obu rejestrach i długości. Po uwagach redaktora próbka staje się
 wzorcem.
+
+**Rozdział 2 (2026-11-17):** szkic (`menu41`–`43`, `m204`, `m205`, `m009`–`m026`, menu 3–5),
+czeka na lekturę redaktora. Co z niego wynikło, jest w §9 (echa), §10 (`m018.23`) i §14.
 
 **Stan (2026-11-17):** przetłumaczona (179 kluczy: tagi i nawiasy z §7, prolog, `m001`–`m008` z
 menu 1 i 2, `m013`–`m017`) i obejrzana w grze. Co z niej wynikło:
@@ -529,10 +540,12 @@ Zatwierdzony razem z §0 (2026-11-17); wpisy „do ustalenia” i „otwarte” 
 | 脳移植 | przeszczep mózgu | |
 | マインド・コントロール / バイオＡＩチップ | kontrola umysłu / bioczip SI | |
 | ウロボロス計画 / 新世紀宇宙開発計画 | projekt Uroboros / Program Kosmiczny Nowego Stulecia | |
-| プリズンプロジェクト | projekt „Więzienie” | |
+| プリズンプロジェクト, プリズンプラン | projekt „Więzienie” | to samo pod dwiema nazwami (`m022.0`) |
+| 〜の線 (で洗う / 検討する) | trop | マフィアの線 = „trop mafijny” (`m010.17`, `m022.24`), コンバット・ドールの線 = „trop lalki bojowej” (`m070.3`). Wyjątek: 売春婦の線で洗わせれば (`m010.25`) = „poszuka wśród prostytutek”, bo „trop prostytutek” to ślad, który zostawiły |
+| ガイシャ | denatka | policyjny żargon Kenzō (`m012.10`) |
 | 浦和国際ホテル / 浦和国際会議 | Międzynarodowy Hotel Urawa / konferencja w Urawie | |
 | ＮＡＳＡ | NASA | |
-| ＵＩＡ・氷翼 | UIA – Lodowe Skrzydło | alternatywa „Hyoyoku” |
+| ＵＩＡ・氷翼 | UIA – Lodowe Skrzydło | alternatywa „Hyōyoku” |
 | 国際派遣軍 機甲陸兵団 特殊陸戦部隊 少将 | Międzynarodowe Siły Ekspedycyjne, Korpus Pancerny Wojsk Lądowych, Specjalna Jednostka Lądowa, generał dywizji | `m062.0` |
 | 新宿都庁ビル爆破未遂事件 / 宇宙開発局襲撃事件 | próba wysadzenia ratusza w Shinjuku / atak na Agencję Rozwoju Kosmosu | |
 | １３号地スラム街 | slumsy Trzynastki (na sztucznym lądzie nr 13) | |
@@ -564,13 +577,13 @@ Zatwierdzony razem z §0 (2026-11-17); wpisy „do ustalenia” i „otwarte” 
 | チェリーのような舌 | język jak wisienka | `m035.6`, `m061.27`, `m126.17`, a celowo także w laboratorium i zakończeniach (`m157.26`, `m157.43`, `m184.40`, `m188.128`, `m196.9`): ten sam obraz |
 | 能面顔 | twarz jak maska (nō) | D7; „nō” tylko przy pierwszym użyciu (`m001.47`) |
 | しなを作る | wdzięczyć się | `m001.32` („zacząłem się przed nim „wdzięczyć””); wraca w `menu11.2` |
-| チャラチャラした所 | mizdrzenie się | `m001.35`, Kenzo o Murakumo |
+| チャラチャラした所 | mizdrzenie się | `m001.35`, Kenzō o Murakumo |
 | アイデンティティ | imidż | `m001.41` (§6.6: zapożyczenie z epoki; decyzja redaktora) |
 | ナイスボディー | sexy ciało | `m005.58` (§6.6: zapożyczenie z epoki) |
 | ドラッグ・バー | narkobar | `m008.53` |
 | 打撲 / 撲殺 / 殴り殺す | stłuczenie / zatłuc na śmierć / pobić na śmierć | `m005.64`–`m005.71`, `m006.29`; bez słowa „pięść” poza `m006.26` i `m007.7` (wskazówka, biblia §2.2) |
 | お姉様 (Shinobu) | jaśnie pani | `m016.0` |
-| 顔面岩 (Kenzo) | „kamienna gęba” | `m037.3`, `m039.0` |
+| 顔面岩 (Kenzō) | „kamienna gęba” | `m037.3`, `m039.0` |
 | 薮医者 / ヤブ医者 | konował | |
 | ヘボ公安 | partacz z Toanu | `m052.48` |
 | 耳年増 | stara plotkara | §10 |
