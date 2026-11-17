@@ -96,6 +96,12 @@ void vg_vram_kanji_wipe(int x, int row, unsigned lead, unsigned trail, void (*st
  * 16 x 32) in colour 15 at byte column x, line 16 * row + 1 */
 void vg_vram_kanji_2x(int x, int row, unsigned lead, unsigned trail);
 void vg_vram_ank_2x(int x, int row, unsigned ch, int mode);
+/* the same for a translation's glyph given as its rows (8 bits wide for w 1, 16 for w 2, the
+ * msb leftmost, not emboldened): vram_kanji/vram_ank's cell, the prologue's wipe (8 steps
+ * for a half-width glyph, which the original never wipes), the staff roll's double size */
+void vg_vram_cell(int x, int y, const uint16_t g[16], int w, int mode);
+void vg_vram_cell_wipe(int x, int row, const uint16_t g[16], int w, void (*step)(void));
+void vg_vram_cell_2x(int x, int row, const uint16_t g[16], int w);
 /* vram_15_to_8 (05C3:0588): every pixel of colour 15 becomes colour 8 */
 void vg_vram_15_to_8(void);
 /* vram_outline (05C3:05E2): around the colour-15 pixels of `words` words a line from (byte x,

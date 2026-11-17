@@ -10,6 +10,12 @@
 #include <string.h>
 #include "vg.h"
 
+/* song i's title on its row (a translation at the original's column) */
+static void title(int i, int attr)
+{
+    vg_bi_text(20, i + 3, vg.bi.song[i].title, vg_lang_get("bi.music.%d", i), attr, 0);
+}
+
 /* mus_select (0504:089D): redraws what changed */
 static void mus_select(int sel)
 {
@@ -19,13 +25,13 @@ static void mus_select(int sel)
         return;
     vg_mouse_hide();
     if (b->mus_shown == -1) {
-        vg_bi_line(21, 0, b->str[VG_BI_MUSIC_HEADING], 0xE1);
+        vg_bi_text(21, 0, b->str[VG_BI_MUSIC_HEADING], vg_lang_get("bi.music.heading"), 0xE1, 1);
         for (i = 0; i < b->mus_count; i++)
-            vg_bi_line(20, i + 3, b->song[i].title, i == sel ? 0xE5 : 0xE1);
-        vg_bi_line(3, 24, b->str[VG_BI_MUSIC_HELP], 0xE1);
+            title(i, i == sel ? 0xE5 : 0xE1);
+        vg_bi_text(3, 24, b->str[VG_BI_MUSIC_HELP], vg_lang_get("bi.music.help"), 0xE1, 0);
     } else {
-        vg_bi_line(20, b->mus_shown + 3, b->song[b->mus_shown].title, 0xE1);
-        vg_bi_line(20, sel + 3, b->song[sel].title, 0xE5);
+        title(b->mus_shown, 0xE1);
+        title(sel, 0xE5);
     }
     b->mus_shown = sel;
     vg_mouse_show();

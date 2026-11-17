@@ -21,6 +21,14 @@
 #define VG_BI_STAFF_MAX     128         /* lines of the staff roll (44) */
 #define VG_BI_SONGS_MAX     64          /* songs of the music mode (18) */
 #define VG_BI_RECTS         6
+/* the areas a translation is laid out in (docs/translation.md): the prologue's page, the
+ * staff roll's page (double-size columns), a page of the notice */
+#define VG_BI_PROLOGUE_W    72
+#define VG_BI_PROLOGUE_H    8
+#define VG_BI_STAFF_W       32
+#define VG_BI_STAFF_H       4
+#define VG_BI_ANNOUNCE_W    80
+#define VG_BI_ANNOUNCE_H    23
 
 /* a string of the pack's tables: NULL ends a table, as the original's NULL pointer */
 struct vg_bi_row { int row; const uint8_t *s; };
@@ -78,6 +86,12 @@ void vg_builtin(int n);
 /* text80_line (0504:007C): str on the 80-column grid at column col, text row row; attribute
  * E1h white on black, any other inverse */
 void vg_bi_line(int col, int row, const uint8_t *s, int attr);
+/* the same for a translation (UTF-8, the language's glyphs; n bytes, 0 = up to the NUL): a
+ * space takes a column; cut at column 80. Returns the column after it. */
+int  vg_bi_line_utf8(int col, int row, const uint8_t *s, uint32_t n, int attr);
+/* text80_line of the original orig, or of its translation tl (NULL: none) at the original's
+ * column, or centred on the original's centre (centre 1) */
+void vg_bi_text(int col, int row, const uint8_t *orig, const uint8_t *tl, int attr, int centre);
 /* input_check (0504:039C): one reading; on a key, the left button or a joystick button, its
  * release step and 1. With wait 1 it polls until there is one (a frame each turn). */
 int  vg_bi_input_check(int wait);

@@ -5,6 +5,7 @@
 #include <string.h>
 #include "vg.h"
 #include "lrvne/sjis.h"
+#include "lrvne/utf8.h"
 
 /* ---- the data ----------------------------------------------------------------------------- */
 
@@ -172,6 +173,48 @@ void vg_bi_line(int col, int row, const uint8_t *s, int attr)
         if (i + 1 >= 80)
             break;
     }
+}
+
+int vg_bi_line_utf8(int col, int row, const uint8_t *s, uint32_t n, int attr)
+{
+    int mode = attr == 0xE1 ? 1 : 0;
+    uint32_t i = 0;
+    while (s[i] && (!n || i < n) && col < 80) {
+        uint16_t g[16];
+        uint32_t cp;
+        int w;
+        i += (uint32_t)lrv_utf8_decode(s + i, &cp);
+        if (cp < 0x20)
+            continue;
+        if (cp == 0x20) {               /* a space takes its column, nothing is drawn */
+            col++;
+            continue;
+        }
+        w = vg_lang_glyph(cp, g);
+        if (col + w > 80)
+            break;
+        vg_vram_cell(col, 16 * row, g, w, mode);
+        col += w;
+    }
+    return col;
+}
+
+void vg_bi_text(int col, int row, const uint8_t *orig, const uint8_t *tl, int attr, int centre)
+{
+    if (!tl) {
+        vg_bi_line(col, row, orig, attr);
+        return;
+    }
+    if (centre) {
+        int cols = vg_lang_width(tl, 0);
+        col = (2 * col + (int)strlen((const char *)orig) - cols) / 2;
+        if (col > 80 - cols)
+            col = 80 - cols;
+        if (col < 0)
+            col = 0;
+    }
+    vg_text_tl(VG_TL_LINE, 0, row, col, tl, (uint32_t)strlen((const char *)tl));
+    vg_bi_line_utf8(col, row, tl, 0, attr);
 }
 
 int vg_bi_input_check(int wait)

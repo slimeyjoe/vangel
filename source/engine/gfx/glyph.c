@@ -206,6 +206,72 @@ void vg_vram_ank_2x(int x, int row, unsigned ch, int mode)
     mark(off, 2, 32);
 }
 
+/* ---- a translation's glyphs (docs/translation.md): the same routines for a glyph given as its
+ * rows, 8 bits (w 1) or 16 (w 2) wide, the msb leftmost, not emboldened ------------------ */
+
+void vg_vram_cell(int x, int y, const uint16_t g[16], int w, int mode)
+{
+    struct lrv_surface *pg = page();
+    uint16_t b[16];
+    unsigned off = (unsigned)(y * VG_PLANE_STRIDE + x);
+    int r, q, k;
+    for (r = 0; r < 16; r++) {
+        b[r] = w == 2 ? lrv_glyph_bold16_plain(g[r]) : lrv_glyph_bold8_plain((uint8_t)g[r]);
+        if (mode == 0)
+            b[r] = (uint16_t)(w == 2 ? ~b[r] : (uint8_t)~b[r]);
+    }
+    for (q = 0; q < 4; q++)
+        for (r = 0; r < 16; r++)
+            for (k = 0; k < w; k++) {
+                uint8_t *p = at(pg, q, off + (unsigned)(r * VG_PLANE_STRIDE + k));
+                uint8_t v = (uint8_t)(w == 2 ? (k ? b[r] : b[r] >> 8) : b[r]);
+                if (p)
+                    *p = mode == 2 ? (uint8_t)(*p | v) : v;
+            }
+    mark(off, w, 16);
+}
+
+void vg_vram_cell_wipe(int x, int row, const uint16_t g[16], int w, void (*step)(void))
+{
+    struct lrv_surface *pg;
+    uint16_t b[16], mask = 0x8000;
+    unsigned off = (unsigned)(row * 16 * VG_PLANE_STRIDE + x);
+    int k, r, q, steps = 8 * w;
+    for (r = 0; r < 16; r++)            /* left-aligned in 16 bits */
+        b[r] = (uint16_t)(w == 2 ? lrv_glyph_bold16_plain(g[r]) :
+                          lrv_glyph_bold8_plain((uint8_t)g[r]) << 8);
+    for (k = 0; k < steps; k++) {
+        pg = page();
+        for (q = 1; q <= 2; q++)        /* planes R and G only, written opaque */
+            for (r = 0; r < 16; r++) {
+                unsigned o = off + (unsigned)(r * VG_PLANE_STRIDE);
+                uint16_t v = b[r] & mask;
+                put(pg, q, o, (uint8_t)(v >> 8));
+                if (w == 2)
+                    put(pg, q, o + 1, (uint8_t)v);
+            }
+        mark(off, w, 16);
+        step();
+        mask = (uint16_t)(mask >> 1 | 0x8000);
+    }
+}
+
+void vg_vram_cell_2x(int x, int row, const uint16_t g[16], int w)
+{
+    struct lrv_surface *pg = page();
+    unsigned off = (unsigned)(row * 16 * VG_PLANE_STRIDE + x + VG_PLANE_STRIDE);
+    int r, k, i;
+    for (r = 0; r < 16; r++) {          /* not emboldened, as the roll's own glyphs */
+        uint32_t d = doubled(g[r], 8 * w);
+        for (k = 0; k < 2; k++) {
+            unsigned o = off + (unsigned)((2 * r + k) * VG_PLANE_STRIDE);
+            for (i = 0; i < 2 * w; i++)
+                rmw(pg, o + (unsigned)i, (uint8_t)(d >> (8 * (2 * w - 1 - i))), 1);
+        }
+    }
+    mark(off, 2 * w, 32);
+}
+
 void vg_vram_15_to_8(void)
 {
     struct lrv_surface *pg = page();

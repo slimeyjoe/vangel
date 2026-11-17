@@ -19,9 +19,12 @@ static int menu_draw(const struct vg_menu *m, struct menu_state *st)
 {
     int i;
     vg_win_clear();
-    for (i = 0; i < m->n; i++)
-        if (!vg_menu_choice(m->item[i], &st->r[i], i))
+    for (i = 0; i < m->n; i++) {
+        const uint8_t *t = m->number ? vg_lang_get("menu%02d.%d", m->number, i + 1) : NULL;
+        if (!(t ? vg_menu_choice_tl(m->item[i], t, &st->r[i], i) :
+              vg_menu_choice(m->item[i], &st->r[i], i)))
             return 0;
+    }
     st->n = m->n;
     st->sel = 0;
     vg_win_show();

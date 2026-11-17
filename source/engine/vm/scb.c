@@ -216,6 +216,7 @@ static int load_menus(struct rd *r)
             return 0;
         getw_(r);                       /* the strings' size: only allocates */
         s->menu[i].n = n;
+        s->menu[i].number = i;
         for (k = 0; k < n; k++) {
             int c, len = 0;
             /* the offset now, a pointer once the pool stops moving */

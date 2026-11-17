@@ -11,6 +11,7 @@
 #include <string.h>
 #include "vg.h"
 #include "lrvne/sjis.h"
+#include "lrvne/utf8.h"
 
 /* the work buffer: row r, column c */
 #define CELL(r, c)  ((r) * 0x550 + (c) + 0x88)
@@ -33,6 +34,12 @@ void vg_text_free_fonts(void)
     lrv_font_free(&vg.text.font16);
     lrv_font_free(&vg.text.font8);
     lrv_font_free(&vg.text.ank8);
+}
+
+void vg_text_tl(int where, int page, int row, int col, const uint8_t *s, uint32_t n)
+{
+    if (vg.text.on_text)
+        vg.text.on_text(vg.text.on_event_ctx, where, page, row, col, s, n);
 }
 
 void vg_text_event(int event, int arg)
@@ -120,6 +127,8 @@ int vg_win_line(const uint8_t *s, int row, int col)
     /* (INT 18h AX=1B01h: the KCG's access mode; nothing to do) */
     if (row > 3 || row < 0 || col > 0x43)
         return 0;
+    if (vg.text.on_line)
+        vg.text.on_line(vg.text.on_event_ctx, row, col, s, (uint32_t)strlen((const char *)s), 0);
     vg_mouse_hide();
     while (*s) {
         if (lrv_sjis_is_lead(*s)) {
@@ -133,6 +142,33 @@ int vg_win_line(const uint8_t *s, int row, int col)
         }
         if (col > 0x43)
             break;
+    }
+    vg_mouse_show();
+    return 1;
+}
+
+int vg_win_utf8(const uint8_t *s, uint32_t n, int row, int col)
+{
+    uint32_t i = 0;
+    if (row > 3 || row < 0 || col > 0x43)
+        return 0;
+    if (vg.text.on_line)
+        vg.text.on_line(vg.text.on_event_ctx, row, col, s, n, 1);
+    vg_mouse_hide();
+    while (i < n && s[i] && col <= 0x43) {
+        uint16_t g[16], b[16];
+        uint32_t cp;
+        int w, r;
+        i += (uint32_t)lrv_utf8_decode(s + i, &cp);
+        if (cp < 0x20)
+            continue;
+        w = vg_lang_glyph(cp, g);
+        if (col + w > VG_WIN_COLS)
+            break;
+        for (r = 0; r < 16; r++)
+            b[r] = w == 1 ? lrv_glyph_bold8_plain((uint8_t)g[r]) : lrv_glyph_bold16_plain(g[r]);
+        win_glyph((unsigned)CELL(row, col), b, w);
+        col += w;
     }
     vg_mouse_show();
     return 1;
@@ -196,9 +232,55 @@ void vg_rect_invert(const struct vg_menu_rect *rc)
     vg_text_event(VG_TEV_INVERT, rc->y0);
 }
 
+/* the original's leading spaces and width, in columns (Shift-JIS) */
+static void sjis_cols(const uint8_t *s, int *lead, int *width)
+{
+    int c = 0, l = 0, w = 0, inside = 0;
+    while (*s) {
+        int k = lrv_sjis_is_lead(s[0]) && s[1] ? 2 : 1;
+        int sp = (k == 2 && s[0] == 0x81 && s[1] == 0x40) || (k == 1 && s[0] == 0x20);
+        if (!inside && sp) {
+            l += k;
+        } else {
+            inside = 1;
+            c += k;
+            if (!sp)
+                w = c;
+        }
+        s += k;
+    }
+    *lead = l;
+    *width = w;
+}
+
+int vg_menu_col(const uint8_t *orig, int cols)
+{
+    int lead, w, col;
+    sjis_cols(orig, &lead, &w);
+    if (!lead)
+        return 0;
+    col = (2 * lead + w - cols) / 2;
+    if (col > VG_WIN_COLS - cols)
+        col = VG_WIN_COLS - cols;
+    return col < 0 ? 0 : col;
+}
+
 int vg_menu_choice(const uint8_t *s, struct vg_menu_rect *r, int i)
 {
     if (vg_win_line(s, i, 0) != 1)
+        return 0;
+    r->x0 = 0x30;
+    r->x1 = 0x24F;
+    r->y0 = 20 * i + 0x133;
+    r->y1 = r->y0 + 0x13;
+    return 1;
+}
+
+int vg_menu_choice_tl(const uint8_t *orig, const uint8_t *t, struct vg_menu_rect *r, int i)
+{
+    int cols;
+    uint32_t n = vg_lay_fit(t, VG_WIN_COLS, &cols);
+    if (vg_win_utf8(t, n, i, vg_menu_col(orig, cols)) != 1)
         return 0;
     r->x0 = 0x30;
     r->x1 = 0x24F;

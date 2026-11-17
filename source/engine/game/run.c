@@ -257,10 +257,14 @@ static int run_game(void)
 
 /* ---- the engine --------------------------------------------------------------------------- */
 
+/* the storage record of the language last asked for with --lang */
+#define LANG_KEY "lang"
+static char s_lang[LRV_PACK_TAG_LEN + 1];
+
 int vg_open_pack(const struct lrv_hal *hal, const struct lrv_run_cfg *cfg)
 {
     const char *lang;
-    int rc;
+    int rc, stored;
 
     vg.hal = hal;
     vg.cfg = *cfg;
@@ -272,7 +276,24 @@ int vg_open_pack(const struct lrv_hal *hal, const struct lrv_run_cfg *cfg)
         lrv_pack_close(&vg.pak);
         return LRV_ERR_FORMAT;
     }
-    lang = cfg->lang ? cfg->lang : vg.profile.base.lang;
+    /* --lang (remembered for the next start), else the language chosen last time, else the
+     * game's own, the original text's */
+    lang = cfg->lang;
+    stored = hal->storage_open && hal->storage_read && hal->storage_write &&
+             hal->storage_open(vg.profile.base.id) == 0;
+    if (lang) {
+        if (!stored || hal->storage_write(LANG_KEY, lang, strlen(lang)) != LRV_OK)
+            lrv_log(hal, LRV_LOG_WARN, "lang: cannot remember the language");
+    } else {
+        size_t n = 0;
+        if (stored && hal->storage_read(LANG_KEY, s_lang, sizeof s_lang - 1, &n) == LRV_OK &&
+            n > 0) {
+            s_lang[n] = 0;
+            lang = s_lang;
+        } else {
+            lang = vg.profile.base.lang;
+        }
+    }
     lrv_pack_set_lang(&vg.pak, lrv_pack_lang_id(&vg.pak, lang));
     if (!vg.pak.lang && !lrv_name_eq(lang, vg.profile.base.lang))
         lrv_log(hal, LRV_LOG_WARN, "the pack has no language \"%s\": the original text is "
@@ -312,6 +333,11 @@ void vg_machine_open(const struct lrv_hal *hal, const struct lrv_run_cfg *cfg)
         lrv_fatal(hal, "%s is not a picture library", vg.profile.library);
     vg_gfx_load_builtin();
     vg_text_load_fonts();
+    vg_lang_init();
+    if (vg.pak.lang && !vg_lang_active() &&
+        !lrv_name_eq(lrv_pack_lang_tag(&vg.pak, vg.pak.lang), vg.profile.base.lang))
+        lrv_log(hal, LRV_LOG_WARN, "the pack has no translation for language \"%s\": the "
+                "original text is shown", lrv_pack_lang_tag(&vg.pak, vg.pak.lang));
     vg_bi_load();
     vg_timer_install();
     /* the input devices are opened by the game (run_game), after the console's question */
@@ -322,6 +348,8 @@ void vg_machine_close(void)
     vg_input_term();
     vg_txb_free();
     vg_bi_free();
+    vg_msg_free();
+    vg_lang_free();
     vg_text_free_fonts();
     vg_timer_remove();
     vg_snd_close();

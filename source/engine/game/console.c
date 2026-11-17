@@ -9,8 +9,11 @@
  * The console is the PC-98's text screen, which the game's graphics turn off (gfx_mode,
  * graphics.md §8). Here it is drawn into graphics page 0 as 80x25 cells of 8x16 in white with
  * the kanji-ROM stand-in (the pack's font16 / font8), and the graphics start clears it. The
- * profile's mouse=on|off answers the question without showing it (lrvne-fit.md). */
+ * profile's mouse=on|off answers the question without showing it (lrvne-fit.md). A
+ * translation (con.*) is printed in its place, between the original's line controls. */
+#include <string.h>
 #include "lrvne/sjis.h"
+#include "lrvne/utf8.h"
 #include "vg.h"
 
 /* DS:01E4, DS:0203, DS:021A, DS:0233 (Shift-JIS) */
@@ -71,6 +74,55 @@ static void con_print(const char *s)
     }
 }
 
+/* a translation (UTF-8, the language's glyphs, as the console's: not emboldened) */
+static void con_utf8(const uint8_t *s)
+{
+    uint32_t i = 0;
+    while (s[i]) {
+        uint16_t g[16];
+        uint8_t b[32];
+        uint32_t cp;
+        int w, r;
+        i += (uint32_t)lrv_utf8_decode(s + i, &cp);
+        if (cp == '\n') {
+            con_print("\n\r");
+            continue;
+        }
+        if (cp < 0x20)
+            continue;
+        w = vg_lang_glyph(cp, g);
+        if (con_x + w > 80) {
+            con_x = 0;
+            if (++con_y > 24)
+                con_y = 24;
+        }
+        for (r = 0; r < 16; r++) {
+            if (w == 2) {
+                b[2 * r] = (uint8_t)(g[r] >> 8);
+                b[2 * r + 1] = (uint8_t)g[r];
+            } else {
+                b[r] = (uint8_t)g[r];
+            }
+        }
+        con_glyph(b, w);
+        con_x += w;
+    }
+}
+
+/* a string of the console, or its translation between the original's line controls */
+static void con_say(const char *orig, const char *key, const char *pre, const char *post)
+{
+    const uint8_t *t = vg_lang_get("%s", key);
+    if (!t) {
+        con_print(orig);
+        return;
+    }
+    con_print(pre);
+    vg_text_tl(VG_TL_CONSOLE, 0, con_y, con_x, t, (uint32_t)strlen((const char *)t));
+    con_utf8(t);
+    con_print(post);
+}
+
 int vg_console_ask(int shown)
 {
     int yes = -1;
@@ -82,7 +134,7 @@ int vg_console_ask(int shown)
     con_x = con_y = 0;
     if (shown) {
         lrv_screen_set_colour(&vg.screen, 15, 15, 15, 15);
-        con_print(s_ask);
+        con_say(s_ask, "con.ask", "\n\r", "  ");
     }
     lrv_sys_key_flush(&vg.sys);
     lrv_sys_trace(&vg.sys, LRV_TR_WAIT, 0, 0, VG_WAIT_KEY, 0, 0, 0);
@@ -102,8 +154,11 @@ int vg_console_ask(int shown)
     }
     lrv_sys_trace(&vg.sys, LRV_TR_WAIT, 0, 0, VG_WAIT_KEY, 1, VG_LEAVE_KEY, 0);
     if (shown) {
-        con_print(yes ? s_yes : s_no);
-        con_print(s_loading);
+        if (yes)
+            con_say(s_yes, "con.yes", "\n\r", "\n\r");
+        else
+            con_say(s_no, "con.no", "\n\r", "\n\r");
+        con_say(s_loading, "con.loading", "", "");
         lrv_sys_present_now(&vg.sys);
     }
     return yes;
