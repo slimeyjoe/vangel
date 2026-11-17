@@ -24,7 +24,8 @@ first; our own Polish and English translations follow.
   (scenario); sound and X68000 tools; `*_verify.py` compare the decoders with the original
   code under emulation.
 - `source/` — the engine: `engine/` (C, on lrvne; `snd/mus.c` the music layer over lrvne's
-  PMD module), `tools/` (stdlib Python: import, pack,
+  PMD module; `bi/` the built-in sequences, `gfx/glyph.c` their VRAM routines of segment
+  05C3), `tools/` (stdlib Python: import, pack,
   `saves.py` (GAME.DAT in and out), and the decoders `scb.py`, `txb.py`, `gf.py` the research tools also use), `tests/` (`run.sh`,
   `test_*.c`, `check_*.py`), `lrvne/` (the submodule). `make data SRC=...`, `make pack`,
   `make test` (`EMU_PYTHON` for the checks against the original under emulation).
@@ -51,6 +52,9 @@ first; our own Polish and English translations follow.
   calls the driver only through `vg.mus.int60`, which the test replaces): every call, file
   tried and variable. `check_pmd`: the real PMD.COM on every song (`re-tools/pmd_capture.py`)
   replayed by lrvne's `tests/test_pmd.c`, built here as `lrv_test_pmd`.
+  `check_builtin` (M5): statement 25h's sequences (segment 0504) on textrig with their wait
+  loops as frame points and the music layer stood in for, against `test_bi`: page 0 and the DAC
+  at every VSYNC, the pointer, the music calls, the result, pages 0/1 and buffer 12 at the end.
 
 ## Rules
 

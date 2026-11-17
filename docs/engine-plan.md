@@ -1,6 +1,6 @@
 # vangel — engine plan
 
-**Status (2026-11-17):** M0 to M4 done. M0: import, pack, the engine skeleton with a picture
+**Status (2026-11-17):** M0 to M5 done. M0: import, pack, the engine skeleton with a picture
 viewer (`--view`), the decoder bit-exact against the original (54 pictures × 4 cases). M1: the
 three buffers, ops 31h/33h/18h and the window's background, op 32h with every transition, the
 palettes and fades, on the VSYNC timer. Against the original under emulation: every write of
@@ -18,7 +18,10 @@ and the 80286 clocks of 10 000 (`check_vmstep`). M4: the music layer and the PMD
 lrvne's PMD module, with blocking fades and the measure counter of statement 35h; against the
 original under emulation, every driver call of 348 calls into the layer on five driver set-ups
 (`check_snd`), and every register write of the 21 songs on the real PMD.COM for 30 000
-interrupts each (`check_pmd`). M5 (the built-in sequences, first playable) is next.
+interrupts each (`check_pmd`). M5: the built-in sequences (the prologue, the staff rolls, the
+notice, the music mode); against the original under emulation, 28 runs, 55 239 frames, page 0
+and the DAC at every VSYNC (`check_builtin`): the whole game plays, with music. First
+playable; M6 (end to end) is next.
 
 vangel reimplements `M.EXE`, the engine of Crystal Soft's *Virgin Angel* (PC-98, 1995), on
 [lrvne](https://github.com/slimeyjoe/lrvne). It reproduces the PC-98 release faithfully in
@@ -71,7 +74,7 @@ source/
 | 1 | `tools/lrvne/exepack.py`: EXEPACK unpacker | M0 |
 | 2 | `xfont.py` raw glyph-array input (`add_raw`, `--raw FILE@OFF:CODES`) | M0 |
 | 3 | palette `lrv_pal_shift` (add and clamp), `lrv_pal_step_down` (decrement only) | M1 (**done**, lrvne 47f114f) |
-| 4 | glyphs: plain `g\|g<<1` bold (8 and 16 bits) and a transparent cell (M2, **done**, lrvne 79631d2: `lrv_glyph_bold8_plain` / `16_plain`, `lrv_glyph_blit` with `LRV_GLYPH_CLEAR`); double size and the planar 4-neighbour outline come with the staff roll | M2, M5 |
+| 4 | glyphs: plain `g\|g<<1` bold (8 and 16 bits) and a transparent cell (M2, **done**, lrvne 79631d2: `lrv_glyph_bold8_plain` / `16_plain`, `lrv_glyph_blit` with `LRV_GLYPH_CLEAR`); the staff roll's double size and outline stayed in the engine (M5, `gfx/glyph.c`: the original's GRCG routines with their quirks, not a general facility) | M2 |
 | 5 | reflow `lrv_reflow_layout_from(..., first_line)`, plus `tools/lrvne/reflow.py` as the Python reference | M7 |
 
 Engine-specific drawing stays in the engine: the black vertical edge, the prologue's reveal
@@ -237,6 +240,32 @@ mask, and the colour 15 → 8 step.
 - **Test:** `check_builtin.py`, the DAC and VRAM at every VSYNC against the original.
 
 Exit: the whole Japanese game plays on SDL3 with music. lrvne and vangel go public on GitHub.
+
+**Done (2026-11-17).** `engine/bi/` (bi.c opening.c ending.c announce.c musmode.c) and
+`engine/gfx/glyph.c` (segment 05C3: the glyphs into VRAM, the prologue's wipe, the double-size
+glyphs, colour 15 → 8, the outline, the GRCG fill); statement 25h calls them, INIT asks the
+console's question again unseen. The tables, strings, palettes and the roll's six rectangle
+copies come from `M.EXE` (`tools/mexe.py builtin`: `bi.prologue`, `bi.staff`, `bi.music`,
+`bi.strings`, `bi.rects`, `pal.prologue`, `pal.end1.*`, `pal.end2.*`). The music mode calls
+the layer through `vg.bi.mus` (a test replaces it). **Test:** `tests/test_bi.c` +
+`check_builtin.py`: the original's routines of segment 0504 on `textrig` (their wait loops,
+`dac_set`'s wait for the retrace, `fx31_wait` and the fades as frame points; the music layer's
+three entries stood in for), input decided while the original runs and replayed: OPENING with
+no input and with keys, buttons and ESC at 14 points, the mouse closed, no free timer; ENDING
+twice (its palette stays faded) and ENDING2; ANNOUNCE by keys, by buttons, with the mouse
+closed, without its file; the music mode by keys and by the mouse, with the mouse closed,
+without a driver and once more (remembered). Page 0 and the DAC at every VSYNC where either
+changed, the pointer, the music calls, and at the end the result, pages 0 and 1, buffer 12
+and the DAC: all 28 runs identical. **Found on the way** (verified, `platform.md` §5,
+`text.md` §5.4): a later `gfx_init` also clears both pages (the engine set only the palette:
+the music mode now starts and ends on black); the prologue's colour fade is 32 VSYNCs, the
+staff roll's palette fade 64 and its working palette stays faded; the roll's 360/120 count from
+the end of its effect-31 copies, and one more restore follows the last page; its double-size
+glyphs are not emboldened; the sequences unlock the pointer with `mouse_lock(0, 1)`.
+`textrig.run` now fails a run the emulation stops short of (it took that for the routine's
+end). **Not charged:** the drawing's 80286 clocks (as for M2's text): about 5 frames a page of
+the staff roll (four outlines) and about 5 once (colour 15 → 8) at 10 MHz; ANNOUNCE's 23-line
+page and long-line cut are not reached by the shipped file.
 
 ### M6 — end to end
 

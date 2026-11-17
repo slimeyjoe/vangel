@@ -404,12 +404,19 @@ take a column).
 ### 5.4 Staff roll (built-ins 2 and 5)
 
 List 0ABB:04B2 of 44 far string pointers (NULL-ended), 11 pages of 4 lines. Each line is drawn on
-graphics page 1 at **double size**: full-width `05C3:03A9` = ROM glyph, bold, every pixel doubled
-horizontally and every row doubled (32 × 32, 4 bytes wide); half-width `05C3:04DB` = 16 × 32;
+graphics page 1 at **double size**: full-width `05C3:03A9` = ROM glyph, **not** emboldened,
+every pixel doubled horizontally and every row doubled (32 × 32, 4 bytes wide); half-width
+`05C3:04DB` = the game's font, not emboldened, 16 × 32 (its mode 0 would invert only the first
+of each pair of rows; the roll uses mode 2);
 x byte = 2 × (byte index in the string), so a half-width character is 16 px and a full-width
 one 32 px wide; line k at pixel row 32·k + 1 of the page block (k = 0..3); colour 15 through the
-GRCG (RMW, all tiles FFh). `05C3:05E2(0, 1, 40h, 80h)` then adds a black outline (the text
-dilated by one pixel left, right, up and down, written in colour 0 where there is no text). The
+GRCG (RMW, all tiles FFh). `05C3:05E2(0, 1, 40h, 80h)`, after each line, adds a black
+outline: it reads the colour-15 pixels with the GRCG's compare (tiles FFh) word by word over
+lines 1..128 and 128 bytes from the line's start (so past the 80 of a line, into the next), and
+writes colour 0 (RMW, tiles 0) on the lines above and below a word's text, widened by a pixel
+each way, then on the pixels beside a word's first and last pixel on its line and the lines
+above and below, never over colour 15. A text pixel's left and right neighbours on its own
+line are reached through the doubled rows (each line's twin writes them). The
 block is copied to the screen by rectangle copies ([platform.md](platform.md) §5.3). Lines are
 left-aligned; the centring is done with leading ASCII spaces in the data.
 

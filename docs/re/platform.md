@@ -149,10 +149,15 @@ printed with `printf` while the text screen is off: they are seen once the progr
 ## 5. Built-in sequences (segment 0504)
 
 Called by statement 25h n, which clears the result flag (byte 0BA1:0000) first and copies it to
-v1 afterwards; a sequence sets the flag to 1 when the player skips it. Each one locks the mouse
-pointer hidden (`mouse_lock(1, 0)`) on entry and unlocks it (`mouse_lock(0, 0)`) on exit
-(OPENING, ENDING, ENDING2). "Input" below is the §3.4 rule, polled without waiting
-(`0504:039C`); its release step follows.
+v1 afterwards; a sequence sets the flag to 1 when the player skips it. OPENING, ENDING and
+ENDING2 lock the mouse pointer hidden (`mouse_lock(1, 0)`) on entry and unlock it
+(`mouse_lock(0, 1)`) on exit. "Input" below is the §3.4 rule, polled without waiting
+(`0504:039C`); its release step follows. Several of them reset the VSYNC counter DS:109E (the
+one effect 31 and the fades' callers also read) and wait on it directly.
+
+The engine's sequences (`source/engine/bi/`) are compared with these routines frame by frame
+by `source/tests/check_builtin.py`: page 0 and the DAC at every VSYNC, the pointer, the music
+calls, the result (**verified** below means by that check, time passing only at the waits).
 
 ### 5.1 INIT (0) — `0504:0004`
 
@@ -176,9 +181,15 @@ The prologue: four pages of centred text on a black screen; the scenario then sh
   `0504:02C8`, run after each step, waits for a VSYNC on every second step (a global step
   counter DS:04CA decides the parity), so a character takes about 8 frames; the callback also polls input and sets the skip flag. Half-width bytes are
   skipped (the texts have none).
-* After a page: a 3-second timer (`timer_start(300)`), ended early by input (→ skip). Then, if
-  another page follows, colour 6 is faded out (`0504:030E`): 16 frames, each decrementing that
-  entry's three components by 1 while above 0, set each frame with `0315:0144`.
+* After a page: a 3-second timer (`timer_start(300)`), ended early by input (→ skip; without a
+  free timer slot there is no wait). Then, if another page follows, colour 6 is faded out
+  (`0504:030E`): 16 steps, each decrementing that entry's three components by 1 while above 0
+  (the first step already), set with `0315:0144`, then the counter is reset and waited on until
+  it moves: two VSYNCs a step (the DAC load's and the counter's), 32 in all (**verified**).
+* The wipe's callback waits only while the counter equals its due value, which goes up every
+  second step; the counter is reset at each character. The skip flag is tested after a whole
+  character: an input during a wipe ends the sequence once that character is drawn
+  (**verified**).
 * Skip: input at any time sets the flag and returns at once (the screen is left as is).
 * On normal or skipped exit: `0315:04E2(0, 100)` (fade to black in 1 s, = op 1Ah) and
   `screen_clear` (`0315:0132`: both VRAM pages cleared by `vram_clear` `00DD:00E3`, the
@@ -190,11 +201,15 @@ The same staff roll with different palettes:
 
 1. Palette fade (`0504:0632`): a working palette (0ABB:0596 for ENDING, 0ABB:0626 for ENDING2)
    is moved towards a target (0ABB:05C6 / 0ABB:0656) in 16 steps; each step decrements every
-   component that differs from the target by 1, sets the working palette, then waits 3 VSYNCs
-   (48 frames in all). The fade only decrements.
+   component that differs from the target by 1, sets the working palette (a VSYNC: the DAC
+   load's), then waits 3 VSYNCs: 64 frames in all (**verified**). The fade only decrements (a
+   component below its target would wrap; none is). The working palette is the program's data:
+   a second staff roll in the same session starts from the target, and its fade changes nothing
+   but still takes its 64 frames (**verified**).
 2. every colour-15 pixel on the screen becomes colour 8 (`05C3:0588`: planes 0–2 cleared where
    all four planes are set), then the roll palette 0ABB:05F6 (ENDING) / 0686 (ENDING2).
-3. The roll (`0504:06FA`): the area 512×130 at (128, 256) of the screen is saved, and for each
+3. The roll (`0504:06FA`): the area 512×130 at (128, 256) of the screen is saved (to buffer 12
+   at (0, 130)), the counter reset, and for each
    page of 4 lines from the list 0ABB:04B2 (far string pointers, NULL = end; 11 pages:
    スタッフ, 企画・プロデュース 鈴木 憲一 (CRYSTAL SOFT), シナリオ 飯縄 誠, キャラクターデザイン
    中村 錦, プログラム PC-9801/FM-TOWNS 宮本 正城, 原画 中村 錦, ＣＧ ＰＲＯＰＥＲ, 作曲／編曲 柴田
@@ -204,23 +219,30 @@ The same staff roll with different palettes:
    `0504:0B52`; x = 2 × byte index, line y = 0, 2, 4, 6 — double size inferred from the
    advance; [text.md](text.md)), composed with `05C3:05E2`, and shown
    with the rectangle copies of statement 32h (`0315:07CB`, operand records in DGROUP 04CCh–
-   0526h): background → work buffer (effect 10), page → screen area with **effect 31**; it stays
-   until 360 frames (6.4 s) after the page started, is replaced by the saved background with
-   effect 31, then 120 frames (2.1 s) pass before the next page. The staff roll cannot be
-   skipped (no input is polled).
+   0526h): the screen's area → buffer 12 → page 1 (effect 10) under the lines, which are drawn
+   with A6h = 1 and outlined after each line; then page 1 → buffer 12 → the screen area with
+   **effect 31**. The counter is reset after that copy: the page stays 360 frames (6.4 s) after
+   its effect 31 ended; the saved background comes back with effect 31, and 120 frames (2.1 s)
+   after that copy ended the next page starts. After the last page the background is copied
+   back once more (effect 31 again, on an unchanged screen). The staff roll cannot be skipped
+   (no input is polled). Half-width bytes of 80h and over are skipped (a signed compare with
+   20h). All **verified**.
 4. `0315:04E2(0, 100)` (fade to black in 1 s), `screen_clear`.
 
 ### 5.4 ANNOUNCE (3) — `0504:0114`, statement 2007
 
 Shows the text file `announce.txt` (Crystal Soft's notice: anti-piracy, coming titles,
 support BBS): `0315:04E2(0, 1)` (fade to black in 0.01 s) and `screen_clear` (`0315:0132`) clear the screen; the file is read with
-`fgets` (≤ 83 bytes per line) and each line drawn on text row 0..22 with `0504:007C` (80 columns:
+`fgets` (≤ 82 bytes per line) and each line drawn on text row 0..22 with `0504:007C` (80 columns:
 kanji through `05C3:00CD`, half-width bytes with the embedded font; attribute E1h). A line
 starting with `#p` ends the page, as does the 23rd line; `#e` ends the file. At a page end
 the standard palette 0AA8:0030 faded in over 0.01 s (`pal_fade_in`, `0315:031E`), the prompt `マウスのボタンかキーを押して下さい` on row 23, a wait for
 input (`0504:0257`), a fade to black and `screen_clear`. A missing file shows
-`お知らせ用ファイルが見つかりません` and returns at once. Details of the 80-column text output:
-[text.md](text.md).
+`お知らせ用ファイルが見つかりません` and returns at once, after the fade to black: the message is
+drawn in a black palette and is not seen. The wait ends on a key, either mouse button or a
+joystick button (`0504:0257`; at once when no device is open). Details of the 80-column text
+output: [text.md](text.md). **Verified** for the shipped file (3 pages: `#p`, `#p`, `#e`; the
+23-line page end and the long-line cut are not reached by it).
 
 ### 5.5 MUSMODE (4) — `0504:088E`, statement 2001
 
@@ -238,8 +260,16 @@ The music mode. `0315:000E` (graphics re-initialisation) before and after.
   others; only the two changed rows are redrawn when the selection moves); help line
   `選択：カーソル上下   演奏：スペースキー又はリターンキー   終了：ＥＳＣキー` at column 3, row 24.
 * Keys: UP / DOWN move the selection (no wrap); RETURN or SPACE plays the selected song; ESC
-  (on release, §3.2) leaves; LEFT/RIGHT do nothing. Mouse: whenever the reading changes, the
-  row under the pointer becomes the selection (row k for 48 + 16k < y < 64 + 16k; elsewhere it
-  stays); the left button then plays it, the right button leaves.
+  (on release, §3.2) leaves; LEFT/RIGHT do nothing. Mouse: whenever the reading changes (the
+  right button alone does not change it, §3.3), the release step runs (it waits for the left
+  button), then the row under the pointer becomes the selection (row k for 48 + 16k < y <
+  64 + 16k; elsewhere it stays); the left button then plays it, the right button leaves
+  (without a release step). The loop has no wait of its own: a turn without a key polls again
+  (the engine ends such a turn with a frame).
 * Playing: if a song was started in this visit, `04E4:00F0(150)` first, then
-  `04E4:0034(file, 100)` ([sound.md](sound.md)). Leaving: `04E4:00F0(150)` if a song was played.
+  `04E4:0034(file, 100)` ([sound.md](sound.md)). Leaving: the keyboard's release step, then
+  `04E4:00F0(150)` if a song was played. The whole screen is drawn on the first turn (the row
+  shown, DS:0680, starts at −1). `gfx_init` before and after (a later call: the default
+  palette, then `gfx_mode`, which clears both VRAM pages) leaves the screen black: the list is
+  drawn on black, and the mode, even refused without a driver, ends on a black screen. **Verified** (the music layer stood
+  in for).
