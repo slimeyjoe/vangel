@@ -68,14 +68,14 @@ to v20 before `call 1670` (0 = music off).
 | 1 | 1 | 1–55 | 1–8 | 1, 2 | 3, 4 | va_main, va_bg04, va_ch01, va_ch04 | w v2 (helper 31: show the chief once) | night call to the crime scene; the hero Murakumo |
 | 2 | 56 | 56–197 | 9–26 | 3, 4, 5 | 5, 6, 7, 8 | va_04, va_va, va_bg01–03, va_ch01–04 | — | at the bureau (都安) HQ |
 | 3 | 198 | 198–278 | 27–36 | 6, 7 | 5, 6, 7 | va_bg02–03, va_ch01–03, va_ch02k | v3 local; **save point** | the information section, Yuki |
-| 4 | 279 | 279–349 | 37–43 | 8 | 6 | va_01–03, va_main, va_bg01–02 | **v12** = took the armoury key (menu 8 choice 1) | the key to the armoury |
+| 4 | 279 | 279–349 | 37–43 | 8 | 6 | va_01–03, va_main, va_bg01–02 | **v12** = kept the armoury key and looked inside (menu 8 choice 1; choice 2 leaves it on the chief's desk) | the key to the armoury |
 | 5 | 350 | 350–424 | 44–52 | 9 | 3, 5, 6, 7, 9 | va_bg01–03, 05, 06; va_ch01–03, 05, 06, 08 | **save point** | next morning; Kusanagi hospital |
 | 6 | 425 | 425–488 | 53–60 | 10, 11 | 3, 5, 7 | va_bg01–03, va_ch01–04 | **v13** = menu 11 choice 2; reads v12 | back at the bureau |
 | 7 | 489 | 489–550 | 61–71 | — | 9, 20 | va_bg02, 05, 06; va_ch01, 02, 05, 08 | reads v13; **save point** | the DNA number |
 | 8 | 551 | 551–592 | 72–79 | 12, 13 | 9, 10 | va_bg07, va_ch01, va_ch08 | — | a nurse's testimony; fight |
 | 9 | 593 | 593–701 | 80–96 | 14, 15, 16 | 6, 11 | va_05–07, va_main, va_bg08, va_mw02, va_ch01, 02, 02k | v4, v5–v7 local (menu 15 needs all three of v5–v7) | Yuki after the attack; first love scene; `music_fade 200` |
 | 10 | 702 | 702–751 | 97–101 | 17 | 5 | va_main, va_bg01–03, va_ch02–04 | **save point** | |
-| 11 | 752 | 752–793 | 102–110 | 18, 19 | — | va_bg01, va_ch01, 02, 04 | **v14** = armour (menu 19, only if v12: menu 18 choice 1 goes to the armoury) | preparing the raid |
+| 11 | 752 | 752–793 | 102–110 | 18, 19 | — | va_bg01, va_ch01, 02, 04 | **v14** = armour (menu 19, reached by menu 18 choice 1; choice 2 leaves v14 = 0). v12 only picks message 107 (the key in his pocket) or 108 (he takes it from the chief's drawer); both lead to menu 18 | preparing the raid |
 
 ## 5. The raid and the endings (794–1655, 1911–1968)
 
@@ -124,7 +124,7 @@ switch) cannot be reached in practice: v17 always holds a menu result 1–4.
 | v3, v4 | bool | chapter-local (3, 9) |
 | v5–v7 | int | chapter 9: which of three actions were done |
 | v8–v11 | int | the four investigation items (subs 861/1054) |
-| v12 | bool | has the armoury key (chapter 4); enables the armoury in chapter 11 |
+| v12 | bool | kept the armoury key (chapter 4); chapter 6 shows message 54 or 55, chapter 11 message 107 or 108. It does not gate the armoury: menu 18 is offered either way |
 | v13 | bool | chapter 6: menu 11 choice 2; read in chapter 7 |
 | v14 | int | armour chosen (0 none, 1 bulletproof, 2 combat, 3 anti-beam, 4 insulation) |
 | v15 | bool | Yuki investigates with the hero (menu 21 choice 2) |
