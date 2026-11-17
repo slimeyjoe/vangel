@@ -8,6 +8,7 @@
 #                                  into ../resources/original/
 #   make pack                      build the game pack ../build/<game>.pak from the imported game
 #   make TARGET=host test          build and run the conformance tests
+#   make e2e-routes                play the end-to-end check's plans on the engine again
 #   make clean                     remove ../build/
 #   make data-clean                remove everything made from the game outside ../build/
 #   make distclean                 clean + data-clean: only the committed files are left
@@ -76,6 +77,13 @@ $(LRV_TEST_PMD): $(BUILD)/$(LRVNE)/tests/test_pmd.o $(LRV_TEST_PMD_OBJS)
 
 test: $(TEST_EXES) $(LRV_TEST_PMD) $(EXE)
 	$(Q)GAME=$(GAME) tests/run.sh $(BUILD)
+
+# the routes of the end-to-end check (tests/check_vm.py): the plans of tests/e2e/explore.py
+# played on the engine again, into tests/e2e/routes (commit them; make test checks that the
+# engine still plays them so)
+.PHONY: e2e-routes
+e2e-routes: $(BUILD)/tests/test_game$(EXESUF)
+	$(Q)$(LRVNE_PY) tests/e2e/explore.py $(BUILD)/tests/test_game$(EXESUF) $(PAK)
 
 # the original's results of the emulation checks, kept between runs
 # (tests/refcache.py; REFCACHE=on|off|refresh|verify)

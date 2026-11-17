@@ -70,8 +70,23 @@ if [ -n "$HAVE_GAME" ] && [ -f "$PAK" ]; then
     else
         echo "teardown: exit $t (not 3) or no save"; cat "$BIN/teardown/log"; rc=1
     fi
+    # the same with the pretend audio device pulling the sound, as a real device's callback
+    echo "== vangel (the game, --audio pull) to --max-ticks"
+    rm -f "$BIN/teardown/game.dat"
+    t=0
+    "$BUILD/vangel" --pak "$PAK" --storage "$BIN/teardown" --audio pull \
+        --autoplay 'y:wait return:wait' --max-ticks 40000 >/dev/null \
+        2>"$BIN/teardown/log" || t=$?
+    if [ $t -eq 3 ] && [ -f "$BIN/teardown/game.dat" ]; then
+        echo "teardown: ended at the tick limit, a save written, nothing left"
+    else
+        echo "teardown: exit $t (not 3) or no save"; cat "$BIN/teardown/log"; rc=1
+    fi
+    # the routes of the end-to-end check: the engine still plays each plan as recorded
+    run $PY -I "$HERE/e2e/explore.py" --check "$BIN/test_game" "$PAK"
 else
     skip teardown "needs the game and $PAK (make pack)"
+    skip explore "needs the game and $PAK (make pack)"
 fi
 
 # ---- against the original code under emulation (re-tools/mcall.py) -------------------------
@@ -99,10 +114,11 @@ if [ -x "$EMU_PY" ] && "$EMU_PY" -c 'import unicorn' 2>/dev/null && [ -n "$HAVE_
     fi
     run "$EMU_PY" -I "$HERE/check_snd.py" "$BIN/test_snd" "$PAK"
     run "$EMU_PY" -I "$HERE/check_pmd.py" "$BIN/lrv_test_pmd" "$PAK"
+    run "$EMU_PY" -I "$HERE/check_vm.py" "$BIN/test_game" "$PAK"
 else
     for c in check_gf check_buf check_pal check_fx check_input check_text check_menu \
              check_builtin check_scb \
-             check_expr check_save check_vmstep check_snd check_pmd; do
+             check_expr check_save check_vmstep check_snd check_pmd check_vm; do
         skip $c "needs the game, $PAK and a Python with unicorn (EMU_PYTHON)"
     done
 fi

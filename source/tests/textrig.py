@@ -30,7 +30,6 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, '..', '..'))
 sys.path.insert(0, os.path.join(ROOT, 're-tools'))
 sys.path.insert(0, os.path.join(ROOT, 'source', 'tools'))
-import vgpak  # noqa: E402
 
 from unicorn import UC_HOOK_CODE  # noqa: E402
 from unicorn.x86_const import UC_X86_REG_AX, UC_X86_REG_BX, UC_X86_REG_CX, UC_X86_REG_DX, \
@@ -38,6 +37,7 @@ from unicorn.x86_const import UC_X86_REG_AX, UC_X86_REG_BX, UC_X86_REG_CX, UC_X8
     UC_X86_REG_CS, UC_X86_REG_IP, UC_X86_REG_DS, UC_X86_REG_ES, UC_X86_REG_EFLAGS  # noqa: E402
 from gf_verify import GM  # noqa: E402
 from mcall import SENTINEL, STUB  # noqa: E402
+from va98 import Fonts, read_xfnt  # noqa: E402,F401 - the kanji ROM, shared
 
 WIN_OFF, WIN_WB, WIN_H = 0x5FF6, 68, 80
 MAX_FRAMES = 100000                 # a run that waits longer is a script that never ends
@@ -58,43 +58,6 @@ EVENTS = {
     (0x02BE, 0x00A8): 'restore',        # win_restore_screen, after the copy
     (0x02BE, 0x029B): 'invert',         # rect_invert, after vram_invert
 }
-
-
-def read_xfnt(data):
-    cw, ch, count = data[5], data[6], struct.unpack_from('<H', data, 8)[0]
-    codes = struct.unpack_from('<%dH' % count, data, 12)
-    gb = ch * cw // 8
-    g = 12 + 2 * count
-    return {c: data[g + i * gb:g + (i + 1) * gb] for i, c in enumerate(codes)}
-
-
-class Fonts:
-    """the kanji ROM as lrvne's lrv_font_rom_glyph reads it from font16 / font8"""
-
-    def __init__(self, pak):
-        p = vgpak.read(pak)
-        self.raw = {}
-        for name in ('font16', 'font8'):
-            e = p.find(name)
-            if e is None:
-                sys.exit('textrig: the pack has no %s' % name)
-            self.raw[name] = e.data
-        self.font16 = read_xfnt(self.raw['font16'])
-        self.font8 = read_xfnt(self.raw['font8'])
-
-    def rom(self, jis):
-        row, cell = (jis >> 8) & 0xFF, jis & 0xFF
-        out = bytearray(32)
-        if row in (0x29, 0x2A, 0x2B):
-            g = None if row == 0x2B else self.font8.get(cell if row == 0x29 else
-                                                        (cell + 0x80) & 0xFF)
-            if g:
-                out[0:16] = g[:16]
-            return bytes(out)
-        g = self.font16.get(jis & 0xFFFF)
-        if g:
-            out[:] = g[:32]
-        return bytes(out)
 
 
 class Machine(GM):
