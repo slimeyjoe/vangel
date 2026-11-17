@@ -29,7 +29,9 @@ translation-ready (`docs/translation.md`). The keys, the translation files and t
 every place the original prints. With a pseudo-translation of every string (`check_lang`),
 the engine draws every message, menu and built-in as the reference layout does (lrvne's
 reflow in Python over the original's verified page loop), and every route meets its menus in
-the same game state as in Japanese. M8 (Polish) is next.
+the same game state as in Japanese. M8 (Polish): phase 0 is done (`text/docs/`): the story
+bible, the guides and the editor's decisions. The calibration sample is next
+(`text/docs/PASS_PL.md`).
 
 vangel reimplements `M.EXE`, the engine of Crystal Soft's *Virgin Angel* (PC-98, 1995), on
 [lrvne](https://github.com/slimeyjoe/lrvne). It reproduces the PC-98 release faithfully in
@@ -403,7 +405,9 @@ passages and names appear next to translated ones.
 ### M8 — Polish
 
 A guide (register, the ty/pan matrix, gender concealment, name declension, glossary), a story
-bible and calibration samples come first. Then a pass chapter by chapter, followed by a native
+bible and calibration samples come first. **Done (phase 0):** `text/docs/STORY_BIBLE.md`,
+`TRANSLATION_GUIDE.md`, `TRANSLATION_GUIDE_PL.md` (decisions D1–D23 approved by the editor),
+the hand-over `PASS_PL.md`. Then a pass chapter by chapter, followed by a native
 read-through in play order.
 
 ### M9 — English

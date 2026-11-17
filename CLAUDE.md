@@ -20,6 +20,12 @@ first; our own Polish and English translations follow.
   (`engine/text/lang.c`, `layout.c`) and the test. Tools: `source/tools/tl.py` (template,
   pseudo, check, layout, ...), `vgtext.py` (keys, files, table), `vglayout.py` (the reference
   layout), `vgfont.py` (latin8, wide16); `mkpack.py --text LANG=FILE`.
+- `text/` — the translations (M8 Polish, then M9 English). `text/docs/PASS_PL.md` is the
+  hand-over: start there. `STORY_BIBLE.md` (plot, routes, characters, echoes; spoilers),
+  `TRANSLATION_GUIDE.md` (limits, traps, fidelity rules), `TRANSLATION_GUIDE_PL.md` (the
+  editor's decisions D1–D23, address, voices, wordplay, glossary). `text/translation/
+  vangel_<lang>.tsv` is packed; `editor_pl.tsv` holds six rows only the editor translates, and
+  a model never writes or polishes them.
 - `docs/game-data.md` — releases, media, files; `resources/inventory.tsv` — every file + md5.
 - `re-tools/` — `human68k.py` (X68000 media); `exeunpack.py` (EXEPACK); `dis16.py`,
   `madis.py` (disassembly); `mcall.py` (unicorn harness: the original's C start-up to `main`,

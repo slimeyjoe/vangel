@@ -12,8 +12,10 @@ Our own translations of Virgin Angel, made from the Japanese: Polish first, then
   * [`docs/TRANSLATION_GUIDE.md`](docs/TRANSLATION_GUIDE.md): read before changing a line. How text
     gets into the game, the engine's limits, the traps of this script, the fidelity rules, and
     what must not be flattened.
+  * [`docs/PASS_PL.md`](docs/PASS_PL.md): where the Polish pass stands and how to carry on:
+    the order, the procedure for one chapter, what is settled, what not to touch.
   * [`docs/TRANSLATION_GUIDE_PL.md`](docs/TRANSLATION_GUIDE_PL.md): the rules for Polish (in
-    Polish). It holds the decisions awaiting the editor, forms of address, names, conventions,
+    Polish). It holds the editor's decisions, forms of address, names, conventions,
     voices, wordplay and a glossary.
 
 The Japanese to translate from comes from your own copy of the game (`make data`, `make pack`):
