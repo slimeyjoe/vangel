@@ -172,12 +172,18 @@ if state == 0Ah: AH=01h; state = 0Bh
 base = name up to the first '.' (SJIS-aware, mk_song_name 048F:04B3)   ; the script's ".m" is ignored
 try base".n"  -> found: masks(2)
 else if board == 0 (PMD.COM): try base".s" -> found: masks(1); else masks(0), try base".m"
-else (PMD86, PMDB2, no board): masks(0), try base".m"
+else (PMD86, PMDB2, no board): masks(0), try name           ; the argument itself, see below
 not found: return 0 (state stays 0Bh: the old song is stopped, silence)
 pmd_read_song 048F:03DD: if board == -1 -> fail (nothing read, nothing started)
                          fseek(fp,0); fread(musbuf, filelength, 1, fp)     ; no size check vs /M
 fclose; pmd_set_vol(vol) (AH=19h); cli; AH=00h; sti; state = 0Ah; return 1
 ```
+On the drivers other than PMD.COM the last try opens the script's string as it is, not the
+name `mk_song_name` has just made from it with `.m`: `048F:01A8` builds it, but `048F:01AE–01B7`
+pass the argument's far pointer to `fopen` (**verified** *(emu)*, `source/tests/check_snd.py`:
+`VA_M01.M` opens `VA_M01.M`, `x` opens `x`, `.m` opens `.m`). With the script's `va_mNN.m` names
+both give the same file.
+
 `pmd_set_masks 048F:0376(kind)` acts only when board is 1 or 2 (PMDB2/PMD86):
 kind 0 (`.m`) → **AH=1Eh AL=0Ah** (mask part K), then AH=1Eh AL=89h (unmask J);
 kind 2 (`.n`) → AH=1Eh AL=88h (unmask I), then AL=89h; kind 1 (`.s`) → nothing.

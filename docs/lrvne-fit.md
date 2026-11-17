@@ -72,7 +72,8 @@ To repeat the check (the logs are game-derived: `resources/derived/`, never comm
     <lrvne>/build/host/tests/test_pmd VA_M01.M.log VA_M01.M ssgtab.bin
 
 The last command prints `... 30000 interrupts, the same`, or it prints the first interrupt that
-differs.
+differs. Since M4 the suite does this for every song (`source/tests/check_pmd.py`, with an AH=19h
+ramp and a stop at the end of each log, the song and the table taken from the pack).
 
 **Still open for the port:**
 - PPS drums (setup 1): need a PCM channel in lrvne;

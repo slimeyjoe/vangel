@@ -1,6 +1,6 @@
 # vangel — engine plan
 
-**Status (2026-11-17):** M0 to M3 done. M0: import, pack, the engine skeleton with a picture
+**Status (2026-11-17):** M0 to M4 done. M0: import, pack, the engine skeleton with a picture
 viewer (`--view`), the decoder bit-exact against the original (54 pictures × 4 cases). M1: the
 three buffers, ops 31h/33h/18h and the window's background, op 32h with every transition, the
 palettes and fades, on the VSYNC timer. Against the original under emulation: every write of
@@ -14,7 +14,11 @@ the game plays from the question through the title into the story, without music
 built-in sequences; against the original under emulation: the loader on both releases and
 damaged files (`check_scb`), 800 random expressions (`check_expr`), saves and loads
 (`check_save`), 250 000 statements on 44 routes with every call, the stack and the variables,
-and the 80286 clocks of 10 000 (`check_vmstep`). M4 (music) is next.
+and the 80286 clocks of 10 000 (`check_vmstep`). M4: the music layer and the PMD binding over
+lrvne's PMD module, with blocking fades and the measure counter of statement 35h; against the
+original under emulation, every driver call of 348 calls into the layer on five driver set-ups
+(`check_snd`), and every register write of the 21 songs on the real PMD.COM for 30 000
+interrupts each (`check_pmd`). M5 (the built-in sequences, first playable) is next.
 
 vangel reimplements `M.EXE`, the engine of Crystal Soft's *Virgin Angel* (PC-98, 1995), on
 [lrvne](https://github.com/slimeyjoe/lrvne). It reproduces the PC-98 release faithfully in
@@ -196,6 +200,33 @@ mask, and the colour 15 → 8 step.
 - **Tests:**
   - `check_pmd.py`: 21 songs × 30 000 interrupts against the real driver's logs;
   - `check_snd.py`: the driver-call trace against the original layer, 26K and none.
+- **Done (2026-11-17).** `engine/snd/mus.c` (`snd/snd.h`): the machine's sound (with
+  `sound=pmd26k` the music path of `lrv_music`, the driver installed with the profile's
+  `pmd=/DF5 /K /M8 /V0 /E0`: `/DF` `/DS` `/M` `/F` are read, the music buffer is the engine's,
+  the SSG-effect table the pack's; with `none` nothing), the binding (048F: each INT 60h through
+  `vg.mus.int60`, which a test replaces; detection and queries, file choice `.n`/`.s`/`.m`,
+  the part masks of the OPNA drivers, the copy into the buffer, `255 − trunc(2.55·v)` in
+  16-bit arithmetic, start and stop) and the layer (04E4: init and the atexit term, play with
+  the same-name rule, stop, the blocking fade one AH=19h per VSYNC with the original's long
+  arithmetic, t = 0 dividing by zero as R6003, the measure + 1 / −1). `run_game` calls
+  `mus_init` and `mus_term`; the VM's 1Bh, 1Ch and 35h call the layer. Without a device the
+  music path renders a frame's worth per frame into nothing, so 35h advances with the frames:
+  headless, the opening's first sync ends 201 ticks (3.56 s) after the song's start, as
+  `sound.md` measured. `--render-wav FILE --song NAME` plays a song offline through the same
+  path. The fades now block (180 VSYNCs for 1Ch 320): the first save of the autoplay run in
+  `run.sh` moved from tick ~28 600 to ~30 900 (its limit is now 40 000). **Found on the way**
+  (verified, `check_snd`): on the drivers other than PMD.COM the binding's last open is of the
+  name as the script wrote it, not of the name it made with `.m` (`sound.md` §3.3). **Tests:**
+  `tests/test_snd.c` + `check_snd.py`: the original's 04E4/048F under `re-tools/sndcall.py`'s
+  stand-in and the engine's on the same stand-in, 348 commands on no driver and on boards 0,
+  1, 2 and FFh (plays of the same and other names, `.n` songs, missing files, names without or
+  with several dots, volumes 0 to 200 and −1, fades of −5 to 1000, no timer, no free slot,
+  t = 0, term and init again): every return value, every one of the 3 012 driver calls with
+  the frames before it, every file tried, the layer's variables and the music buffer
+  identical. `check_pmd.py`: each song on the real PMD.COM (`re-tools/pmd_capture.py`, GAME.BAT's
+  options, results kept by refcache) for 30 000 interrupts, the last 6 000 with an AH=19h ramp
+  and a stop, replayed by lrvne's `tests/test_pmd.c` (built here as `lrv_test_pmd`) on the
+  pack's song and SSG-effect table: all 21 the same.
 
 ### M5 — built-in sequences: first playable
 

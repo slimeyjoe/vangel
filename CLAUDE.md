@@ -23,7 +23,8 @@ first; our own Polish and English translations follow.
   `vm/vm_clk.h`); `scbdis.py`, `scbsum.py`
   (scenario); sound and X68000 tools; `*_verify.py` compare the decoders with the original
   code under emulation.
-- `source/` — the engine: `engine/` (C, on lrvne), `tools/` (stdlib Python: import, pack,
+- `source/` — the engine: `engine/` (C, on lrvne; `snd/mus.c` the music layer over lrvne's
+  PMD module), `tools/` (stdlib Python: import, pack,
   `saves.py` (GAME.DAT in and out), and the decoders `scb.py`, `txb.py`, `gf.py` the research tools also use), `tests/` (`run.sh`,
   `test_*.c`, `check_*.py`), `lrvne/` (the submodule). `make data SRC=...`, `make pack`,
   `make test` (`EMU_PYTHON` for the checks against the original under emulation).
@@ -45,6 +46,11 @@ first; our own Polish and English translations follow.
   engine replays the answers; four routes under m286 compare each statement's clocks with
   `vm/vm_clk.h` (`re-tools/vm_cost.py consts` makes it). The statements reach the
   subsystems through `vg.vm.io`; a test replaces it.
+  `check_snd` (M4): the original's music layer and PMD binding (04E4/048F) under
+  `re-tools/sndcall.py`'s stand-in driver and `test_snd` on the same stand-in (the binding
+  calls the driver only through `vg.mus.int60`, which the test replaces): every call, file
+  tried and variable. `check_pmd`: the real PMD.COM on every song (`re-tools/pmd_capture.py`)
+  replayed by lrvne's `tests/test_pmd.c`, built here as `lrv_test_pmd`.
 
 ## Rules
 
