@@ -188,9 +188,12 @@ Yajima Takao, Kandori, Shikakura, Goryl (ゴリ), Snake (スネーク i スネ�
 ## 6. Konwencje zapisu
 
 ### 6.1 Interpunkcja
-- **Wielokropek:** `...` (trzy kropki ASCII). Oryginalne `…`, `……`, `…………` = `...`; bardzo długie
-  pauzy (sześć i więcej znaków) = `......`. Kwestia z samych kropek zostaje kwestią z samych
-  kropek: `Murakumo: „......”`.
+- **Wielokropek:** `...` (trzy kropki ASCII). Oryginalne `…`, `……`, `………`, `…………` (do czterech
+  znaków) = `...`; dłuższe pauzy (pięć i więcej znaków) = `......` (redaktor, 2026-11-17: cztery
+  znaki to `...`). Kwestia z samych kropek zostaje kwestią z samych kropek, tej samej długości
+  według tej reguły: `Yuki: „......”` za `……………`.
+- **Pytanie zakończone ☆** dostaje pytajnik przed gwiazdką, także gdy oryginał go nie ma:
+  „Co tak nos na kwintę zwiesiłaś?☆” (`m029.0`).
 - `？？？` = `???`, `！！！` = `!!!`, `！？` = `?!`. Pełnoszerokie cyfry i litery = ASCII.
 - **Myślnik** to półpauza ze spacjami: `słowo – słowo`. Kwestia urwana kończy się wielokropkiem.
 - `～` (przeciągnięcie) zastępujemy powtórzeniem samogłoski („No to cze-eeść”). Tak samo
@@ -371,6 +374,10 @@ brzmienie, wpisane tutaj przy pierwszym przekładzie.
 - `m022.32` 君の働きに期待している: „...Prawdę mówiąc, wiele sobie obiecuję po twojej pracy.”
   Te same słowa w `m098.35` („No cóż, wiele sobie obiecuję po twojej pracy.”), bo na nich
   opiera się podwójne odczytanie kwestii Sasamego (biblia §5).
+- Yuki, ずるい人ですね (`m029.19`): „...Pan jest nie fair, panie Murakumo...” → `m029.21`
+  „...Nie fair?”. Zwykłe orzeczenie „pan jest nie fair”, nie okrzyk z „jaki”.
+- Shinobu po kłótni (`m036.9`, 寂しそうに): „jakaś taka osowiała”; 気分が乗らない = „nie mam
+  nastroju”, jak w `m018.13`. Jej nastrój widać, nikt go nie tłumaczy.
 - Bliźniaki `m023.8` / `m025.2` różnią się jednym słowem (えらく): „Jakoś tak służbowo się
   zachowuje.” / „Jakoś strasznie służbowo się zachowuje.”, w obu dalej: „Aż jej z twarzy
   wyziera, że nie znosi podrywaczy.”
@@ -461,8 +468,14 @@ Yuki i Shinobu (`m013`–`m017`). Cel: sprawdzić w grze nawiasy (D4), wcięcia 
 (D3), ton Murakumo w obu rejestrach i długości. Po uwagach redaktora próbka staje się
 wzorcem.
 
-**Rozdział 2 (2026-11-17):** szkic (`menu41`–`43`, `m204`, `m205`, `m009`–`m026`, menu 3–5),
-czeka na lekturę redaktora. Co z niego wynikło, jest w §9 (echa), §10 (`m018.23`) i §14.
+**Rozdział 3 (2026-11-17):** szkic (`m027`–`m036`, menu 6), czeka na lekturę redaktora;
+rozstrzygnięte: `?☆` (§6.1), „siostrzyczko” (§14), `m036.13` nie mówi, kto krzyczał, `m030.38`
+zostaje z cytryną (do oceny w lekturze). Liczbę
+z jednostką w nawiasach 【 】 łączymy twardą spacją (`m027.38`: 【1263 osoby】), żeby wiersz nie
+złamał się w środku.
+
+**Rozdział 2 (2026-11-17):** zatwierdzony przez redaktora (`menu41`–`43`, `m204`, `m205`,
+`m009`–`m026`, menu 3–5). Co z niego wynikło, jest w §9 (echa), §10 (`m018.23`) i §14.
 
 **Stan (2026-11-17):** przetłumaczona (179 kluczy: tagi i nawiasy z §7, prolog, `m001`–`m008` z
 menu 1 i 2, `m013`–`m017`) i obejrzana w grze. Co z niej wynikło:
@@ -543,6 +556,11 @@ Zatwierdzony razem z §0 (2026-11-17); wpisy „do ustalenia” i „otwarte” 
 | プリズンプロジェクト, プリズンプラン | projekt „Więzienie” | to samo pod dwiema nazwami (`m022.0`) |
 | 〜の線 (で洗う / 検討する) | trop | マフィアの線 = „trop mafijny” (`m010.17`, `m022.24`), コンバット・ドールの線 = „trop lalki bojowej” (`m070.3`). Wyjątek: 売春婦の線で洗わせれば (`m010.25`) = „poszuka wśród prostytutek”, bo „trop prostytutek” to ślad, który zostawiły |
 | ガイシャ | denatka | policyjny żargon Kenzō (`m012.10`) |
+| 【該当者なし】 | 【Nie znaleziono】 | ekran wyszukiwania; wyśrodkowane 13 spacjami pełnoszerokimi, tak samo w `m027.51`, `m028.1` i na każdym późniejszym ekranie |
+| 検索領域 / 領域 | zakres wyszukiwania / zakres | `m027.29`, `m028.11`, `m035.9` |
+| 前科のある売春婦 | notowane prostytutki | `m027.38` |
+| 照合 | porównywać | |
+| 姉さん (Yuki o siostrze) | siostrzyczko | `m032.0` = `m034.0`; to samo słowo w parku (od `m081`); zatwierdzone przez redaktora |
 | 浦和国際ホテル / 浦和国際会議 | Międzynarodowy Hotel Urawa / konferencja w Urawie | |
 | ＮＡＳＡ | NASA | |
 | ＵＩＡ・氷翼 | UIA – Lodowe Skrzydło | alternatywa „Hyōyoku” |
