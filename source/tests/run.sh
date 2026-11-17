@@ -88,6 +88,7 @@ if [ -x "$EMU_PY" ] && "$EMU_PY" -c 'import unicorn' 2>/dev/null && [ -n "$HAVE_
     run "$EMU_PY" -I "$HERE/check_input.py" "$BIN/test_text" "$PAK"
     run "$EMU_PY" -I "$HERE/check_text.py" "$BIN/test_text" "$PAK"
     run "$EMU_PY" -I "$HERE/check_menu.py" "$BIN/test_text" "$PAK"
+    run "$EMU_PY" -I "$HERE/check_builtin.py" "$BIN/test_bi" "$PAK"
     run "$EMU_PY" -I "$HERE/check_scb.py" "$BIN/test_vm"
     run "$EMU_PY" -I "$HERE/check_expr.py" "$BIN/test_vm"
     run "$EMU_PY" -I "$HERE/check_save.py" "$BIN/test_vm"
@@ -99,7 +100,8 @@ if [ -x "$EMU_PY" ] && "$EMU_PY" -c 'import unicorn' 2>/dev/null && [ -n "$HAVE_
     run "$EMU_PY" -I "$HERE/check_snd.py" "$BIN/test_snd" "$PAK"
     run "$EMU_PY" -I "$HERE/check_pmd.py" "$BIN/lrv_test_pmd" "$PAK"
 else
-    for c in check_gf check_buf check_pal check_fx check_input check_text check_menu check_scb \
+    for c in check_gf check_buf check_pal check_fx check_input check_text check_menu \
+             check_builtin check_scb \
              check_expr check_save check_vmstep check_snd check_pmd; do
         skip $c "needs the game, $PAK and a Python with unicorn (EMU_PYTHON)"
     done

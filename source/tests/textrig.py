@@ -271,6 +271,10 @@ class Machine(GM):
             self._stop_why = None
             self._run_to(SENTINEL * 16)
             if self._stop_why is None:
+                if uc.reg_read(UC_X86_REG_CS) * 16 + uc.reg_read(UC_X86_REG_IP) != \
+                        SENTINEL * 16:
+                    raise RuntimeError('textrig: the emulation stopped short of the routine\'s '
+                                       'end (mcall\'s instruction limit: a hang)')
                 break
             self._skip_once = self._stop_why
             if self.frame - self.fbase > MAX_FRAMES:
