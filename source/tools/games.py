@@ -32,6 +32,8 @@ GAMES = {
             'scenario': 'CMD00.SCB',
             'library': 'GDATA.LIB',
             'sound': 'pmd26k',
+            # GAME.BAT's PMD.COM line for a 26K (docs/re/sound.md §2.2)
+            'pmd': '/DF5 /K /M8 /V0 /E0',
             'mouse': 'ask',
             # an 80286 at 10 MHz (a PC-9801VX-class machine), 10 000 000 / 56.42 Hz: the
             # clocks are re-tools/m286.py's (docs/engine-plan.md, decisions)

@@ -184,6 +184,7 @@ static int game_load(void)
 static void game_free(void)
 {
     vg_input_term();
+    vg_mus_term();                      /* also an atexit function of run_game */
     vg_vm_free();
     vg_scb_free();
     vg_txb_free();
@@ -201,7 +202,9 @@ static int game_run(unsigned devices)
     } else {
         rc = game_load();
         if (rc == VG_EXIT_OK) {
-            /* timer_init: installed with the machine; mus_init: no driver until M4 */
+            /* timer_init: installed with the machine; mus_init's result is not looked at:
+             * without a driver the game is silent */
+            vg_mus_init();
             if (!vg_input_init(devices)) {
                 lrv_log(vg.hal, LRV_LOG_ERROR, "input init failed");
                 rc = VG_EXIT_RUN;
@@ -226,6 +229,8 @@ static void game_reset(void)
     vg.text.skip = 0;
     vg.text.menu_last = 0;
     vg.text.menu_choice = 0;
+    strcpy(vg.mus.name, "none");
+    vg.mus.vol = 0;
     memset(&vg.input, 0, sizeof vg.input);
     lrv_screen_clear_access(&vg.screen);
     vg_timer_install();
@@ -297,6 +302,7 @@ void vg_machine_open(const struct lrv_hal *hal, const struct lrv_run_cfg *cfg)
     lrv_sys_init(&vg.sys, hal, video.mode.w, video.mode.h);
     vg.sys.cpu_per_frame = (uint32_t)vg.profile.cpu_per_frame;
     lrv_sys_set_present(&vg.sys, lrv_screen_present_hook, &vg.screen);
+    vg_snd_open(0);                     /* the board and the driver, as GAME.BAT set them up */
 
     e = lrv_pack_find(&vg.pak, vg.profile.library, VG_PT_LIBRARY);
     if (!e)
@@ -315,6 +321,7 @@ void vg_machine_close(void)
     vg_txb_free();
     vg_text_free_fonts();
     vg_timer_remove();
+    vg_snd_close();
     gf_lib_close(&vg.lib);
     vg.hal->video_close();
     lrv_screen_free(&vg.screen);

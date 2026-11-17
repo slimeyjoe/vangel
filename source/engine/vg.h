@@ -29,6 +29,7 @@
 #include "bios/bios.h"
 #include "gfx/gf.h"
 #include "gfx/gfx.h"
+#include "snd/snd.h"
 #include "text/text.h"
 #include "vm/timer.h"
 #include "vm/vm.h"
@@ -82,6 +83,7 @@ struct vg_profile {
     char scenario[16];                  /* the program's arguments (GAME.BAT): the scenario */
     char library[16];                   /* ... and the picture library */
     char sound[16];                     /* the sound setup: pmd26k, none */
+    char pmd[64];                       /* the driver's command line (GAME.BAT), "/DF5 /M8" */
     char mouse[8];                      /* the console question "use the mouse?": ask, on, off */
     /* the reference machine: 80286 clocks per VSYNC (re-tools/m286.py), the time base of
      * what the original runs at CPU speed (most transitions); 0 = such loops take no time */
@@ -120,6 +122,9 @@ struct vg_state {
 
     /* the scenario and its interpreter */
     struct vg_vm vm;
+
+    /* the music: the sound board and its driver, the binding, the music layer */
+    struct vg_mus mus;
 
     /* the program's exit (vg_exit): where it unwinds to, and its code */
     jmp_buf *exit_to;

@@ -47,7 +47,8 @@ const struct lrv_app vg_app = {
     .run = run,
     .trace_names = trace_names,
     .ntrace_names = (int)(sizeof trace_names / sizeof trace_names[0]),
-    .wait_is_input = wait_is_input
+    .wait_is_input = wait_is_input,
+    .render_music = vg_render_music
 };
 
 int vg_main(int argc, char **argv)

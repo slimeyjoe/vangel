@@ -89,27 +89,14 @@ static void io_msg(int n)
     vg_msg_show(n);
 }
 
-/* the music layer comes with M4: until then the machine has no sound driver, as GAME.BAT's
- * option 4 (sound.md): nothing plays, 35h reads -1 */
 static void io_music_play(int volume, const char *name)
 {
-    (void)volume;
-    (void)name;
-}
-
-static int io_music_state(void)
-{
-    return 0;
+    vg_mus_play(name, volume);
 }
 
 static void io_music_fade(int t)
 {
-    (void)t;
-}
-
-static int io_music_measure(void)
-{
-    return -1;
+    vg_mus_fade_stop(t);
 }
 
 static int io_menu(long stmt, const struct vg_menu *m)
@@ -146,8 +133,8 @@ static void io_rect_copy(const struct vg_rect_op *op)
 
 const struct vg_vm_io vg_vm_engine_io = {
     io_wait, io_wait_input, vg_win_restore, io_msg, vg_pal_fade_out, io_music_play,
-    io_music_state, io_music_fade, io_menu, io_builtin, vg_pal_flash, io_palette,
-    io_pic_load, io_rect_copy, vg_buf_clear, io_music_measure, vg_mouse_lock
+    vg_mus_state, io_music_fade, io_menu, io_builtin, vg_pal_flash, io_palette,
+    io_pic_load, io_rect_copy, vg_buf_clear, vg_mus_measure, vg_mouse_lock
 };
 
 /* ---- state ------------------------------------------------------------------------------ */
