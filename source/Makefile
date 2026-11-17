@@ -183,7 +183,7 @@ dist-src:
 	@echo "  TAR   $(BUILDROOT)/$(SRC_NAME)-src.tar.gz"
 	$(Q)rm -rf $(SRCDIST)
 	$(Q)mkdir -p $(SRCDIST)
-	$(Q)git -C .. archive --format=tar --prefix=$(SRC_NAME)/ HEAD | tar -x -C $(SRCDIST)
-	$(Q)git -C $(LRVNE) archive --format=tar --prefix=$(SRC_NAME)/source/lrvne/ HEAD | tar -x -C $(SRCDIST)
+	$(Q)git -C .. archive --format=tar --prefix=$(SRC_NAME)/ HEAD | tar -xf - -C $(SRCDIST)
+	$(Q)git -C $(LRVNE) archive --format=tar --prefix=$(SRC_NAME)/source/lrvne/ HEAD | tar -xf - -C $(SRCDIST)
 	$(Q)cd $(SRCDIST) && tar $(TAR_ANON) -czf ../$(SRC_NAME)-src.tar.gz $(SRC_NAME)
 	$(Q)rm -rf $(SRCDIST)
