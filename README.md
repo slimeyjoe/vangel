@@ -10,8 +10,10 @@ Polish and English translations will follow the Japanese release.
 **Status:** the reverse engineering is complete: the documents in [`docs/re/`](docs/re/README.md)
 specify the original engine `M.EXE` and all its data formats. The engine plays the whole
 Japanese game with its music (headless and SDL3), each part checked against the original code
-under emulation; end-to-end checks, the translations, the extras and the Amiga family come next
-([`docs/engine-plan.md`](docs/engine-plan.md)).
+under emulation, and the whole game end to end: routes through all four endings, every menu,
+the saves and loads and the built-in sequences, played on the engine and on the original
+program under emulation, identical at every wait. The translations, the extras and the Amiga
+family come next ([`docs/engine-plan.md`](docs/engine-plan.md)).
 
 **Adults only.** The game contains explicit sexual scenes, some of them non-consensual.
 

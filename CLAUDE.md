@@ -20,7 +20,8 @@ first; our own Polish and English translations follow.
   then any routine callable; VRAM/GRCG/palette modelled); `m286.py` (mcall with time: 80286
   clocks, the VSYNC, the spin loops); `fx_cost.py` (op 32h's clocks: the engine's
   `gfx/fx_clk.h`, the transitions' durations); `vm_cost.py` (the interpreter's clocks:
-  `vm/vm_clk.h`); `scbdis.py`, `scbsum.py`
+  `vm/vm_clk.h`); `va98.py` (the whole program on an emulated PC-98, from its start: the
+  end-to-end reference); `scbdis.py`, `scbsum.py`
   (scenario); sound and X68000 tools; `*_verify.py` compare the decoders with the original
   code under emulation.
 - `source/` — the engine: `engine/` (C, on lrvne; `snd/mus.c` the music layer over lrvne's
@@ -55,6 +56,16 @@ first; our own Polish and English translations follow.
   `check_builtin` (M5): statement 25h's sequences (segment 0504) on textrig with their wait
   loops as frame points and the music layer stood in for, against `test_bi`: page 0 and the DAC
   at every VSYNC, the pointer, the music calls, the result, pages 0/1 and buffer 12 at the end.
+  `check_vm` (M6): the whole game end to end. `re-tools/va98.py` runs `M.EXE` from its start
+  (an instruction time base, its spin loops skipping to the next VSYNC, its own VSYNC and
+  keyboard handlers, INT 18h/33h, the real `PMD.COM` behind INT 60h through `pmdemu.py`);
+  `test_game` is the whole engine (`vg_run`) on the test HAL. Both play a route
+  (`tests/e2e/routes/*.route`: a line a wait, the input a frame from the frame after the wait
+  began) and print the state at every wait (the engine's `vg_wait_begin`, the original's
+  `va98.WAITS`): the interpreter, CRCs of both pages, buffer 12 and the window's buffers, the
+  DAC, flags, music, pointer, `game.dat`, the INT 60h calls. The routes come from
+  `tests/e2e/explore.py`'s plans played on `test_game` (stdin: it decides at each wait);
+  `make e2e-routes` makes them again, `make test` checks that the engine still plays them so.
 
 ## Rules
 

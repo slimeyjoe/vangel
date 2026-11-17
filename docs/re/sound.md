@@ -247,6 +247,12 @@ loop counter: the engine never waits for a loop or song end.
 Not used: AH=02h–04h, 07h, 08h, 0Ah, 0Bh–0Fh (no FM/SSG/PCM effects), 10h–18h except 17h, 1Ah–1Dh,
 1Fh–21h; PPSDRV is never asked to play anything (PPS samples are only reached through PMD's K part).
 
+The calls go through `int86x` with one REGS block (`g_pmd_inregs`, DS:178E) that only ever has
+AH set, and AL only for AH=19h and 1Eh (048F:023E, 038F–03C3): every other call passes on the
+AL of the call before, so a stop after a fade is AX=01FFh, and a start is AX=0000h only because
+the volume set just before it is 100 % (AH=19h AL=00h) (**verified** *(emu)*: `re-tools/va98.py`, the
+whole program with the real PMD.COM; the driver ignores AL for these functions).
+
 ### 3.7 Without a driver, or with PMD but no board (**verified** *(emu)*)
 
 * No `PMD` at INT 60h (key 4, or a failed install): `mus_init` returns 0, g_mus_ok = 0; play/fade

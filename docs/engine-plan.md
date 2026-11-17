@@ -1,6 +1,6 @@
 # vangel — engine plan
 
-**Status (2026-11-17):** M0 to M5 done. M0: import, pack, the engine skeleton with a picture
+**Status (2026-11-17):** M0 to M6 done. M0: import, pack, the engine skeleton with a picture
 viewer (`--view`), the decoder bit-exact against the original (54 pictures × 4 cases). M1: the
 three buffers, ops 31h/33h/18h and the window's background, op 32h with every transition, the
 palettes and fades, on the VSYNC timer. Against the original under emulation: every write of
@@ -21,7 +21,10 @@ original under emulation, every driver call of 348 calls into the layer on five 
 interrupts each (`check_pmd`). M5: the built-in sequences (the prologue, the staff rolls, the
 notice, the music mode); against the original under emulation, 28 runs, 55 239 frames, page 0
 and the DAC at every VSYNC (`check_builtin`): the whole game plays, with music. First
-playable; M6 (end to end) is next.
+playable. M6: the whole game end to end against the original program under emulation
+(`re-tools/va98.py`, `check_vm`): 12 routes through the four endings, every menu, the saves and
+loads, the built-in sequences and the machine without sound, identical at every wait. M7
+(translation-ready) is next.
 
 vangel reimplements `M.EXE`, the engine of Crystal Soft's *Virgin Angel* (PC-98, 1995), on
 [lrvne](https://github.com/slimeyjoe/lrvne). It reproduces the PC-98 release faithfully in
@@ -289,6 +292,52 @@ page and long-line cut are not reached by the shipped file.
 **`check_vm.py`** compares at every wait: VM state, both pages, the buffers, the DAC, the driver calls and `GAME.DAT`.
 
 Also: the teardown run, sanitizers, pull audio, and the whole suite rerun under CPU load with identical results.
+
+**Done (2026-11-17).** `re-tools/va98.py` runs `M.EXE` whole, from its C start-up to its
+exit: a VSYNC every `ipf` instructions (cpu_per_frame over an 80286's 6 clocks an instruction),
+the spin loops' heads skipping to the next VSYNC when reached twice in one frame (so the
+emulation does not spin), the VSYNC interrupt armed by port 64h and masked at the PIC, the
+GDC status's retrace bit once after each VSYNC, the keyboard through the program's own INT 09h
+handler (make and break codes), the keyboard BIOS for the console's question and the kanji
+ROM (INT 18h), MSZ (INT 33h), and behind INT 60h the real `PMD.COM` resident in its own
+machine (`pmdemu.py`), its timer interrupts on the master clock (3 993 600 / 56.42 clocks a
+VSYNC), so statement 35h reads the real driver's measure counter. The waits are hooked where
+the engine's `vg_wait_begin` stands (`va98.WAITS`: the message pages, the timed pages, menus,
+statements 15h/16h, the prologue's pages, the notice, the music mode, the console's question).
+`tests/test_game.c` is the whole engine (`vg_run`) on the test HAL. A route is a line a wait,
+the input one entry a frame from the frame after the wait began (on the original: after its
+first input poll, as a wait may draw first: the music mode draws its list for longer than a
+frame, which the engine does in no time, and a key pressed and let go before the first poll
+would be lost); both play it and print the
+state at every wait; `tests/check_vm.py` compares: pc, depth, stack, every variable, CRCs of
+both pages, buffer 12 and the window's two buffers, the page shown, the DAC, the skip flag, the
+last menu's choice, the music layer's song and volume, the pointer, `game.dat`, and the INT 60h
+calls since the wait before. The routes are made by `tests/e2e/explore.py` from 12 plans played
+on `test_game` (which reads the route from stdin as the waits come, so the player decides
+there; not the control protocol, so the routes replayed are exactly the ones played): the four
+endings by six routes (ending 3 also by losing the fight, ending 4 also by the wrong armour),
+the six save points into slots 1, 2, 3, 1, 2, 3, six investigation orders (all of menus 23-37),
+all 42 menus the scenario has (menu 22 is never asked), 209 of the 211 messages it shows, the
+prologue cut short, the prelude cut short in each of messages 206-209, the logo cut short,
+the notice and the music mode (all 18 songs) by keys and by the mouse, the mouse not used,
+loads of a good, a damaged and an empty slot and of no file, and `sound=none`. The loads start
+from the `game.dat` the end1 route leaves (written by the explorer from the engine's run;
+end1's own comparison checks that the original writes the same file). `make test` also checks
+that the engine still plays every plan as recorded (`explore.py --check`; `make e2e-routes`
+records them again), runs the game to `--max-ticks` with `--audio pull`, and every route runs
+clean under `SAN=1` with the same output. **Result:** 12 routes, 8 015 waits, 388 235 frames
+of the original: identical at every wait.
+
+**Found on the way:** the binding's `int86x` keeps its REGS between calls, so every call but
+AH=19h passes on the AL of the call before (AH=01h after a fade is 01FFh): the engine now does
+the same (`vg.mus.in_al`). Not compared: time (the original's instruction time base is not the
+engine's clock model; a route's input is tied to waits, so the state at each wait does not
+depend on it), the measure counter's reads (statement 35h's loop reads it as often as it
+turns; where the loop ends is in the variables), the driver's registers after a call other
+than the AL the binding reads (09h, 17h, 22h), and, at the console's question, page 0, the
+DAC, the pc and the variables (the original asks on the text screen before the scenario is
+loaded). An entry of a route given while a blocking fade runs is gone, on both sides alike:
+the music mode's routes leave 100 frames after each song.
 
 ### M7 — translation-ready
 
