@@ -1,0 +1,12 @@
+# Six passages of the love scene in chapter 9 (m084-m093), translated by the editor
+# (STORY_BIBLE.md §8, TRANSLATION_GUIDE_PL.md §11). Not packed: make pack takes vangel_*.tsv
+# only. When done, from source/:
+#   python3 -I tools/tl.py put ../text/translation/vangel_pl.tsv ../text/translation/editor_pl.tsv
+# The Japanese, for reading: ../build/tl/editor_pl_ja.tsv (never committed).
+key	kind	text	note
+m084.0	text		piersi porównane do dziewczęcych
+m085.10	text		„niedojrzały” sutek
+m086.0	text		piersi porównane do dziewczęcych
+m089.0	text		ciało z „dziewczęcą niewinnością”
+m090.0	text		srom „jeszcze dziecięcy”
+m093.45	text		łechtaczka „dziecięca”
