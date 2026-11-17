@@ -84,9 +84,27 @@ if [ -n "$HAVE_GAME" ] && [ -f "$PAK" ]; then
     fi
     # the routes of the end-to-end check: the engine still plays each plan as recorded
     run $PY -I "$HERE/e2e/explore.py" --check "$BIN/test_game" "$PAK"
+    # translated text: a pseudo-translation of every string packed, laid out as the reference
+    # lays it out, played through every plan in the same states as Japanese
+    run $PY -I "$HERE/check_lang.py" "$BUILD" "$PAK" "$ROOT/build/fonts"
+    # ... and the game in that language to the tick limit: nothing left behind (its first
+    # save comes later than in Japanese, after the pseudo-translation's extra pages)
+    echo "== vangel (the game, --lang pl, the pseudo-translation) to --max-ticks"
+    rm -f "$BIN/teardown/game.dat" "$BIN/teardown/lang"
+    t=0
+    "$BUILD/vangel" --pak "$BIN/lang/pseudo.pak" --storage "$BIN/teardown" --lang pl \
+        --autoplay 'y:wait return:wait' --max-ticks 90000 >/dev/null \
+        2>"$BIN/teardown/log" || t=$?
+    if [ $t -eq 3 ] && [ -f "$BIN/teardown/game.dat" ]; then
+        echo "teardown: ended at the tick limit, a save written, nothing left"
+    else
+        echo "teardown: exit $t (not 3) or no save"; cat "$BIN/teardown/log"; rc=1
+    fi
+    rm -f "$BIN/teardown/lang"
 else
     skip teardown "needs the game and $PAK (make pack)"
     skip explore "needs the game and $PAK (make pack)"
+    skip check_lang "needs the game and $PAK (make pack)"
 fi
 
 # ---- against the original code under emulation (re-tools/mcall.py) -------------------------

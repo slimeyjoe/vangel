@@ -80,6 +80,8 @@ static void on_event(void *ctx, int event, int arg)
     static const char *const names[] = { "", "show", "icon1", "icon0", "restore", "invert" };
     uint32_t f = vg.sys.frame - base;
     (void)ctx;
+    if (event == VG_TEV_PAGE)           /* (test_lang's; the original has no such event) */
+        return;
     printf("%u %s %d %u\n", (unsigned)f, names[event], arg,
            (unsigned)(event == VG_TEV_RESTORE ? page_crc() : window_crc()));
 }

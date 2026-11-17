@@ -154,6 +154,7 @@ class Player:
         self.notices = 0
         self.msg_timed = set()
         self.seen = {'menus': set(), 'msgs': set(), 'builtins': set(), 'endings': []}
+        self.menu_states = []           # (menu, the state printed at its wait)
 
     def stmt(self, pc):
         """the statement the wait is in: (number, opcode, args)"""
@@ -202,6 +203,7 @@ class Player:
 
     def menu(self, n, menu, st):
         self.seen['menus'].add(menu)
+        self.menu_states.append((menu, st))
         items = [x.decode('cp932', 'replace') for x in self.sc.t44[menu - 1][1]]
         v = self.visits[menu] = self.visits.get(menu, 0) + 1
         if menu == self.plan.get('until_menu'):
@@ -253,9 +255,10 @@ def gamedat_for(out, how):
     return data
 
 
-def play(test, pak, sc, name, plan, out, verbose=0):
-    """the plan on the engine: (route lines, the player); the game.dat the run ends with is
-    kept as OUT/NAME.end.dat when another plan starts from it"""
+def play(test, pak, sc, name, plan, out, verbose=0, lang=None):
+    """the plan on the engine (in language lang: test_game's lang=): (route lines, the
+    player); the game.dat the run ends with is kept as OUT/NAME.end.dat when another plan
+    starts from it"""
     p = Player(sc, plan)
     lines = []
     with tempfile.TemporaryDirectory(prefix='vg-explore-') as d:
@@ -266,6 +269,8 @@ def play(test, pak, sc, name, plan, out, verbose=0):
         args = [test, pak, d, '-']
         if plan.get('sound'):
             args.append('sound=' + plan['sound'])
+        if lang:
+            args.append('lang=' + lang)
         e = subprocess.Popen(args, stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True,
                              bufsize=1)
         try:

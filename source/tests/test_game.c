@@ -3,7 +3,7 @@
  * tests/check_vm.py, which plays the same route on the original under emulation
  * (re-tools/va98.py) and compares what both print.
  *
- *   test_game PAK STORAGE ROUTE [sound=pmd26k|none]
+ *   test_game PAK STORAGE ROUTE [sound=pmd26k|none] [lang=TAG]
  *
  * STORAGE: the directory of game.dat (the file the run starts with, if any). ROUTE (a file, or
  * - for stdin: a line is read when its wait comes, after the wait's state is printed, so a
@@ -282,7 +282,7 @@ int main(int argc, char **argv)
     int i, rc;
 
     if (argc < 4) {
-        fprintf(stderr, "usage: test_game PAK STORAGE ROUTE [sound=S]\n");
+        fprintf(stderr, "usage: test_game PAK STORAGE ROUTE [sound=S] [lang=TAG]\n");
         return 2;
     }
     storage = argv[2];
@@ -291,15 +291,18 @@ int main(int argc, char **argv)
         fprintf(stderr, "test_game: cannot read %s\n", argv[3]);
         return 2;
     }
-    for (i = 4; i < argc; i++)
+    memset(&cfg, 0, sizeof cfg);
+    for (i = 4; i < argc; i++) {
         if (!strncmp(argv[i], "sound=", 6))
             snprintf(sound, sizeof sound, "%s", argv[i] + 6);
+        else if (!strncmp(argv[i], "lang=", 5))
+            cfg.lang = argv[i] + 5;
+    }
     crc_init();
     th_hal(&hal, argv[1], NULL, storage);
     hal.trace = on_trace;
     hal.input_poll = poll;
     vg_profile_hook = profile_hook;
-    memset(&cfg, 0, sizeof cfg);
     memset(&opt, 0, sizeof opt);
     rc = vg_run(&hal, &cfg, &opt);
     printf("exit %d\n", rc);
