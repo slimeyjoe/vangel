@@ -220,9 +220,17 @@ uint16_t vg_snd_int60(uint16_t ax)
 
 /* ---- 048F: the PMD binding ----------------------------------------------------------------- */
 
-static uint16_t drv(unsigned ax)
+/* The binding's int86x keeps its REGS (DS:178E): a call sets AH, and AL only for AH=19h and
+ * 1Eh, so the others pass on the AL of the call before (the driver ignores it there) */
+static uint16_t drv_al(unsigned ah, unsigned al)
 {
-    return vg.mus.int60((uint16_t)ax);
+    vg.mus.in_al = (uint8_t)al;
+    return vg.mus.int60((uint16_t)(ah << 8 | al));
+}
+
+static uint16_t drv(unsigned ah)
+{
+    return vg.mus.int60((uint16_t)(ah << 8 | vg.mus.in_al));
 }
 
 /* 048F:0227: AH=19h with AL = 255 - trunc(2.55 v), computed as the original does: a 16-bit
@@ -234,7 +242,7 @@ static void pmd_set_vol(int v)
         return;
     p = (int16_t)(uint16_t)((unsigned)v * 0xFF01u);
     q = (int16_t)(p / 100);
-    drv(0x1900u | (uint8_t)(q - 1));
+    drv_al(0x19, (uint8_t)(q - 1));
 }
 
 /* 048F:01F7 */
@@ -242,7 +250,7 @@ static void pmd_stop(void)
 {
     if (vg.mus.present != 1 || vg.mus.state != VG_MUS_PLAYING)
         return;
-    drv(0x0100);
+    drv(0x01);
     vg.mus.state = VG_MUS_IDLE;
 }
 
@@ -260,14 +268,14 @@ static int pmd_init(void)
     m->state = VG_MUS_NODRIVER;
     if (!m->resident)
         return 0;
-    drv(0x0600);
-    drv(0x2200);
-    r = drv(0x0900);
+    drv(0x06);
+    drv(0x22);
+    r = drv(0x09);
     m->board = (r & 0xFFu) == 0xFFu ? -1 : (int)(r & 0xFFu);
-    drv(0x1700);
+    drv(0x17);
     m->present = 1;
     m->state = VG_MUS_IDLE;
-    drv(0x0100);
+    drv(0x01);
     return 1;
 }
 
@@ -339,8 +347,8 @@ static void pmd_set_masks(int kind)
 {
     if (kind == 1 || vg.mus.board < 1 || vg.mus.board > 2)
         return;
-    drv(kind == 0 ? 0x1E0Au : 0x1E88u);
-    drv(0x1E89u);
+    drv_al(0x1E, kind == 0 ? 0x0Au : 0x88u);
+    drv_al(0x1E, 0x89u);
 }
 
 /* 048F:03DD: fseek(fp, 0), fread(the music buffer, filelength, 1, fp): nothing without a
@@ -385,7 +393,7 @@ static int pmd_load_play(const char *name, int vol)
     if (m->present != 1)
         return 0;
     if (m->state == VG_MUS_PLAYING) {
-        drv(0x0100);
+        drv(0x01);
         m->state = VG_MUS_IDLE;
     }
     if ((e = song_open(name, "n")) != NULL) {
@@ -404,7 +412,7 @@ static int pmd_load_play(const char *name, int vol)
     if (!e || !pmd_read_song(e))
         return 0;
     pmd_set_vol(vol);                   /* overridden by the start, which clears the fade */
-    drv(0x0000);
+    drv(0x00);
     m->state = VG_MUS_PLAYING;
     lrv_log(vg.hal, LRV_LOG_INFO, "music: %s (%s, %lu bytes)", name, e->name,
             (unsigned long)m->song_size);
@@ -516,7 +524,7 @@ int vg_mus_measure(void)
         return -1;
     if (vg.mus.present != 1 || vg.mus.state != VG_MUS_PLAYING)
         return 0;                       /* pmd_measure1's other answer: not reached */
-    return (int16_t)(uint16_t)(drv(0x0500) + 1u);
+    return (int16_t)(uint16_t)(drv(0x05) + 1u);
 }
 
 /* ---- offline ------------------------------------------------------------------------------- */

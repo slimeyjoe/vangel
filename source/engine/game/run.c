@@ -231,6 +231,7 @@ static void game_reset(void)
     vg.text.menu_choice = 0;
     strcpy(vg.mus.name, "none");
     vg.mus.vol = 0;
+    vg.mus.in_al = 0;
     memset(&vg.input, 0, sizeof vg.input);
     lrv_screen_clear_access(&vg.screen);
     vg_timer_install();

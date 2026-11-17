@@ -26,8 +26,11 @@ static const struct lrv_pfield fields[] = {
     LRV_PF_INT("cpu_per_frame", struct vg_profile, cpu_per_frame, 0, 100000000)
 };
 
+void (*vg_profile_hook)(struct vg_profile *p);
+
 int vg_profile_load(struct vg_profile *p, const struct lrv_pack *pk)
 {
+    int rc;
     memset(p, 0, sizeof *p);
     strcpy(p->base.title, "vangel");
     strcpy(p->scenario, "CMD00.SCB");
@@ -35,5 +38,8 @@ int vg_profile_load(struct vg_profile *p, const struct lrv_pack *pk)
     strcpy(p->sound, "pmd26k");
     strcpy(p->pmd, "/DF5 /K /M8 /V0 /E0");
     strcpy(p->mouse, "ask");
-    return lrv_profile_load(pk, fields, (int)(sizeof fields / sizeof fields[0]), p);
+    rc = lrv_profile_load(pk, fields, (int)(sizeof fields / sizeof fields[0]), p);
+    if (vg_profile_hook)
+        vg_profile_hook(p);
+    return rc;
 }

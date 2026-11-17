@@ -51,6 +51,7 @@ struct vg_mus {
     int state;                          /* g_pmd_state DS:17A6 */
     int board;                          /* g_pmd_board DS:17A4: AH=09h's AL, -1 for FFh */
     uint32_t song_size;                 /* the bytes the last song put into buf */
+    uint8_t in_al;                      /* AL of g_pmd_inregs DS:178E, kept between calls */
 
     /* ---- 04E4, the API ---- */
     int ok;                             /* g_mus_ok DS:01CC */

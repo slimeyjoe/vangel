@@ -169,5 +169,7 @@ int  vg_console_ask(int shown);
 
 /* game/profile.c: the defaults, then the pack's "profile" entry; LRV_OK or enum lrv_err */
 int vg_profile_load(struct vg_profile *p, const struct lrv_pack *pk);
+/* tests: called with the profile just loaded, to change it (another setup of the machine) */
+extern void (*vg_profile_hook)(struct vg_profile *p);
 
 #endif
