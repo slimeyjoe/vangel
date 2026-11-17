@@ -8,7 +8,9 @@ music unchanged and reproduces the PC-98 release faithfully, built on
 Polish and English translations will follow the Japanese release.
 
 **Status:** the reverse engineering is complete: the documents in [`docs/re/`](docs/re/README.md)
-specify the original engine `M.EXE` and all its data formats. The engine is being built
+specify the original engine `M.EXE` and all its data formats. The engine plays the whole
+Japanese game with its music (headless and SDL3), each part checked against the original code
+under emulation; end-to-end checks, the translations, the extras and the Amiga family come next
 ([`docs/engine-plan.md`](docs/engine-plan.md)).
 
 **Adults only.** The game contains explicit sexual scenes, some of them non-consensual.
