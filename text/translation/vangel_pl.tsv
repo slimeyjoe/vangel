@@ -2120,7 +2120,7 @@ bi.announce.last	bi
 announce.0	announce	
 announce.1	announce	
 announce.2	announce	
-con.ask	con	
-con.yes	con	
-con.no	con	
-con.loading	con	
+con.ask	con	Czy używać myszy? [Y/N]
+con.yes	con	Mysz będzie używana.
+con.no	con	Mysz nie będzie używana.
+con.loading	con	Trwa ładowanie programu...
