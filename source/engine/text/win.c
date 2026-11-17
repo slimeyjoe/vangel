@@ -86,6 +86,11 @@ static unsigned sjis_to_jis(unsigned lead, unsigned trail)
     return lrv_sjis_to_jis(lead, trail);
 }
 
+void vg_kanji_rom(unsigned lead, unsigned trail, uint8_t g[32])
+{
+    lrv_font_rom_glyph(&vg.text.font16, &vg.text.font8, sjis_to_jis(lead, trail), g);
+}
+
 /* win_kanji (02EC:0006): INT 18h AH=14h, the kanji ROM's pattern of `jis` */
 static void win_kanji(unsigned jis, int col, int row)
 {

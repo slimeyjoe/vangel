@@ -104,15 +104,6 @@ static int io_menu(long stmt, const struct vg_menu *m)
     return vg_op24(stmt, m);
 }
 
-/* the built-in sequences come with M5 */
-static void io_builtin(int n)
-{
-    static const char *const names[VG_BUILTINS] = {
-        "INIT", "OPENING", "ENDING", "ANNOUNCE", "MUSMODE", "ENDING2"
-    };
-    lrv_log(vg.hal, LRV_LOG_WARN, "built-in sequence %s: not yet (M5)", names[n]);
-}
-
 static void io_palette(const uint8_t *pal, int t)
 {
     /* numbers <= 1 pass NULL, and the original reads 48 bytes at 0000:0000 (the interrupt
@@ -133,7 +124,7 @@ static void io_rect_copy(const struct vg_rect_op *op)
 
 const struct vg_vm_io vg_vm_engine_io = {
     io_wait, io_wait_input, vg_win_restore, io_msg, vg_pal_fade_out, io_music_play,
-    vg_mus_state, io_music_fade, io_menu, io_builtin, vg_pal_flash, io_palette,
+    vg_mus_state, io_music_fade, io_menu, vg_builtin, vg_pal_flash, io_palette,
     io_pic_load, io_rect_copy, vg_buf_clear, vg_mus_measure, vg_mouse_lock
 };
 

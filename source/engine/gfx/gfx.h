@@ -56,7 +56,8 @@ struct vg_gfx {
 
 /* buf.c */
 /* gfx_init (0315:000E): the first call readies the graphics (clears both pages, the window's
- * background), later calls only set the default palette again. The palettes and effect 31's
+ * background) and sets the default palette; a later call sets the default palette and clears
+ * both pages again (gfx_mode; buffer 12 and the window's background stay). The palettes and effect 31's
  * order come from the pack (vg_gfx_load_builtin, at start-up; fatal when missing). */
 void vg_gfx_init(void);
 void vg_gfx_load_builtin(void);
@@ -81,6 +82,27 @@ void vg_mark_lines(int page, int y0, int y1);
 int  vg_rect_copy(const struct vg_rect_op *op);
 /* Charges n clocks of the reference machine: frames pass as they are spent. */
 void vg_cpu(uint32_t n);
+
+/* glyph.c: segment 05C3, into the access page (docs/re/text.md §5.1, §5.3, §5.4) */
+/* vram_kanji (05C3:00CD) / vram_ank (05C3:01E9): the character emboldened at byte column x,
+ * line y, all four planes; mode 0 inverse (black on white), 1 opaque (white on black), 2 OR-ed
+ * in (white, the background kept) */
+void vg_vram_kanji(int x, int y, unsigned lead, unsigned trail, int mode);
+void vg_vram_ank(int x, int y, unsigned ch, int mode);
+/* vram_kanji_wipe (05C3:02F9): at byte column x, text row row (16 lines), revealed from the
+ * left in 16 steps into planes R and G, step() after each */
+void vg_vram_kanji_wipe(int x, int row, unsigned lead, unsigned trail, void (*step)(void));
+/* vram_kanji_2x (05C3:03A9) / vram_ank_2x (05C3:04DB): the glyph at double size (32 x 32,
+ * 16 x 32) in colour 15 at byte column x, line 16 * row + 1 */
+void vg_vram_kanji_2x(int x, int row, unsigned lead, unsigned trail);
+void vg_vram_ank_2x(int x, int row, unsigned ch, int mode);
+/* vram_15_to_8 (05C3:0588): every pixel of colour 15 becomes colour 8 */
+void vg_vram_15_to_8(void);
+/* vram_outline (05C3:05E2): around the colour-15 pixels of `words` words a line from (byte x,
+ * line y), h lines, the pixels beside them that are not colour 15 become colour 0 */
+void vg_vram_outline(int x, int y, int words, int h);
+/* vram_fill_black (05C3:0753): colour 0, from word column xw of line y, ww words, h lines */
+void vg_vram_fill_black(int xw, int y, int ww, int h);
 
 /* pal.c */
 /* dac_set (00DD:01D0): waits for the next vertical retrace, then loads pal into the DAC */

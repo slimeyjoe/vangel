@@ -26,6 +26,7 @@
 #include "lrvne/pc98.h"
 #include "lrvne/profile.h"
 #include "lrvne/sys.h"
+#include "bi/bi.h"
 #include "bios/bios.h"
 #include "gfx/gf.h"
 #include "gfx/gfx.h"
@@ -126,6 +127,9 @@ struct vg_state {
     /* the music: the sound board and its driver, the binding, the music layer */
     struct vg_mus mus;
 
+    /* the built-in sequences: their tables and what they keep between calls */
+    struct vg_bi bi;
+
     /* the program's exit (vg_exit): where it unwinds to, and its code */
     jmp_buf *exit_to;
     int exit_code;
@@ -159,6 +163,9 @@ LRV_NORETURN void vg_runtime_error(int which);
 /* game/console.c: built-in 0 INIT (0504:0004), the DOS console's question whether to use the
  * mouse, answered by the profile's mouse=on|off or asked (ask). 1 = yes. */
 int  vg_console_init(void);
+/* The same question for statement 25h 0, while the graphics are shown: the DOS console is not
+ * seen then (shown 0), the question is answered all the same. */
+int  vg_console_ask(int shown);
 
 /* game/profile.c: the defaults, then the pack's "profile" entry; LRV_OK or enum lrv_err */
 int vg_profile_load(struct vg_profile *p, const struct lrv_pack *pk);

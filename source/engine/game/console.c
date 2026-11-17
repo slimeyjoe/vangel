@@ -71,7 +71,7 @@ static void con_print(const char *s)
     }
 }
 
-int vg_console_init(void)
+int vg_console_ask(int shown)
 {
     int yes = -1;
 
@@ -80,8 +80,10 @@ int vg_console_init(void)
     if (lrv_name_eq(vg.profile.mouse, "off"))
         return 0;
     con_x = con_y = 0;
-    lrv_screen_set_colour(&vg.screen, 15, 15, 15, 15);
-    con_print(s_ask);
+    if (shown) {
+        lrv_screen_set_colour(&vg.screen, 15, 15, 15, 15);
+        con_print(s_ask);
+    }
     lrv_sys_key_flush(&vg.sys);
     lrv_sys_trace(&vg.sys, LRV_TR_WAIT, 0, 0, VG_WAIT_KEY, 0, 0, 0);
     while (yes < 0) {
@@ -99,8 +101,15 @@ int vg_console_init(void)
         }
     }
     lrv_sys_trace(&vg.sys, LRV_TR_WAIT, 0, 0, VG_WAIT_KEY, 1, VG_LEAVE_KEY, 0);
-    con_print(yes ? s_yes : s_no);
-    con_print(s_loading);
-    lrv_sys_present_now(&vg.sys);
+    if (shown) {
+        con_print(yes ? s_yes : s_no);
+        con_print(s_loading);
+        lrv_sys_present_now(&vg.sys);
+    }
     return yes;
+}
+
+int vg_console_init(void)
+{
+    return vg_console_ask(1);
 }

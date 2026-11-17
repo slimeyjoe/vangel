@@ -74,6 +74,9 @@ void vg_txb_read(int n);
 int  vg_txb_line(unsigned pos, uint8_t *out, int max);
 
 /* win.c */
+/* INT 18h AH=14h for the Shift-JIS character lead, trail (sjis_to_jis 0A96:0002 first): the
+ * kanji ROM's 16 x 16 pattern, two bytes a row */
+void vg_kanji_rom(unsigned lead, unsigned trail, uint8_t g[32]);
 /* The fonts from the pack (at start-up; fatal when missing). */
 void vg_text_load_fonts(void);
 void vg_text_free_fonts(void);

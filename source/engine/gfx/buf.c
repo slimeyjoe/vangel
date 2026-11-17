@@ -38,7 +38,14 @@ static void vram_clear(void)
 
 void vg_gfx_init(void)
 {
-    if (!vg.gfx.ready) {
+    if (vg.gfx.ready) {
+        /* a later call: the default palette, then gfx_mode (00DD:00A4), which clears both
+         * pages (vram_clear) and selects page 0 for display and access */
+        vg_pal_set(vg.gfx.pal_default);
+        vram_clear();
+        return;
+    }
+    {
         /* the library is open (vg_machine_open); gfx_alloc's gfx_mode clears the pages; the
          * window buffers are new (zero) */
         vram_clear();

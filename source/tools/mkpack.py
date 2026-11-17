@@ -18,7 +18,8 @@ tools/vgpak.py):
            "txbdict": M.EXE's text dictionary (tools/mexe.py); M.EXE's built-in palettes
            "pal.black", "pal.white", "pal.default" (48 bytes R[16] G[16] B[16]: 0AA8:0000,
            0AA8:0060, 0AA8:0030, the one gfx_init sets); "fx31.order", effect 31's 64 cells
-           (0783:0730)
+           (0783:0730); the built-in sequences' tables, strings and palettes "bi.*" and
+           "pal.prologue", "pal.end1.*", "pal.end2.*" (tools/mexe.py builtin)
   FONT     "ank8": M.EXE's own half-width font, all 256 codes, as stored (the engine
            emboldens); "font16" (JIS X 0208, 16x16) and "font8" (JIS X 0201, 8x16) stand in
            for the kanji ROM, from lrvne's xfont (--no-bold), given in --fonts as k16.xfnt and
@@ -153,7 +154,13 @@ def main():
     for name, data in mexe.palettes(img).items():
         pk.add(name, xpak.T_BLOB, data)
     pk.add('fx31.order', xpak.T_BLOB, mexe.fx31_order(img))
-    counts['blob'] += 6
+    try:
+        bi = mexe.builtin(img)
+    except ValueError as e:
+        die('M.EXE: %s' % e)
+    for name, data in bi.items():
+        pk.add(name, xpak.T_BLOB, data)
+    counts['blob'] += 6 + len(bi)
     pk.add('viewer', xpak.T_META, viewer_palettes(a.original, game['release'], img))
     counts['fonts'] += 1
     for lang, lname in game['languages'].items():

@@ -311,6 +311,7 @@ void vg_machine_open(const struct lrv_hal *hal, const struct lrv_run_cfg *cfg)
         lrv_fatal(hal, "%s is not a picture library", vg.profile.library);
     vg_gfx_load_builtin();
     vg_text_load_fonts();
+    vg_bi_load();
     vg_timer_install();
     /* the input devices are opened by the game (run_game), after the console's question */
 }
@@ -319,6 +320,7 @@ void vg_machine_close(void)
 {
     vg_input_term();
     vg_txb_free();
+    vg_bi_free();
     vg_text_free_fonts();
     vg_timer_remove();
     vg_snd_close();
