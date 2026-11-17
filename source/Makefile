@@ -65,7 +65,16 @@ $(BUILD)/tests/%$(EXESUF): $(BUILD)/tests/%.o $(TEST_OBJS)
 	@echo "  LINK  $@"
 	$(Q)$(LRVNE_LD) $(OPT) -o $@ $< $(TEST_OBJS) $(LDLIBS)
 
-test: $(TEST_EXES) $(EXE)
+# lrvne's replay of a log of the real PMD.COM (tests/check_pmd.py), built from lrvne's source
+LRV_TEST_PMD := $(BUILD)/tests/lrv_test_pmd$(EXESUF)
+LRV_TEST_PMD_OBJS := $(LRVNE_LIB_OBJS) $(filter $(BUILD)/$(LRVNE)/backends/common/%,$(LRVNE_BACKEND_OBJS))
+-include $(BUILD)/$(LRVNE)/tests/test_pmd.d
+$(LRV_TEST_PMD): $(BUILD)/$(LRVNE)/tests/test_pmd.o $(LRV_TEST_PMD_OBJS)
+	@mkdir -p $(dir $@)
+	@echo "  LINK  $@"
+	$(Q)$(LRVNE_LD) $(OPT) -o $@ $< $(LRV_TEST_PMD_OBJS) $(LDLIBS)
+
+test: $(TEST_EXES) $(LRV_TEST_PMD) $(EXE)
 	$(Q)GAME=$(GAME) tests/run.sh $(BUILD)
 
 # the original's results of the emulation checks, kept between runs
