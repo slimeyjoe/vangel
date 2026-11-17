@@ -232,7 +232,12 @@ static void game_reset(void)
     strcpy(vg.mus.name, "none");
     vg.mus.vol = 0;
     vg.mus.in_al = 0;
-    memset(&vg.input, 0, sizeof vg.input);
+    {
+        /* the screen lives on, and the pointer's overlay with it */
+        int overlay = vg.input.ptr_overlay;
+        memset(&vg.input, 0, sizeof vg.input);
+        vg.input.ptr_overlay = overlay;
+    }
     lrv_screen_clear_access(&vg.screen);
     vg_timer_install();
 }

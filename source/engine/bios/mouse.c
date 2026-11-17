@@ -5,14 +5,13 @@
  * pointer drawn over the displayed page.
  *
  * MSZ's own pointer shape is not known (docs/lrvne-fit.md); the engine draws an arrow of its
- * own, white with a black outline, hot spot at its tip. It is an overlay: it exists in the
- * picture presented, never in VRAM, so drawing under it needs no hiding. The original hides it
- * around every VRAM access because MSZ draws it into VRAM; the engine keeps those calls, as
- * they decide when the pointer is visible. */
+ * own, white with a black outline, hot spot at its tip. It is an overlay (lrvne's
+ * struct lrv_pointer): it exists in the picture presented, never in VRAM, so drawing under it
+ * needs no hiding. The original hides it around every VRAM access because MSZ draws it into
+ * VRAM; the engine keeps those calls, as they decide when the pointer is visible. */
 #include <string.h>
 #include "vg.h"
 
-#define PTR_W 2                         /* bytes */
 #define PTR_H 16
 
 /* the arrow: ink (white) and outline (black), 16 pixels a row, the leftmost the msb */
@@ -24,64 +23,24 @@ static const uint16_t ptr_mask[PTR_H] = {
     0xC000, 0xE000, 0xF000, 0xF800, 0xFC00, 0xFE00, 0xFF00, 0xFF80,
     0xFFC0, 0xFFC0, 0xFE00, 0xEF00, 0xCF00, 0x0780, 0x0780, 0x0300
 };
+static const struct lrv_pointer_shape ptr_shape = { ptr_ink, ptr_mask, PTR_H, 0, 0, 15, 0 };
 
-static struct {
-    int valid, col, y, w, h;
-    uint8_t under[4][PTR_H][PTR_W + 1];
-} ptr;
-
-static void ptr_mark(struct lrv_surface *pg, struct lrv_rect *dirty)
-{
-    struct lrv_rect r;
-    r.x0 = ptr.col * 8;
-    r.x1 = (ptr.col + ptr.w) * 8;
-    r.y0 = ptr.y;
-    r.y1 = ptr.y + ptr.h;
-    lrv_rect_clip(&r, pg);
-    lrv_rect_union(dirty, &r);
-}
+/* lrvne's pointer overlay, seen while the driver shows it and the mouse is open */
+static struct lrv_pointer ptr;
 
 static void ptr_apply(void *ctx, struct lrv_surface *pg, struct lrv_rect *dirty)
 {
-    int x = vg.sys.mouse_x, y = vg.sys.mouse_y, sh = x & 7, r, b, p;
     (void)ctx;
-    ptr.valid = 0;
-    if (!vg.input.ptr_shown || !(vg.input.open & VG_DEV_MOUSE))
-        return;
-    ptr.col = x >> 3;
-    ptr.y = y;
-    ptr.w = PTR_W + (sh ? 1 : 0);
-    if (ptr.col + ptr.w > pg->stride)
-        ptr.w = pg->stride - ptr.col;
-    ptr.h = y + PTR_H > pg->h ? pg->h - y : PTR_H;
-    for (r = 0; r < ptr.h; r++) {
-        uint32_t ink = (uint32_t)ptr_ink[r] << 8 >> sh, mask = (uint32_t)ptr_mask[r] << 8 >> sh;
-        for (b = 0; b < ptr.w; b++) {
-            int sft = 16 - 8 * b;
-            uint8_t m = (uint8_t)(mask >> sft), i = (uint8_t)(ink >> sft);
-            for (p = 0; p < 4; p++) {
-                uint8_t *d = pg->plane[p] + (y + r) * pg->stride + ptr.col + b;
-                ptr.under[p][r][b] = *d;
-                *d = (uint8_t)((*d & ~m) | (i & m));
-            }
-        }
-    }
-    ptr.valid = 1;
-    ptr_mark(pg, dirty);
+    ptr.x = vg.sys.mouse_x;
+    ptr.y = vg.sys.mouse_y;
+    ptr.shown = vg.input.ptr_shown && (vg.input.open & VG_DEV_MOUSE);
+    lrv_pointer_apply(&ptr, pg, dirty);
 }
 
 static void ptr_restore(void *ctx, struct lrv_surface *pg, struct lrv_rect *dirty)
 {
-    int r, b, p;
     (void)ctx;
-    if (!ptr.valid)
-        return;
-    for (r = 0; r < ptr.h; r++)
-        for (b = 0; b < ptr.w; b++)
-            for (p = 0; p < 4; p++)
-                pg->plane[p][(ptr.y + r) * pg->stride + ptr.col + b] = ptr.under[p][r][b];
-    ptr.valid = 0;
-    ptr_mark(pg, dirty);
+    lrv_pointer_restore(&ptr, pg, dirty);
 }
 
 /* INT 33h AX=1 / AX=2 */
@@ -98,6 +57,7 @@ int vg_mouse_open(void)
      * MSZ's own functions, whose effect is not known */
     vg.input.ptr_shown = 0;
     if (!vg.input.ptr_overlay) {
+        lrv_pointer_init(&ptr, &ptr_shape);
         if (lrv_screen_add_overlay(&vg.screen, ptr_apply, ptr_restore, NULL) != LRV_OK)
             return 0;
         vg.input.ptr_overlay = 1;
