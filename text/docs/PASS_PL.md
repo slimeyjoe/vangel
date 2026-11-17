@@ -2,17 +2,21 @@
 
 This is the hand-over for whoever continues the Polish translation. A new session starts here.
 
-**State on 2026-11-17: phase 0 is done.**
+**State on 2026-11-17: phase 0 and the calibration sample are done.**
 - The whole script has been read, and the story bible is written.
 - Both guides are written, and an independent review checked them against the whole script.
   Its factual corrections are applied.
 - The editor has approved every decision in `TRANSLATION_GUIDE_PL.md` §0 (D1–D23) and the
   glossary.
-- No line is translated yet. `text/translation/vangel_pl.tsv` does not exist yet.
+- The calibration sample is translated, was looked at in the game and is **approved by the
+  editor**: 179 keys in `text/translation/vangel_pl.tsv` (the names and brackets, the prologue,
+  `m001`–`m008` with menus 1 and 2, `m013`–`m017`). It is the model for everything that follows:
+  read those rows before translating (`tl.py view`). What it settled is in
+  `TRANSLATION_GUIDE_PL.md` §12, §10 and §14.
 - `text/translation/editor_pl.tsv` holds the six passages the editor translates.
 
-**Next: the calibration sample** (`TRANSLATION_GUIDE_PL.md` §12). Then comes the pass, chapter
-by chapter, and then a native read-through in play order (`docs/engine-plan.md`, M8).
+**Next: step 2 of the order below** (the title menu, save and load), then chapter 2. After the
+pass comes a native read-through in play order (`docs/engine-plan.md`, M8).
 
 ## Before the first line
 
@@ -27,8 +31,8 @@ by chapter, and then a native read-through in play order (`docs/engine-plan.md`,
        --tl ../text/translation/vangel_pl.tsv          # ../build/tl/read/messages.txt
    ```
    Everything in `build/` contains the game's Japanese and is never committed.
-3. Once only: create the translation file with every key and an empty text:
-   `python3 -I tools/tl.py skeleton ../build/virginangel.pak ../text/translation/vangel_pl.tsv`.
+3. The translation file exists (it was made once with `tl.py skeleton`). Do not run `skeleton`
+   over it.
 
 ## Order
 
@@ -36,11 +40,10 @@ The story runs in message order, and the scenario runs the chapters in that orde
 (`docs/re/script-catalog.md`). Translate in that order, so that voices, terms and running
 gags are settled where they first appear:
 
-1. **Calibration sample:** `bi.prologue.0`–`3`, `m001`–`m008` (chapter 1), `m013`–`m017`.
-   Look at it in the game. The editor reads it, and it becomes the model.
-2. `name.*`, `quote.open`, `quote.close` (fixed by the guide's §7 and D4), the title menu,
-   save and load (`menu41`–`43`, `m204`, `m205`).
-3. Chapters 2–11: `m009`–`m110`, menus 1–19. Chapter 9's love scene includes the editor's six
+1. **Done:** the calibration sample (`bi.prologue.0`–`3`, `m001`–`m008` with menus 1 and 2,
+   `m013`–`m017`) and `name.*`, `quote.open`, `quote.close`.
+2. The title menu, save and load (`menu41`–`43`, `m204`, `m205`; the guide's §8 gives them).
+3. Chapters 2–11: `m009`–`m012`, `m018`–`m110`, menus 3–19. Chapter 9's love scene includes the editor's six
    rows (below).
 4. The raid: `m111`–`m182`, menus 20–40. The exhibit menus 22–37 repeat four items, so use
    `tl.py fill`.
@@ -74,6 +77,33 @@ Translate the twins of a scene together (bible §2.3). Same Japanese, same Polis
 6. Commit the chapter: the translation file and the guide together. Run `make test` at least
    once a session (`check_lang` packs and plays a pseudo-translation; the real one must also
    build).
+
+## Looking at it without a window
+
+The headless build writes frames as pictures, and its run is the same every time:
+
+```sh
+../build/host/vangel --pak ../build/virginangel.pak --lang pl --storage DIR \
+    --autoplay @SPEC --shot-every 60 --shot-dir DIR --max-ticks 10000
+```
+
+`SPEC` holds `at:20=n` (the mouse question wants N or Y, not Return) and then a Return at
+intervals (`at:75=return at:135=return` …). A Return during the prologue skips its page, so
+leave the prologue alone to see it. The text window is the bottom 100 rows of a frame.
+
+## What the sample taught
+
+- **Inline speech is wrapped by hand** (guide §6.2): every line at most 66 columns, so that it
+  also fits the window's last row, and each later line indented by as many U+00A0 as the name
+  is long plus three. Write a small script for the batch that does this, outside the
+  repository; do not count columns by eye.
+- **Fit the original's rows.** When a passage takes more rows than the original's, the passage
+  after it moves to a new page. Tighten the sentence first; split with `\p` only where the
+  break helps (`m008.10`).
+- **The fonts.** In the game's font `!` and `"` are the halves of a two-cell symbol, so the
+  translation font has its own. It also has `ō`, drawn for "maska nō". A character the font
+  lacks stops the build; for a Latin letter, draw it in `fonts/vangel-latin.txt` as a mark on
+  the game's letter.
 
 ## Do not touch
 

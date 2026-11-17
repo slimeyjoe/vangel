@@ -14,7 +14,8 @@ tekst z kluczami daje `make text-template` i `tl.py read` (w `source/`, wynik w 
 
 **Status (2026-11-17):** faza 0 zakończona. Cały skrypt przeczytany, biblia spisana, dokumenty
 sprawdzone przez niezależnego recenzenta z całym skryptem, a redaktor podjął wszystkie decyzje
-z §0 (**zatwierdzone**). Następna jest próbka kalibracyjna (§12), po niej przekład. Wpisy
+z §0 (**zatwierdzone**). Próbka kalibracyjna (§12) jest przetłumaczona i zatwierdzona
+przez redaktora: jest wzorcem dla przekładu. Wpisy
 oznaczone „otwarte” (§10) i „do ustalenia” (§14) rozstrzyga się przy tłumaczeniu danej sceny
 i wpisuje tutaj.
 
@@ -43,7 +44,7 @@ proponował co innego niż pierwsza wersja, redaktor przyjął propozycję przeg
 | D4 | Mowa: nawiasy | `quote.open` = `: „` (dwukropek, spacja, „), `quote.close` = `”`. Mowa wpisana w akapit wygląda tak samo: `Murakumo: „Siema!”` |
 | D5 | Wcięcie wielowierszowej mowy w akapicie | kolejne wiersze zaczynamy **twardymi spacjami** (U+00A0) do kolumny za „ (§6.2) |
 | D6 | Toan i Biuro | 首都公安局 = **Stołeczne Biuro Ochrony Publicznej**, w skrócie **Toan** (D. Toanu, Ms. w Toanie); potocznie „Biuro”. **Nigdy** „Urząd Bezpieczeństwa”, „bezpieka”, „SB” |
-| D7 | 局長 | **szef** (Biura), w zwrocie „szefie”. Przezwisko 能面局長 = **szef Maska**; przy pierwszym użyciu „twarz jak maska nō”. „Dyrektor” to 院長 (Kusanagi). „Kamienna gęba” zostaje dla Kenza (顔面岩) |
+| D7 | 局長 | **szef** (Biura), w zwrocie „szefie”. Przezwisko 能面局長 = **szef Maska**; przy pierwszym użyciu „twarz jak maska nō”. „Dyrektor” to 院長 (Kusanagi). „Kamienna gęba” zostaje dla Kenza (顔面岩). Font przekładu ma własne `ō` właśnie dla tego słowa (`m001.47`); potem samo „twarz jak maska” |
 | D8 | ボディ・ドラッグ | **żywy narkotyk** (lm. żywe narkotyki; „przerobić kogoś na żywy narkotyk”) |
 | D9 | コンバット・ドール | **lalka bojowa** (lm. lalki bojowe); typ **Statue 2H**; メタル女 = „metalowa baba” |
 | D10 | バージン・エンジェル | **Virgin Angel** bez tłumaczenia (narkotyk i tytuł gry) |
@@ -80,8 +81,8 @@ proponował co innego niż pierwsza wersja, redaktor przyjął propozycję przeg
 
 ## 2. Znaki i długości
 
-- **Jedna kolumna:** ASCII, polskie litery `ąćęłńóśźżĄĆĘŁŃÓŚŹŻ`, ISO 8859-1 (`« » é ü °` …),
-  `– — … ‘ ’ ‚ “ ” „` i twarda spacja U+00A0. `# $ % & ' " \` rysują się jako zwykłe znaki
+- **Jedna kolumna:** ASCII, polskie litery `ąćęłńóśźżĄĆĘŁŃÓŚŹŻ`, `ō`, ISO 8859-1 (`« » é ü °` …),
+  `– — … ‘ ’ ‚ “ ” „` i twarda spacja U+00A0. `! # $ % & ' " \` rysują się jako zwykłe znaki
   (w oryginale były czymś innym; przewodnik ogólny §2).
 - **Dwie kolumny** (japoński font): `☆ ★ ♀ ♂ ○ ◎ ＊`, `『』「」【】`, spacja pełnoszeroka `　`,
   pełnoszerokie litery i cyfry. Używamy ich tylko tam, gdzie §6 każe.
@@ -223,6 +224,8 @@ Yajima Takao, Kandori, Shikakura, Goryl (ゴリ), Snake (スネーク i スネ�
 ### 6.3 『』 poza mową
 - Nazwy i terminy przy pierwszym użyciu: „ ” (`『首都公安局』` → „Stołeczne Biuro Ochrony
   Publicznej”, `『ＵＩＡ・氷翼』` → „UIA – Lodowe Skrzydło”). Potem bez cudzysłowu.
+- Imię i nazwisko, którym ktoś się przedstawia w kwestii (`m015.1`: `『ヤサカ・ユキ』`), piszemy bez
+  cudzysłowu: „Nazywam się Yasaka Yuki”.
 - Słowa przytoczone w narracji (`『しな』`, `『住む世界が違う』`, `『処女だ！！』`): „ ”.
 - **Dźwięki** (`『バタン！！』`, `『ガン！ガン！』`, `『ポカリ☆☆』`): bez cudzysłowu, jako osobny
   fragment: „Trzask!!”, „Bach! Bach!”, „Bęc☆☆”.
@@ -393,7 +396,7 @@ samej wielkości w tym samym miejscu. Wpisy bez dopisku są zatwierdzone (2026-1
 
 | Klucze | Oryginał | Polski |
 |---|---|---|
-| `m005.28`–`m005.35` | 穴堀工事 (roboty drogowe) / 穴掘り z rudą | „trzy rozkopane ulice” → „Na twojej trasie nikt nic nie rozkopywał. Rozkopywałeś najwyżej jedną rudą panienkę.” — otwarte, do wygładzenia |
+| `m005.28`–`m005.35` | 穴堀工事 (roboty drogowe) / 穴掘り z rudą | „po drodze aż w trzech miejscach wiercili w jezdni” → „Na twojej trasie nie zaplanowano żadnych robót. A jedyne wiercenie odbyło się z udziałem twoim i pewnej rudej dziewczyny, Murakumo.” (sucha urzędowość Sasamego niesie żart) |
 | `m018.23`, `m042.6` | 暴れん坊将軍 (serial, przydomek penisa) | **„Rozbrykany Szogun”** (暴れん坊 to rozrabiaka); „Rozbrykany Szogun ma dziś zamknięte☆” |
 | `m021.9` | 天にも昇る天使な気分 | „Czujesz się jak anioł w siódmym niebie.” |
 | `m012.8` | 現場百回 | „Śledczy wraca na miejsce zbrodni sto razy!” (nie bezosobowo: „wraca się na miejsce zbrodni” brzmi jak przysłowie o mordercy) |
@@ -449,6 +452,16 @@ Do przetłumaczenia na próbę, po decyzjach z §0: prolog (`bi.prologue.0`–`3
 Yuki i Shinobu (`m013`–`m017`). Cel: sprawdzić w grze nawiasy (D4), wcięcia (D5), zdrobnienia
 (D3), ton Murakumo w obu rejestrach i długości. Po uwagach redaktora próbka staje się
 wzorcem.
+
+**Stan (2026-11-17):** przetłumaczona (179 kluczy: tagi i nawiasy z §7, prolog, `m001`–`m008` z
+menu 1 i 2, `m013`–`m017`) i obejrzana w grze. Co z niej wynikło:
+- kod `!` w foncie gry nie jest wykrzyknikiem (razem z `"` to połówki jednego znaku na dwie
+  kolumny), więc font przekładu dostał własny `!`;
+- `m008.10` dzielimy na dwie strony (`\p`), żeby „......Murakumo. / Na bezpańskiego psa bez
+  obroży trzeba zapolować.” stało razem; to jedyny komunikat próbki dłuższy niż oryginał;
+- `m013.13` w oryginale nie ma zamykającego 」; zamykamy;
+- wiersze ręcznie łamanej mowy w akapicie trzymamy w 66 kolumnach, żeby pasowały też do
+  ostatniego wiersza okna.
 
 ## 13. Otwarte sprawy
 
@@ -549,7 +562,14 @@ Zatwierdzony razem z §0 (2026-11-17); wpisy „do ustalenia” i „otwarte” 
 | 甘いコーヒー | słodka kawa | §9, echa |
 | ずるい | nie fair | §9, Yuki |
 | チェリーのような舌 | język jak wisienka | `m035.6`, `m061.27`, `m126.17`, a celowo także w laboratorium i zakończeniach (`m157.26`, `m157.43`, `m184.40`, `m188.128`, `m196.9`): ten sam obraz |
-| 能面顔 | twarz jak maska (nō) | D7 |
+| 能面顔 | twarz jak maska (nō) | D7; „nō” tylko przy pierwszym użyciu (`m001.47`) |
+| しなを作る | wdzięczyć się | `m001.32` („zacząłem się przed nim „wdzięczyć””); wraca w `menu11.2` |
+| チャラチャラした所 | mizdrzenie się | `m001.35`, Kenzo o Murakumo |
+| アイデンティティ | imidż | `m001.41` (§6.6: zapożyczenie z epoki; decyzja redaktora) |
+| ナイスボディー | sexy ciało | `m005.58` (§6.6: zapożyczenie z epoki) |
+| ドラッグ・バー | narkobar | `m008.53` |
+| 打撲 / 撲殺 / 殴り殺す | stłuczenie / zatłuc na śmierć / pobić na śmierć | `m005.64`–`m005.71`, `m006.29`; bez słowa „pięść” poza `m006.26` i `m007.7` (wskazówka, biblia §2.2) |
+| お姉様 (Shinobu) | jaśnie pani | `m016.0` |
 | 顔面岩 (Kenzo) | „kamienna gęba” | `m037.3`, `m039.0` |
 | 薮医者 / ヤブ医者 | konował | |
 | ヘボ公安 | partacz z Toanu | `m052.48` |

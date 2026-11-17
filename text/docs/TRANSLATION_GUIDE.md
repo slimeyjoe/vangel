@@ -79,13 +79,14 @@ contain the game's text.
 ## 2. Engine limits (verified: `source/tests/check_lang.py`, `docs/translation.md`)
 
 - **A character** takes 1 column (8 pixels) if the Latin table `latin8` has it. That covers
-  ASCII, ISO 8859-1 (so `é à ü « » ° ·` …), the Polish letters, `– — … ‘ ’ ‚ “ ” „` and the
+  ASCII, ISO 8859-1 (so `é à ü « » ° ·` …), the Polish letters, `ō`, `– — … ‘ ’ ‚ “ ” „` and the
   no-break space. Anything else that Shift-JIS can write is drawn from the Japanese font at 16
   pixels, **2 columns**: `☆ ★ ♀ ♂ ○ ◎ ＊ 『』「」【】`, full-width letters, digits and spaces
   (`　`), kana and kanji. A character neither font has stops the build.
 - **The game's own ASCII is not ASCII.** In the original, `#` `$` `%` are the pieces of a long
-  bar, `&` `'` draw the page-wait arrow, and `\` is a yen sign. In a translation these codes are
-  drawn as the ordinary characters, with our own glyphs. The original's `#$$$$%` (a long drawn-out
+  bar, `&` `'` draw the page-wait arrow, `!` `"` are the halves of a two-cell symbol, and `\` is
+  a yen sign. In a translation these codes are drawn as the ordinary characters, with our own
+  glyphs. The original's `#$$$$%` (a long drawn-out
   sound, `m019.5`, `m025.8`, `m052.43`) has no equivalent; write the long sound with letters.
 - **The message window** is 68 columns by 4 rows. **Row 3 holds 66**; the page-wait icon sits in
   its last two cells. Text is wrapped greedily at ASCII spaces. Spaces at a break are dropped,
@@ -132,7 +133,7 @@ contain the game's text.
 | **The console** | `con.ask` ends in `[Y/N]`. The game reads the **Y** and **N** keys. | Keep `[Y/N]` and the letters Y and N, whatever the words for yes and no. |
 | **The music room's help line** | It names keys: cursor up and down, Space or Return, ESC. | Name the same keys. |
 | **Real names and a phone number** | The staff roll and the notice name real people (in kanji) and give the 1995 support BBS's number. | The language guide decides between romanisation (readings must be verified, not guessed) and keeping them as written. The number stays as it is. |
-| **The shared and rare characters** | `ヘボ公安め` etc. are ordinary; but `!"` in `m001.29` is a stray character in the original (its `"` is not a quote). | Ignore the stray `"`. |
+| **The shared and rare characters** | `ヘボ公安め` etc. are ordinary; but `!"` in `m001.29` is not an exclamation mark and a quote: in the game's font the two codes are the halves of one two-cell symbol. | Translate it as the exclamation it stands for; write no `"`. |
 | **A wrong inline name** | `m006.29` is written `ムラクモ「…」`, but it is Sasame's line: plain だ and hearsay (そうだ), and Murakumo answers him politely at `m006.31`. | Inline names are text, so the translation can fix it: write Sasame's name. |
 | **A wrong subject** | `m208.15` writes 女 (the woman) where 娘 (the girl) is meant: the girl is the one pulled close. | Translate what is meant. |
 | **Dropped characters** | `m195.5` reads `…に／らったの☆` across a line break: にしてもらったの with characters missing. | Translate the complete sentence. |
