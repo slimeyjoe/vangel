@@ -114,8 +114,8 @@ original draws its text (`docs/re/text.md` §3.2).
 - **`latin8`** (one per pack, keyed by code point), built at pack time by `tools/vgfont.py`:
   - ISO 8859-1 from lrvne's `fonts/x11/8x16.bdf`, the fallback;
   - ASCII from the game's own font in `M.EXE`, except the codes it draws something else for:
-    `#` `$` `%` (pieces of a long bar), `&` `'` (the halves of the page-wait arrow), `"` (not a
-    quote) and `\` (the yen sign);
+    `#` `$` `%` (pieces of a long bar), `&` `'` (the halves of the page-wait arrow), `!` `"` (the
+    halves of a two-cell symbol) and `\` (the yen sign);
   - our own glyphs and the Polish letters, `fonts/vangel-latin.txt`. That file holds our own
     glyphs for those seven codes, for `– — … ‘ ’ ‚ “ ” „` and the no-break space, and the
     marks (acute, dot, ogonek, stroke) that make ą ć ę ł ń ó ś ź ż and their capitals out of

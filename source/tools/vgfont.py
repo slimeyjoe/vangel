@@ -5,8 +5,8 @@ latin8  the half-width glyphs, keyed by code point, 8x16, not emboldened (the en
         them as it does the game's own): in this order, a later one replacing an earlier
           - ISO 8859-1 from lrvne's fonts/x11/8x16.bdf, the fallback;
           - ASCII 21h-7Eh from the game's own font (M.EXE, the pack's ank8), except the codes
-            that are not Latin there (# $ % & ' " \\: bar pieces, the page-wait arrow, the
-            yen sign) and the space;
+            that are not Latin there (# $ % & ' ! " \\: bar pieces, the page-wait arrow,
+            the halves of a two-cell symbol, the yen sign) and the space;
           - our own glyphs and the Polish letters, fonts/vangel-latin.txt: a glyph of its own,
             or a mark on one of the game's letters
         A character is one column when latin8 has it, otherwise two.
@@ -26,7 +26,7 @@ ROOT = os.path.normpath(os.path.join(HERE, '..', '..'))
 OWN = os.path.join(ROOT, 'fonts', 'vangel-latin.txt')
 FALLBACK = os.path.join(ROOT, 'source', 'lrvne', 'fonts', 'x11', '8x16.bdf')
 
-NOT_LATIN = set(b'#$%&\'"\\')       # the game's font draws something else for these
+NOT_LATIN = set(b'!#$%&\'"\\')      # the game's font draws something else for these
 
 
 class FontError(Exception):
@@ -80,7 +80,7 @@ def sjis_to_jis(lead, trail):
     row = (lead - (0x70 if lead < 0xA0 else 0xB0)) * 2
     if trail < 0x9F:
         row -= 1
-        col = trail - (0x20 if trail < 0x7F else 0x21)
+        col = trail - (0x1F if trail < 0x7F else 0x20)
     else:
         col = trail - 0x7E
     return row << 8 | col
