@@ -9,6 +9,11 @@
 #   make pack                      build the game pack ../build/<game>.pak from the imported game
 #   make TARGET=host test          build and run the conformance tests
 #   make e2e-routes                play the end-to-end check's plans on the engine again
+#   make text-template             every string of the game for translators (derived game data,
+#                                  ../build/tl/template.tsv; ../docs/translation.md)
+#   make text-check                check every translation in ../text/translation/
+#   make TARGET=sdl3 dist          the player's archive ../build/sdl3/vangel-<version>-<host>.tar.gz
+#   make dist-src                  the source archive ../build/vangel-<version>-src.tar.gz
 #   make clean                     remove ../build/
 #   make data-clean                remove everything made from the game outside ../build/
 #   make distclean                 clean + data-clean: only the committed files are left
@@ -125,4 +130,60 @@ pack:
 	$(Q)$(LRVNE_TOOL) xfont --no-bold -o $(BUILDROOT)/fonts/ank8rom.xfnt $(X11FONTS)/8x16rk.bdf >/dev/null
 	$(Q)$(LRVNE_TOOL) xfont --no-bold -o $(BUILDROOT)/fonts/k16.xfnt $(X11FONTS)/jiskan16.bdf >/dev/null
 	$(Q)$(LRVNE_PY) tools/mkpack.py --game $(GAME) --original $(ORIGINAL) --fonts $(BUILDROOT)/fonts \
-	    -o $(PAK)
+	    $(foreach t,$(PACK_TEXT),--text $(t)) -o $(PAK)
+
+# ---------------------------------------------------------------------------------------------
+# Translations (../docs/translation.md): ../text/translation/vangel_<lang>.tsv, keys and text
+# only. `make pack` packs every one of them (PACK_TEXT="pl=FILE ..." instead); the template
+# and the reading copies hold the game's Japanese, derived data that stays in ../build/ (never
+# in the repository).
+# ---------------------------------------------------------------------------------------------
+TL_DIR    ?= ../text/translation
+PACK_TEXT ?= $(foreach f,$(sort $(wildcard $(TL_DIR)/vangel_*.tsv)),$(patsubst vangel_%.tsv,%,$(notdir $(f)))=$(f))
+.PHONY: text-template text-check
+text-template:
+	$(Q)$(LRVNE_PY) tools/tl.py template $(PAK) $(BUILDROOT)/tl/template.tsv
+text-check:
+	$(Q)for t in $(PACK_TEXT); do \
+	    $(LRVNE_PY) tools/tl.py check $${t#*=} --pak $(PAK) || exit 1; \
+	done
+
+# ---------------------------------------------------------------------------------------------
+# Release archives. The version is engine/version.h's (the release is tagged v<version>).
+# `make TARGET=sdl3 dist`: $(BUILD)/vangel-<version>-<name>.tar.gz, which unpacks to
+# VANGEL/{vangel, ReadMe.txt, LICENSE, LICENSE.ymfm}: the stripped executable, the player's
+# ReadMe (dist/ReadMe.txt, @VERSION@ replaced) and the licences of what is in the executable.
+# The pack is not in it: it is the game's data, which the player builds from their own copy
+# (the ReadMe says how). <name> is the target's (lrvne's LRVNE_DIST_NAME).
+# `make dist-src`: the committed tree at HEAD with the lrvne submodule's (git archive; the
+# repository holds no game data).
+# ---------------------------------------------------------------------------------------------
+DIST_README ?= dist/ReadMe.txt
+DIST_STRIP  ?= strip
+DIST        := $(BUILD)/vangel-$(VG_VERSION)-$(LRVNE_DIST_NAME).tar.gz
+DISTDIR     := $(BUILD)/dist
+SRC_NAME    := vangel-$(VG_VERSION)
+SRCDIST     := $(BUILDROOT)/srcdist
+# no local user or group names in the archive (GNU tar / bsdtar spell it differently)
+TAR_ANON    := $(if $(shell tar --version 2>/dev/null | grep GNU),--owner=0 --group=0 --numeric-owner,--uid 0 --gid 0 --uname '' --gname '')
+.PHONY: dist dist-src
+dist: $(EXE)
+	$(Q)test -n "$(LRVNE_DIST_NAME)" || { echo "dist: no release archive for TARGET=$(TARGET) (TARGET=sdl3)"; exit 1; }
+	$(Q)rm -rf $(DISTDIR) $(DIST)
+	$(Q)mkdir -p $(DISTDIR)/VANGEL
+	$(Q)cp $(EXE) $(DISTDIR)/VANGEL/
+	$(if $(DIST_STRIP),$(Q)$(DIST_STRIP) $(DISTDIR)/VANGEL/vangel$(EXESUF))
+	$(Q)sed 's/@VERSION@/$(VG_VERSION)/g' $(DIST_README) >$(DISTDIR)/VANGEL/ReadMe.txt
+	$(Q)cp ../LICENSE $(DISTDIR)/VANGEL/LICENSE
+	$(Q)cp $(LRVNE)/third_party/ymfm/LICENSE $(DISTDIR)/VANGEL/LICENSE.ymfm
+	@echo "  TAR   $(DIST)"
+	$(Q)cd $(DISTDIR) && tar $(TAR_ANON) -czf $(abspath $(DIST)) VANGEL
+	$(Q)tar -tzvf $(DIST)
+dist-src:
+	@echo "  TAR   $(BUILDROOT)/$(SRC_NAME)-src.tar.gz"
+	$(Q)rm -rf $(SRCDIST)
+	$(Q)mkdir -p $(SRCDIST)
+	$(Q)git -C .. archive --format=tar --prefix=$(SRC_NAME)/ HEAD | tar -x -C $(SRCDIST)
+	$(Q)git -C $(LRVNE) archive --format=tar --prefix=$(SRC_NAME)/source/lrvne/ HEAD | tar -x -C $(SRCDIST)
+	$(Q)cd $(SRCDIST) && tar $(TAR_ANON) -czf ../$(SRC_NAME)-src.tar.gz $(SRC_NAME)
+	$(Q)rm -rf $(SRCDIST)
