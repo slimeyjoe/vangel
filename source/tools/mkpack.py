@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 """Build a vangel game pack (<game>.pak) from the imported original game.
 
-usage: mkpack.py [--game NAME] [--original DIR] [--fonts DIR] -o GAME.pak
+usage: mkpack.py [--game NAME] [--original DIR] [--fonts DIR] [--text LANG=FILE ...] -o GAME.pak
 
 DIR is resources/original/ as `gamedata.py import` fills it (and resources/derived/
 M_unpacked.EXE, which the import makes). Every file taken is checked against
@@ -24,6 +24,12 @@ tools/vgpak.py):
            emboldens); "font16" (JIS X 0208, 16x16) and "font8" (JIS X 0201, 8x16) stand in
            for the kanji ROM, from lrvne's xfont (--no-bold), given in --fonts as k16.xfnt and
            ank8rom.xfnt
+  FONT     "latin8": the half-width glyphs of translated text, keyed by code point
+           (tools/vgfont.py: the game's font, our own glyphs, lrvne's 8x16 as the fallback)
+  per translation (--text LANG=FILE, any number; docs/translation.md), in language LANG:
+  STRINGS  "text": the translation's string table (tools/vgtext.py), with every speaker's name
+           and the quotes (the original's where the file has none)
+  FONT     "wide16": the full-width glyphs it uses, keyed by code point, from font16
   META     "profile" (tools/games.py), "lang" per language, and "langs" (the pack writer's);
            "viewer": the palette the scenario shows each picture with (tools/gf.py
            gf_palettes, the first of them), for the picture viewer only (--view; the pictures
@@ -47,7 +53,9 @@ import games     # noqa: E402
 import gf        # noqa: E402
 import mexe      # noqa: E402
 import scb       # noqa: E402
+import vgfont    # noqa: E402
 import vgpak     # noqa: E402
+import vgtext    # noqa: E402
 
 KIND_TYPE = {
     'scenario (CRSC)': ('scenario', vgpak.T_SCENARIO),
@@ -111,16 +119,52 @@ def viewer_palettes(original, release, img):
     return ('\n'.join(lines) + '\n').encode('ascii')
 
 
+def add_texts(pk, texts, data_of, lat, fonts, counts):
+    """the translations' tables, glyphs and settings"""
+    strings = vgtext.game_strings(data_of.get)
+    if not fonts:
+        die('--text needs --fonts (the translations\' full-width glyphs come from font16)')
+    with open(os.path.join(fonts, 'k16.xfnt'), 'rb') as fo:
+        font16 = vgfont.read_table(fo.read())
+    for lang, path in texts:
+        tl, problems = vgtext.load(path, strings)
+        if problems:
+            die('%s:\n  %s' % (path, '\n  '.join(problems[:20])))
+        entries = vgtext.pack_entries(strings, tl)
+        chars = ''.join(b.decode('utf-8') for b in entries.values())
+        try:
+            wide = vgfont.wide16(chars, font16, lat)
+        except vgfont.FontError as e:
+            die('%s: %s' % (path, e))
+        pk.add('text', xpak.T_STRINGS, vgtext.table_bytes(entries), lang=lang)
+        pk.add('wide16', xpak.T_FONT, vgfont.build(wide or {0x3000: [0] * 16}, 16), lang=lang)
+        name = games.LANG_NAMES.get(lang, lang)
+        pk.add('lang', xpak.T_META, ('encoding=utf-8\nname=%s\n' % name).encode('utf-8'),
+               lang=lang)
+        counts['text ' + lang] = len(tl)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split('\n')[0])
     ap.add_argument('--original', default=games.ORIG)
     ap.add_argument('--fonts', help='directory with k16.xfnt and ank8rom.xfnt (xfont --no-bold)')
     ap.add_argument('--game', default=games.DEFAULT, choices=sorted(games.GAMES))
+    ap.add_argument('--text', action='append', default=[], metavar='LANG=FILE',
+                    help='a translation (docs/translation.md), in language LANG')
     ap.add_argument('-o', '--output', required=True)
     a = ap.parse_args()
     game = games.GAMES[a.game]
     prof = dict(game['profile'])
-    pk = xpak.PackWriter(vgpak.TYPES, langs=list(game['languages']))
+    texts = []
+    for spec in a.text:
+        lang, _, path = spec.partition('=')
+        if not lang or not path:
+            die('--text %s: LANG=FILE' % spec)
+        if lang in game['languages'] or lang in [t[0] for t in texts]:
+            die('--text %s: the language %s is there already' % (spec, lang))
+        texts.append((lang, path))
+    pk = xpak.PackWriter(vgpak.TYPES, langs=list(game['languages']) + [t[0] for t in texts])
+    data_of = {}
     counts = collections.Counter()
     pmd_com = None
     for row in inventory.Inventory.load(games.INVENTORY).rows:
@@ -129,10 +173,12 @@ def main():
         name = row.basename
         kind = KIND_TYPE.get(row.get('kind'))
         if kind:
-            pk.add(name, kind[1], read_checked(row, a.original))
+            data_of[name] = read_checked(row, a.original)
+            pk.add(name, kind[1], data_of[name])
             counts[kind[0]] += 1
         elif name in FILES:
-            pk.add(name, FILES[name], read_checked(row, a.original))
+            data_of[name] = read_checked(row, a.original)
+            pk.add(name, FILES[name], data_of[name])
             counts['file'] += 1
         elif name == 'PMD.COM':
             pmd_com = read_checked(row, a.original)
@@ -149,8 +195,15 @@ def main():
     except ValueError as e:
         die('PMD.COM: %s' % e)
     img = read_engine(game)
-    pk.add('txbdict', xpak.T_BLOB, mexe.text_dictionary(img))
+    data_of['txbdict'] = mexe.text_dictionary(img)
+    pk.add('txbdict', xpak.T_BLOB, data_of['txbdict'])
     pk.add('ank8', xpak.T_FONT, ank8_table(img))
+    try:
+        lat = vgfont.latin8(mexe.ank_font(img))
+    except vgfont.FontError as e:
+        die('latin8: %s' % e)
+    pk.add('latin8', xpak.T_FONT, vgfont.build(lat, 8))
+    counts['fonts'] += 1
     for name, data in mexe.palettes(img).items():
         pk.add(name, xpak.T_BLOB, data)
     pk.add('fx31.order', xpak.T_BLOB, mexe.fx31_order(img))
@@ -159,6 +212,7 @@ def main():
     except ValueError as e:
         die('M.EXE: %s' % e)
     for name, data in bi.items():
+        data_of[name] = data
         pk.add(name, xpak.T_BLOB, data)
     counts['blob'] += 6 + len(bi)
     pk.add('viewer', xpak.T_META, viewer_palettes(a.original, game['release'], img))
@@ -174,6 +228,8 @@ def main():
             with open(f, 'rb') as fo:
                 pk.add(name, xpak.T_FONT, fo.read())
             counts['fonts'] += 1
+    if texts:
+        add_texts(pk, texts, data_of, lat, a.fonts, counts)
     pk.add('profile', xpak.T_META, profile.dumps(prof).encode('utf-8'))
     data = pk.build(dedupe=True)
     os.makedirs(os.path.dirname(os.path.abspath(a.output)), exist_ok=True)
