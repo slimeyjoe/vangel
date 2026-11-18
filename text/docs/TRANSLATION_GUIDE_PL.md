@@ -272,7 +272,8 @@ Yajima Takao, Kandori, Shikakura, Goryl (ゴリ), Snake (スネーク i スネ�
 ### 6.8 Liczby i miary
 - Godziny według D20. „2 m”, „180 cm”, „2 km”. ４５口径 = „czterdziestkapiątka” albo
   „kaliber .45”, ３８口径 = „kaliber .38”.
-- 65 700 godzin, ze spacją. „Klasa B”.
+- 65 700 godzin, ze spacją; gdy liczba mogłaby się złamać między wierszami, spacja twarda
+  (U+00A0; `m057.18`, `m103.27`). „Klasa B”.
 - Ekrany wyszukiwania (`m035.18`, `m062.0`, `m104.29`): układ i nawiasy `【】` zostają, treść po
   polsku, a etykiety z dwukropkiem: `Nazwisko: Misaki Misa   Płeć: kobieta   Wiek: 23`.
 
@@ -339,7 +340,7 @@ Oryginał pisze `ボードをを` (podwójne を). To literówka, której przek�
 | Kenzō | Głośno, urzędowo, z oburzeniem (cytuje powitanie Murakumo, więc idzie za §6.7): „Murakumo! Jakie «siema»?! Co zawieszony agent robi na miejscu zbrodni?!” Na nagraniu (`m037`) jak protokół: „Świadek zeznaje, co następuje.” |
 | Hinamura | Uprzejmie, z przytykiem: „Pan na nadgodzinach? Jutro będzie padać.” Jąkanie: „To... to... to... to...” (`m019.0`). |
 | Reiko (maska) | Lodowato uprzejma sekretarka: „Nazywam się Takama Reiko, jestem sekretarką doktora Kusanagiego Kena.” Drwina pod spodem: „Hm, hm... Partacz z Toanu.” (`m052.48`), „Och, przepraszam, nie zauważyłam. Ohoho...” (`m079.10`). |
-| Reiko (bez maski) | `m134.23`: „Tak. To ja jestem Fubuki Izumo. Doktor Kusanagi przywrócił mnie do życia. I dał mi najsilniejsze ciało, jakie istnieje!” Potem salonowa dominatorka: ☆, „Hi, hi, hi”, piskliwe キャハハ (`m134.46`), a rozkazy w damskich formach: 眺めてらして☆ (`m150.19`), 嘘おっしゃい (`m154.1`), 見えなくてよ (`m154.17`), 御上げ (`m157.12`). Okrucieństwo z salonu, nie szczekanie: „Niechże pan sobie popatrzy☆”, „Proszę nie kłamać!”, „Jakoś nie wygląda pani na zawiedzioną”. Raz mówi jak maszyna (`m168.18`, D23). |
+| Reiko (bez maski) | `m134.23`: „Tak. To ja jestem Izumo Fubuki. Doktor Kusanagi przywrócił mnie do życia. I dał mi najsilniejsze ciało, jakie istnieje!” Potem salonowa dominatorka: ☆, „Hi, hi, hi”, piskliwe キャハハ (`m134.46`), a rozkazy w damskich formach: 眺めてらして☆ (`m150.19`), 嘘おっしゃい (`m154.1`), 見えなくてよ (`m154.17`), 御上げ (`m157.12`). Okrucieństwo z salonu, nie szczekanie: „Niechże pan sobie popatrzy☆”, „Proszę nie kłamać!”, „Jakoś nie wygląda pani na zawiedzioną”. Raz mówi jak maszyna (`m168.18`, D23). |
 | Kusanagi | Napuszony, kliniczny: „Mięsień obszerny boczny i półścięgnisty uszkodzone. Tętnica udowa pęknięta. Kość udowa złamana. Cztery tygodnie leczenia, powiedziałbym.” (`m148.1`). Do Murakumo „panie Murakumo”. Gdy traci twarz: „Moja twarz! Twarz genialnego lekarza!”. |
 | Mami | Cicho, z wahaniem: „Ja... przepraszam! Ja nic nie wiem!” |
 | Goryl | Prymitywnie, lubieżnie, bełkotliwie i przeciągle, jak komiksowy osiłek (Murakumo: 漫画みたいな奴): „Ihihihi, panienki, jak będziecie tu tak łazić, to zaraz będziecie piszczeć.” Groźby: „Ale tobą cisnę!” (nie „Ale cię rzucę!”, to brzmi jak zerwanie). |
@@ -381,6 +382,73 @@ brzmienie, wpisane tutaj przy pierwszym przekładzie.
 - Bliźniaki `m023.8` / `m025.2` różnią się jednym słowem (えらく): „Jakoś tak służbowo się
   zachowuje.” / „Jakoś strasznie służbowo się zachowuje.”, w obu dalej: „Aż jej z twarzy
   wyziera, że nie znosi podrywaczy.”
+
+- Kusanagi (`m051.43`): „Panie agencie, szpital żyje ze swojego wizerunku.” Murakumo cytuje to
+  dosłownie w `m053.20`. Jeśli zmieni się jedno, zmienia się i drugie.
+- Kenzō na deku (`m037`): jego własne zdania ramowe (w oryginale 「」) zostają w „ ”
+  („Taksówkarz Yajima Takao zeznaje, co następuje.”), a bloki zeznań (『』) idą w « », w
+  policyjnej urzędowości: pokrzywdzona, sprawczyni, wymieniony, przedmiotowe zdarzenie.
+- Sasame, ironiczne 〜てくれたのは君かね z ムラクモ君 (`m055.2`): „Mój drogi Murakumo, czy to ty byłeś
+  łaskaw położyć to na moim biurku?” Grzeczność z kpiną, bez ciepła i bez groźby; ten sam ton
+  przy szufladzie w `m108`.
+- Mami, あの jako jąkanie (`m052.37`): „to... to...”, jak u Hinamury (`m019.0`), nie „ale... ale...”.
+- Yuki, キャハ☆ (`m042.12`): „Hi-hi☆”.
+- Pancerze osobiste, bliźniacze brzmienie `m040.13` / `m109.7`: „Wszystkie typy są lekkie,
+  robione z myślą o agentach: wystarczy włożyć na wierzch kurtkę i nic nie widać.” Wstęp o
+  zbrojowni `m040.6` jest wzorem dla `m109.0`.
+
+- Podziw Murakumo, なぁ bez ～ (`m063.16`): „no, no” („Ale ma pupę, no, no.”). Przeciągnięte „no-o”
+  tylko tam, gdzie oryginał ma ～.
+- Reiko, 追い出す (`m065.65`): „wyrzucić” („wyrzucę państwa siłą”), podjęte w `m066.0` („Wyrzuceni
+  przez piękną sekretarkę”). Nie „wyprosić” i nie „usunąć” (przed `m134` brzmiałoby jak groźba).
+- Cios otwartą dłonią (`m075.72` = `m076.74`): „przekazuję siłę w głąb i – wuuuuum! – wstrząsam mu
+  mózgiem”, potem „rozbity budyń” (`m075.75`, `m076.77`). „Rozpryskuje się” zostaje dla mózgu w
+  `m170.29` i `m175.0`; przedmioty „rozlatują się na kawałki” (`m075.43`).
+- Goryl o swoim pancerzu (`m075.53` = `m076.14`): „U mnie między skórą a mięśniami siedzą silikon i
+  stalowe płyty, wszczepione jak pancerz kompozytowy-y-y!!”. Jego przeciągnięcie (のだぁ) idzie na
+  ostatnie słowo zdania. Jego へへへ = „He, he, he”; do Yuki „panienko”.
+- Okrzyk 破！！！ w 『』 (`m075.70`) to żywy krzyk, nie nagranie: `Murakumo: „Ha!!!”`.
+  `ムラクモ「ニヤッ」` (`m076.60`) = `Murakumo: „He, he.”`.
+
+- 幸せになって (`m096.16` → `m188.77`): Murakumo: „Wolno ci być szczęśliwą, Yuki. Ja cię
+  uszczęśliwię...” → Yuki: „Murakumo, wolno mi być szczęśliwą...”. `m096.7` przygotowuje to słowem
+  „uszczęśliwić”. 嬉しい (Yuki, `m091.16`, też `m186.6`) = „jak się cieszę”; „szczęście” zostaje dla 幸せ.
+- Yuki w trzeciej osobie w parku: エッチな娘になっちゃう (`m093.16`) = „Yuki... zostanie figlarką”
+  (D15); いやらしい女の子 (`m093.53`) to inne słowo: „bezwstydna dziewczyna”, lament, nie przysięga.
+  恥ずかしい w całej scenie = „wstyd mi”; ダメ(です) = „nie wolno” / „nie”.
+- Shinobu o porzuconym zdrobnieniu (`m099.46`): „Yuki?... Murakumo! A od kiedy to jesteście tak
+  blisko, że mówisz do niej bez zdrobnienia?”.
+- Hinamura duszony (`m100.40`): 言いすぎました = „Przesadziłem” (nie „za dużo powiedziałem”):
+  „Przeprasza-a-am! Przesadziłe-e-em!”.
+- Płacz: ぐすっ = „chlip”, połknięty szloch (んくっ) = „hyk”, わぁ～ん = „Uaaa...” (`m096.0`).
+
+- 私専用のボディ・ドラッグ (`m136.0` = `m140.1` = `m144.1` → `m138.6` = `m142.6` → `m195.5`): „mój osobisty
+  żywy narkotyk”. Reiko: „Poproszę doktora Kusanagiego, żeby przerobił twoją partnerkę na mój
+  osobisty żywy narkotyk.” On wspomina to dokładnym urywkiem: „...na mój osobisty żywy narkotyk...”.
+  `m195.5` (z uzupełnionym ubytkiem, D17): „...żeby przerobił ją na mój osobisty żywy narkotyk☆”.
+- Reiko, przebłysk keigo wobec obojga (`m134.6`, 困った都安の方々ですね): kpiąco-salonowe „ci państwo”:
+  „Ależ kłopotliwi są ci państwo z Toanu.” Następne zdanie wraca do zwykłej liczby mnogiej.
+- Słodka kawa w nalocie: `m118.31` ma 甘いコーヒー = „słodka kawa”, ale odpowiedź Yuki `m118.39` ma samo
+  コーヒー: „Zrobię kawę i będę na pana czekać.” Nie dopisujemy „słodkiej”.
+- Głos Misy i kobiety na nagraniach (`m129.15`, `m130.15`): `Misa: «...»`, `Kobieta: «...»`.
+- は！！ (`m116.9`, rozpoznaje Yuki): „Ach!!”; tak samo w `m138.14`, `m147.6`.
+
+- Murakumo przez zaciśnięte zęby, くっ (`m162.8`): „Szlag.” (lżej niż くそっ = „Cholera...!”); nigdy
+  „mmh”, to należy do jęków (§11).
+- Ryk うおおお = „Aaaaa!” (Murakumo `m176.50`, Kusanagi `m176.66`), nie „Uooo”; osobny lament おおおお
+  może zostać „Ooooo” (`m176.66`: „Ooooo, moja twarz!”).
+- Kobieta / Reiko bez maski: あら = „ach” / „proszę, proszę” (`m208.28`, `m209.19`), nigdy kampowe
+  „ojej” Murakumo; mówi „dziewczyna”, nie „dziewucha” (to słowo Bezdomnej C, `m207.9`).
+- 生気 w laboratorium to siły albo blask oczu, nie życie: „oczy gasną” (`m157.32`), „uszły z niej
+  wszystkie siły” (`m161.16`); „uszło z niej życie” brzmiałoby jak śmierć.
+
+- Sasame, はずだ / はずだが = „o ile wiem” (`m005.14`, `m005.20`); w `m183.13` z kropką, nie pytajnikiem:
+  „O ile wiem, nasza umowa jeszcze nie wygasła.”
+- オモチャになっちゃた, Reiko o Yuki (`m198.26`) i Yuki o sobie (`m202.4`): to samo brzmienie, „zrobiła
+  się (już całkiem) zabawką do seksu” / „która zrobiła się zabawką tylko do seksu”.
+- 傷だらけ(の)天使: `m202.11` „anioł o połamanych skrzydłach, cały poraniony” → `m202.23` „Poraniony anioł”.
+- Noc poślubna, 許して / 許さない (`m185.0`, `m185.5`): „Odpuść mi” / „Nie odpuszczę” (prośba, żeby
+  przestał, nie wina). ムラクモさん ze swobodnymi czasownikami: „panie Murakumo” + „ty”.
 
 **Śmiechy i okrzyki:**
 
@@ -425,6 +493,7 @@ samej wielkości w tym samym miejscu. Wpisy bez dopisku są zatwierdzone (2026-1
 | `m075.27` | 男を辞めるなら良い医者 | „Jakbyś chciał przestać być facetem, znam dobrego lekarza☆” |
 | `m075.65`, `m076.67` | 南国系の笑み | „uśmiech jak z tropików” |
 | `m100.30`–`m100.44` | エッチしてればストレス知らず (gałąź Shinobu) | „Pan przy tych swoich figlach stresu nie zna.” – „Figle! O to chodzi!” (D15) |
+| `m105.23`–`m105.27` | いいな / 良くない | Sasame: „Czy to jasne, Murakumo?” → narracja: „Nie jasne, wcale nie jasne! Nie przełknę tego!! (grr, grr, grr)” |
 | `m110.9` | 面倒だ！全部もって行け | „Eee, za dużo zachodu! Biorę wszystko!” (面倒 to kłopot, nie czas) |
 | `m170.27`, `m174.10`; `m170.29`, `m175.0` | フェラチオ / 射精する | „Jakbyś mi robiła laskę!” (D13; ta sama rodzina słów co `m157.2`, bo to echo); „Ściągnąłem spust i spuściłem jej w mózg pocisk przeciwpancerny...” (`m175.0`: „ołów”) |
 | `m176.77` | 歯医者でも開業 | „Otwórz gabinet dentystyczny. Twoja gęba nada się na eksponat.” |
@@ -449,7 +518,19 @@ samej wielkości w tym samym miejscu. Wpisy bez dopisku są zatwierdzone (2026-1
   - オチンチン Reiko po polsku słowem z pokoju dziecięcego, bo umniejsza.
 - `○` to cenzura epoki, także w słowach klinicznych (クリ○リス, アヌ○): zostaje `○` w polskim
   odpowiedniku.
-- Dźwięki w zdaniach (`『チュパッ』と…`) i jęki należą do tego rejestru (§13).
+- **Jęki** (ustalone w parku, `m083.34`): japońskich dźwięków nie transliterujemy. あ = „ach / aach”,
+  う = „och”, ん / くっ = „mmm / mmh”, はぁ (oddech) = „haa”. ～ i małe ォ / ぅ = podwojona samogłoska po
+  łączniku („Murakumo-o”, „aa-ach”, „wstydzę-ę”), jak w §6.1.
+- **Dźwięki w zdaniach** (ピクン, ズキンズキン, ジワ～ッ, ビクッ, ヒクヒク, `m085.0`) tłumaczymy słowami („drga
+  gwałtownie”, „pulsują”, „rozlewa się powo-o-oli”), nie dźwiękami. Odgłosy stojące osobno (チュッ,
+  クチュ) dostają polską onomatopeję bez cudzysłowu: „Cmok, cmok, cmok.”, „Mlask, mlask, mlask.”
+- Samodzielne odgłosy tworzymy od rdzenia czasownika (mlask, chlip, siorb, drg): ビクン = „Drg!”
+  (`m196.95`, `m202.21`), ドクン = „Łup!” (`m198.79`), ぶしゅっ = „Prysk!” (`m200.0`), ズブズブ = „Chlup”
+  (`m158.2`). 追いつめる w scenie erotycznej = „pchać coraz bliżej szczytu” / „nie dawać wytchnienia”,
+  nigdy „przypierać do muru”.
+- Mimowolne reakcje ciała w dobrowolnej scenie w parku (彼女の意志と関係なく, `m093.39`) = „mimowolnie”,
+  nigdy „wbrew jej woli” (brzmiałoby jak przymus).
+- Scena w parku idzie w czasie teraźniejszym narracyjnym od `m083.22` do `m095.0`.
 - **Sześć fragmentów tłumaczy redaktor:** `m084.0`, `m085.10`, `m086.0`, `m089.0`, `m090.0`,
   `m093.45` (scena w parku; narracja porównuje ciało Yuki do dziewczęcego albo dziecięcego).
   Plik: `translation/editor_pl.tsv` (same klucze, nie trafia do paczki); japoński do czytania:
@@ -467,6 +548,31 @@ Do przetłumaczenia na próbę, po decyzjach z §0: prolog (`bi.prologue.0`–`3
 Yuki i Shinobu (`m013`–`m017`). Cel: sprawdzić w grze nawiasy (D4), wcięcia (D5), zdrobnienia
 (D3), ton Murakumo w obu rejestrach i długości. Po uwagach redaktora próbka staje się
 wzorcem.
+
+**Przegląd całości (2026-11-18):** po ostatniej partii cały skrypt przeczytany jeszcze raz i
+sprawdzony mechanicznie (znaki, wielokropki, imiona, D6, D13, slang, rodzaj Murakumo, „Yukinka”
+po `m083.11`, identyczny japoński = identyczny polski). Poprawione: `m134.23` „Izumo Fubuki”
+(nazwisko pierwsze, D1; wcześniejszy przykład w §9 miał odwrotnie), `m134.16` (płyty wygłuszające),
+`m124.8` / `m131.14` (nazwa UIA nieodmieniana, jak wszędzie), `m209.31` (pani, nie ty), `m182.0`,
+`m077.13` = `m078.22` (ryk bez „Uooo”).
+
+**Zakończenia (2026-11-18):** szkic (`m183`–`m203`). Przekład kompletny poza sześcioma wierszami
+redaktora (§11) i kartami zakończeń (D19). Teksty wbudowane (`bi.staff`, `bi.music`,
+`bi.announce`, `announce`) też przetłumaczone; ozdobna linia komunikatu ma `·` zamiast `･`,
+którego font nie ma.
+
+**Nalot, część 2, i otwarcie (2026-11-17):** szkic (`m153`–`m182`, menu 40, `m206`–`m209`).
+`m176` ma o stronę więcej niż oryginał, celowo: puenta `m176.77` dostaje własną stronę.
+
+**Nalot, część 1 (2026-11-17):** szkic (`m111`–`m152`, menu 20–39).
+
+**Rozdziały 9–11 (2026-11-17):** szkic (`m080`–`m110`, menu 14–19); sześć wierszy redaktora
+nietknięte. Ustalone: jęki i dźwięki (§11), słownik parku (§14).
+
+**Rozdziały 7–8 (2026-11-17):** szkic (`m061`–`m079`, menu 12–13).
+
+**Rozdziały 4–6 (2026-11-17):** szkic (`m037`–`m060`, menu 8–11). Grawlix `m045.20` / `m045.22`
+ma pełnoszerokie `＠`, jak w §6.5.
 
 **Rozdział 3 (2026-11-17):** szkic (`m027`–`m036`, menu 6), czeka na lekturę redaktora;
 rozstrzygnięte: `?☆` (§6.1), „siostrzyczko” (§14), `m036.13` nie mówi, kto krzyczał, `m030.38`
@@ -489,7 +595,6 @@ menu 1 i 2, `m013`–`m017`) i obejrzana w grze. Co z niej wynikło:
 
 ## 13. Otwarte sprawy
 
-- Zasada dla jęków i dźwięków w zdaniach scen erotycznych.
 - Erotyczna część słownika (§14, „do ustalenia”).
 - Gry słów oznaczone „otwarte” w §10.
 - Lint dla zasad tego przewodnika: imiona w mowie w akapicie zgodne z `name.NN`, nawiasy,
@@ -612,10 +717,55 @@ Zatwierdzony razem z §0 (2026-11-17); wpisy „do ustalenia” i „otwarte” 
 | 道具 / 玩具, オモチャ | narzędzie / zabawka | Yuki: kobiety jako narzędzia (`m027.8`, `m118.5`); Reiko: zabawka (`m153.39`, `m157.12`); オモチャ: pistolet, Reiko, Yuki (`m165.34`, `m176.3`, `m198.26`, `m202.4`) |
 | 自分を責めるな | przestań się obwiniać | `m081.44`, `m083.11`, `m185.28` |
 | 好き / 愛してる | kocham cię / kocham cię nad życie | D21 |
-| 女性自身, 蜜壷, 肉ヒダ | do ustalenia (§11) | |
-| 菊門, 菊の花びら | do ustalenia (§11) | chryzantema to po polsku cmentarz: nie dosłownie |
-| 性交玩具, セックス奴隷, 調教, 御主人様 | do ustalenia (§11) | 玩具 = zabawka (wyżej) |
-| ザーメン, スペルマ, 精子 | do ustalenia (§11) | trzy rejestry, nie jedno słowo |
-| 愛液, 愛汁 | do ustalenia (§11) | |
-| イク | do ustalenia (§11) | |
+| 青白い閃光 | niebieskobiały błysk | `m037.29`, wskazówka (biblia §2.2), w nawiasie jak w oryginale; `m170.9` 青白く発光した tym samym przymiotnikiem |
+| 有名な方々 | znane osobistości | `m051.36`, `m051.41`, echo w `m053.43` |
+| 机の引き出し (Sasame) | górna szuflada biurka | `m055.4`; klucz z etykietą 【Zbrojownia】 (`m039.13`); ta sama szuflada w `m108` |
+| 警備服 | mundur ochrony | `m074.11`, `m075.0` |
+| シロ (żargon policyjny) | nie mieć z tym nic wspólnego | `m061.6`, jak `m053.12`; nigdy „czysty” |
+| 強制的に捜査 / 緊急時 / 証拠の隠滅 | dokonać przeszukania, w razie potrzeby siłą / w wypadkach niecierpiących zwłoki / obawa zatarcia dowodów | `m074.42` |
+| 殺人許可証 z dziedziną | licencja na zabijanie klasy B w strzelaniu | `m077.25` = `m078.33`; `m074.55`: „klasy B, w walce wręcz albo w strzelaniu”; 一応 = „tak się składa, że…” |
+| 受身 | robię pad | `m076.23` |
+| デカマラ | wielki fiut | `m074.47` (D13: prawdziwy wulgaryzm, bez słów na k…) |
+| 複合強化プラスチック / 軽チタン合金 / 対人捕獲用スタンガン | wzmacniane tworzywo kompozytowe / stop lekkiego tytanu / paralizator do obezwładniania ludzi | ekran Statue 2H, `m104.34`; `m145.14` powtarza „lekki tytan” i „powłokę chroniącą przed bronią optyczną” dokładnie |
+| 簡易光学兵器 | uproszczona broń optyczna | `m110.5`; ten sam przymiotnik co powłoka |
+| 捜査の糸口 | punkt zaczepienia | `m101.2`; nie „trop” (to 〜の線) |
+| 女性自身 (park) | kobiecość | `m093.6`; eufemizm z romansu; 弄ぶ = „bawić się (czymś)” |
+| 愛液 (park) / ワレメ (park) | soki / szparka | `m089.9`; laboratorium i otwarcie mają własne słowa |
+| イク (park) / 絶頂 | odlatywać / szczyt | `m093.36` („Gdzieś... odlatuję-ę!”), `m093.48`; „dochodzić” zostaje wolne dla innych scen |
+| クリ○リス | łech○aczka | `m090.6`; ○ w miejscu „t”; 包茎の〜 = „pod kapturkiem”; to samo słowo w wierszach redaktora `m090.0`, `m093.45` |
+| ラビア / ヴァギナ / アヌ○ | labia / wagina / anu○ | park, `m093.31`; 嘗める (park) = „lizać”, nie „wylizywać” |
+| パンティ / ショーツ | majteczki / figi | `menu16.4`, `m089.5`, `m093.3` |
+| キスの雨 / キスのスコール / ピンクの突起 | deszcz pocałunków / ulewa pocałunków / różowy czubek | `m091.0`, `m092.0`, `m086.5` |
+| 防音壁 | płyty wygłuszające | `m112.3`; ta sama ściana w `m134.16` |
+| 昔取った杵柄 (całość) | „Phi, ręka nie zapomina. Jak byłem w ulicznym gangu, nieraz robiłem zwarcie w zamkach elektronicznych☆” | `m119.7` = `m126.39` |
+| 青い閃光 | niebieski błysk | `m134.54`; inne słowo niż 青白い閃光 = „niebieskobiały błysk” (`m037.29`); nie zlewamy ich |
+| 処女地 (laboratorium) | dziewicza ziemia | `m150.4`; `m153.31` もう一つの処女地 = „druga dziewicza ziemia” |
+| 調教 | tresura, tresować | `m129.23`, `m150.19`; **robocze**, pytanie do redaktora |
+| セックス奴隷 | niewolnica seksualna | `m136.4` = `m140.5` = `m144.5`; **robocze**, pytanie do redaktora |
+| イク (poza parkiem) | dochodzić | `m129.15` („Dochodzę!”); **robocze**, pytanie do redaktora; park: „odlatywać” |
+| 汚物 (laboratorium) | plugastwo | `m154.26`, `m155.0`, `m160.5` |
+| 愛液 (laboratorium) / 粘液 / 肉ヒダ | wydzielina / śluz / mięsiste fałdy, fałdki | `m155.7`; park: „soki” |
+| 菊門 / 菊の花びら / 薔薇の花びら | rozetka / płatki rozetki / płatki róży | `m157.73` |
+| イモムシ / 双頭の魔物 / 凶器 / 肉穴 | gąsienica / dwugłowy potwór / morderczy oręż / mięsna dziura | laboratorium (`m156.2`, `m157.78`), 肉穴 też w otwarciu (`m209.2`); 凶器 nigdy „narzędzie” (słowo Yuki) |
+| オ○ンチン / オチンチン / お薬 (Reiko) | siu○iak / siusiak / lekarstewko | `m153.20`, `m153.39` |
+| オマ○コ / オ○ンコ | pi○da | laboratorium (`m153.39`, `m154.9`) i otwarcie (`m206.13`, `m206.19`, `m207.25`, `m208.61`); **robocze**, pytanie do redaktora (alternatywa „ci○a”) |
+| セックスさせて / セックスがしたい z organem | „weźcie mnie w…”, „żeby cię wzięli w…” | `m154.9`, `m154.37`; nigdy „seks w…” |
+| 性交玩具 / セックスする為の玩具 / 性交奴隷 | seksualna zabawka / zabawka do seksu / seksualna niewolnica | `m157.12`, `m158.43`, `m162.4`; `m153.39`; `m160.0` |
+| 蜜壷 | miodne wnętrze | `m153.13`, `m157.62`; **robocze**, pytanie do redaktora |
+| スペルマ / ザーメン | nasienie / sperma | `m157.17`, `m161.0`; **robocze**, pytanie do redaktora (niewola może chcieć ostrzej) |
+| 愛汁 (otwarcie) | soki miłości | `m207.25`, `m208.61`, `m209.2` |
+| 華芯 / 女芯 / 串刺 | kielich / łono / nabijać na rękę jak na pal | otwarcie: `m207.31`, `m208.66`, `m209.8`; 女芯: `m150.33`, `m208.47` |
+| 黄金の雫 / お漏らし | złote krople / zsiusiać się | `m209.17`, `m209.19` |
+| 視姦 | gwałcić wzrokiem (kogoś) | `m208.3`, `m208.58`; nigdy rzeczownik abstrakcyjny |
+| 刺激 (otwarcie) | doznanie; 刺激が欲しい = „chcesz mocniejszych podniet” | `m207.43`, `m209.13`, `m209.6` |
+| 放す / 離れたくない (noc poślubna) | puścić („Już cię nie puszczę”) / nie chcę się odrywać | `m188.147`, `m189.6`, `m190.0`; `m188.95` |
+| 凄い (noc poślubna) | niesamowite | `m188.36`, `m188.103`; wyjątek `m188.23`: „to takie... mocne...” |
+| 唇を奪う | wpijać się zachłannie w usta, kraść sobie pocałunki | `m188.61`; „zawładnąć” zostaje dla 奪って / 奪う o samej Yuki (`m185.117`, `m188.125`) |
+| 恍惚 / 酔いしれる / 蜜 (noc poślubna) | upojenie / być pijanym rozkoszą / miód | `m188.91`, `m188.120`; `m188.87` |
+| 御主人様 (niewola) | mój panie | `m194.15`; **robocze**, pytanie do redaktora |
+| オ○ンチン / チン○ン / ハメられ (niewola, Yuki) | fiu○ek / fi○t / „jak mnie pieprzą” | `m196.13`; **robocze**, pytanie do redaktora; Reiko zostaje przy „siu○iaku” |
+| パイズリ / アナ○ (czynność) / オッパイ | hiszpanka / ana○ (narząd: anu○) / Reiko: cycuszki, Yuki i narracja: cycki | `m193.49`, `m198.42`, `m199.11` |
+| 精子 (niewola) | ejakulat | `m196.66`, `m196.101`, `m199.0`; trzeci rejestr obok „sperma” i „nasienie”; **robocze** |
+| 拘束着 | kaftan bezpieczeństwa (z wycięciami) | `m194.2`; **robocze**, pytanie do redaktora |
+| 正気に戻る (niewola) | oprzytomnieć | `m196.5`, `m196.25`, `m196.27`, `m196.56` |
 | えっち１ / えっち２ (tytuły utworów) | Figle 1 / Figle 2 | D15 |

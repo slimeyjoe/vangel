@@ -366,1589 +366,1589 @@ m036.13	text	Czyżby przejęła się tamtymi krzykami...
 m036.15	text	Hinamura: „No to ja też już idę... Panie Murakumo, gaszę światło.”
 m036.17	text	Murakumo: „Aha...”
 m036.19	text	Hinamura mnie wyprosił, więc poszedłem do Praw Człowieka.\n...Trochę martwiłem się o Shinobu.
-m037.0	text	
-m037.3	text	
-m037.7	text	
-m037.9	text	
-m037.13	text	
-m037.16	text	
-m037.19	text	
-m037.22	text	
-m037.26	text	
-m037.29	text	
-m037.31	text	
-m038.0	text	
-m038.3	text	
-m038.5	text	
-m039.0	text	
-m039.2	text	
-m039.4	text	
-m039.6	text	
-m039.9	text	
-m039.11	text	
-m039.13	text	
-m039.15	text	
-m039.19	text	
-m040.0	text	
-m040.3	text	
-m040.6	text	
-m040.10	text	
-m040.13	text	
-m040.18	text	
-m040.22	text	
-m040.25	text	
-m041.1	text	
-m042.0	text	
-m042.2	text	
-m042.4	text	
-m042.6	text	
-m042.10	text	
-m042.12	text	
-m043.0	text	
-m043.4	text	
-m044.0	text	
-m044.2	text	
-m044.5	text	
-m044.8	text	
-m045.0	text	
-m045.2	text	
-m045.4	text	
-m045.8	text	
-m045.10	text	
-m045.12	text	
-m045.15	text	
-m045.17	text	
-m045.20	text	
-m045.22	text	
-m045.24	text	
-m046.1	text	
-m046.4	text	
-m046.6	text	
-m046.9	text	
-m046.12	text	
-m046.14	text	
-m046.17	text	
-m046.19	text	
-m046.21	text	
-m046.24	text	
-m046.27	text	
-m046.30	text	
-m046.34	text	
-m047.0	text	
-m048.0	text	
-m048.4	text	
-m048.6	text	
-m048.8	text	
-m048.11	text	
-m048.14	text	
-m048.17	text	
-m048.23	text	
-m048.26	text	
-m048.28	text	
-m048.30	text	
-m048.33	text	
-m048.36	text	
-m048.39	text	
-m048.41	text	
-m049.0	text	
-m049.4	text	
-m049.8	text	
-m049.12	text	
-m050.0	text	
-m050.2	text	
-m050.4	text	
-m050.6	text	
-m050.10	text	
-m050.13	text	
-m051.0	text	
-m051.4	text	
-m051.7	text	
-m051.9	text	
-m051.11	text	
-m051.13	text	
-m051.15	text	
-m051.19	text	
-m051.23	text	
-m051.26	text	
-m051.30	text	
-m051.33	text	
-m051.36	text	
-m051.41	text	
-m051.43	text	
-m051.45	text	
-m051.49	text	
-m051.51	text	
-m052.0	text	
-m052.2	text	
-m052.5	text	
-m052.9	text	
-m052.11	text	
-m052.14	text	
-m052.17	text	
-m052.20	text	
-m052.23	text	
-m052.25	text	
-m052.27	text	
-m052.31	text	
-m052.34	text	
-m052.37	text	
-m052.39	text	
-m052.41	text	
-m052.43	text	
-m052.45	text	
-m052.48	text	
-m052.50	text	
-m053.0	text	
-m053.3	text	
-m053.6	text	
-m053.9	text	
-m053.12	text	
-m053.15	text	
-m053.17	text	
-m053.20	text	
-m053.24	text	
-m053.26	text	
-m053.29	text	
-m053.33	text	
-m053.37	text	
-m053.40	text	
-m053.43	text	
-m053.46	text	
-m053.50	text	
-m053.52	text	
-m053.54	text	
-m053.56	text	
-m053.60	text	
-m053.64	text	
-m054.0	text	
-m054.4	text	
-m055.0	text	
-m055.2	text	
-m055.4	text	
-m055.7	text	
-m056.0	text	
-m056.3	text	
-m056.5	text	
-m056.7	text	
-m056.9	text	
-m056.11	text	
-m056.14	text	
-m056.17	text	
-m056.20	text	
-m056.23	text	
-m056.25	text	
-m056.27	text	
-m057.0	text	
-m057.4	text	
-m057.8	text	
-m057.11	text	
-m057.15	text	
-m057.18	text	
-m057.22	text	
-m057.25	text	
-m057.28	text	
-m057.30	text	
-m057.32	text	
-m057.37	text	
-m057.40	text	
-m057.42	text	
-m057.44	text	
-m057.46	text	
-m057.49	text	
-m057.53	text	
-m057.56	text	
-m057.59	text	
+m037.0	text	W Prawach Człowieka nie zastałem żywej duszy. W pokoju panowała ciiiiisza.\nCzyżby wszyscy już poszli do domu?
+m037.3	text	Włączyłem dek na swoim biurku. Na ekranie wyskoczyła kanciasta twarz Kenzō, aż podskoczyłem.\nKamienna gęba z ekranu zaczęła jak katarynka recytować raport z przesłuchania.
+m037.7	text	Kenzō: „Taksówkarz Yajima Takao zeznaje, co następuje.”
+m037.9	text	«Według pana Yajimy około godz. 22:30 w dawnej dzielnicy nadbrzeżnej Arakawa, blok D, pokrzywdzona wsiadła do prowadzonego przez wymienionego pojazdu.»
+m037.13	text	Dawna dzielnica nadbrzeżna Arakawa, blok D? Jeśli dobrze pamiętam, tam właśnie pracowała ofiara.
+m037.16	text	«Pojazd poruszał się trasą 357 w kierunku Big Birda. W czasie jazdy pokrzywdzona nie odzywała się i sprawiała wrażenie czymś przestraszonej.»
+m037.19	text	«Około godz. 23:05, w pobliżu wjazdu do slumsów Trzynastki, podczas oczekiwania na zmianę świateł, pojazd został zaatakowany od tyłu przez kobietę jadącą na motocyklu (sprawczynię przedmiotowego zdarzenia).»
+m037.22	text	«Sprawczyni zsiadła z motocykla, zniszczyła zamek drzwi pojazdu od strony kierowcy, wyciągnęła pana Yajimę z wnętrza pojazdu i rzuciła wymienionego na jezdnię.»
+m037.26	text	«Następnie gołymi rękami wyrwała tylne drzwi pojazdu, wtargnęła do jego wnętrza i siłą wyciągnęła stawiającą opór pokrzywdzoną na zewnątrz.»
+m037.29	text	«W tym momencie, według pana Yajimy, zaobserwował on (niebieskobiały błysk).»
+m037.31	text	«Sprawczyni dokonała na pokrzywdzonej......
+m038.0	text	...na oczach bezdomnych gwałtu, po czym gołymi rękami zadała jej po jednym ciosie w okolicę skroniową i w twarz, powodując zgon.»
+m038.3	text	«Następnie sprawczyni zbiegła motocyklem w kierunku dawnej dzielnicy nadbrzeżnej Arakawa.»
+m038.5	text	Kenzō: „Na tym kończy się zeznanie taksówkarza Yajimy Takao.\n        Koniec.”
+m039.0	text	Kamienna gęba zniknęła z ekranu.
+m039.2	text	Murakumo: „Jak by nie patrzeć, to przecież ponad ludzkie siły, no\n           nie?”
+m039.4	text	Przypomniałem sobie, że Yuki na mnie czeka, i w pośpiechu zabrałem się do wpisywania raportu.
+m039.6	text	Kiedy raport był już prawie wpisany, zauważyłem nagle, że na rogu mojego biurka leży coś błyszczącego.
+m039.9	text	Murakumo: „A to co?”
+m039.11	text	Na plakietce tego klucza do zamka elektronicznego...
+m039.13	text	...jak wół stoi: 【Zbrojownia】!
+m039.15	text	Skąd coś takiego wzięło się na moim biurku?!\nPrzecież w zbrojowni trzyma się amunicję specjalną i pancerze osobiste na wypadek sytuacji nadzwyczajnych, no nie?!
+m039.19	text	W ogóle to ten klucz powinien trzymać u siebie sam szef Maska...?
+m040.0	text	Stanąłem przed drzwiami z tabliczką „Zbrojownia”. Żelazne drzwi stanowczo broniły wstępu.
+m040.3	text	Kiedy się zakradam do takich miejsc, przypominają mi się czasy, gdy w slumsach byłem w ulicznym gangu... He, he, he☆
+m040.6	text	Otworzyłem kluczem i wszedłem. Pokój okazał się zaskakująco schludny.\nNa półkach przedzielonych żelaznymi kratami: amunicja specjalna i pancerze osobiste.
+m040.10	text	Śrut, pociski przeciwpancerne, pociski wiązkowe... Ojej, jest i pocisk zamrażający...\nPrototyp nr 1??? Ten pocisk zamrażający jest jeszcze w fazie prób?
+m040.13	text	Półki z pancerzami osobistymi też zabezpieczono żelaznymi kratami.\nWszystkie typy są lekkie, robione z myślą o agentach: wystarczy włożyć na wierzch kurtkę i nic nie widać.
+m040.18	text	Kuloodporny, do walki wręcz, antywiązkowy... Każdy do czegoś innego, więc dobieranie ich to pewnie niezła mordęga.
+m040.22	text	O? Jest tu nawet, nie wiedzieć czemu, kombinezon izolacyjny do prac kablowych.\nPo co to komu???
+m040.25	text	Aaa!!! Niedobrze. Przecież Yuki czeka, ale klops! Szybko!!!\nZamknąłem z powrotem na klucz, tak jak było, i poszedłem do Wydziału Informacji.
+m041.1	text	Yukinko☆\nCzekałaś? Przepraszam, że tak długo☆
+m042.0	text	Yuki: „A, panie Murakumo. To naprawdę nie kłopot? Na pewno?”
+m042.2	text	Murakumo: „Yukinka jest taka śliczna, że aż się chce być dla niej\n           miłym, no wiesz.”
+m042.4	text	Yuki: „Oj, niech pan przestanie. Komplementami i tak ni-ic pan\n       nie wskóra.” (uśmiech☆)
+m042.6	text	Murakumo: „Prawdę mówiąc, niecnych zamiarów mam co niemiara...\n           Ale nie chcę, żebyś mną jeszcze bardziej gardziła.\n           Rozbrykany Szogun ma dziś zamknięte☆” (oklapł)
+m042.10	text	Odstawiłem przy tym małą błazenadę.
+m042.12	text	Yuki: „Hi-hi☆ Przepraszam. Wcale panem nie gardzę...”
+m043.0	text	Koniec końców przez całą drogę nawet nie dotknąłem jej dłoni.\nNaprawdę zupełnie ni-i-i-i-ic. Rozmawialiśmy tylko na pogodne, przyzwoite tematy, i tak aż pod sam jej blok......
+m043.4	text	Co się ze mną, do licha, dzieje? To do mnie niepodobne.\nNormalnie od razu bym się do niej dobrał......
+m044.0	text	Murakumo: „Mmmmmmmmmmmmmm!! Ale się wyspałem.”
+m044.2	text	Była 10.20. Słońce stało już za wysoko, żeby to nazwać rześkim porankiem.\nOd zbrodni minęło jakieś 35 godzin.
+m044.5	text	Jak dotąd ustaliliśmy tylko tożsamość ofiary. Zeznań i dowodów jest sporo, a mimo to w tej sprawie nie ma się czego uchwycić.
+m044.8	text	W każdym razie pojechałem do Toanu.
+m045.0	text	Murakumo: „Wszystkim dzie-eń do-o-obry!!”
+m045.2	text	          „......”
+m045.4	text	Odpowiedziała mi cisza.\nWidocznie wszyscy już rozeszli się do swoich śledztw.\nNa wszelki wypadek włączyłem dek na biurku.
+m045.8	text	Murakumo: „Ble! Szef!”
+m045.10	text	Na ekranie szef z twarzą jak maska rozchylił wąskie wargi i zaczął prawić kazanie.
+m045.12	text	Sasame: «Dzień dobry, mój drogi Murakumo. Znowu spóźniony. Na\n         twój niedbały stosunek do służby brak mi już słów.»
+m045.15	text	Murakumo: „...Spa-adaj.”
+m045.17	text	Sasame: «Zapewne właśnie się odszczekujesz, ale słuchaj w\n         milczeniu. Przechodząc do rzeczy: chcę, żebyś sprawdził\n         miejsce pracy ofiary, Misaki Misy.»
+m045.20	text	Murakumo: „...○♀♀＠＊☆♂!”
+m045.22	text	Sasame: «I zechciej nie mówić „...○♀♀＠＊☆♂!”.»
+m045.24	text	Mimo woli rozejrzałem się dookoła...
+m046.1	text	Ach, panie Murakumo☆ Dziękuję za wczoraj.\nBo ja... prawdę mówiąc, boję się chodzić nocą po ulicach...
+m046.4	text	Murakumo: „Ależ Yukinka dziecinna, he, he, he.”
+m046.6	text	Yuki zrobiła lekko zawstydzoną minę.
+m046.9	text	Kiedyś, dawno temu, przeżyłam coś strasznego na ciemnej ulicy...\nPrze-epraszam, że jestem taka dziecinna...
+m046.12	text	Murakumo: „Hę?... Ach.”
+m046.14	text	Yuki: „A... bo... jeśli to nie... kłopot... jeśli to nie kłopot,\n       to... czy znowu... odwiezie mnie pan... wieczorem?”
+m046.17	text	Usta Yuki wypowiedziały to nieśmiało, słowo po słowie.
+m046.19	text	Już otwierałem usta, żeby odpowiedzieć, kiedy...
+m046.21	text	Yuki: „Nie, to... to był żart... Żartowałam, naprawdę! Przecież\n       pan też ma mnóstwo pracy, prawda?
+m046.24	text	       Ale mniejsza z tym!! Na prośbę szefa umówiłam pana na\n       spotkanie w szpitalu Kusanagi.”
+m046.27	text	Murakumo: „...A, tak? Dzięki.”
+m046.30	text	I jeszcze pani doktor Shinobu mówiła, że po południu będzie chyba znany numer DNA sprawcy. Panie Murakumo... więc...\n...po południu... poprowadźmy śledztwo razem...
+m046.34	text	Końcówki nie dosłyszałem, ale tak czy owak Yuki zgrabnie mnie pogoniła i musiałem jechać do szpitala.
+m047.0	text	Murakumo: „Puk, puk... Pani doktor Shinobu☆”
+m048.0	text	Kiedy przyszedłem do Wydziału Kryminalistyki, Shinobu i Hinamura zbierali jakieś dane.\nNa mój widok Shinobu rzuciła:
+m048.4	text	Shinobu: „Hinamura! Dokończ za mnie.”
+m048.6	text	Hinamura: „Ze... zaraz, pani dokto-o-o-o-or, to nie fair...”\n           (półgłosem)
+m048.8	text	Shinobu: „Z Yukinką to u ciebie na poważnie?”
+m048.11	text	Mmm-mmm... Czy ja to na poważnie??\nSam nie bardzo wiem.
+m048.14	text	Shinobu zachichotała.
+m048.17	text	Przed zawieszeniem to byłoby nie do pomyślenia. Skoro nie mówisz, że to zabawa, to chyba na poważnie, co? Yukinka też mnie zaskoczyła: dała się odwieźć takiemu wilkowi.\nCałe szczęście, że nie wyciągnąłeś do niej łap.
+m048.23	text	To Yukinka ci powiedziała, że ją odwiozłem, co? Ty stara plotkaro-o...\n...Do czego ty właściwie pi-ijesz??
+m048.26	text	Z oczu Shinobu nagle zniknął uśmiech.
+m048.28	text	Shinobu: „Jestem o was zazdrosna!”
+m048.30	text	Murakumo: „......” (pot, pot...)
+m048.33	text	Mniejsza z tym!! Numer DNA sprawcy będzie chyba znany po południu.
+m048.36	text	Ledwie to powiedziała, odwróciła się do mnie plecami.\nA w jej sylwetce było coś, co od razu ucięło wszystkie dotychczasowe żarty.
+m048.39	text	Murakumo: „...To zajrzę, jak wrócę ze szpitala...”
+m048.41	text	Pojechałem do szpitala Kusanagi.
+m049.0	text	Jechałem trasą nadbrzeżną na wschód, do szpitala Kusanagi w dawnej dzielnicy nadbrzeżnej Arakawa, blok D.\nWedług danych od Yuki to szpital ogólny: przede wszystkim neurochirurgia, ale też interna i chirurgia.
+m049.4	text	Na rozległym terenie wyłonił się biały, czysty budynek, szpital jak z obrazka. Za nim widać było nieco wyższy wieżowiec.
+m049.8	text	O? Czy to nie Międzynarodowy Hotel Urawa? Tam, gdzie Toan ma ochraniać ważną konferencję projektu Uroboros...\nAle blisko, no proszę.
+m049.12	text	Na moment stanęła mi przed oczami twarz szefa Maski (bleee...).
+m050.0	text	Kiedy dojechałem do szpitala i doszedłem do dziedzińca, wyszła mi na spotkanie wysoka kobieta.
+m050.2	text	Reiko: „Pan Amano Murakumo ze Stołecznego Biura Ochrony\n        Publicznej, prawda?”
+m050.4	text	Murakumo: „A, tak.”
+m050.6	text	Bombowa figura, jędrna, zadarta pupa i sterczący biust☆\nNo, no, całkiem niezła piękność.
+m050.10	text	Nazywam się Takama Reiko, jestem sekretarką dyrektora szpitala Kusanagi, doktora Kusanagiego Kena.
+m050.13	text	Poprowadziła mnie do gabinetu dyrektora.
+m051.0	text	W gabinecie dyrektora stał mężczyzna o przenikliwym spojrzeniu.\nWyglądał na trochę nerwowego.\nObok niego czekała sekretarka, Reiko.
+m051.4	text	Przedstawiono mi go jako Kusanagiego Kena, młodego dyrektora szpitala.\nPosadzono mnie na luksusowej kanapie z prawdziwej skóry, w stylu „patrzcie, jacy z nas bogacze”.
+m051.7	text	Kusanagi: „To pan jest tym agentem Stołecznego Biura Ochrony\n           Publicznej?”
+m051.9	text	Murakumo: „Tak.”
+m051.11	text	Kusanagi: „Nie wygląda pan na funkcjonariusza publicznego.”
+m051.13	text	Murakumo: „Ha, ha... Często to słyszę.”
+m051.15	text	Kusanagi przeniósł wzrok na Reiko i lekko skinął głową, jakby dawał jej znak, żeby mówiła.\nJeśli chodzi o zadzieranie nosa, ten dyrektor mógłby chyba iść w zawody z naszym szefem Maską.
+m051.19	text	A zatem, co do pielęgniarki Misaki Misy, w sprawie której pan przyszedł: nie zapadła nam szczególnie w pamięć.\nPoza tym odeszła z pracy jakieś dwa miesiące temu, więc...
+m051.23	text	Murakumo: „Odeszła?”
+m051.26	text	Innymi słowy, o cokolwiek by nas pan pytał, nie mamy panu nic do powiedzenia.
+m051.30	text	Właśnie wezwałam dziewczynę, która pracowała razem z panią Misaki, więc proszę chwilę zaczekać.
+m051.33	text	Murakumo: „Eee... przepraszam, ale jakby nie było, zamordowano\n           kogoś z waszych, i to wszystko?”
+m051.36	text	Pan dyrektor bardzo nad tym ubolewa. Ważniejsze jednak, że w naszym szpitalu bywają znane osobistości, dlatego nie życzymy sobie, żeby ktoś taki jak pan zanadto się tu kręcił.
+m051.41	text	Murakumo: „Znane osobistości???”
+m051.43	text	Kusanagi: „Panie agencie, szpital żyje ze swojego wizerunku.”
+m051.45	text	Kusanagi wzruszył lekko ramionami i wstał z kanapy, niby na obchód.\nTo, co powiedział, zupełnie nie brzmiało jak słowa lekarza.\nTa jego nerwowa twarz coraz bardziej mnie drażniła.
+m051.49	text	Kusanagi: „Czy to panu... wystarczy?”
+m051.51	text	Kusanagi skinął zdawkowo głową i wyszedł z pokoju.\nZaraz po nim weszła pielęgniarka o ślicznej buzi.
+m052.0	text	Reiko: „Oto Inaba Mami.”
+m052.2	text	Mami: „Miło mi pana poznać, nazywam się Inaba.”
+m052.5	text	No to tro-oszkę cię popytam, dobrze?\nPodobno przyjaźniłaś się ze zmarłą panią Misaki.\nJaka to była dziewczyna?
+m052.9	text	Pielęgniarka imieniem Mami zerknęła na Reiko.
+m052.11	text	Mami: „Tak... Zwyczajna dziewczyna.”
+m052.14	text	Zwyczajna, mhm... A miała jakichś kolegów czy znajomych wśród chuliganów albo w mafii?
+m052.17	text	Mami: „Chyba nie...”
+m052.20	text	To może się domyślasz, czemu pani Misaki odeszła z tego szpitala?
+m052.23	text	Znowu spojrzała na Reiko. Wyraźnie oglądała się na sekretarkę Kusanagiego.
+m052.25	text	Mami: „Przepraszam! Ja... ja nic nie wiem!”
+m052.27	text	To jakaś szopka! Mami najwyraźniej pilnuje się przy Reiko i waży każdą odpowiedź......
+m052.31	text	Dobra! Bardzo mi pomogłaś, dzięki za fatygę☆\nA przy okazji, Mamiś, tak? Umówisz się ze mną kiedyś na randkę? Prywatnie?
+m052.34	text	Położyłem rękę na ramieniu zbitej z tropu Mami, poza zasięgiem wzroku Reiko wsunąłem jej do kieszeni wizytówkę i szepnąłem do ucha.
+m052.37	text	Mami: „Och... to... to...?!”
+m052.39	text	Murakumo: (Jeśli teraz trudno ci mówić, zadzwoń później.)
+m052.41	text	Reiko zmierzyła mnie ostrym spojrzeniem.
+m052.43	text	Murakumo: „No to do widze-e-e-nia.”
+m052.45	text	Gdy wychodziłem z pokoju, uśmiechając się od ucha do ucha, dobiegł mnie z tyłu przyciszony, pełen chłodnej drwiny głos Reiko.
+m052.48	text	Reiko: „Hm, hm... Partacz z Toanu.”
+m052.50	text	...Słyszałem, Takama Reiko!\nPrzez te słowa biorę się do tej sprawy na serio! Jeszcze się policzymy!
+m053.0	text	Ze szpitala Kusanagi wyszedłem z pustymi rękami i, gotując się ze złości, wróciłem do Toanu.
+m053.3	text	W Wydziale Praw Człowieka czekał już na mnie szef.
+m053.6	text	Wracasz w samą porę.\nWłaśnie dostałem raport od Kandori i pozostałych.
+m053.9	text	Murakumo: „No i co? Sprawcą jest jednak mafia, prawda?”
+m053.12	text	Podobnie jak ofiara nie była prostytutką, tak mafijni kupcy i dilerzy nie mają, jak się zdaje, z tą sprawą nic wspólnego.
+m053.15	text	Murakumo: „Czyli zaczynamy od zera-a...”
+m053.17	text	Sasame: „Nie dąsaj się. Powiedz lepiej, jak było w miejscu pracy\n         ofiary.”
+m053.20	text	Kręcili, jak mogli, i w ogóle nie chcieli współpracować.\n«Panie agencie, szpital żyje ze swojego wizerunku.»\n– tak mi powiedzia-a-a-ał!
+m053.24	text	Sasame: „No proszę.”
+m053.26	text	Murakumo: „Ale ta pielęgniarka, Inaba Mami, wyglądała, jakby coś\n           wiedziała.”
+m053.29	text	Ja również przyjrzałem się szpitalowi Kusanagi.\nDyrektor, niejaki Kusanagi Ken, to taki typ: jak go przetrzepać, poleci kurz.
+m053.33	text	Uchodzi za autorytet w neurochirurgii i inżynierii biomechanicznej, ale policja stołeczna podobno po cichu sprawdza go pod kątem nielegalnych operacji i powiązań z grupami terrorystycznymi.
+m053.37	text	Murakumo: „Policja to się dopiero napracuje.”
+m053.40	text	Tyle że Kusanagi ma mocne dojścia do wpływowych firm i polityków, więc to raczej na policję wywiera się naciski.
+m053.43	text	Murakumo: „...No tak. Znane osobistości.”
+m053.46	text	Dodam rzecz może zbędną: według ustaleń Kandori i pozostałych, wśród terrorystów są ostatnio, jak się zdaje, tacy, którzy zamierzają coś przedsięwziąć przy użyciu żywych narkotyków.
+m053.50	text	Murakumo: „Szefie! Do czego pan właściwie zmierza?”
+m053.52	text	Sasame: „Powiedziałem tylko, że jak Kusanagiego przetrzepać,\n         poleci kurz.”
+m053.54	text	Murakumo: „...Czyli mam trzepać, tak?”
+m053.56	text	Patrzyłem na uśmiechniętą półgębkiem twarz szefa Maski i jakoś tak miałem wrażenie, że wykorzystuje mnie, jak mu wygodnie. Zrobiło mi się troszkę niemiło.
+m053.60	text	Poza tym była wiadomość od doktor Shinobu.\nPodobno ustalono numer DNA sprawcy. Zgłoś się, proszę, do kryminalistyki.
+m053.64	text	Murakumo: „Tak jest, tak je-est.”
+m054.0	text	Już wychodziłem z Praw Człowieka, kiedy nagle przypomniał mi się klucz do zbrojowni. Czyżby szef nie zauważył, że klucz zginął?
+m054.4	text	Skoro tak, to jeszcze go sobie trochę potrzymam. He, he, he☆\nPostanowiłem pójść do kryminalistyki.
+m055.0	text	Gdy już wychodziłem z Praw Człowieka, zawołał mnie szef.
+m055.2	text	Sasame: „Mój drogi Murakumo, czy to ty byłeś łaskaw położyć to na\n         moim biurku?”
+m055.4	text	Po tych słowach szef, specjalnie na moich oczach, schował klucz 【Zbrojownia】 do górnej szuflady swojego biurka.
+m055.7	text	Postanowiłem pójść do kryminalistyki.
+m056.0	text	Ta twarz szefa jak maska jakoś mi nie leży, oj nie.\nZ tą myślą wszedłem do Wydziału Kryminalistyki.
+m056.3	text	Murakumo: „Pani doktor☆”
+m056.5	text	Hinamura: „A, pan Murakumo. Pani doktor dopiero co wyszła.”
+m056.7	text	Murakumo: „Słyszałem, że jest już numer DNA sprawcy...”
+m056.9	text	Hinamura: „Hę? A?... Ja to raczej nie bardzo...”
+m056.11	text	Murakumo: „Ale z ciebie niedorajda-a! Dlatego nie masz powodzenia\n           u dziewczyn!”
+m056.14	text	Lepsze to, niż trafić, tak jak pan, na czarną listę wszystkich dziewczyn w Biurze!!
+m056.17	text	Murakumo: „Ty mi tu nie pyskuj, Hinamura!!” (fuk, fuk)
+m056.20	text	Ha, ha, ha... Pani doktor jest pewnie w Wydziale Informacji.\nPrzed chwilą przyszła pani Yasaka, że niby chce się poradzić, i ją zabrała.
+m056.23	text	Murakumo: „Phi! Yukinka, tak? Dzięki wielkie, Hinamura.” (fuk,\n           fuk)
+m056.25	text	Hinamura: „He, he, he! He, he, he, he, he, he, he......”
+m056.27	text	Aż tak się cieszysz, że utarłeś mi nosa, Hinamura?! (niech to szlag)\nNa razie skierowałem się do Wydziału Informacji.
+m057.0	text	Kiedy chwyciłem za klamkę drzwi Wydziału Informacji, dobiegło mnie ze środka trajkotanie Yukinki i Shinobu.
+m057.4	text	Murakumo... wiesz, myślę, że on na swój sposób wcale nie jest lekkoduchem. Urodził się w slumsach, w bandyckiej okolicy, i podobno był w ulicznym gangu...
+m057.8	text	Yuki: „W gangu??? Jak ktoś taki mógł zostać agentem Toanu...”
+m057.11	text	Jak miał osiemnaście lat, zabił policjanta, złapali go i dostał dożywocie. Ale szef Sasame dostrzegł w nim sprawność fizyczną, trzeźwy osąd i zdolność skupienia, więc zawarł z nim układ.
+m057.15	text	Yuki: „Układ?”
+m057.18	text	Czyli tak: szef Stołecznego Biura Ochrony Publicznej, Sasame, swoim nazwiskiem załatwił mu warunkowe zwolnienie pod nadzorem Toanu, a on w zamian podpisał umowę, że przepracuje tu jako agent 65 700 godzin.
+m057.22	text	Yuki: „Po dwanaście godzin dziennie... przez piętnaście lat?!”
+m057.25	text	Agent Toanu ma mniej niż 60% szans, że przeżyje rok.\nWięc przetrwać tu piętnaście lat to nic innego jak ciężkie roboty.
+m057.28	text	Yuki: „Jakoś mi go żal...”
+m057.30	text	Shinobu: „Niedawno powiedział mi coś takiego...
+m057.32	text	          ...«Kiedy żyłem w slumsach, zabijanie ludzi, żeby\n          przeżyć, wcale nie wydawało mi się czymś złym. Ale tak\n          naprawdę uważam, że świat, w którym biedny żyje z\n          napadania na biednego, jest nie w porządku.»
+m057.37	text	          Skoro mówi takie rzeczy, to myślę, że na swój sposób\n          wcale nie jest lekkoduchem.”
+m057.40	text	Yuki: „Tak, pani doktor. Po tym, co pani powiedziała, kamień\n       spadł mi z serca... naprawdę.”
+m057.42	text	Shinobu: „?!”
+m057.44	text	Shinobu wyczuła, że tu jestem, i odwróciła się do mnie.
+m057.46	text	Shinobu: „Murakumo! Nieładnie tak podsłuchiwać!!”
+m057.49	text	Shinobu, proszę cię, jak to brzmi!\nNo, troszkę mi się obiło o uszy, fakt... Ale przede wszystkim nie zdradzaj moich sekretów, proszę-ę!
+m057.53	text	Zerknąłem na Yuki: nie wiedzieć czemu zrobiła się czerwona jak burak i spuściła głowę.
+m057.56	text	Ej, Murakumo! Mniejsza o to, mamy numer DNA sprawcy!\nChodź no tu!
+m057.59	text	I znowu Shinobu zaciągnęła mnie za moje urocze uszko do kryminalistyki.
 m057.62	text	Murakumo: „Shinobu, ucho! Ucho!! Au! Au! Au! Au! Boli!!”
-m058.0	text	
-m058.2	text	
-m058.4	text	
-m058.7	text	
-m058.11	text	
-m058.14	text	
-m058.16	text	
-m058.19	text	
-m058.22	text	
-m058.26	text	
-m058.28	text	
-m058.31	text	
-m058.34	text	
-m059.0	text	
-m059.3	text	
-m059.5	text	
-m060.1	text	
-m060.4	text	
-m060.7	text	
-m060.11	text	
-m060.14	text	
-m060.18	text	
-m060.20	text	
-m060.22	text	
-m060.24	text	
-m061.0	text	
-m061.3	text	
-m061.6	text	
-m061.10	text	
-m061.12	text	
-m061.16	text	
-m061.19	text	
-m061.24	text	
-m061.27	text	
-m061.31	text	
-m061.35	text	
-m061.38	text	
-m061.40	text	
-m061.43	text	
-m062.0	text	
-m062.5	text	
-m062.9	text	
-m062.13	text	
-m062.17	text	
-m062.20	text	
-m062.23	text	
-m062.26	text	
-m062.29	text	
-m062.31	text	
-m062.34	text	
-m062.37	text	
-m062.41	text	
-m062.43	text	
-m062.46	text	
-m062.50	text	
-m062.52	text	
-m063.0	text	
-m063.3	text	
-m063.6	text	
-m063.10	text	
-m063.12	text	
-m063.14	text	
-m063.16	text	
-m063.20	text	
-m063.22	text	
-m064.0	text	
-m064.2	text	
-m064.5	text	
-m064.8	text	
-m064.10	text	
-m064.13	text	
-m064.15	text	
-m065.1	text	
-m065.4	text	
-m065.6	text	
-m065.8	text	
-m065.10	text	
-m065.13	text	
-m065.17	text	
-m065.19	text	
-m065.21	text	
-m065.23	text	
-m065.25	text	
-m065.27	text	
-m065.30	text	
-m065.34	text	
-m065.37	text	
-m065.41	text	
-m065.45	text	
-m065.49	text	
-m065.53	text	
-m065.56	text	
-m065.60	text	
-m065.62	text	
-m065.65	text	
-m065.68	text	
-m066.0	text	
-m066.2	text	
-m067.0	text	
-m067.3	text	
-m067.6	text	
-m068.0	text	
-m068.3	text	
-m068.6	text	
-m068.8	text	
-m069.0	text	
-m069.3	text	
-m069.6	text	
-m069.8	text	
-m069.11	text	
-m070.0	text	
-m070.3	text	
-m070.6	text	
-m071.0	text	
-m071.4	text	
-m071.8	text	
-m072.1	text	
-m072.6	text	
-m072.9	text	
-m072.12	text	
-m072.15	text	
-m072.19	text	
-m072.22	text	
-m072.27	text	
-m072.30	text	
-m072.33	text	
-m072.39	text	
-m072.42	text	
-m072.44	text	
-m072.46	text	
-m073.0	text	
-m073.3	text	
+m058.0	text	Shinobu, szczerząc się nie wiadomo czemu, patrzyła, jak rozcieram sobie ucho.
+m058.2	text	Murakumo: „Shinobu, jak się będziesz tak śmiać, to ci zmarszczek\n           przybędzie-e.”
+m058.4	text	Shinobu: „Oho, oho, cichutko się odgryzasz, żeby ukryć, że ci\n          głupio, co?”
+m058.7	text	A niby czego miałbym się wstydzić?\nI w ogóle przestań się tak szczerzyć, aż ciarki przechodzą.
+m058.11	text	Jak na ciebie, całkiem nieźle: grzecznie, krok po kroku, i nie rzucasz się na nią z marszu☆
+m058.14	text	Murakumo: „?????”
+m058.16	text	Przestała się śmiać i z przymilną miną przylgnęła do mnie...
+m058.19	text	Żal mi, że nie będę już z tobą figlować, Murakumo,\nale Yukince mogę cię chyba odstąpić... Tak tylko gadam.
+m058.22	text	Murakumo: „Nie jestem rzeczą, żeby mnie odstępować czy nie... A\n           poza tym! Myślisz, że mojej bezbrzeżnej miłości\n           starczy jedna dziewczyna...
+m058.26	text	           Au-au-au-au-au-au-au-au-au-au-au-au! Boli! Shinobu!”
+m058.28	text	Shinobu obiema rękami uszczypnęła mnie w policzki i zaczęła je ciągnąć.
+m058.31	text	Bierz to i zmykaj, ale już! A jeśli przez ciebie będzie płakać, to ze mną popamiętasz!!
+m058.34	text	Coś tu się dzieje za moimi plecami, oj, dzieje...\nDane z numerem DNA sprawcy odebrałem od Shinobu z należytym szacunkiem i ruszyłem do Wydziału Informacji.
+m059.0	text	Kiedy wytoczyłem się chwiejnym krokiem z kryminalistyki, z drugiego końca korytarza zawołał mnie na cały głos Kenzō.
+m059.3	text	Kenzō: „He-ej, Murakumo! Chodź no tu. Mam sprawę.”
+m059.5	text	??? Kenzō sam mnie woła? Co to ma znaczyć?\nUch, czyżby Kenzō odkrył w sobie geja i chciał mnie zaprosić na randkę?! (skok myślowy)
+m060.1	text	Co ta-am?☆ Jestem normalny, Kenuś, tyłka ci nie pożyczę☆
+m060.4	text	Jak zwykle zacząłem się przed Kenzō „wdzięczyć” na środku korytarza Toanu.
+m060.7	text	Ty draniu, nie rób takich rzeczy w świętym miejscu pracy! I ile razy mam powtarzać: przestań mówić do mnie «Kenuś»!\n...Czemu do tego zniewieściałego faceta dzwoni kobieta?!
+m060.11	text	Murakumo: „Kobieta? Kto? Kto? Kto? Kto? Kto? No powie-e-edz,\n           kto??”
+m060.14	text	E-ech! Nie lep się do mnie, działasz mi na nerwy!\nNiejaka Inaba koniecznie chce z tobą o czymś pomówić. Prosi o spotkanie dziś pod wieczór na dziedzińcu szpitala.
+m060.18	text	Kenzō: „Murakumo, ty jedną za drugą... Teraz pielęgniarka, tak?”
+m060.20	text	Murakumo: „Zazdrościsz, co-o?”
+m060.22	text	Kenzō: „Wcale ci nie zazdroszczę!”
+m060.24	text	Zostawiłem Kenzō i poszedłem do Wydziału Informacji.
+m061.0	text	Kiedy wszedłem do Wydziału Informacji, Yuki z dziewczęcą miną o czymś rozmyślała. Siedziała z brodą opartą na dłoni i wyglądała przy tym uroczo.
+m061.3	text	Murakumo: „Yukinko☆ Znamy już numer DNA sprawcy!”
+m061.6	text	A! Tak! Zaraz wszystko przygotuję.\n...Ee, pani Kandori mówiła, że mafia też nie ma z tym nic wspólnego, prawda?
+m061.10	text	Murakumo: „Aha. Po stronie ofiary też ani śladu mafii...”
+m061.12	text	...Czyli jednak, tak jak mówi szef, podejrzany jest szpital Kusanagi albo ekstremiści...?\nMimo woli zrobiłem poważną minę, zupełnie nie w moim stylu.
+m061.16	text	Panie Murakumo! Przecież śledztwa zawsze kiedyś stają w martwym punkcie!\nZnajdźmy sprawcę we dwoje!!
+m061.19	text	...Yuki pomyślała, że się podłamałem, i próbowała dodać mi otuchy.\nWcale się nie podłamałem, ale zrobiło mi się troszkę miło, że jest dla mnie taka dobra.
+m061.24	text	No jasne, tę sprawę rozwiążemy we dwoje!\nA to, co przed chwilą powiedziałaś... To przecież moje słowa z wczoraj!
+m061.27	text	Yuki speszyła się i z uśmiechem pokazała mi koniuszek języka jak wisienka......
+m061.31	text	Gotowe. Proszę podać dane i zakres, panie Murakumo.
+m061.35	text	Na początek sprawdźmy notowanych.\nA potem poszukaj jeszcze wśród ekstremistów i terrorystów.
+m061.38	text	Yuki: „Ekstremistów i terrorystów też?”
+m061.40	text	Łączyła się naraz z kilkoma głównymi systemami policji......
+m061.43	text	Jest!! Trafienie. Udało się za pierwszym razem.\nWyświetlam na ekranie.
+m062.0	text	【Wynik wyszukiwania】\nNazwisko: Izumo Fubuki  Płeć: kobieta  Wiek: 27  Adres: nieznany\nZawód: były generał dywizji, Międzynarodowe Siły Ekspedycyjne,\n       Korpus Pancerny Wojsk Lądowych, Specjalna Jednostka Lądowa
+m062.5	text	【Uwagi】\nPo odejściu z Międzynarodowych Sił Ekspedycyjnych wstąpiła do „UIA – Lodowe Skrzydło”, grupy ekstremistów sprzeciwiającej się projektowi Uroboros, i należy do niej do dziś.
+m062.9	text	Ścigana listem gończym w całym kraju jako podejrzana o próbę wysadzenia ratusza w Shinjuku, atak na Agencję Rozwoju Kosmosu i cztery inne przestępstwa......
+m062.13	text	Panie Murakumo, UIA – Lodowe Skrzydło to przecież grupa, która urządza zamachy bombowe, a nawet zabójstwa polityczne!
+m062.17	text	Jeśli są zamieszani w tę sprawę z żywym narkotykiem, to robi się paskudnie.
+m062.20	text	...Czyżby szef od początku się domyślał, że w tle są terroryści?
+m062.23	text	P-panie Murakumo,\nt-tu! Proszę przeczytać dalszy ciąg uwag!
+m062.26	text	...Ścigana listem gończym, stawiła opór przy legitymowaniu.\nW obawie o życie policjant był zmuszony zastrzelić Izumo Fubuki...
+m062.29	text	Murakumo: „Zastrzelona?! Nie żyje?! A data: trzy miesiące temu!”
+m062.31	text	Yuki: „Znowu martwy punkt...”
+m062.34	text	Nie. Kto wie, czy to nie strzał w dziesiątkę.\nDasz mi szczegółowe dane o śmierci Izumo Fubuki?
+m062.37	text	...Ściganą listem gończym Izumo Fubuki zauważono koło Międzynarodowego Hotelu Urawa (dawna dzielnica nadbrzeżna Arakawa, blok D). Stawiła opór przy legitymowaniu. Jedną osobę zabiła, dwie raniła, w tym jedną ciężko. Z konieczności otwarto ogień...
+m062.41	text	...Zmarła w pobliskim szpitalu Kusanagi...
+m062.43	text	Yuki: „Znowu szpital Kusanagi.”
+m062.46	text	Ślady ofiary i sprawcy prowadzą do szpitala Kusanagi.\nA dyrektor podobno ma powiązania z terrorystami!\nPojadę tam jeszcze raz.
+m062.50	text	Yuki: „Już umawiam panu spotkanie.”
+m062.52	text	Postanowiłem jechać do tego nieuprzejmego lekarza i sekretarki.
+m063.0	text	Przy wejściu do szpitala Kusanagi pofatygowała się po mnie ta piękna sekretarka.\nNiby się uśmiechała, ale oczy jej się nie śmiały.
+m063.3	text	Reiko: „Czym tym razem możemy panu służyć?”
+m063.6	text	A, wie pani, to taka dziwna historia.\nOsoba o tym samym numerze DNA co sprawca, którego szukamy, zmarła trzy miesiące temu w tym właśnie szpitalu.
+m063.10	text	Reiko: „No proszę, to w Toanie są też pogromcy duchów?”
+m063.12	text	Murakumo: „Jeśli zajdzie potrzeba...” (uśmieszek)
+m063.14	text	Reiko: „Na razie zapraszam tędy.”
+m063.16	text	Piękna sekretarka szła przodem, pokazując drogę. Ale ma pupę, no, no.\nGdyby jeszcze miała dobry charakter...\nAż się zapatrzyłem☆ (ślinka)
+m063.20	text	Yuki: „Panie Murakumo.”
+m063.22	text	Nagle za plecami usłyszałem głos Yukinki...
+m064.0	text	Murakumo: „Aa, wcale nie patrzyłem na żadne pupy!” (pot, pot, pot)
+m064.2	text	Yuki: „Ee... Na jakie pupy??”
+m064.5	text	A, nie, nic, nic☆\nA tak w ogóle, co ty tu robisz?
+m064.8	text	Yuki: „Szef kazał mi panu przywieźć radio, bo pan zapomniał.”
+m064.10	text	Wyjęła radio, promiennie uśmiechnięta...\nNa widok jej niewinnego uśmiechu zaczęły mnie troszkę gryźć wyrzuty sumienia.
+m064.13	text	Murakumo: „A... dzięki...”
+m064.15	text	Usłyszałem, jak Reiko chichocze za moimi plecami.
+m065.1	text	Doktor Kusanagi jest wyjątkowo zapracowany, więc to ja zajmę się państwem.
+m065.4	text	Usiedliśmy z Yuki na kanapie w gabinecie dyrektora, a Reiko podała nam dokumenty.
+m065.6	text	Reiko: „Oto kopia karty choroby osoby, o którą państwo pytali.”
+m065.8	text	Murakumo: „Faktycznie, nie żyje-e.”
+m065.10	text	Reiko: „Zwłoki tej osoby zostały już poddane kremacji.”
+m065.13	text	To nieprawda! Na pewno kryje się w tym jakaś tajemnica.\nPrzecież porównanie numeru DNA dało ponad 95% zgodności z Izumo Fubuki!!
+m065.17	text	Reiko patrzyła na rozgorączkowaną Yuki z lekceważącym uśmieszkiem.
+m065.19	text	Murakumo: „No już, już, Yukinko. Nie unoś się tak.”
+m065.21	text	Yuki: „Ale-e...”
+m065.23	text	Murakumo: „Mam takie malutkie pytanko... Można?”
+m065.25	text	Reiko: „Hm, hm... A cóż takiego?”
+m065.27	text	Murakumo: „Na przykład w tej karcie jest godzina zatrzymania\n           akcji serca, a godziny śmierci mózgu nie ma...
+m065.30	text	           Podejrzewałem, że sprawcą jest wojskowa lalka bojowa,\n           ale sposób działania był zbyt ludzki, więc ten trop\n           odrzuciłem...”
+m065.34	text	Z twarzy siedzącej przede mną pięknej sekretarki zniknął uśmiech.
+m065.37	text	Dalej to już moja dedukcja, wie pani.\nMózg na progu śmierci przełożono do lalki bojowej i utrzymano przy życiu.\nA teraz, po trzech miesiącach, Izumo Fubuki zabija...
+m065.41	text	Przez chwilę trwała cisza... Twarz Reiko wydała mi się na moment czymś nieorganicznym. A potem nagle się odezwała.
+m065.45	text	Ohohoho! To nawet w Toanie są tacy zabawni ludzie jak pan!\nPo historyjce o duchach pora na powieść science fiction!!
+m065.49	text	Po pierwsze, przeszczep do lalki bojowej jest niemożliwy z powodu stresu, jaki to wywołuje w mózgu.\nPrzecież to rozumie nawet dziecko!!!!
+m065.53	text	Unosi się bardziej, niż trzeba. Ta kobieta coś wie, jestem pewien.
+m065.56	text	Na tym kończymy zbieranie materiałów do powieści!!\nI zechce pan przestać kręcić się po tym szpitalu.\nPokazałam, co było do pokazania, więc proszę wyjść.
+m065.60	text	Murakumo: „Ojej, ojej...”
+m065.62	text	Reiko wystawiła nas za drzwi...
+m065.65	text	Jeśli będą się państwo dalej kręcić, wyrzucę państwa siłą.\nProszę się z tym liczyć...
+m065.68	text	Trzask!!
+m066.0	text	Wyrzuceni przez piękną sekretarkę, powlekliśmy się na dziedziniec.
+m066.2	text	Byłem wściekły, że szpital Kusanagi tak nas potraktował, ale pamiętałem, że obok jest Yuki, i starałem się nadrabiać wesołą miną.
+m067.0	text	Murakumo: „Ej, ej, ej☆ Co sądzisz o zachowaniu tej sekretarki\n           Kusanagiego?”
+m067.3	text	Wydaje mi się, że ta cała Reiko zachowuje się podejrzanie.\nI wydaje mi się, że pana dedukcja idzie w dobrym kierunku.
+m067.6	text	Murakumo: „Serio?! Aż mi miło, że mnie chwalisz.”
+m068.0	text	Yuki: „Co teraz robimy?”
+m068.3	text	Bo widzisz, umówiłem się tu z pewną pielęgniarką.\nMyślę, że dowiemy się od niej czegoś przydatnego.
+m068.6	text	Yuki: „Pan to jednak jest niezawodny, panie Murakumo☆”
+m068.8	text	Murakumo: „Ależ skąd... Ha, ha, ha, ha, ha...”
+m069.0	text	Mami: „Przepraszam... panie Murakumo.”
+m069.3	text	Ha, ha, ha... hę?\nA, Mamiś☆ To moja partnerka...
+m069.6	text	Yuki: „Miło mi. Yasaka Yuki, Wydział Informacji Toanu.”
+m069.8	text	Na początek obie przywitały się przepisowo.
+m069.11	text	Panie Murakumo, wtedy nie mogłam nic powiedzieć, bo była przy tym pani Reiko, ale coś nie daje mi spokoju.
+m070.0	text	Yuki: „Co teraz robimy?”
+m070.3	text	Na razie wróćmy do Biura i przyjrzyjmy się tropowi lalki bojowej, co?
+m070.6	text	Mami: „Przepraszam... pan Amano z Biura Ochrony Publicznej?”
+m071.0	text	Odwróciłem się. Stała tam przyjaciółka ofiary, Inaba Mami.\nPodeszła bliżej, rozglądając się wokół, i odezwała się niepewnie:
+m071.4	text	To... ja... wtedy przy pani Reiko trudno mi było mówić, ale...\ncoś nie daje mi spokoju w sprawie Misy.
+m071.8	text	Murakumo: „Naprawdę?! Mów, mów, mó-ów!”
+m072.1	text	Bo to było dzień przed tym, jak Misa odeszła ze szpitala.\nPrzyszła się do mnie zwierzyć: «Widziałam w starym skrzydle coś strasznego... Co ja mam robić, Mami? Ja już nie ufam doktorowi Kusanagiemu».
+m072.6	text	Murakumo: „W starym skrzydle?”
+m072.9	text	Tak. W północnej części szpitala stoi opuszczony budynek, właściwie ruina.\nTylko że wstęp tam jest zabroniony.
+m072.12	text	Yuki: „Czyli Misa odeszła, bo zobaczyła coś w starym skrzydle?”
+m072.15	text	To, że odeszła, też jest dziwne.\nPrzecież za tydzień miała z pielęgniarki stażystki zostać dyplomowaną pielęgniarką.
+m072.19	text	Murakumo: „Fakt, takie nagłe odejście to dziwna sprawa...”
+m072.22	text	A kiedy mi się zwierzała i nagle zobaczyła panią Reiko, powiedziała: «W szpitalu nie mogę o tym mówić, powiem ci dziś, jak będziemy razem wracać»...
+m072.27	text	...Tego wieczoru długo czekałam na nią przy głównej bramie...\nAle nie przyszła.
+m072.30	text	Yuki: „A następnego dnia Misa już odeszła ze szpitala, tak?”
+m072.33	text	Tak...\n...Mnie... mnie tak żal Misy. Tak się cieszyła, że wreszcie zostanie dyplomowaną pielęgniarką...\nA potem przerobili ją na żywy narkotyk i zabili...
+m072.39	text	To okropne... Przecież jej marzenie właśnie miało się spełnić...\n...Tak bardzo mi jej żal.
+m072.42	text	Murakumo: „Dzięki, Mamiś, bardzo nam pomogłaś.”
+m072.44	text	Yuki: „My na pewno złapiemy sprawcę, zobaczysz.”
+m072.46	text	Pielęgniarka, która straciła koleżankę, odeszła ze łzami w oczach.
+m073.0	text	Yuki: „Panie Murakumo, co pan o tym myśli?”
+m073.3	text	...Jednak to stare skrzydło jest podejrzane, no nie?\nZajrzymy tam?
 m073.6	text	Yuki: „Tak!!”
-m074.0	text	
-m074.5	text	
-m074.9	text	
-m074.11	text	
-m074.14	text	
-m074.17	text	
-m074.21	text	
-m074.26	text	
-m074.30	text	
-m074.34	text	
-m074.37	text	
-m074.39	text	
-m074.42	text	
-m074.47	text	
-m074.50	text	
-m074.55	text	
-m074.60	text	
-m074.63	text	
-m074.67	text	
-m075.0	text	
-m075.4	text	
-m075.6	text	
-m075.10	text	
-m075.12	text	
-m075.15	text	
-m075.17	text	
-m075.20	text	
-m075.23	text	
-m075.25	text	
-m075.27	text	
-m075.29	text	
-m075.31	text	
-m075.33	text	
-m075.37	text	
-m075.39	text	
-m075.41	text	
-m075.43	text	
-m075.46	text	
-m075.49	text	
-m075.53	text	
-m075.57	text	
-m075.59	text	
-m075.63	text	
-m075.65	text	
-m075.68	text	
-m075.70	text	
-m075.72	text	
-m075.75	text	
-m075.79	text	
-m075.81	text	
-m076.0	text	
-m076.3	text	
-m076.5	text	
-m076.9	text	
-m076.11	text	
-m076.14	text	
-m076.19	text	
-m076.23	text	
-m076.26	text	
-m076.29	text	
-m076.31	text	
-m076.34	text	
-m076.36	text	
-m076.39	text	
-m076.41	text	
-m076.45	text	
-m076.47	text	
-m076.49	text	
-m076.53	text	
-m076.55	text	
-m076.57	text	
-m076.60	text	
-m076.62	text	
-m076.65	text	
-m076.67	text	
-m076.70	text	
-m076.72	text	
-m076.74	text	
-m076.77	text	
-m076.81	text	
-m076.83	text	
-m077.0	text	
-m077.4	text	
-m077.6	text	
-m077.8	text	
-m077.10	text	
-m077.13	text	
-m077.18	text	
-m077.20	text	
-m077.25	text	
-m077.28	text	
-m078.0	text	
-m078.4	text	
-m078.6	text	
-m078.10	text	
-m078.12	text	
-m078.15	text	
-m078.17	text	
-m078.19	text	
-m078.22	text	
-m078.27	text	
-m078.30	text	
-m078.33	text	
-m078.36	text	
+m074.0	text	Za dziedzińcem, jakby ukryty za białym, czystym gmachem, wyłonił się szary budynek z gołym betonem i odsłoniętymi klimatyzatorami starego typu. Okna zasłaniały od środka rolety, a na żelaznych drzwiach wisiała tabliczka z zakazem wstępu.
+m074.5	text	Yuki obok mnie aż wstrzymała oddech. Ta buda ma klimat jak z horroru.\nA więc to jest stare skrzydło...\nPodszedłem bliżej, żeby się lepiej przyjrzeć, kiedy...
+m074.9	text	Reiko: „Jeszcze się tu kręcicie?! Przecież was ostrzegałam!”
+m074.11	text	Wtedy zza pleców Reiko wyszło czterech facetów w mundurach ochrony.\nRaczej zabijaki niż ochroniarze.
+m074.14	text	Zwłaszcza dwóch rozpoznałem: mięśniaka, który ma ponad 2 m, i tyczkowatego chudzielca o długich rękach i nogach.
+m074.17	text	Mięśniak nazywa się „Goryl”. W mafijnym podziemnym wrestlingu zabił aż trzech ludzi.\nTo typ, o którym mówią: „Sterydy wstrzykuje sobie nawet do mózgu.”
+m074.21	text	Większy kłopot to ten tyczkowaty: nawet wśród mafijnych osiłków przezywają go „Snake”, bo jest podstępny.\nMówią o nim: „Możesz wyciągnąć broń szybciej niż Snake, ale szybciej nie strzelisz.” Aż tak słynie z szybkiego strzału!!
+m074.26	text	Pozostali dwaj też wyglądają raczej na street fighterów albo chuliganów niż na pracowników ochrony.
+m074.30	text	Ihihihi, panienki, jak będziecie tu tak łazić, to zaraz będziecie piszcze-eć.
+m074.34	text	Co jest, przeszliście obaj na uczciwy chleb? A tak w ogóle to ten budynek nas interesuje.
+m074.37	text	Snake: „Jak już koniecznie musicie, to bez nakazu ani rusz, co?”
+m074.39	text	Mignąłem im odznaką Stołecznego Biura Ochrony Publicznej.
+m074.42	text	My, agenci Stołecznego Biura Ochrony Publicznej, w wypadkach niecierpiących zwłoki albo gdy zachodzi obawa zatarcia dowodów, mamy prawo według własnego uznania dokonać przeszukania, w razie potrzeby siłą☆
+m074.47	text	Nic takiego tu nie robimy-y! No nie, bracie Snake?\nZłapmy je szybko, chcę tym dwóm ślicznotkom wsadzić mojego wielkiego fiu-u-uta!
+m074.50	text	...Porządny ochroniarz tak nie gada, o nie.\nI chyba w tym starym skrzydle jest coś, czego nie chcą pokazać...\nDo tego bierze mnie za kobietę. Biedak... Wyrazy współczucia...
+m074.55	text	Goryl! Nie rozpędzaj się, agent z Toanu to facet.\nPewnie ma licencję na zabijanie co najmniej klasy B, w walce wręcz albo w strzelaniu!!
+m074.60	text	Eee-e, to ja biorę tę śliczną tutaj.\nA wy dwaj, jazda tam!
+m074.63	text	Na jedną chwilę, ale jednak zapomniałem o Yukince.\nOna nie przeszła szkolenia z chwytów obezwładniających!\nPowinienem był ściągnąć całą ich uwagę na siebie!!!
+m074.67	text	Goryl, wrzeszcząc coś niezrozumiałego w rodzaju „Ihihihi!”, rzucił się na Yuki.\nDwóch ochroniarzy uniosło tonfy i natarło na mnie.
+m075.0	text	Dwóch facetów w mundurach ochrony naciera na mnie z uniesionymi tonfami. Uznaję, że najlepiej pomogę Yukince, jeśli błyskawicznie załatwię tych dwóch.
+m075.4	text	Ochroniarz A: „Hiaaaa!!”
+m075.6	text	„Za wolno!!” Zamach szeroki, same luki. Uchylam się w prawo. Pierwszy zupełnie traci równowagę. Drugiemu, który właśnie bierze zamach z góry, łapię nadgarstek, zakładam dźwignię i wykręcam mu rękę.
+m075.10	text	Ochroniarz B: „Aaa!! Au-au-au-au-au!!”
+m075.12	text	Wyrywam mu tonfę, którą odruchowo puścił, i z całej siły dźgam go nią w potylicę. Facet z jękiem pada plackiem na ziemię.
+m075.15	text	Ochroniarz A: „Ty gno-o-o-oju!!”
+m075.17	text	Drugi ochroniarz łapie równowagę i, oszalały ze strachu, rzuca się na mnie, wymachując na oślep tonfą.
+m075.20	text	Przyjmuję cios na zdobyczną tonfę, a kiedy na moment zastyga, kopię go w krocze!!
+m075.23	text	Ochroniarz A: „Uch...!!”
+m075.25	text	Nieszczęśnik kuli się tam, gdzie stał...
+m075.27	text	Murakumo: „Jakbyś chciał przestać być facetem, znam dobrego\n           lekarza☆”
+m075.29	text	Yuki: „Aaaaaaaa!”
+m075.31	text	Goryl: „He, he, he, panienko, pokaż no s-sutki... u-he-he-he”
+m075.33	text	Goryl przygniata Yukinkę i z całej siły szarpie ją za kołnierz munduru. Lada chwila rozedrze jej mundur na piersi.\nNiedobrze. Yuki ze strachu jest na wpół odrętwiała i w ogóle nie potrafi się bronić.
+m075.37	text	Murakumo: „Ty obleśny zboczeńcu!!”
+m075.39	text	Z całej siły walę tonfą od tyłu w olbrzymie cielsko Goryla!
+m075.41	text	Trach!!
+m075.43	text	Co jest?! Tonfa rozlatuje się na kawałki jak cukrowa figurka.\nGoryl puszcza Yukinkę i powoli odwraca się w moją stronę...
+m075.46	text	Goryl: „Ty-yyyy! Przecież to bo-o-oli-iiii!”
+m075.49	text	Ale z ciebie twardy drań! Ty chyba jesteś z kamienia albo z żelaza?!
+m075.53	text	Zga-adza się! U mnie między skórą a mięśniami siedzą silikon i stalowe płyty, wszczepione jak pancerz kompozytowy-y-y!!\nNa mnie twój cherlawy cios nie działa-aaa!!
+m075.57	text	Murakumo: „...Taki komiksowy, że to aż nie fair...” (kropla potu)
+m075.59	text	Ponad dwumetrowy mięśniak, ufny w swoją odporność, rzuca się, żeby mnie złapać.\nGdyby mnie gorąco uściskał tymi ramionami jak kłody, mdłości byłyby najmniejszym zmartwieniem.
+m075.63	text	Goryl: „Ale tobą cisnę-ę-ę-ę!”
+m075.65	text	Celowo wchodzę Gorylowi głęboko pod gardę. Mięśniak, jakby chciał powiedzieć „Już po tobie!”, posyła mi uśmiech jak z tropików...
+m075.68	text	Gdy Goryl już ma mnie chwycić, o ułamek sekundy wcześniej trafiam go otwartą dłonią w szczękę.
+m075.70	text	Murakumo: „Ha!!!”
+m075.72	text	Wiem, że od samego bicia nic mu nie będzie.\nWięc nie tyle uderzam, ile przekazuję siłę w głąb i – wuuuuum! – wstrząsam mu mózgiem.
+m075.75	text	Jego mózg pewnie przypomina teraz rozbity budyń!\nZamiera, a potem to wielkie cielsko wali się pod moje nogi jak na wideo puszczonym klatka po klatce.
+m075.79	text	Nagle w powietrzu dźwięczy żądza mordu, napięta jak struna!!
+m075.81	text	Dryblas ruchem, który przywodzi na myśl węża, kładzie dłoń na kaburze przy biodrze! Oni naprawdę chcą nas zabić?!
+m076.0	text	Yukinka w niebezpieczeństwie!! Decyzję podejmuję w jednej chwili: nie zważam na dwóch ochroniarzy i wdzieram się między Goryla a Yuki.
+m076.3	text	Yuki: „Panie Murakumo!!”
+m076.5	text	Goryl sięga po Yukinkę, a ja wchodzę mu pod gardę. Poszło zaskakująco łatwo, aż mnie to zbiło z tropu, ale bez ceregieli wbijam mu łokieć od dołu w splot słoneczny.
+m076.9	text	Puk.
+m076.11	text	Murakumo: „Puk???”
+m076.14	text	Ehehehe, nie boli...\nU mnie między skórą a mięśniami siedzą silikon i stalowe płyty, wszczepione jak pancerz kompozytowy-y-y!!\nTwój cherlawy łokieć mnie nie powali-iii!!
+m076.19	text	Chwyta mnie wpół, gdy stoję jak wryty, i jak w front suplexie ciska mną do tyłu.\nJestem lekki, więc szybuję w powietrzu.
+m076.23	text	W powietrzu skręcam ciało i robię pad, żeby rozłożyć siłę upadku.\nGoryl niespiesznie rusza w stronę Yukinki. Muszę ją jakoś ratować, ale...!
+m076.26	text	Klęczę, w kiepskiej pozycji, a dwaj ochroniarze już walą we mnie z góry tonfami.
+m076.29	text	Ochroniarz A: „Hiaaaaa!”
+m076.31	text	Nogę pierwszego, który na mnie naciera, chwytam w nożyce obiema nogami i od razu łamię!!\nChrup! Noga trzaska głucho, a pierwszy leci do przodu i pada na twarz.
+m076.34	text	Ochroniarz A: „Uaaaaa!”
+m076.36	text	Zrywam się na nogi tuż przed osłupiałym drugim ochroniarzem i nie zmieniając pozycji, markuję lewą ręką uderzenie otwartą dłonią.
+m076.39	text	Ochroniarz B: „Iii!”
+m076.41	text	Daje się nabrać na zwód lewą i w popłochu próbuje się zasłonić. Opuszczam lewą, która była tylko przynętą, i prawą, kantem dłoni, dźgam go w splot słoneczny. Zwija się z bólu, głowa mu opada.
+m076.45	text	Yuki: „Nieeee!!”
+m076.47	text	Murakumo: „Yuki!!”
+m076.49	text	Goryl przygniata Yukinkę i z całej siły szarpie ją za kołnierz munduru. Lada chwila rozedrze jej mundur na piersi.\nNiedobrze. Yuki ze strachu jest na wpół odrętwiała i w ogóle nie potrafi się bronić.
+m076.53	text	Goryl: „He, he, he, panienko, pokaż no s-sutki... u-he-he-he”
+m076.55	text	Murakumo: „Ty gno-o-oju! Dosyć tego!!!”
+m076.57	text	Wrzeszcząc, żeby go sprowokować, skracam dystans do Goryla. Tak jak myślałem: puszcza Yuki i wita mnie ciosem na odlew z półobrotu.
+m076.60	text	Murakumo: „He, he.”
+m076.62	text	Cios jest zaskakująco szybki, ale da się go uniknąć. Znów wskakuję Gorylowi pod gardę.
+m076.65	text	Goryl: „Próbuj, ile chcesz, i tak nic z tego-o-o!!!”
+m076.67	text	Celowo wchodzę Gorylowi głęboko pod gardę. Mięśniak, jakby chciał powiedzieć „Już po tobie!”, posyła mi uśmiech jak z tropików...
+m076.70	text	Gdy Goryl już ma mnie chwycić, o ułamek sekundy wcześniej trafiam go otwartą dłonią w szczękę.
+m076.72	text	Murakumo: „Ha!!!”
+m076.74	text	Wiem, że od samego bicia nic mu nie będzie.\nWięc nie tyle uderzam, ile przekazuję siłę w głąb i – wuuuuum! – wstrząsam mu mózgiem.
+m076.77	text	Jego mózg pewnie przypomina teraz rozbity budyń!\nZamiera, a potem to wielkie cielsko wali się pod moje nogi jak na wideo puszczonym klatka po klatce.
+m076.81	text	Nagle w powietrzu dźwięczy żądza mordu, napięta jak struna!!
+m076.83	text	Dryblas ruchem, który przywodzi na myśl węża, kładzie dłoń na kaburze przy biodrze! Oni naprawdę chcą nas zabić?!
+m077.0	text	Nie wolno mi się zawahać ani na chwilę.\nO wszystkim przesądzą ułamki sekundy! Prawą rękę, którą uderzyłem, błyskawicznie wsuwam pod kurtkę.\nDryblas ruchem, który przywodzi na myśl węża, wyciąga broń!
+m077.4	text	Snake: „Już po tobie!”
+m077.6	text	Snake celuje o jedną dziesiątą sekundy wcześniej.
+m077.8	text	Bum!!
+m077.10	text	Rozlega się jeden jedyny strzał...
+m077.13	text	Aaaaaaaaaaaargh......!!!\nBoli!! Boli!! Boli!! Iiiiiiiiiii!!!!!\nUaaaaaaaa, ratunku! Ratunku! Ratunku!\nAaaaaaaa!! Aaaaaaaa!! Aaaaaaaa!!
+m077.18	text	To moja czterdziestkapiątka plunęła ogniem o dwie dziesiąte sekundy szybciej.
+m077.20	text	W filmie akcji wytrąciłbym mu strzałem sam pistolet. Ale moja spluwa jest przerobiona pod siłę obalającą, nie pod przebicie, więc od samego uderzenia prawa dłoń Snake'a odrywa się w nadgarstku i odlatuje.
+m077.25	text	Szybkie strzelanie to i moja specjalność, wiesz.\nTak się składa, że mam licencję na zabijanie klasy B w strzelaniu☆
+m077.28	text	Nawet nie słucha, co mówię, tylko tarza się po ziemi i wije.\nPewnie przyspieszył sobie przewodzenie w nerwach ruchowych treningiem na chemii i stąd ta nadwrażliwość na ból.\nDoprawdy żałosne......
+m078.0	text	Wiem, jaki Snake jest szybki z bronią. Zasłaniając się powalonym Gorylem, skaczę w bok, robię przewrót po ziemi i wsuwam prawą rękę pod kurtkę.
+m078.4	text	Pach! Pach! Pach!
+m078.6	text	Broń Snake'a, kaliber .38, ma przerobioną, wydłużoną lufę. Trzy razy pluje ogniem, a kule idą moim śladem, ledwie kilka centymetrów za mną, gdy skaczę w bok.
+m078.10	text	Snake: „Tss!!”
+m078.12	text	Drań cmoka ze złością i seria się urywa.\nNie mogę przegapić tej luki, choćby trwała ułamek sekundy! Jeśli strzelę za późno, będę idealnym celem.
+m078.15	text	Tocząc się po ziemi, celuję i ściągam spust...
+m078.17	text	Buuum!!
+m078.19	text	Rozlega się ryk mojej czterdziestkipiątki...
+m078.22	text	Aaaaaaaaaaaargh......!!!\nBoli!! Boli!! Boli!! Iiiiiiiiiii!!!!!\nUaaaaaaaa, ratunku! Ratunku! Ratunku!\nAaaaaaaa!! Aaaaaaaa!! Aaaaaaaa!!
+m078.27	text	W filmie akcji wytrąciłbym mu strzałem sam pistolet. Ale moja spluwa jest przerobiona pod siłę obalającą, nie pod przebicie.
+m078.30	text	Od samego uderzenia prawa dłoń Snake'a odrywa się w nadgarstku i odlatuje.
+m078.33	text	Strzelanie akrobatyczne to moja specjalność, wiesz.\nTak się składa, że mam licencję na zabijanie klasy B w strzelaniu☆
+m078.36	text	Nawet nie słucha, co mówię, tylko tarza się po ziemi i wije.\nPewnie przyspieszył sobie przewodzenie w nerwach ruchowych treningiem na chemii i stąd ta nadwrażliwość na ból.\nDoprawdy żałosne......
 m079.0	text	Yuki: „......”
-m079.2	text	
-m079.7	text	
-m079.10	text	
-m079.12	text	
-m079.15	text	
-m079.18	text	
-m079.20	text	
-m080.0	text	
-m080.3	text	
-m080.7	text	
+m079.2	text	Yukinka, śmiertelnie przerażona, cała się trzęsła. Objąłem ją za ramiona i pomogłem jej wstać. Nogi miała jak z waty.\nChyba nie było mowy, żeby dalej prowadzić tu śledztwo...
+m079.7	text	Pani Reiko! Na dzisiaj się wycofamy, ale równie dobrze mógłbym to podciągnąć pod utrudnianie czynności służbowych!
+m079.10	text	Reiko: „Och, przepraszam, nie zauważyłam. Ohoho...”
+m079.12	text	Jakie znowu „Ohoho”?! Skoro ma mocne plecy, to myśli, że wszystko jej wolno!\nPostanowiłem zabrać śmiertelnie przerażoną Yuki i wrócić do Toanu.
+m079.15	text	Koniec końców z przeszukania starego skrzydła nic nie wyszło, ale coś tu jest.\nCo do tego nie mam wątpliwości!
+m079.18	text	Reiko: „Wyjście, proszę, tędy.”
+m079.20	text	Murakumo: „...Dziękuję, bardzo pani uprzejma.”
+m080.0	text	Posadziłem Yukinkę na fotelu pasażera i jechałem do Toanu, do centrum miasta.
+m080.3	text	Yukinka chyba wciąż nie otrząsnęła się ze strachu: obejmowała się ramionami i cała dygotała...\nZupełnie jak małe zwierzątko zapędzone w kąt.
+m080.7	text	Murakumo: „Już wszystko dobrze, Yukinko☆”
 m080.9	text	Yuki: „......”
-m080.11	text	
-m080.15	text	
-m080.17	text	
-m081.0	text	
-m081.3	text	
-m081.8	text	
-m081.12	text	
-m081.15	text	
-m081.17	text	
-m081.22	text	
-m081.26	text	
-m081.30	text	
-m081.33	text	
-m081.36	text	
-m081.40	text	
-m081.44	text	
-m081.47	text	
-m081.52	text	
-m081.54	text	
-m081.59	text	
-m081.63	text	
-m082.0	text	
-m083.0	text	
-m083.2	text	
-m083.6	text	
-m083.8	text	
-m083.11	text	
-m083.15	text	
-m083.17	text	
-m083.20	text	
-m083.22	text	
-m083.26	text	
-m083.30	text	
-m083.32	text	
-m083.34	text	
-m083.36	text	
-m083.40	text	
-m083.42	text	
-m083.44	text	
-m083.48	text	
-m083.50	text	
-m083.52	text	
-m083.54	text	
-m083.56	text	
-m083.58	text	
-m083.61	text	
+m080.11	text	Nic z tego, jest śmiertelnie przerażona. Czyżby dręczyło ją wspomnienie tamtej napaści sprzed lat? Muszę coś zrobić... coś wymyślić.\nNagle przy trasie nadbrzeżnej ukazała się zieleń parku leśnego...
+m080.15	text	Murakumo: „Yukinko, odpocznijmy tam chwilę.”
+m080.17	text	Yukinka, nie podnosząc wzroku, lekko skinęła głową...
+m081.0	text	Wkoło zielone drzewa, pod stopami miękka murawa. Dzień powszedni, środek dnia, wokoło same drzewa i nic więcej – nic dziwnego, że ani żywej duszy.
+m081.3	text	Pośrodku pustego parku stał mały domek z bali.\nMorski wiatr, przeciskając się między gałęziami, przechodził w lekki powiew i muskał mi policzki...\nW sam raz, żeby się uspokoić.
+m081.8	text	Usiedliśmy na trawiastej skarpie w chłodnym cieniu drzew. Nagle Yuki przywarła do mojej piersi; jej drobne ramiona dygotały.
+m081.12	text	Przepraszam... przepraszam...\nJestem dla pana kulą u nogi...... przepraszam.
+m081.15	text	Murakumo: „Nie przejmuj się. Posiedź tak, aż się uspokoisz.”
+m081.17	text	Yukinka wtuliła twarz w moją pierś, skulona i drżąca. Kiedy delikatnie położyłem dłoń na jej ramieniu, poczułem, jak drobno dygocze. Zaczęła mówić, z wolna, słowo po słowie.
+m081.22	text	Miałam siostrzyczkę... Piękną, dobrą, cudowną...\n...Marzyłam, żeby być kiedyś taka jak siostrzyczka.
+m081.26	text	Gdyby nie to, że kiedy chodziłam do liceum, koło slumsów napadli na mnie i na siostrzyczkę mafijni handlarze ludźmi...
+m081.30	text	Murakumo: „...”
+m081.33	text	Siostrzyczka mnie wtedy osłoniła, chciała mnie ratować...\n...i to ją złapali!
+m081.36	text	Yukinka miała spuszczoną głowę i nie widziałem jej twarzy, ale przez ramię, którego dotykałem, czułem gniew zmieszany z żalem...
+m081.40	text	Przeze mnie... przeze mnie siostrzyczkę spotkało coś tak strasznego...\nI to dla kogoś takiego jak ja...\n...Siostrzyczko-o!
+m081.44	text	Murakumo: „Yukinko, przestań się obwiniać za wszystko!”
+m081.47	text	Ale...!! Siostrzyczkę przerobili na żywy narkotyk\ni sprzedawali z rąk do rąk jak niewolnicę...\nKiedy ją w końcu uratowano, była już wrakiem człowieka.\nA w zeszłym roku umarła...
+m081.52	text	Yuki: „Dlatego ja...!! Dlatego zgłosiłam się do Toanu!!”
+m081.54	text	Yukinka kurczowo chwyciła mnie za ubranie na piersi i podniosła twarz. Przygryzała drobne wargi, a z oczu lada chwila miały się posypać perły łez.
+m081.59	text	Ja... nawet w Wydziale Informacji nie najlepiej mi idzie.\nA przed chwilą znowu byłam dla pana kulą u nogi...\n...Ja... ja... ja...!!
+m081.63	text	Wzdłuż kręgosłupa przeszył mnie dreszcz, jak prąd...\nYuki się zaraz rozsypie. W tej samej chwili, gdy to pomyślałem...
+m082.0	text	...przyciągnąłem ją mocno do siebie i siłą wpiłem się w jej drżące usta.
+m083.0	text	Yuki: „Ach!”
+m083.2	text	Czas stanął w miejscu...\nSzum drzew, wiatr muskający policzki... Tylko Yuki drżała w moich ramionach.
+m083.6	text	W końcu i to drżenie ustało, a Yuki wsparła się na mnie całym ciałem.
+m083.8	text	...Delikatnie oderwałem usta od jej warg.
+m083.11	text	Yuki, przestań się obwiniać za wszystko.\nJesteś moją partnerką! Potrzebuję cię!!\nRozwiążmy tę sprawę razem, dobrze?
+m083.15	text	Yuki: (...Dziękuję...)
+m083.17	text	Yuki coś szepnęła w moich ramionach, ale nie dosłyszałem. Powoli wtuliła twarz w moją pierś.
+m083.20	text	Yuki: „Panie Murakumo? Czy mogę jeszcze chwilę tak zostać?”
+m083.22	text	Gładzę ją po włosach, ledwie muskając. Wiatr niesie zapach mydła.\nJej ramiona unoszą się lekko w rytm oddechu.\nGdybym objął ją mocniej, chyba by mi się rozsypała...
+m083.26	text	Unoszę palcem wskazującym podbródek Yuki. Przymyka powieki, rozmarzona, a z lekko rozchylonych ust ulatuje jej słodki oddech.
+m083.30	text	W jednej chwili tracę głowę z czułości.
+m083.32	text	Nasze usta odnajdują się same, nie wiadomo, czyje pierwsze.
+m083.34	text	Yuki: „Och... mmm.”
+m083.36	text	Całujemy się cicho i czule, spijamy sobie pocałunki z ust i szukamy się nawzajem; mój język łagodnie oplata i otula język Yuki.\nNasze ciała lgną do siebie coraz mocniej.
+m083.40	text	Gdy odrywam usta, Yuki, czerwona jak w gorączce, ucieka wzrokiem.
+m083.42	text	Yuki: „Wsty... wstyd mi...”
+m083.44	text	Wodzę ustami po białej szyi Yuki, delikatnie ją ssąc, i guzik po guziku rozpinam czarny mundur Toanu na jej piersi.\nW popłochu zasłania się obiema rękami.
+m083.48	text	Yuki: „Aach, panie Murakumo, nie wolno...”
+m083.50	text	Zaglądam Yuki głęboko w oczy i więżę ją spojrzeniem.
+m083.52	text	Murakumo: „Kocham cię...
+m083.54	text	           Chcę poznać cię całą, Yuki... całą!!”
+m083.56	text	Yuki: „......”
+m083.58	text	Yuki powoli odsuwa ręce, którymi przyciskała piersi, i cichutko zamyka oczy.
+m083.61	text	Układam Yuki na trawie.\nKładę dłoń na staniku, który okrywa jej jędrne, młode piersi, i delikatnie podsuwam go w górę.
 m084.0	text	
-m084.4	text	
-m084.6	text	
-m084.8	text	
-m085.0	text	
-m085.4	text	
-m085.6	text	
-m085.8	text	
+m084.4	text	Yuki: „...W-wstyd mi... niech pan tak nie patrzy...”
+m084.6	text	Murakumo: „Cudowna jesteś. Piękna. Dla mnie najśliczniejsza ze\n           wszystkich.”
+m084.8	text	Yuki: „Aach, panie Murakumo...”
+m085.0	text	Zbliżam usta do mlecznobiałych krągłości Yuki i całuję różowy sutek.\nCiało Yuki drga gwałtownie!!
+m085.4	text	Yuki: „Ach... mmm.”
+m085.6	text	Toczę językiem w ustach uroczą różową perełkę, w środku jeszcze twardą.
+m085.8	text	Yuki: „Mmm... och... mmm...”
 m085.10	text	
 m086.0	text	
-m086.3	text	
-m086.5	text	
-m086.8	text	
-m086.10	text	
-m087.0	text	
-m087.3	text	
-m087.6	text	
-m087.9	text	
-m087.11	text	
-m088.0	text	
-m088.4	text	
-m088.7	text	
+m086.3	text	Yuki: „Mmm!”
+m086.5	text	Jakbym chciał poznać kształt tych krągłości, gładzę je od pach aż po rowek między piersiami. Palce chwytają różowy czubek.
+m086.8	text	Yuki: „Aaach... ta... tak nie można...”
+m086.10	text	Wyrywa się jej jęk, w którym rozkosz ciała stapia się ze wstydem.\nTrącam palcami jędrne sutki, a różowe czubki twardnieją i sterczą.
+m087.0	text	Obejmując dłonią krągłość piersi, która nabiegła bladoróżowym rumieńcem, ssę ją i wodzę po niej językiem...
+m087.3	text	Cmok, cmok, cmok.
+m087.6	text	Haaa... mmm... mmh,\njak pan tak robi... to Yuki jest całkiem bezradna-a...
+m087.9	text	Koniuszkiem języka czuję miękkość ciała Yuki.
+m087.11	text	Yuki: „Aaa-aaach!”
+m088.0	text	Cmok, cmok, cmok – liżę piersi Yuki, ssę je i ugniatam...
+m088.4	text	Ach... ach... mmm, ach, aa-ach, panie Murakumo-o...\nYu... Yuki... jakoś... jakoś dziwnie się czuje-e-e...
+m088.7	text	Różowe sutki Yuki pulsują i sterczą, twarde aż do bólu...
 m089.0	text	
-m089.3	text	
-m089.5	text	
-m089.9	text	
-m089.13	text	
-m089.15	text	
-m089.19	text	
+m089.3	text	Yuki: „Ach! Nie! Nie wolno! Tak strasznie się wstydzę-ę... ach.”
+m089.5	text	Zamykam jej usta swoimi. Lekko podciągam spódniczkę: bladoniebieskie figi, a w powietrzu słodko-cierpka woń. „Dziewica!!”\nTak pachnie tylko ta, która nie zna mężczyzny.
+m089.9	text	Dotykam przez majteczki szparki: jest szczelnie zamknięta.\nGdy przez cienki materiał rozchylam ją środkowym palcem, wstrzymywane soki wypływają i plama rozlewa się powo-o-oli.
+m089.13	text	Yuki: „Mmm... aach... mmm, mmmmm!”
+m089.15	text	Z początku jest cała spięta, ale gładzę ją dalej środkowym palcem, od dołu w górę.\nWreszcie z ust, które wciąż zamykam pocałunkiem, wymyka się jej słodki, stłumiony jęk.
+m089.19	text	Yuki: „Oo-och... mmm... mmh, mmmh, mmmmmm...”
 m090.0	text	
-m090.4	text	
-m090.6	text	
-m090.8	text	
-m090.11	text	
-m090.13	text	
-m091.0	text	
-m091.5	text	
-m091.8	text	
-m091.10	text	
-m091.12	text	
-m091.14	text	
-m091.16	text	
-m091.18	text	
-m092.0	text	
-m092.3	text	
-m092.6	text	
-m093.0	text	
-m093.3	text	
-m093.6	text	
-m093.9	text	
-m093.11	text	
-m093.13	text	
-m093.16	text	
-m093.20	text	
-m093.22	text	
-m093.26	text	
-m093.31	text	
-m093.36	text	
-m093.39	text	
-m093.43	text	
+m090.4	text	Yuki: „Haa, haa, panie Murakumo... nie-e... ta... tak... aaach!”
+m090.6	text	Dalej opuszką kciuka krążę po łech○aczce ukrytej pod kapturkiem.
+m090.8	text	Yuki wygina się w łuk, jakby miotało nią nieznane dotąd doznanie, i dyszy ciężko.
+m090.11	text	Yuki: „Haaach... to... to jest... niesamowite-e... panie\n       Murakumo...”
+m090.13	text	Yuki kręci głową na boki, jakby mówiła „nie, nie”, i pręży białe, zroszone potem ciało.
+m091.0	text	Od szyi Yuki po piersi, od podbrzusza po pępek – obsypuję ją deszczem pocałunków.\nNa mlecznobiałej skórze wykwitają malinki, różowe jak płatki wiśni.
+m091.5	text	Och... mmm, aach... ach... aach...\nA... ee, panie Murakumo... mam... prośbę...
+m091.8	text	Murakumo: „Co... się stało?”
+m091.10	text	Yuki: „Jeszcze raz... jeszcze tylko raz niech pan powie «kocham\n       cię»...”
+m091.12	text	Patrzę w wilgotne oczy Yuki...
+m091.14	text	Murakumo: „Kocham cię, Yuki...”
+m091.16	text	Yuki: „Aaach... jak się cieszę...”
+m091.18	text	Yuki, z głosem drżącym z radości, przywiera do mojej piersi.
+m092.0	text	Zasypuję ulewą pocałunków białą, smukłą szyję Yuki i miejsca za uszami, a ona łamiącym się głosem...
+m092.3	text	Yuki: „Och, panie Murakumo, aach, ta... tak mocno mnie pan\n       całuje, że ja... ja... aa-aach!”
+m092.6	text	Jaka urocza jest Yuki, gdy tak odpowiada na każdą moją pieszczotę.
+m093.0	text	Całuję śliczne usta Yuki, oplatam jej język swoim. Koniuszek jej języka, dotąd uległy, zaczyna się nieśmiało poruszać.
+m093.3	text	Odsuwam na bok cieniutkie bladoniebieskie majteczki Yuki: ukazuje się pulchny wzgórek łonowy. Rzadkie włoski są wilgotne od jej soków.
+m093.6	text	Koniuszkami palców bawię się jej kobiecością. Yuki mimo woli cicho jęczy, a jej biodra unoszą się.
+m093.9	text	Mlask, mlask, mlask.
+m093.11	text	Yuki: „Mmm...!”
+m093.13	text	Od ust, przez szyję i piersi, aż po podbrzusze – zsuwam się językiem w dół.
+m093.16	text	Panie Murakumo-o... pro... proszę... niech pan już przestanie...\nBo inaczej... Yuki... Yuki...\n...zostanie fi... figlarką...!
+m093.20	text	      „Aaach... mmmh! Mmm-aaach!”
+m093.22	text	Całuję jej dolne wargi i spijam słodko-cierpko pachnącą wilgoć. Smak, który kusi mężczyznę.
+m093.26	text	Aach, Murakumo-o, wstyd mi-i...\nAa-ach... Murakumo-o.\nMurakumo-oo, Murakumo-oo, Murakumo-oo, Murakumo-oo...\nAaaaaaaaaach!!... Murakumo-o!!!
+m093.31	text	Liżę i ssę wciąż różowe labia i łech○aczkę w kapturku, a soki płyną i płyną, aż wszystko po sam anu○ robi się lepkie. Pod nieznanym bodźcem dziewicze labia i anu○ Yuki drgają.
+m093.36	text	Haa, haa, haa... już... nie mogę-ę... Yuki zaraz oszaleje-e!\nMmm-aach! Nie-e! Gdzie... gdzieś... odlatuję-ę!
+m093.39	text	Yuki gwałtownie rzuca głową na boki. Przyciska rękami moją głowę i mocno ściska ją udami. Jej zwieracze mimowolnie kurczą się raz po raz w spazmach, a wypływające soki tryskają dookoła.
+m093.43	text	Yuki: „Aach! Aaaach! Mo... moje ciało!”
 m093.45	text	
-m093.48	text	
-m093.53	text	
-m094.0	text	
-m095.0	text	
-m095.2	text	
-m096.0	text	
-m096.2	text	
-m096.4	text	
-m096.7	text	
-m096.12	text	
-m096.14	text	
-m096.16	text	
-m096.18	text	
-m096.20	text	
-m096.24	text	
-m096.26	text	
-m096.29	text	
-m097.0	text	
-m097.4	text	
-m098.1	text	
-m098.5	text	
-m098.8	text	
-m098.13	text	
-m098.18	text	
-m098.22	text	
-m098.25	text	
-m098.27	text	
-m098.29	text	
-m098.31	text	
-m098.35	text	
-m098.40	text	
-m099.0	text	
-m099.2	text	
-m099.4	text	
-m099.7	text	
-m099.10	text	
-m099.13	text	
-m099.18	text	
-m099.21	text	
-m099.24	text	
-m099.29	text	
-m099.32	text	
-m099.35	text	
-m099.38	text	
-m099.42	text	
-m099.46	text	
-m099.50	text	
-m100.1	text	
-m100.5	text	
-m100.9	text	
-m100.11	text	
-m100.13	text	
-m100.15	text	
-m100.18	text	
-m100.23	text	
-m100.27	text	
-m100.30	text	
-m100.34	text	
-m100.37	text	
-m100.40	text	
-m100.44	text	
-m100.48	text	
-m100.51	text	
-m100.54	text	
-m101.0	text	
-m101.2	text	
-m101.5	text	
-m101.8	text	
-m101.10	text	
-m102.1	text	
-m102.4	text	
-m102.7	text	
-m102.11	text	
-m102.15	text	
-m102.18	text	
-m102.21	text	
-m102.24	text	
-m102.26	text	
-m102.29	text	
-m102.31	text	
-m103.0	text	
-m103.3	text	
-m103.5	text	
-m103.8	text	
-m103.11	text	
-m103.14	text	
-m103.17	text	
-m103.19	text	
-m103.21	text	
-m103.24	text	
-m103.27	text	
-m103.31	text	
-m103.36	text	
-m103.41	text	
-m103.43	text	
-m103.45	text	
-m103.47	text	
-m103.49	text	
-m104.0	text	
-m104.2	text	
-m104.5	text	
-m104.10	text	
-m104.14	text	
-m104.18	text	
-m104.21	text	
-m104.24	text	
-m104.27	text	
-m104.29	text	
-m104.34	text	
-m104.40	text	
-m104.44	text	
-m104.47	text	
-m105.0	text	
-m105.2	text	
-m105.4	text	
-m105.7	text	
-m105.12	text	
-m105.16	text	
-m105.19	text	
-m105.23	text	
-m105.27	text	
-m105.29	text	
-m105.31	text	
-m106.0	text	
-m107.0	text	
-m107.2	text	
-m108.0	text	
-m108.3	text	
-m109.0	text	
-m109.4	text	
-m109.7	text	
-m109.11	text	
-m109.15	text	
-m109.19	text	
-m109.22	text	
-m109.25	text	
-m110.0	text	
-m110.2	text	
-m110.5	text	
-m110.9	text	
-m111.0	text	
-m111.4	text	
-m111.9	text	
-m112.0	text	
-m112.3	text	
-m112.7	text	
-m112.9	text	
-m113.0	text	
-m113.3	text	
-m113.5	text	
-m114.0	text	
-m114.2	text	
-m115.1	text	
-m115.5	text	
-m115.9	text	
-m115.13	text	
-m116.0	text	
-m116.3	text	
-m116.7	text	
-m116.9	text	
-m117.0	text	
-m117.2	text	
-m117.5	text	
-m117.9	text	
-m117.11	text	
-m118.0	text	
-m118.2	text	
-m118.5	text	
-m118.8	text	
-m118.12	text	
-m118.16	text	
-m118.18	text	
-m118.22	text	
-m118.25	text	
-m118.28	text	
-m118.31	text	
-m118.35	text	
-m118.39	text	
-m119.0	text	
-m119.4	text	
-m119.7	text	
-m119.10	text	
-m119.12	text	
-m120.0	text	
-m121.0	text	
-m122.0	text	
-m122.4	text	
-m122.6	text	
-m123.0	text	
-m123.5	text	
-m124.0	text	
-m124.3	text	
-m124.5	text	
-m124.8	text	
-m125.0	text	
-m125.4	text	
-m125.6	text	
-m125.8	text	
-m125.10	text	
-m126.0	text	
-m126.2	text	
-m126.4	text	
-m126.6	text	
-m126.8	text	
-m126.10	text	
-m126.13	text	
-m126.17	text	
-m126.20	text	
-m126.22	text	
-m126.24	text	
-m126.27	text	
-m126.31	text	
-m126.34	text	
-m126.36	text	
-m126.39	text	
-m126.42	text	
-m126.44	text	
-m127.0	text	
-m127.5	text	
-m127.8	text	
-m127.10	text	
-m128.0	text	
-m128.2	text	
-m128.6	text	
-m129.0	text	
-m129.4	text	
-m129.7	text	
-m129.10	text	
-m129.15	text	
-m129.17	text	
-m129.21	text	
-m129.23	text	
-m130.0	text	
-m130.4	text	
-m130.6	text	
-m130.8	text	
-m130.11	text	
-m130.15	text	
-m130.17	text	
-m130.22	text	
-m131.0	text	
-m131.3	text	
-m131.5	text	
-m131.8	text	
-m131.10	text	
-m131.14	text	
-m132.0	text	
-m132.5	text	
-m132.8	text	
-m132.10	text	
-m132.13	text	
-m132.16	text	
-m133.0	text	
-m133.2	text	
-m133.5	text	
-m133.9	text	
-m133.11	text	
-m133.13	text	
-m133.15	text	
-m133.17	text	
-m134.0	text	
-m134.3	text	
-m134.6	text	
-m134.9	text	
-m134.11	text	
-m134.13	text	
-m134.16	text	
-m134.20	text	
-m134.23	text	
-m134.27	text	
-m134.30	text	
-m134.33	text	
-m134.35	text	
-m134.38	text	
-m134.40	text	
-m134.42	text	
-m134.46	text	
-m134.48	text	
-m134.52	text	
-m134.54	text	
-m134.58	text	
-m134.60	text	
-m135.0	text	
-m136.0	text	
-m136.4	text	
-m136.6	text	
-m137.0	text	
-m137.2	text	
-m137.4	text	
-m137.6	text	
-m138.0	text	
-m138.4	text	
-m138.6	text	
-m138.10	text	
-m138.14	text	
-m138.16	text	
-m138.20	text	
-m139.0	text	
-m140.1	text	
-m140.5	text	
-m140.7	text	
-m141.0	text	
-m141.2	text	
-m141.4	text	
-m141.6	text	
-m142.0	text	
-m142.4	text	
-m142.6	text	
-m142.10	text	
-m142.13	text	
-m142.15	text	
-m142.19	text	
-m143.0	text	
-m144.1	text	
-m144.5	text	
-m144.7	text	
-m145.0	text	
-m145.3	text	
-m145.6	text	
-m145.10	text	
-m145.14	text	
-m145.19	text	
-m146.0	text	
-m146.4	text	
-m146.6	text	
-m147.0	text	
-m147.4	text	
-m147.6	text	
-m147.8	text	
-m147.12	text	
-m147.14	text	
-m147.16	text	
-m147.18	text	
-m148.1	text	
-m148.4	text	
-m148.6	text	
-m149.0	text	
-m149.4	text	
-m149.7	text	
-m149.9	text	
-m149.11	text	
-m149.13	text	
-m149.16	text	
-m149.19	text	
-m149.21	text	
-m149.24	text	
-m149.26	text	
-m149.29	text	
-m149.34	text	
-m149.38	text	
-m149.42	text	
-m149.45	text	
-m149.47	text	
-m150.0	text	
-m150.2	text	
-m150.4	text	
-m150.9	text	
-m150.12	text	
-m150.15	text	
-m150.19	text	
-m150.22	text	
-m150.26	text	
-m150.31	text	
-m150.33	text	
-m151.0	text	
-m151.2	text	
-m151.4	text	
-m151.6	text	
-m151.10	text	
-m152.0	text	
-m152.3	text	
-m152.6	text	
-m152.8	text	
-m153.0	text	
-m153.2	text	
-m153.8	text	
-m153.11	text	
-m153.13	text	
-m153.16	text	
-m153.20	text	
-m153.24	text	
-m153.27	text	
-m153.31	text	
-m153.35	text	
-m153.39	text	
-m153.43	text	
-m153.45	text	
-m154.1	text	
-m154.4	text	
-m154.9	text	
-m154.13	text	
-m154.17	text	
-m154.20	text	
-m154.22	text	
-m154.24	text	
-m154.26	text	
-m154.29	text	
-m154.31	text	
-m154.33	text	
-m154.37	text	
-m154.39	text	
-m155.0	text	
-m155.4	text	
-m155.7	text	
-m155.11	text	
-m155.13	text	
-m155.15	text	
-m155.17	text	
-m155.19	text	
-m156.0	text	
-m156.2	text	
-m156.6	text	
-m156.10	text	
-m156.12	text	
-m157.0	text	
-m157.2	text	
-m157.6	text	
-m157.8	text	
-m157.12	text	
-m157.17	text	
-m157.20	text	
-m157.24	text	
-m157.26	text	
-m157.30	text	
-m157.32	text	
-m157.35	text	
-m157.39	text	
-m157.43	text	
-m157.47	text	
-m157.51	text	
-m157.55	text	
-m157.58	text	
-m157.62	text	
-m157.67	text	
-m157.70	text	
-m157.73	text	
-m157.78	text	
-m158.0	text	
-m158.2	text	
-m158.4	text	
-m158.6	text	
-m158.8	text	
-m158.10	text	
-m158.14	text	
-m158.20	text	
-m158.23	text	
-m158.26	text	
-m158.31	text	
-m158.35	text	
-m158.38	text	
-m158.43	text	
-m158.46	text	
-m158.48	text	
-m159.0	text	
-m159.2	text	
-m159.7	text	
-m159.12	text	
-m159.16	text	
-m159.19	text	
-m159.21	text	
-m160.0	text	
-m160.5	text	
-m161.0	text	
-m161.2	text	
-m161.4	text	
-m161.8	text	
-m161.10	text	
-m161.13	text	
-m161.16	text	
-m162.0	text	
-m162.4	text	
-m162.8	text	
-m162.10	text	
-m162.13	text	
-m162.15	text	
-m163.0	text	
-m163.4	text	
-m164.0	text	
-m164.2	text	
-m165.0	text	
-m165.2	text	
-m165.4	text	
-m165.7	text	
-m165.9	text	
-m165.11	text	
-m165.13	text	
-m165.17	text	
-m165.19	text	
-m165.21	text	
-m165.23	text	
-m165.25	text	
-m165.29	text	
-m165.31	text	
-m165.34	text	
-m165.38	text	
-m165.40	text	
-m166.0	text	
-m166.2	text	
-m167.0	text	
-m167.2	text	
-m167.4	text	
-m167.7	text	
-m167.9	text	
-m167.12	text	
-m167.14	text	
-m167.16	text	
-m167.18	text	
-m167.20	text	
-m167.22	text	
-m167.24	text	
-m167.26	text	
-m167.28	text	
-m167.30	text	
-m167.32	text	
-m167.36	text	
-m167.38	text	
-m167.41	text	
-m167.45	text	
-m167.47	text	
-m168.0	text	
-m168.2	text	
-m168.5	text	
-m168.7	text	
-m168.9	text	
-m168.12	text	
-m168.14	text	
-m168.18	text	
-m168.20	text	
-m169.0	text	
-m170.0	text	
-m170.2	text	
-m170.5	text	
-m170.7	text	
-m170.9	text	
-m170.13	text	
-m170.15	text	
-m170.18	text	
-m170.21	text	
-m170.23	text	
-m170.27	text	
-m170.29	text	
-m171.0	text	
-m171.2	text	
-m171.5	text	
-m171.7	text	
-m172.0	text	
-m173.0	text	
-m173.2	text	
-m173.5	text	
-m173.7	text	
-m174.0	text	
-m174.2	text	
-m174.4	text	
-m174.7	text	
-m174.10	text	
-m175.0	text	
-m176.0	text	
-m176.3	text	
-m176.7	text	
-m176.10	text	
-m176.14	text	
-m176.16	text	
-m176.19	text	
-m176.21	text	
-m176.25	text	
-m176.29	text	
-m176.32	text	
-m176.37	text	
-m176.39	text	
-m176.41	text	
-m176.43	text	
-m176.47	text	
-m176.50	text	
-m176.52	text	
-m176.55	text	
-m176.58	text	
-m176.60	text	
-m176.62	text	
-m176.64	text	
-m176.66	text	
-m176.68	text	
-m176.74	text	
-m176.77	text	
-m176.79	text	
-m176.84	text	
-m177.0	text	
-m178.0	text	
-m178.2	text	
-m178.4	text	
-m178.6	text	
-m178.8	text	
-m179.0	text	
-m179.5	text	
-m179.10	text	
-m179.15	text	
-m179.18	text	
-m179.23	text	
-m179.26	text	
-m179.31	text	
-m179.34	text	
-m179.37	text	
-m180.0	text	
-m180.2	text	
-m180.4	text	
-m180.7	text	
-m181.0	text	
-m181.4	text	
-m181.7	text	
-m181.9	text	
-m181.13	text	
-m181.15	text	
-m181.19	text	
-m181.21	text	
-m181.24	text	
-m181.26	text	
-m181.28	text	
-m181.31	text	
-m181.34	text	
-m181.37	text	
-m181.39	text	
-m182.0	text	
-m182.3	text	
-m182.5	text	
-m183.0	text	
-m183.4	text	
-m183.6	text	
-m183.8	text	
-m183.10	text	
-m183.13	text	
-m183.17	text	
-m183.19	text	
-m183.22	text	
-m183.25	text	
-m183.27	text	
-m183.30	text	
-m183.33	text	
-m183.35	text	
-m183.37	text	
-m183.39	text	
-m183.41	text	
-m183.43	text	
-m183.46	text	
-m183.48	text	
-m183.50	text	
-m183.55	text	
-m184.0	text	
-m184.2	text	
-m184.6	text	
-m184.8	text	
-m184.13	text	
-m184.17	text	
-m184.22	text	
-m184.25	text	
-m184.29	text	
-m184.33	text	
-m184.36	text	
-m184.40	text	
-m184.43	text	
-m184.45	text	
-m184.48	text	
-m184.50	text	
-m185.0	text	
-m185.2	text	
-m185.5	text	
-m185.7	text	
-m185.9	text	
-m185.13	text	
-m185.17	text	
-m185.22	text	
-m185.25	text	
-m185.28	text	
-m185.33	text	
-m185.38	text	
-m185.40	text	
-m185.43	text	
-m185.46	text	
-m185.48	text	
-m185.51	text	
-m185.53	text	
-m185.58	text	
-m185.60	text	
-m185.63	text	
-m185.66	text	
-m185.68	text	
-m185.70	text	
-m185.73	text	
-m185.76	text	
-m185.78	text	
-m185.80	text	
-m185.82	text	
-m185.85	text	
-m185.88	text	
-m185.91	text	
-m185.97	text	
-m185.100	text	
-m185.102	text	
-m185.104	text	
-m185.107	text	
-m185.109	text	
-m185.112	text	
-m185.117	text	
-m186.0	text	
-m186.4	text	
-m186.6	text	
-m187.0	text	
-m187.3	text	
-m187.5	text	
-m187.9	text	
-m187.11	text	
-m187.15	text	
-m187.17	text	
-m187.19	text	
-m187.24	text	
-m187.26	text	
-m187.28	text	
-m187.30	text	
-m188.0	text	
-m188.4	text	
-m188.6	text	
-m188.10	text	
-m188.12	text	
-m188.14	text	
-m188.19	text	
-m188.21	text	
-m188.23	text	
-m188.26	text	
-m188.30	text	
-m188.32	text	
-m188.36	text	
-m188.38	text	
-m188.42	text	
-m188.44	text	
-m188.47	text	
-m188.49	text	
-m188.52	text	
-m188.54	text	
-m188.57	text	
-m188.59	text	
-m188.61	text	
-m188.65	text	
-m188.67	text	
-m188.71	text	
-m188.77	text	
-m188.80	text	
-m188.82	text	
-m188.87	text	
-m188.91	text	
-m188.95	text	
-m188.97	text	
-m188.100	text	
-m188.103	text	
-m188.105	text	
-m188.108	text	
-m188.111	text	
-m188.115	text	
-m188.118	text	
-m188.120	text	
-m188.125	text	
-m188.128	text	
-m188.131	text	
-m188.133	text	
-m188.135	text	
-m188.140	text	
-m188.143	text	
-m188.145	text	
-m188.147	text	
-m188.149	text	
-m189.1	text	
-m189.6	text	
-m189.10	text	
-m189.16	text	
-m190.0	text	
-m191.0	text	
-m191.4	text	
-m191.6	text	
-m191.8	text	
-m191.11	text	
-m191.14	text	
-m191.16	text	
-m191.19	text	
-m191.21	text	
-m191.23	text	
-m191.25	text	
-m191.27	text	
-m191.29	text	
-m191.31	text	
-m191.33	text	
-m191.35	text	
-m191.37	text	
-m191.39	text	
-m191.42	text	
-m191.45	text	
-m191.48	text	
-m191.51	text	
-m191.53	text	
-m191.55	text	
-m191.58	text	
-m191.60	text	
-m191.62	text	
-m191.64	text	
-m192.0	text	
-m192.2	text	
-m192.6	text	
-m192.10	text	
-m193.0	text	
-m193.2	text	
-m193.5	text	
-m193.8	text	
-m193.11	text	
-m193.14	text	
-m193.18	text	
-m193.20	text	
-m193.23	text	
-m193.26	text	
-m193.29	text	
-m193.32	text	
-m193.35	text	
-m193.37	text	
-m193.42	text	
-m193.46	text	
-m193.49	text	
-m193.53	text	
-m193.56	text	
-m193.58	text	
-m194.0	text	
-m194.2	text	
-m194.7	text	
-m194.9	text	
-m194.11	text	
-m194.13	text	
-m194.15	text	
-m194.17	text	
-m195.0	text	
-m195.2	text	
-m195.5	text	
-m195.8	text	
-m195.14	text	
-m196.0	text	
-m196.2	text	
-m196.5	text	
-m196.7	text	
-m196.9	text	
-m196.13	text	
-m196.15	text	
-m196.19	text	
-m196.21	text	
-m196.25	text	
-m196.27	text	
-m196.30	text	
-m196.34	text	
-m196.36	text	
-m196.39	text	
-m196.44	text	
-m196.49	text	
-m196.52	text	
-m196.56	text	
-m196.59	text	
-m196.63	text	
-m196.66	text	
-m196.71	text	
-m196.75	text	
-m196.79	text	
-m196.81	text	
-m196.86	text	
-m196.88	text	
-m196.90	text	
-m196.93	text	
-m196.95	text	
-m196.97	text	
-m196.101	text	
-m196.104	text	
-m196.107	text	
-m196.110	text	
-m197.0	text	
-m197.5	text	
-m197.7	text	
-m198.0	text	
-m198.2	text	
-m198.6	text	
-m198.10	text	
-m198.14	text	
-m198.17	text	
-m198.21	text	
-m198.26	text	
-m198.31	text	
-m198.35	text	
-m198.38	text	
-m198.42	text	
-m198.46	text	
-m198.49	text	
-m198.52	text	
-m198.56	text	
-m198.61	text	
-m198.64	text	
-m198.67	text	
-m198.70	text	
-m198.74	text	
-m198.77	text	
-m198.79	text	
-m198.81	text	
-m198.83	text	
-m199.0	text	
-m199.6	text	
-m199.9	text	
-m199.11	text	
-m199.14	text	
-m199.17	text	
-m199.21	text	
-m199.23	text	
-m200.0	text	
-m200.3	text	
-m200.5	text	
-m200.9	text	
-m200.11	text	
-m200.15	text	
-m200.17	text	
-m200.19	text	
-m200.22	text	
-m200.25	text	
-m200.28	text	
-m200.30	text	
-m200.35	text	
-m200.37	text	
-m200.40	text	
-m200.44	text	
-m200.47	text	
-m200.49	text	
-m200.53	text	
-m200.57	text	
-m200.60	text	
-m201.0	text	
-m201.3	text	
-m201.5	text	
-m201.7	text	
-m201.10	text	
-m201.13	text	
-m201.16	text	
-m201.21	text	
-m201.26	text	
-m201.29	text	
-m201.32	text	
-m201.35	text	
-m201.38	text	
-m201.41	text	
-m201.45	text	
-m201.49	text	
-m201.52	text	
-m201.55	text	
-m202.0	text	
-m202.4	text	
-m202.7	text	
-m202.11	text	
-m202.16	text	
-m202.19	text	
-m202.21	text	
-m202.23	text	
-m203.0	text	
+m093.48	text	Na koniec, niczym cios łaski, wsuwam język w głąb jej waginy i czuję szorstkie fałdki. Spocone ciało Yuki wzdryga się gwałtownie! Po raz pierwszy w życiu Yuki zbliża się do szczytu.
+m093.53	text	Haa, haa, haa, haa, haa, haa, haa...\nNie, nie! Yuki...! Yuki zaraz zostanie bezwstydną dziewczyną-ą!\nAch! Aaach! Aaaach!! Murakumo-oooo!!!
+m094.0	text	Yuki: (Ach, jestem dziewczyną, która kocha Murakumo...)
+m095.0	text	Ciało Yuki rzuca się jak ryba wyciągnięta na brzeg, a potem bezwładnie opada...
+m095.2	text	Murakumo: „Jaka ty jesteś wrażliwa...”
+m096.0	text	Yuki: „Chlip... chlip... hyk... siostrzyczko...”
+m096.2	text	Yuki rozpłakała się, pociągając noskiem uroczo, po dziewczęcemu.
+m096.4	text	Murakumo: „Yuki, co się stało?”
+m096.7	text	Ja... do tej pory bałam się mężczyzn... Ale pan był dla mnie taki czuły, panie Murakumo, że zaczęłam się zastanawiać, czy nawet taką jak ja może uszczęśliwić mężczyzna... I kiedy tak pomyślałam... łzy same...
+m096.12	text	Murakumo: „......”
+m096.14	text	Przytuliłem ją i szepnąłem jej do ucha:
+m096.16	text	Murakumo: „Wolno ci być szczęśliwą, Yuki. Ja cię uszczęśliwię...”
+m096.18	text	Yuki: „Uaaaaa! Panie Murakumo-o-o, aaaaaa!”
+m096.20	text	Nagle Yuki przywarła do mnie i wybuchnęła głośnym płaczem.\nNiech się trochę wypłacze na mojej piersi...\nJeśli łzy zmyją z niej wszystko, co się w niej nazbierało...
+m096.24	text	Yuki: „Uaaaa... uaaaaa... uaaaaaaa...”
+m096.26	text	Jak się wypłacze, uspokoi się, a przygnębienie pryśnie.\nWtedy wrócimy do Toanu...
+m096.29	text	...Tak sobie wtedy myślałem.
+m097.0	text	W Toanie rozstałem się z Yuki przy wejściu i wróciłem do Praw Człowieka. W samochodzie nie była wprawdzie przygnębiona, ale zawstydzona tym, co razem zrobiliśmy, siedziała zarumieniona i prawie nie rozmawialiśmy.
+m097.4	text	Kiedy otworzyłem drzwi Wydziału Praw Człowieka, zastałem tam szefa: mina ta sama co zawsze, a jednak twarz jakby zatroskana.
+m098.1	text	Szlag mnie po prostu trafia. Ten cały szpital Kusanagi!\nDali dokumenty i wyrzucili za drzwi, a jak człowiek chciał się trochę rozejrzeć, napuścili na niego jakichś dziwnych ochroniarzy.
+m098.5	text	Sasame: „Że tak po prostu wróciłeś? To do ciebie niepodobne.”
+m098.8	text	Bo byłem z Yuki.\nAle co ważniejsze, ofiara, Misaki Misa, mogła zostać uprowadzona na terenie szpitala.
+m098.13	text	Kenzō na moje polecenie zajął się UIA – Lodowe Skrzydło. Są sygnały, że ugrupowanie to zamierza w jakiś sposób zakłócić ważną konferencję projektu Uroboros.
+m098.18	text	Chyba nie chce pan powiedzieć, że ten sabotaż ma związek z zabójstwem Misaki Misy?!
+m098.22	text	Jeśli numer DNA sprawcy należy do kogoś z UIA – Lodowe Skrzydło, to trudno uznać, że jedno z drugim nie ma związku.
+m098.25	text	Podałem mu kopię dokumentów i rzuciłem trochę złośliwie:
+m098.27	text	Murakumo: „Tyle że tę osobę już spalili i teraz mieszka w niebie.”
+m098.29	text	Sasame: „Ciało owszem.”
+m098.31	text	...Nie może być?! Ach, ten szef Maska! Czyżby od samego początku podejrzewał, że sprawcą może być lalka bojowa po operacji przeszczepu mózgu?!
+m098.35	text	Grupa terrorystyczna, z którą może mieć związki dyrektor Kusanagi, to podobno też UIA – Lodowe Skrzydło... W najgorszym razie może to być ktoś z ich kierownictwa. No cóż, wiele sobie obiecuję po twojej pracy.
+m098.40	text	Phi!! Od faceta z twarzą jak maska nawet komplement nie cieszy!
+m099.0	text	Kiedy zajrzałem do Wydziału Informacji, Yuki rozmawiała z Shinobu.
+m099.2	text	Shinobu: „...Ogólnie rzecz biorąc, nie opisano dotąd żadnego\n          udanego przypadku.”
+m099.4	text	Murakumo: „A o czy-ym to my tu rozmawiamy-y??”
+m099.7	text	Ach, panie Murakumo☆\nWłaśnie rozmawiamy o tej lalce bojowej, o której mówił pan w szpitalu...
+m099.10	text	Murakumo: „O tym, czy przeszczep mózgu jest możliwy, co?”
+m099.13	text	Tak. Faktem jest, że dotąd nie było udanych przypadków.\nKiedy całe ciało jest mechaniczne, mózg się sypie przez odrzucenie i stres.
+m099.18	text	Odrzucenie da się do pewnego stopnia powstrzymać, jeśli regularnie podaje się leki, ale...
+m099.21	text	Yuki: „A ze stresem nic się nie da zrobić?”
+m099.24	text	Słyszałam od znajomego, który prowadzi badania nad komputerami organicznymi... że jeśli stale rozładowywać stres czynnościami jak najbliższymi ludzkim instynktom, to teoretycznie mózg wytrzyma kilka miesięcy.
+m099.29	text	Yuki: „Na przykład jedzeniem?”
+m099.32	text	Dobrze kombinujesz...\nAle myślę, że tak słaby bodziec nie rozładuje stresu do końca.
+m099.35	text	Murakumo: „Pani doktor? A w takim razie seks z żywym narkotykiem?”
+m099.38	text	...Faktycznie, to mogłoby się udać.\nA z Virgin Angel, którego użyto w tej sprawie, pasowałoby to idealnie.
+m099.42	text	Dzięki, pani doktor! Resztę zrobię z Yuki: jeszcze raz prześwietlimy szpital Kusanagi.
+m099.46	text	Yuki?... Murakumo! A od kiedy to jesteście tak blisko, że mówisz do niej bez zdrobnienia?\n...No dobra, niech wam będzie. Piąte koło u wozu się ulatnia☆
+m099.50	text	Widząc, że Yuki zrobiła się czerwona jak burak, pani doktor wyszła z pokoju, zaśmiewając się w głos.
+m100.1	text	Shinobu-u-u! Mam takie malu-utkie pytanko!\nCzy da się przeszczepić ludzki mózg do wojskowej lalki bojowej???
+m100.5	text	Z impetem otworzyłem drzwi Wydziału Kryminalistyki i zasypałem Shinobu i Hinamurę pytaniami jak z karabinu maszynowego. Shinobu zrobiła zniecierpliwioną minę i odpowiedziała od niechcenia...
+m100.9	text	Shinobu: „No cicho-o-o! Najpierw Yukinka, a teraz jeszcze ty?!!”
+m100.11	text	Murakumo: „Co?! Yuki też tu była?”
+m100.13	text	Hinamura: „Tak, ale powiedziałem jej, że sposobów na taki\n           przeszczep prawie nie ma.”
+m100.15	text	Murakumo: „Prawie?? Czyli nie jest tak, że sposobu nie ma wcale!”
+m100.18	text	Problemem są odrzucenie i stres, jakie to wywołuje w mózgu. Z odrzuceniem da się jeszcze coś zrobić, podając leki, ale na stres na razie nie znaleziono rozwiązania.
+m100.23	text	Są tacy, którzy twierdzą, że jeśli stale rozładowywać stres czynnościami jak najbliższymi ludzkim instynktom, to teoretycznie mózg wytrzyma kilka miesięcy.
+m100.27	text	Murakumo: „...”
+m100.30	text	Pan przy tych swoich figlach stresu nie zna.
+m100.34	text	Figle! O to chodzi! Tak właśnie ograniczano szkody, jakie wyrządza stres...
+m100.37	text	Odruchowo złapałem Hinamurę za kołnierz...
+m100.40	text	Uaaa! Przeprasza-a-am! Przesadziłe-e-em! Już nigdy nie będę się z pana nabija-a-ać!
+m100.44	text	No tak! Rozumiem. Gdyby dla rozładowania stresu w mózgu kazać lalce bojowej uprawiać seks z żywym narkotykiem, to faktycznie mogłoby się udać...
+m100.48	text	Hinamura: „P-panie Murakumo... du... duszę się...” (※◎♂＃◎)
+m100.51	text	No i jak?! Przy takim bodźcu przeszczep byłby możliwy, prawda?\nTo ja od razu jeszcze raz przyjrzę się z Yuki szpitalowi Kusanagi!
+m100.54	text	I czym prędzej pobiegłem do Wydziału Informacji.
+m101.0	text	Yuki: „Co?! Naprawdę, panie Murakumo?”
+m101.2	text	Mieliśmy punkt zaczepienia i Yuki w jednej chwili się rozpromieniła.
+m101.5	text	Czyli jeśli przeszczepić do lalki bojowej mózg na progu śmierci, to i zmarły może zabijać ludzi, tak?!
+m101.8	text	Murakumo: „Zobaczycie-e! Tych konowałów na pewno złapię za ogon!”
+m101.10	text	Yuki: „Tak! Ja też się postaram!”
+m102.1	text	No dobrze, co do śledztwa: po pierwsze, czy w starym skrzydle szpitala Kusanagi coś się dzieje, a poza tym...
+m102.4	text	Yuki: „Chodzi o to, skąd wzięli lalkę bojową, tak?”
+m102.7	text	To biorę na siebie. Zdaje się, że zamknęli niejakiego Shikakurę, który upłynniał na lewo wojskowy sprzęt. Podpytam go-o.
+m102.11	text	W takim razie ja sprawdzę, czy w starym skrzydle szpitala Kusanagi coś się nie dzieje! A, eee...
+m102.15	text	Panie Murakumo, wiem, że to nie pora na takie rozmowy, ale... dziękuję. Za tamto...
+m102.18	text	Murakumo: „...”
+m102.21	text	Poza tym ja... nago... nie jestem... zbyt... piękna... więc... pewnie się pan... rozczarował...
+m102.24	text	Murakumo: „Byłaś piękna.”
+m102.26	text	Z tymi słowami pocałowałem ją lekko w policzek. Yuki w jednej chwili spłonęła rumieńcem i aż po kark zrobiła się różowa.
+m102.29	text	Yuki: „To ja...! J-ja... zabieram się do śledztwa.”
+m102.31	text	Czym prędzej zabrała się do przeglądania zużycia prądu w szpitalu Kusanagi i list pacjentów.\nJa połączyłem się z więzieniem i wywołałem Shikakurę.
+m103.0	text	Po chwili na ekranie pojawił się brodaty facet w średnim wieku.\nAni śladu skruchy: trzymał się pewnie.
+m103.3	text	Murakumo: „Shikakura, tak?!”
+m103.5	text	Shikakura: „Wszystko masz w przesłanych aktach.”
+m103.8	text	Pewnie wiesz, ale nasza rozmowa jest nagrywana i będzie traktowana jako dowód, jasne?
+m103.11	text	Shikakura: „Aha.”
+m103.14	text	Nie było ostatnio jakiejś grubszej transakcji z lalkami bojowymi?
+m103.17	text	Shikakura: „Nic nie wiem.”
+m103.19	text	Murakumo: „Zdaje się, że uzbierało ci się razem 80 lat odsiadki,\n           co, Shikakura?”
+m103.21	text	Podniosłem do monitora kartkę z notatką.\nNa jego dotąd spokojnej twarzy odmalowało się lekkie zdziwienie.
+m103.24	text	Shikakura: „No proszę. Ty jesteś z Toanu, co?”
+m103.27	text	A jeśli chodzi o mnie samego: były przestępca, którego wolność Toan kupił za 65 700 godzin i który teraz jest agentem Stołecznego Biura Ochrony Publicznej... to właśnie ja☆
+m103.31	text	Na kartce napisałem...\n„Zależnie od twojej współpracy jesteśmy gotowi wykupić 20 lat twojej kary.”
+m103.36	text	Ha, ha, ha! Podobasz mi się. A wiesz, przypomniało mi się. Pół roku temu sprzedałem, zdaje się, cztery lalki bojowe typu «Statue 2H» facetowi, który przedstawił się jako członek UIA – Lodowe Skrzydło.
+m103.41	text	Murakumo: „A twarz i nazwisko tego faceta?”
+m103.43	text	Shikakura: „Twarz miał zasłoniętą, a zamiast nazwiska\n            kryptonim...”
+m103.45	text	Na wszelki wypadek przesłałem mu zdjęcie Kusanagiego.
+m103.47	text	Shikakura: „Podobny. Zwłaszcza te nerwowe oczy...”
+m103.49	text	Więcej cennych informacji chyba już z niego nie wyciągnę.\nShikakura zniknął z ekranu z miną, jakby chciał powiedzieć: „No to reszta na twojej głowie”.
+m104.0	text	Yuki: „Panie Murakumo.”
+m104.2	text	Moja partnerka patrzyła na mnie z poważną miną.
+m104.5	text	Stare skrzydło rzeczywiście wygląda podejrzanie. Przez ostatnie pół roku regularnie dostarczano tam ogromne ilości prądu.\nZwłaszcza przez jakiś czas po śmierci Izumo Fubuki.
+m104.10	text	Prąd zużywano w podobny sposób jeszcze trzy razy, więc sprawdziłam: w szpitalu Kusanagi zmarły trzy osoby, które prawdopodobnie należały do UIA – Lodowe Skrzydło.
+m104.14	text	Spojrzałem na nazwiska: co do jednego faceci znani z fanatycznego oddania UIA.
+m104.18	text	Tym trzem pewnie też przeszczepiono mózgi do lalek bojowych, co?
+m104.21	text	Siedząca naprzeciwko partnerka skinęła głową.
+m104.24	text	I jeszcze jedno, Yuki: dasz mi dane lalki bojowej typu Statue 2H?
+m104.27	text	Yuki połączyła się z wojskowym bankiem danych.
+m104.29	text	【Wynik wyszukiwania】\nLalka bojowa, typ Statue 2H\n●Silnik: CL2, indukcja elektromagnetyczna●Moc maks.: 58 KM/11000\n●Moment maks.: 3,7 kg/10000●Masa na sucho: 98 kg
+m104.34	text	●Szkielet wewnętrzny: wzmacniane tworzywo kompozytowe\n●Pancerz zewnętrzny: stop lekkiego tytanu,\n                      powłoka chroniąca przed bronią optyczną\n●Uzbrojenie wbudowane: paralizator do obezwładniania ludzi ......
+m104.40	text	Ani zwykłe pociski, ani laser chyba nie przebiją takiego pancerza, prawda?
+m104.44	text	No. Aż ciarki przechodzą, jak pomyśleć, że w czymś takim siedzi mózg pierwszorzędnego terrorysty-y.
+m104.47	text	          „W każdym razie idę zameldować o tym szefowi.”
+m105.0	text	Bach!!
+m105.2	text	Murakumo: „Zaraz, zaraz! Szefie Sasame, niech pan to powtórzy!”
+m105.4	text	Sasame: „Mój drogi Murakumo, czyżbyś zamierzał rozbić mi biurko?\n         W takim razie powtórzę jeszcze tylko raz. Zechciej\n         słuchać uważnie.
+m105.7	text	         Dziś z godziną 20:00 śledztwo w sprawie szpitala\n         Kusanagi zostaje przerwane. Odtąd zabrania się nam,\n         pracownikom Stołecznego Biura Ochrony Publicznej,\n         zbliżać się do szpitala Kusanagi na mniej niż 2 km.”
+m105.12	text	Jak to?! Ofiara, sprawczyni, UIA, lalka bojowa – wszystko prowadzi prosto do szpitala Kusanagi!
+m105.16	text	Sasame: „Wszystko to wyłącznie poszlaki.”
+m105.19	text	Aha, już wiem! Naciskają firmy albo politykierzy, którzy stoją za szpitalem Kusanagi, tak?!!
+m105.23	text	Złapałeś jaszczurkę za ogon, a już się puszysz.\nOd jutra prowadzimy tę sprawę z innej strony.\nCzy to jasne, Murakumo?
+m105.27	text	Nie jasne, wcale nie jasne! Nie przełknę tego!! (grr, grr, grr)
+m105.29	text	Sasame: „Jest już późno. Idź, proszę, do domu.”
+m105.31	text	Szef z twarzą jak maska wyłączył dek stojący na biurku, schował dokumenty do górnej szuflady i wyszedł z pokoju.
+m106.0	text	Nie ma mowy! Zaraz wparuję do starego skrzydła szpitala Kusanagi!!\nTam na pewno coś się kryje.
+m107.0	text	W kieszeni coś zabrzęczało...
+m107.2	text	No tak, przecież mam klucz do zbrojowni! A może by go tak użyć?
+m108.0	text	Hm?! Zaraz, przecież w biurku szefa powinien być klucz do zbrojowni.\nOtworzyłem górną szufladę i...
+m108.3	text	Murakumo: „Jest, jest, no proszę! Klucz do zbrojowni-i!”
+m109.0	text	Otworzyłem kluczem i wszedłem do zbrojowni. W schludnym pokoju, na półkach przedzielonych żelaznymi kratami: amunicja specjalna i pancerze osobiste.
+m109.4	text	Śrut, pociski przeciwpancerne, pociski wiązkowe, jest i pocisk zamrażający...\nPocisk zamrażający to prototyp, tak?... Zdaje się, że jest tylko jeden.
+m109.7	text	Półki z pancerzami osobistymi też zabezpieczono żelaznymi kratami.\nWszystkie typy są lekkie, robione z myślą o agentach: wystarczy włożyć na wierzch kurtkę i nic nie widać.
+m109.11	text	Przeciwnikiem będzie pewnie lalka bojowa z nadludzką siłą i paralizatorem, no nie? Bez pancerza osobistego się nie obejdzie.
+m109.15	text	Kuloodporny, do walki wręcz, antywiązkowy... Każdy do czegoś innego, więc dobieranie ich to pewnie niezła mordęga.\nA do tego kombinezon izolacyjny do prac kablowych.
+m109.19	text	Pancerz kuloodporny, jak sama nazwa wskazuje, zatrzymuje kule.\nPancerz do walki wręcz jest z materiału, który pochłania siłę ciosów przeciwnika.
+m109.22	text	Pancerz antywiązkowy odbija lasery i wiązki cząstek.\nKombinezon izolacyjny nie przewodzi prądu; w zasadzie używa się go przy pracach kablowych.
+m109.25	text	Pasują na mnie w sumie tylko te cztery, ale muszę dobrze przemyśleć, z jaką lalką bojową mam do czynienia, i dopiero wtedy wybrać...
+m110.0	text	Wybrałem pancerz i spojrzałem na amunicję specjalną.
+m110.2	text	Śrut wyrzuca niezliczone kulki łożyskowe i robi z przeciwnika siekaninę. Pocisk przeciwpancerny przebija nawet pancerz z lekkiego tytanu, jaki mają lekkie wozy opancerzone i motocykle pancerne.
+m110.5	text	Pocisk wiązkowy: uproszczona broń optyczna, która wystrzeliwuje wiązkę cząstek. Pocisk zamrażający: po trafieniu w cel pęka w nim kapsuła z ciekłym azotem pod wysokim ciśnieniem i zamraża przeciwnika... tak to chyba działa.
+m110.9	text	Murakumo: „Eee, za dużo zachodu! Biorę wszystko!”
+m111.0	text	Zerknąłem na zegarek. Minęła już dwudziesta trzecia.\nDziś wyjątkowo widać było na niebie cztery, może pięć gwiazd. W szpitalu Kusanagi pogasły światła i budynek spowijała ta szczególna atmosfera, jaką mają szpitale nocą.
+m111.4	text	Przemknąłem ukradkiem przez dziedziniec przy świetle gwiazd i przede mną wyłonił się szary budynek z gołym betonem i odsłoniętymi klimatyzatorami starego typu. Okna zasłaniały od środka rolety, a na żelaznych drzwiach wisiała jak zwykle tabliczka z zakazem wstępu.
+m111.9	text	Murakumo: „Hm? Przecież za dnia było tu zamknięte na głucho...”
+m112.0	text	Żelazne drzwi były lekko uchylone. Kryjąc się w cieniu budynku, podszedłem bliżej i wśliznąłem się przez szparę do środka.
+m112.3	text	Za drzwiami był dość przestronny hol wejściowy; do ścian przykręcono płyty wygłuszające.\nGoło tu było i ciemnawo – aż ciarki przechodziły po plecach...
+m112.7	text	Murakumo: „Zupełnie jak w tajnej bazie☆”
+m112.9	text	...Za plecami wyczułem czyjąś obecność. Coś szczęknęło. Ktoś chwycił za żelazne drzwi.
+m113.0	text	Kiedy tak kryłem się w cieniu drzwi, ktoś wszedł do środka...\nChyba drobna kobieta...?
+m113.3	text	???: „Panie Murakumo-o, gdzie pan jest? Panie Murakumo-o!”
+m113.5	text	Hm!! Znam ten głos...
+m114.0	text	Yuki: „Panie Murakumo, jest pan tu, prawda?”
+m114.2	text	Co, u licha, Yuki tu robi?\nŻeby jej nie przestraszyć, powoli wyszedłem z ukrycia.
+m115.1	text	Aa-ach, jak dobrze! Chciałam pana zawołać, a pan, panie Murakumo, nic, tylko szedł i szedł przed siebie.
+m115.5	text	Po coś ty tu w ogóle przyszła?\nPrzecież już samo to, że tu jesteś, to złamanie rozkazu!
+m115.9	text	A pan, panie Murakumo, to co?!\nJestem przekonana, że w tym szpitalu na pewno jest klucz do rozwiązania tej sprawy.
+m115.13	text	Yuki przygryzła wargi – aż człowieka rozczula.
+m116.0	text	Kiedy tak kryłem się w cieniu drzwi, ktoś wszedł do środka...\nChyba drobna kobieta...?
+m116.3	text	Nie zauważyła mnie; rozglądała się nerwowo na wszystkie strony...\nPo cichu zaszedłem ją od tyłu.\nZatkałem jej dłonią usta i przystawiłem do skroni czterdziestkępiątkę.
+m116.7	text	???: „※○☆＊※※◎!!”
+m116.9	text	Murakumo: „Ach!!”
+m117.0	text	Murakumo: „Yu... Yuki!! Co ty tu robisz?!”
+m117.2	text	Oderwała moją rękę od ust i wyrzuciła z siebie wszystko jednym tchem.
+m117.5	text	No bo...! Ja też nie mogę się pogodzić z tym, że śledztwo przerwano! Jestem absolutnie pewna, że w tym szpitalu jest klucz do rozwiązania tej sprawy!!
+m117.9	text	Murakumo: „To jest złamanie rozkazu!”
+m117.11	text	Yuki: „Panie Murakumo, niech pan i mnie pozwoli pomóc. Bardzo\n       proszę.”
+m118.0	text	Spoważniałem i spojrzałem Yuki w oczy.
+m118.2	text	Murakumo: „Yuki! Posłuchaj. Zostaw to mnie, dobrze?”
+m118.5	text	Jak to... Pan przecież rozumie, co czuję, panie Murakumo, prawda?\nNie mogę tego darować! Tego, że kobiety traktuje się jak narzędzia do seksu!
+m118.8	text	Między brwiami Yuki rysował się gniew.\nMocno chwyciłem ją za ramiona.
+m118.12	text	Spisałaś się świetnie. To dzięki tobie, Yuki, doszliśmy do tego, że szpital Kusanagi jest podejrzany.\nNo więc, Yuki...
+m118.16	text	Yuki: „Ale!!... Mmm-mmm...”
+m118.18	text	Kiedy chciała coś odpowiedzieć, brutalnie wpiłem się w jej usta. Zaskoczona Yuki próbowała się opierać, ale nie odrywałem warg, dopóki nie przestała się wyrywać...
+m118.22	text	Yuki: „To nie fair... w ten sposób...”
+m118.25	text	Niech będzie nie fair! Dla ciebie niech mnie nawet nazywają podłym!\nNie zostawię cię w takim niebezpiecznym miejscu ani na sekundę!!
+m118.28	text	Yuki: „...”
+m118.31	text	Na pewno przyniosę dowody, więc wracaj przodem do Toanu, zrób mi słodkiej kawy i czekaj☆
+m118.35	text	Puściłem do niej oczko.\nYuki trochę posmutniała i powiedziała cichutko...
+m118.39	text	Panie Murakumo... proszę na siebie uważać...\nZrobię kawę i będę na pana czekać.
+m119.0	text	Zostawiłem Yuki i ruszyłem dalej, długim korytarzem. Minąłem kilka porzuconych, pustych pomieszczeń, aż przede mną pojawiły się drzwi okazalsze od pozostałych.
+m119.4	text	Oho, zamek elektroniczny, ależ się zabezpieczyli. Czyli: «Nikt nie może tego zobaczyć!», co?
+m119.7	text	Phi, ręka nie zapomina. Jak byłem w ulicznym gangu, nieraz robiłem zwarcie w zamkach elektronicznych☆
+m119.10	text	Trach!! Trzask, trzask...
+m119.12	text	Ostrożnie uchyliłem drzwi i zajrzałem do środka. Coś jakby archiwum: na półkach segregatory i flakony z lekami. Na szczęście ani żywej duszy.
+m120.0	text	Ostrożnie wśliznąłem się do środka.\nCoś jakby archiwum. Na półkach biały krystaliczny proszek i pliki danych.
+m121.0	text	Wziąłem na palec trochę białych kryształków i polizałem. Bez wątpienia: Virgin Angel w proszku. Obok stała odmiana w maści, do smarowania błon śluzowych.
+m122.0	text	Czerwony plik danych nosił tytuł:\n„Karty dostrajania żywych narkotyków – Kusanagi Ken”.\nWśród kilku kobiecych nazwisk było nazwisko Misaki Misy.
+m122.4	text	Murakumo: „Tss, hasło...”
+m122.6	text	Ale to dyrektor Kusanagi przeprowadzał operacje przerabiające ciała, bez dwóch zdań!
+m123.0	text	Czarny plik danych nosił tytuł:\n„O rozładowywaniu stresu po przeszczepie mózgu do maszyny”.\nNajwyraźniej jakimś sposobem przeszczepiono mózg do lalki bojowej.
+m123.5	text	Murakumo: „No pięknie... Tego hasła nie złamię.”
+m124.0	text	Na tablicy wiszącej na ścianie widniał napis:\n„Projekt Uroboros – konferencja w Urawie – plan ataku”.
+m124.3	text	Murakumo: „A to co? Przecież tu jest rozmieszczenie ochrony na\n           czas konferencji! To przeciek!”
+m124.5	text	...Wygląda na to, że plan zakłada podział czterech lalek bojowych na dwa zespoły: jeden posłuży za przynętę, drugi uderzy od strony zatoki.
+m124.8	text	Wychodzi na to, że Kusanagi jest kimś z kierownictwa UIA – Lodowe Skrzydło.\nNo proszę, trafiłem na całkiem grubą rybę.
+m125.0	text	Te pliki mówią jedno: dyrektor Kusanagi jest umoczony.\nWreszcie złapałem go za ogon!\nNagle mój wzrok padł na drzwi z napisem „Laboratorium”...
+m125.4	text	Yuki: „Aaaaaaaa!!!”
+m125.6	text	Od strony holu wejściowego rozległ się krzyk Yuki.
+m125.8	text	Murakumo: „Szlag! Yuki!!”
+m125.10	text	W pośpiechu zawróciłem do holu wejściowego.
+m126.0	text	Yuki: „Nawet jeśli pan każe mi wracać, panie Murakumo, będę\n       prowadzić śledztwo sama.”
+m126.2	text	Pokręciłem lekko głową.
+m126.4	text	Murakumo: „Yuki, jesteś moją partnerką. Prowadźmy śledztwo razem.”
+m126.6	text	Yuki: „Naprawdę, panie Murakumo?☆”
+m126.8	text	Rzuciła mi się na szyję.
+m126.10	text	Murakumo: „Tylko że jak szef się o tym dowie, oboje dostaniemy\n           zawieszenie☆”
+m126.13	text	Nie szkodzi...\nA jak nas zawieszą i będziemy mieli czas, to niech mnie pan znowu... no... zabierze do tamtego parku leśnego☆
+m126.17	text	Mówiąc to, Yuki pokazała mi koniuszek języka jak wisienka.\nChyba udzieliły jej się moje złe nawyki.
+m126.20	text	Murakumo: „Jasne, pojedziemy razem.”
+m126.22	text	Yuki: „Trzymam pana za słowo☆”
+m126.24	text	„Jest ze mną Yuki” – już sama ta myśl kazała mi uważać bardziej niż zwykle. Ostrożnie ruszyliśmy dalej długim, ciemnym korytarzem...
+m126.27	text	Minęliśmy kilka porzuconych, pustych pomieszczeń, aż przed nami pojawiły się drzwi okazalsze od pozostałych.
+m126.31	text	Panie Murakumo, tu chyba jest zamek elektroniczny.\nPorządnie zabezpieczone.
+m126.34	text	Murakumo: „Czyli: «Nikt nie może tego zobaczyć!», co?”
+m126.36	text	Yuki: „I co teraz...?”
+m126.39	text	Phi, ręka nie zapomina. Jak byłem w ulicznym gangu, nieraz robiłem zwarcie w zamkach elektronicznych☆
+m126.42	text	Trrrach!! Trzask, trzask...
+m126.44	text	Ostrożnie uchyliłem drzwi i zajrzałem do środka. Coś jakby archiwum: na półkach segregatory i flakony z lekami. Na szczęście ani żywej duszy.
+m127.0	text	Ostrożnie wśliznąłem się do środka.\nCoś jakby archiwum. Na półkach biały krystaliczny proszek i pliki danych.
+m127.5	text	Panie Murakumo!!\nHasła do plików danych proszę zostawić mnie.
+m127.8	text	Murakumo: „Dasz radę?”
+m127.10	text	Yuki: „Zaszłam aż tutaj. Chcę się do czegoś przydać.”
+m128.0	text	Yuki: „Czy to przypadkiem nie...!”
+m128.2	text	Wziąłem na palec trochę białych kryształków i polizałem. Bez wątpienia: Virgin Angel w proszku. Obok stała odmiana w maści, do smarowania błon śluzowych.
+m128.6	text	Murakumo: „Tak, bez wątpienia. To Virgin Angel.”
+m129.0	text	Na czerwonym pliku danych widniał napis:\n„Karty dostrajania żywych narkotyków – Kusanagi Ken”.\nWśród nazwisk czterech czy pięciu kobiet było nazwisko Misaki Misy!
+m129.4	text	Murakumo: „Ojoj, hasło... No to klops.”
+m129.7	text	Proszę mi pozwolić!\nBardzo proszę, chcę się panu na coś przydać, panie Murakumo!
+m129.10	text	Yuki z powagą w oczach pracowała nad plikiem. Jakoś obeszła zabezpieczenia i chyba złamała hasło. Mnie by się taka sztuka w życiu nie udała.\nNa ekranie pojawiła się karta Misy...
+m129.15	text	Misa: «Aaaa-aaach! Dochodzę! Dochodzę-ę! Dochodzę-ę-ę!»
+m129.17	text	Naga Misa ze skrępowanymi rękami i nogami, z wibratorem wepchniętym w krocze. Z jej ust i rozwartej waginy ściekają strugi płynów. Tyle śluzu oznacza, że jej ciało przerobiono na żywy narkotyk.
+m129.21	text	Yuki: „Okropne...”
+m129.23	text	To nie tyle karta choroby, co zapis seksualnej tresury.
+m130.0	text	Czarny plik danych nosił tytuł:\n„O rozładowywaniu stresu po przeszczepie mózgu do maszyny”.
+m130.4	text	Murakumo: „Ech! Hasło... Jak wklepię byle co, to nic z tego,\n           nie??”
+m130.6	text	Yuki: „Ja spróbuję.”
+m130.8	text	Yuki włożyła plik do terminala i zabrała się do łamania hasła. Jej białe palce uporały się z nim po mistrzowsku i wyświetliły zawartość na monitorze.
+m130.11	text	Na ekranie lalka bojowa – goła maszyneria, ludzkie tylko penis i usta – gwałci od tyłu jakąś kobietę.\nKobieta wije się, włosy rozsypują się jej na wszystkie strony, a widok jest tak bezwstydny, że Yuki odruchowo odwraca głowę.
+m130.15	text	Kobieta: «Ach, ach, ach, ach... Umieram, umieram, umieram,\n          umiera-a-am...»
+m130.17	text	Lalka bojowa pracuje jak tłok, z szybkością karabinu maszynowego. U dołu ekranu widać jakiś licznik.\nMechaniczny potwór drga gwałtownie, tryska mętnobiała ciecz i oblepia twarz i pośladki kobiety. Liczba na liczniku szybko spada.
+m130.22	text	Yuki: „...”
+m131.0	text	Na tablicy wiszącej na ścianie widniał napis:\n„Projekt Uroboros – konferencja w Urawie – plan ataku”.
+m131.3	text	Yuki: „Czyżby w policji stołecznej była wtyczka?”
+m131.5	text	Yuki ma rację. Ochronę konferencji, poza Toanem, rozpisano tu co do joty. Jak nic, w policji stołecznej siedzi wtyczka.
+m131.8	text	Murakumo: „Aha... chyba tak.”
+m131.10	text	Plan zakłada chyba podział czterech lalek bojowych na dwa zespoły: jeden posłuży za przynętę, drugi uderzy od strony zatoki.
+m131.14	text	Yuki... Kusanagi to ktoś z kierownictwa UIA – Lodowe Skrzydło. To chyba całkiem gruba ryba...
+m132.0	text	Yuki cała dygotała na widok tego, co na ekranie robiono z tymi kobietami.\nNagle mój wzrok padł na drzwi z napisem „Laboratorium”...
+m132.5	text	Yukinko, zabierz te pliki i Virgin Angel i poproś szefa o wsparcie.
+m132.8	text	Yuki: „A pan, panie Murakumo?”
+m132.10	text	Murakumo: „Popilnuję, żeby do przyjścia wsparcia nikt nie\n           zniszczył dowodów.”
+m132.13	text	T-tak, rozumiem. Pospieszę się i zaraz wrócę! A do tego czasu... proszę się trzymać, panie Murakumo.
+m132.16	text	Po tych słowach cmoknęła mnie lekko w policzek. Potem obróciła się na pięcie i z dowodami w rękach wybiegła z pokoju.
+m133.0	text	Murakumo: „...Ale mnie zaskoczyła☆”
+m133.2	text	Mruknąłem to bezwiednie.\nMoże są tu jeszcze jakieś dowody? Sięgnąłem do drzwi laboratorium...
+m133.5	text	Prawdę mówiąc, odesłałem Yuki do Toanu, bo chciałem przeszukać to laboratorium. Kiedy wyobrażałem sobie, co jest za tymi drzwiami, za nic nie chciałem jej tam zabierać.
+m133.9	text	To tu, ani chybi, przerabiano ciała i przeszczepiano mózgi...
+m133.11	text	Yuki: „Aaaaaaa!!!”
+m133.13	text	Od strony holu wejściowego rozległ się krzyk Yuki.
+m133.15	text	Murakumo: „Szlag! Yuki!!”
+m133.17	text	W pośpiechu zawróciłem do holu wejściowego.
+m134.0	text	Kiedy wróciłem do holu, stała tam wysoka, piękna sekretarka.\nNa podłodze leżała Yuki, wstrząsana drgawkami...
+m134.3	text	Murakumo: „Ty gadzino! Co zrobiłaś mojej partnerce?!”
+m134.6	text	Hi, hi, hi... Ależ kłopotliwi są ci państwo z Toanu. Skoro już zaszliście aż tutaj, nie łudźcie się, że wrócicie stąd cali.
+m134.9	text	Murakumo: „Myślisz, że mnie nastraszysz? Przecież widziałaś za\n           dnia, na co mnie stać.”
+m134.11	text	Reiko: „...To ty lepiej nie stawiaj mnie na równi z tymi\n        ochroniarzami.”
+m134.13	text	W następnej chwili jednym susem pokonała dzielące nas dobre trzy metry.\nI od razu spadł na mnie cios, szybki jak strzała.
+m134.16	text	Uniknąłem go, odchylając się mocno do tyłu.\nReiko chybiła, a jej cios trafił prosto w płyty wygłuszające...\nBeton pod ciosem pięknej sekretarki z hukiem posypał się w gruzy.
+m134.20	text	Murakumo: „A więc to ty! To ty jesteś tą morderczynią!!”
+m134.23	text	Tak. To ja jestem Izumo Fubuki. Doktor Kusanagi przywrócił mnie do życia.\nI dał mi najsilniejsze ciało, jakie istnieje!
+m134.27	text	Reiko, nim skończyła się przedstawiać, już się na mnie rzuciła.\nPędziła ku mnie z siłą i szybkością, jakich nie ma żaden zwykły człowiek!
+m134.30	text	Skoro to nakręcana metalowa baba, nie ma co się patyczkować!\nWyszarpnąłem moją ukochaną czterdziestkępiątkę.
+m134.33	text	Bach! Bach!
+m134.35	text	Oba pociski, wystrzelone jeden po drugim, trafiły czysto!\nNieszczęsna piękna sekretarka powinna była odlecieć do tyłu... a jednak.
+m134.38	text	Murakumo: „Stój! Stój, do cholery!!”
+m134.40	text	Bach! Bach! Bach! Bach! Bach!
+m134.42	text	Choć zasypywał ją grad ołowianych kul, w ogóle nie zwolniła.\nZwinna jak lamparcica, w mgnieniu oka zmusiła mnie do walki w zwarciu.
+m134.46	text	Reiko: „Hi-hi-hiii!... Ty głuptasku☆”
+m134.48	text	Nie mogłem się ani uchylić, ani uciec.\nUłamek sekundy wahania okazał się zgubny. Trzy szybkie jaby trafiły czysto, omal nie miażdżąc mi szczęki. Na moment pociemniało mi w oczach.
+m134.52	text	Murakumo: „Gha!”
+m134.54	text	Odchylony, nie widziałem, jak prawa ręka Reiko sypie iskrami...\nTrzask!\nWraz z niebieskim błyskiem jej zabójczy cios trafił mnie z pełną siłą: z boku, prosto w serce.
+m134.58	text	Murakumo: „Agh......”
+m134.60	text	Bezbronny, dosłownie padłem ofiarą piorunującego ciosu Reiko.\nŻebra zawyły od uderzenia, a wyładowanie chwyciło serce w szpony.\nCałe ciało wiło mi się w drgawkach jak ryba wyjęta z wody, nie mogłem nawet krzyknąć.
+m135.0	text	Tracąc przytomność, osunąłem się na betonową podłogę.\nCałe ciało miałem odrętwiałe i nie czułem bólu, ale za to nie mogłem ruszyć nawet palcem.
+m136.0	text	Reiko: „No proszę, jaki marny koniec.\n        A, właśnie☆ Zdradzę ci coś miłego. Poproszę doktora\n        Kusanagiego, żeby przerobił twoją partnerkę na mój\n        osobisty żywy narkotyk.
+m136.4	text	        Na pewno będzie z niej słodka niewolnica seksualna...\n        Ohohoho...”
+m136.6	text	...Do mojej gasnącej świadomości nie docierał już zimny śmiech Reiko...
+m137.0	text	...Mmm... mmh...
+m137.2	text	...Uch... uuuch.
+m137.4	text	Murakumo: „...Tss... szlag...”
+m137.6	text	W głowie wciąż mi się mąciło.\nCiało miałem odrętwiałe i nie bardzo chciało mnie słuchać...\nDzięki pancerzowi do walki wręcz uniknąłem bezpośredniego trafienia.\nInaczej miałbym pewnie w piersi dziurę wielkości pięści.
+m138.0	text	Ile właściwie godzin byłem nieprzytomny...?\nCzyżby Reiko uznała, że nie żyję? Nigdzie w pobliżu jej nie było.
+m138.4	text	Murakumo: „...Yuki?!”
+m138.6	text	Yuki nie ma... Serce ścisnęło mi złe przeczucie.\n„...na mój osobisty żywy narkotyk...”\nPrzez głowę przemknęły mi ostatnie słowa metalowej baby...... Czyżby... „Laboratorium?!”
+m138.10	text	Chyba ci dranie nie chcą poddać Yuki operacji przerabiającej ciało?!!\nRwałem się do działania, ale ciało mnie zdradzało. Chwiejnie, opierając się o ścianę, dźwignąłem się z podłogi.
+m138.14	text	Murakumo: „...Au!!”
+m138.16	text	Choć miałem na sobie pancerz, nie obeszło się bez szwanku.\nŻebra miałem pewnie co najmniej popękane.\nPo porażeniu prądem w rękach i nogach nie czułem zupełnie nic. Były jak kołki.
+m138.20	text	Murakumo: „Yuki! Proszę cię, bądź cała i zdrowa!!”
+m139.0	text	Tracąc przytomność, osunąłem się na betonową podłogę.\nŻebra miałem pewnie połamane.\nCałe ciało miałem odrętwiałe, przestałem czuć ból. Ale za to nie mogłem ruszyć nawet palcem.
+m140.1	text	No proszę, jaki marny koniec.\nA, właśnie☆ Zdradzę ci coś miłego. Poproszę doktora Kusanagiego, żeby przerobił twoją partnerkę na mój osobisty żywy narkotyk.
+m140.5	text	Reiko: „Na pewno będzie z niej słodka niewolnica seksualna...\n        Ohohoho...”
+m140.7	text	...Do mojej gasnącej świadomości nie docierał już zimny śmiech Reiko...
+m141.0	text	...Mmm... mmh...
+m141.2	text	...Uch... auć!!
+m141.4	text	Murakumo: „...Tss... szlag...”
+m141.6	text	Ostry ból w boku przywrócił mnie do rzeczywistości.\nBrakowało mi tchu... połamane żebra chyba uciskały wnętrzności.\nKombinezon izolacyjny ograniczył działanie paralizatora do minimum.\nInaczej przy takim napięciu serce by mi stanęło.
+m142.0	text	Ile właściwie godzin byłem nieprzytomny...?\nCzyżby Reiko uznała, że nie żyję? Nigdzie w pobliżu jej nie było.
+m142.4	text	Murakumo: „...Yuki?!”
+m142.6	text	Yuki nie ma... Serce ścisnęło mi złe przeczucie.\n„...na mój osobisty żywy narkotyk...”\nPrzez głowę przemknęły mi ostatnie słowa metalowej baby...... Czyżby... „Laboratorium?!”
+m142.10	text	Chyba ci dranie nie chcą poddać Yuki operacji przerabiającej ciało?!!\nChwiejnie, opierając się o ścianę, próbowałem się dźwignąć.
+m142.13	text	Murakumo: „Ych!! Auuu!!!”
+m142.15	text	Ból był tak straszny, że mimo woli krzyknąłem...\nZacisnąłem zęby i chwiejnie ruszyłem przed siebie wzdłuż ściany.\nRęce i nogi miałem trochę zdrętwiałe, ale czucie w nich zostało, i to była jedyna pociecha.
+m142.19	text	Murakumo: „Yuki! Proszę cię, bądź cała i zdrowa!!”
+m143.0	text	Tracąc przytomność, osunąłem się na betonową podłogę.\nŻebra miałem pewnie połamane.\nCałe ciało miałem odrętwiałe i nie czułem bólu, ale za to nie mogłem ruszyć nawet palcem.
+m144.1	text	No proszę, jaki marny koniec.\nA, właśnie☆ Zdradzę ci coś miłego. Poproszę doktora Kusanagiego, żeby przerobił twoją partnerkę na mój osobisty żywy narkotyk.
+m144.5	text	Reiko: „Na pewno będzie z niej słodka niewolnica seksualna...\n        Ohohoho...”
+m144.7	text	...Do mojej gasnącej świadomości nie docierał już zimny śmiech Reiko...
+m145.0	text	Dysząc ciężko, z ręką przyciśniętą do boku, opierając się o ścianę, dowlokłem się chwiejnie pod drzwi laboratorium.
+m145.3	text	Tylko szczęściu mogę zawdzięczać, że nie natknąłem się po drodze na Reiko, Kusanagiego ani na wrogie lalki bojowe.
+m145.6	text	Żeby uspokoić urywany oddech,\noparłem się o drzwi laboratorium i chwilę odsapnąłem...
+m145.10	text	Haa, haa, haa... No, ale się wpakowałem.\nGołymi rękami jej nie pokonam, a ołowiane kule tylko się na niej spłaszczały, nawet jej szarży nie zatrzymały...
+m145.14	text	Pogrzebałem w kieszeni i wysypałem na dłoń amunicję specjalną.\nJeśli dobrze pamiętam, pancerz Statue 2H to stop lekkiego tytanu i powłoka chroniąca przed bronią optyczną...
+m145.19	text	Zobaczysz!! Ty nakręcana metalowa babo!\nZaraz ci to wpakuję...
+m146.0	text	Szczęk.\nZaładowałem amunicję specjalną i znów złożyłem się do strzału.\nNa moment całe ciało przeszył ból. Mimo woli... jęknąłem.
+m146.4	text	Tra-a-ach!
+m146.6	text	Drzwi laboratorium pękły od uderzenia i wystrzeliło z nich ramię pięknej kobiety.\nZanim zdążyłem zareagować, chwyciło mnie przez drzwi za kark.\nI wciągnęło do laboratorium, przebijając mną drzwi na wylot.
+m147.0	text	Byłem jeszcze oszołomiony przelotem przez drzwi, a Reiko, trzymając mnie za szyję, uniosła mnie wysoko i z dołu patrzyła, jak się duszę...\nOczy metalowej baby uśmiechnęły się szyderczo.
+m147.4	text	Wciąż trzymając mnie za szyję, Reiko grzmotnęła mną głową w dół o podłogę.
+m147.6	text	Murakumo: „Aagh!!”
+m147.8	text	Wszystkie kości naraz zawyły z bólu.\nWstrząs przeszył mnie aż po czubek czaszki, w głowie mi wirowało.\nPistolet wypadł mi z ręki! Z grzechotem potoczył się po podłodze i wjechał pod biurko!
+m147.12	text	Reiko: „Hi, hi...”
+m147.14	text	Leżałem na brzuchu, a Reiko z całej siły nadepnęła mi na udo.
+m147.16	text	Rozległo się paskudne „chrup”...
+m147.18	text	Murakumo: „Aaaaargh!”
+m148.1	text	Mięsień obszerny boczny i półścięgnisty uszkodzone. Tętnica udowa pęknięta. Kość udowa złamana.\nCztery tygodnie leczenia, powiedziałbym.
+m148.4	text	Murakumo: „Ts... ss...”
+m148.6	text	Kusanagi, który rozsiadł się w głębi pokoju, widząc, jak się wiję, łaskawie zadał sobie trud i postawił mi diagnozę.\nA obok niego...
+m149.0	text	...Na łóżku, tam gdzie ją posadzili, siedziała Yuki w mundurze.\nOczy miała nieobecne. Musieli jej podać jakiś środek czy coś!
+m149.4	text	...Mura... Murakumo...\nPanie Murakumo?... Przyszedł pan po mnie...?
+m149.7	text	Murakumo: „Hej! Yuki!... Ocknij się!!”
+m149.9	text	Na nic! Przez ten środek Yuki chyba nie jest całkiem przytomna.
+m149.11	text	Reiko: „Patrzcie państwo... A byłam pewna, że wtedy zginąłeś.”
+m149.13	text	Kusanagi: „W rzeczy samej. Anormalna żywotność. Zwykły człowiek\n           nie może się z nim równać.”
+m149.16	text	Au... he, he... Mam piekielne szczęście!...\nTfu... ty konowale!!!
+m149.19	text	Reiko: „Co za impertynencja wobec doktora!”
+m149.21	text	Metalowa piękna sekretarka bez litości obsypała mnie, leżącego na podłodze, gradem kopniaków: łup, łup, łup.
+m149.24	text	Murakumo: „Uch...!!”
+m149.26	text	Kusanagi: „Dość już tego, proszę.”
+m149.29	text	Tak jest, doktorze Kusanagi.\nOmal nie zabiłam widza naszego pięknego przedstawienia.\nMieliśmy przecież pokazać, jak wspaniałym lekarzem jest pan doktor.
+m149.34	text	Reiko, nie zważając na mnie, wijącego się z bólu, ruszyła w stronę Yuki.\nW mętniejącej świadomości mogłem się temu tylko przyglądać...
+m149.38	text	A właśnie. Zanim przerobimy tę dziewczynę na żywy narkotyk, pomyślałem, że i panu należy się piękne przedstawienie, panie Murakumo.
+m149.42	text	Nawet nie myśl o ucieczce. Bo jak spróbujesz, to najpierw zabiję ją☆
+m149.45	text	Mówiąc to, Reiko chwyta mundur Yuki na piersi i brutalnie go rozdziera!
+m149.47	text	Yuki: „Aaaaaaa!”
+m150.0	text	Reiko: „I jak? Cudne, prawda? Doktor dorobił jej to dla mnie☆”
+m150.2	text	Murakumo: „Yuki!!”
+m150.4	text	Pod rozdartym mundurem Yuki ma na sobie skórzany kostium z wyciętymi otworami na piersi i łono. Ale wściekłość budzi we mnie co innego: na tej czystej, dziewiczej ziemi przytwierdzono ohydny penis.
+m150.9	text	Nie... niech pan nie patrzy... proszę... Panie Murakumo... niech pan nie... proszę... aaach, niech pan nie patrzy-y
+m150.12	text	Wije się, by zasłonić piersi i łono, ale Reiko ją przytrzymuje.
+m150.15	text	Wy gnoje!... Pozabijam!!... Ta dziewczyna nie zasługuje na to, żeby takie szumowiny jak wy robiły jej coś takiego!!
+m150.19	text	Hi, hi, hi... To tylko ujadanie zbitego psa.\nA teraz pokaz tresury tej dziewczyny. Niechże pan sobie popatrzy☆
+m150.22	text	Yuki gwałtownie kręci głową i się broni, ale Reiko przyciąga ją do siebie od tyłu i nabiera na palec maść, którą podał jej Kusanagi...
+m150.26	text	Wiesz, co to jest, prawda?... Tak, to Virgin Angel.\nKiedy posmaruje się tym dziewczynie najcenniejsze miejsce,\nnawet dziewica wpada w haj i tak chce seksu, tak strasznie chce, że nie może wytrzymać.
+m150.31	text	Yuki: „...Nie-e... przestańcie-e...”
+m150.33	text	Yuki zaciska skrzyżowane białe uda, ale Reiko siłą je rozwiera, a jej oślizgły palec już ma dotknąć szczelnie zamkniętego łona Yuki.
+m151.0	text	Murakumo: „Przesta-a-ańcie!!!”
+m151.2	text	Bez namysłu próbuję skoczyć na Reiko.
+m151.4	text	Yuki: „Panie Murakumo!”
+m151.6	text	Ale ledwie udaje mi się podnieść, nogi zaraz mi się plączą i padam jak długi na podłogę.
+m151.10	text	Że też zdołałeś w tym stanie wstać.\nAle wiesz, tobie najlepiej pasuje tak leżeć na podłodze jak czerw i patrzeć.
+m152.0	text	Widząc mnie leżącego plackiem na podłodze, Kusanagi wykrzywia usta w lekkim, zimnym uśmieszku.
+m152.3	text	A ty tak sobie leż na podłodze jak czerw i patrz.
+m152.6	text	Yuki: „Panie Murakumo...”
+m152.8	text	Yuki słabym głosem woła mnie po imieniu...\nCzekaj, Yuki! Na pewno znajdę okazję i na pewno cię uratuję!!
+m153.0	text	Yuki: „Ra... ratunku... proszę...”
+m153.2	text	Yuki, którą środek już wcześniej pozbawił władzy nad ciałem, może tylko zwiesić głowę. Virgin Angel zostaje wtarty w samo wejście do jej kobiecego sanktuarium... Laboratorium wypełnia bezwstydne mlaskanie i słodkawo-kwaśna woń, jaką ma tylko kobieta.
+m153.8	text	W tym wieku i taka śliczna dziewica! Cudownie.\nA teraz posmarujemy głębiej, jeszcze głę-ębiej☆
+m153.11	text	Yuki: „...Nie... nie-e... prze... proszę przestać... ach, mmm.”
+m153.13	text	Kiedy palec wsuwa się w jej wilgotne, miodne wnętrze, różowe sutki zaczynają twardnieć i sterczeć.
+m153.16	text	Sztuczny penis, który – aż żal patrzeć – wszczepiono jej w krocze, nabrzmiewa i powoli unosi łeb jak wąż. Reiko czule głaszcze to przyrodzenie.
+m153.20	text	Sutki ci sterczą. Kto by pomyślał, że z ciebie taka bezwstydnica, co?\nProszę, proszę, śliczny siu○iak też już wstaje☆
+m153.24	text	Aaach... niech pani tak nie mówi... pro... proszę...\nNiech pani nie robi z Yuki jeszcze większej figlarki...
+m153.27	text	Kusanagi spojrzeniem wydaje Reiko rozkaz. Reiko kiwa głową i palce, które gwałciły labia, przenoszą się na ciasno zaciśnięty anu○, a środkowy palec powoli się w nim zagłębia.
+m153.31	text	Virgin Angel zostaje wtarty głęboko w anu○ – drugą dziewiczą ziemię Yuki.
+m153.35	text	Ach... nie wolno... aach... nie tam...\nAa-ach... boli...
+m153.39	text	Ty już nie jesteś człowiekiem. Będziesz zabawką do seksu.\nPosmarowali cię lekarstewkiem, więc chcesz brać siusiaki w pi○dę i w dziurkę w pupie, prawda?☆
+m153.43	text	Yuki: „Wca... wcale... ta... tak nie jest!”
+m153.45	text	Ale wilgotne od potu ciało Yuki przeczy jej słowom: biodra zaczynają się niespokojnie kołysać, a wszczepiony sztuczny penis stoi tak twardo, że nabrzmiewają na nim żyły...
+m154.1	text	Proszę nie kłamać!!\nA to co ma być?! Tak bezwstydnie sterczy ci siu○iak!!
+m154.4	text	Chwyta sztuczny penis Yuki i zaczyna go mocno pocierać, jakby ją poganiała. Żołądź nabrzmiewa do granic, a z rozchylającej się lubieżnej szczeliny zaczynają kapać krople.
+m154.9	text	No już! Dość uporu! Błagaj: «Proszę, weźcie mnie w pi○dę i w anu○»!!
+m154.13	text	Aach!... Nie!... Niech pani tego nie robi... mmm...\nNie! Nie! Nie!!!... Nie chcę-ę...
+m154.17	text	Ach. Jakoś nie wygląda pani na zawiedzioną.\nA chłopczyk to już zaraz dojdzie, pierwszy raz w życiu☆
+m154.20	text	Ciało Yuki wygina się jak w spazmie, a ona, dysząc, z trudem wydobywa z siebie słowa.
+m154.22	text	Yuki: „Co... coś... nie, nie-e! Prze... przestańcie-e-e-e!!”
+m154.24	text	Chlu-ust! Chlu-ust! Chlu-u-ust!!
+m154.26	text	Otworek na czubku penisa Yuki rozwiera się szeroko i z impetem, bez końca, tryska z niego mętnobiałe plugastwo.
+m154.29	text	Yuki: „Nie... nieeeeeeeee!!”
+m154.31	text	Krzyk Yuki, porażonej tą ohydą, rozlega się po całym laboratorium...
+m154.33	text	Ciało Yuki mimowolnie drga raz po raz od ohydnego doznania wytrysku.\nDziewczyna ciężko dyszy, a piękna sadystka szepcze jej do ucha czule, słodkim głosem.
+m154.37	text	Reiko: „Chcesz, żeby cię wzięli w pi○dę i w anu○, prawda?”
+m154.39	text	Yuki, pusta jak łupina, z której uleciała dusza, tylko dyszy i kiwa głową. Widzę to jak w zwolnionym tempie.
+m155.0	text	Yuki wciąż nie może przyjąć do wiadomości, że z jej ciała wylało się białe plugastwo. Bezwolnie pozwala Reiko się objąć, a ta kładzie ją na wznak na łóżku podobnym do stołu operacyjnego. Kusanagi podchodzi do łóżka.
+m155.4	text	Kusanagi: „...Teraz chyba moja kolej?”
+m155.7	text	Środek zaczyna działać, prawda? Tyle z niej cieknie wydzieliny...\nMięsiste fałdki i rozetka tak bezwstydnie drgają, aż się proszą, żeby je zgwałcić.
+m155.11	text	Yuki: „...Nie-e... ta... tak nie...”
+m155.13	text	Yuki, której wytrysk odebrał wolę oporu, cała drobno drży.
+m155.15	text	Kusanagi: „Ale przedtem weźmiesz to w te swoje usta, hm?”
+m155.17	text	Reiko: „Doktorze? Czy mogłabym wziąć sobie prawictwo tej\n        dziewczyny?”
+m155.19	text	Kusanagi lekko mruży oczy i wykrzywia wąskie wargi.\nPo czym niespiesznie rozpina rozporek.
+m156.0	text	Yuki: „Iii!!”
+m156.2	text	Yuki mimowolnie wstrzymuje oddech. Nic dziwnego. Z krocza sterczą mu aż dwa sztuczne penisy, a w ich trzony powszczepiano guzy, które wiją się jak gąsienice.
+m156.6	text	Kiedy ta potworność zbliża się do jej warg, Yuki próbuje się wyrwać, ale – czy to przez Virgin Angel, czy przez to, co wciąż w niej drga po tamtym – ciało nie chce jej słuchać.
+m156.10	text	Yuki: „Przestańcie!! Ta... takie coś... boję się...”
+m156.12	text	Usiłuje odwrócić twarz, ale Reiko chwyta ją i obraca z powrotem. I czubek zaczyna się wciskać między różowe jak kwiat wiśni wargi Yuki.
+m157.0	text	Yuki: „Och... mmgh... mmggh...”
+m157.2	text	Dwugłowy potwór wdziera się między śliczne wargi drżącej ze strachu Yuki. Trudno to nazwać robieniem laski: to raczej gąsienice wszczepione w dwa penisy gwałcą jej usta i język...
+m157.6	text	Yuki: „Ghh... mmgh... mmmm...”
+m157.8	text	Yuki dławi się obcym ciałem, którym zapchano jej usta, a Reiko siada okrakiem na jej penisie i powoli, z mokrym mlaśnięciem, nadziewa się na niego. Mięsiste fałdy pięknej sadystki ciasno obrabiają sztuczny penis Yuki.
+m157.12	text	Reiko: „No-o, językiem, gardłem, z całego serca dogódźże penisowi\n        doktora. Kiedy już zostaniesz żywym narkotykiem i\n        seksualną zabawką tylko dla nas, lalek bojowych...
+m157.17	text	        przyjdzie ci żyć już tylko z chłeptania nasienia i soku\n        miłości. Poćwiczymy już teraz☆”
+m157.20	text	Mózg roztopiony przez Virgin Angel, w ustach dwugłowy penis, który musi ssać, a na wszczepionym członku gwałcicielka, która go ujeżdża... Dla dziewiczej Yuki to musi być coś, od czego można oszaleć...
+m157.24	text	Yuki: „......Mmmmmh!!”
+m157.26	text	Guzy na penisach łażą niczym gąsienice po wnętrzu ust Yuki i po jej języku jak wisienka. Dwie żołędzie, chlupocząc mokro, na zmianę gwałcą jej gardło coraz głębiej, nie dając jej wytchnienia.
+m157.30	text	Yuki: „Ugh! Mmh! Mmmmh-mmh!”
+m157.32	text	Oczy Yuki gasną. Poddaje się wszystkiemu, a z ust cieknie jej strugami ślina...
+m157.35	text	Piękna sadystka nagle wykręca Yuki sutek!!\nYuki: „Uuugh!!”
+m157.39	text	Samo trzymanie w buzi to za mało!\nNo już, językiem, liż porządnie penis doktora i usługuj mu!!
+m157.43	text	Mówiąc to, Reiko jeszcze raz wykręca jej sutek. Yuki trwożliwie wodzi językiem jak wisienka po trzonie, na którym roją się gąsienice.
+m157.47	text	Liz... liz... liz...\nYuki, która nie zna mężczyzny, robi laskę niezgrabnie, ale widok ślicznej dziewczyny usługującej groteskowemu dwugłowemu penisowi jest lubieżny.
+m157.51	text	W tym samym rytmie Reiko porusza się coraz gwałtowniej...\nMlask, mlask, mlask... Odgłos, z jakim penis Yuki ociera się o pi○dę Reiko, gwałci uszy dziewczyny.
+m157.55	text	Yuki: „Mmm-mmm, mmmm-mmm, haa-aach!”
+m157.58	text	Hm-m, ależ się starasz. Odrobina tresury i będzie z ciebie niewolnica seksualna dobrej jakości...\nA teraz, panienko, dostaniesz ode mnie nagrodę.
+m157.62	text	Mówiąc to, Kusanagi daje Reiko znak oczami. Piękna sekretarka, by doprowadzić sztuczny penis Yuki do wytrysku, jeszcze gwałtowniej unosi i opuszcza biodra, nacierając na niego słodkim, miodnym wnętrzem...
+m157.67	text	Mmh! Mmh! Mmh! Mmh! Mmmmm-mmh!!\nGhh... ghh... Uuuuugh!!
+m157.70	text	Z dwoma groteskowymi penisami w ustach, z oczami wywróconymi na białka, Yuki wyrzuca nasienie w głąb ciała pięknej sekretarki...
+m157.73	text	Wyciągnięty z jej ust penis Kusanagiego ocieka śliną, która ciągnie się za nim nitkami. Reiko ustawia Yuki na łóżku na czworakach, jak psa. Od Virgin Angel płatki róży i płatki rozetki ociekają gęstym, lepkim śluzem...
+m157.78	text	Kusanagi przykłada czubki swego podwójnego morderczego oręża do dwóch mięsnych dziur Yuki.
+m158.0	text	Yuki: „Nie-e! Proszę!... Nie wolno... Aaaaaach!”
+m158.2	text	Chlup!... Chlup, chlup, chlup... Chlu-up!!
+m158.4	text	Yuki: „Przestańcie-e-e!!!”
+m158.6	text	Kusanagi odbiera Yuki oba dziewictwa...
+m158.8	text	Yuki: „Aaaach, boli-i!! Ju... już przestańcie... boli!!”
+m158.10	text	Yuki łapie powietrze ustami jak ryba, pot pryska z niej kroplami, smukłe ciało wygina się w łuk. Z obu dziur, rozepchniętych przez mięsiste trzony, wycieka obfity śluz, a w nim coś czerwonego...
+m158.14	text	Rozmoczone środkiem pi○da i anu○ ociekają wydzieliną i lubieżnie połykają obsiane gąsienicami penisy po samą nasadę, ale gdy gwałci się naraz pochwę i odbyt, a po mięsnej ściance między nimi łażą roje gąsienic, każda by odchodziła od zmysłów, nie tylko Yuki...
+m158.20	text	Aach... mmh... mmh... proszę!\nPrzestańcie-e... ja... ja oszaleję...
+m158.23	text	Piękna dziewczyna tylko... znosi ból, a Kusanagi bez litości naciera na nią biodrami jak tłok.
+m158.26	text	...W Yuki, która z początku czuła tylko ból, budzi się doznanie roztapiające mózg. Jej pośladki w kształcie serca mimowolnie zaczynają się kołysać w rytm pchnięć Kusanagiego. Reiko szepcze jej do ucha.
+m158.31	text	Ohohoho... Virgin Angel nie zawodzi☆\nPrzed chwilą jeszcze dziewica. Co za sprośna panienka.\nPołyka penisa i już kręci biodrami.
+m158.35	text	Yuki: „Wca... wcale nie... Aaach...”
+m158.38	text	Czyżby?\nA właśnie, kochasz go, prawda? Tego, co się tam wala...?\nJestem kobietą, więc i ja to widzę.
+m158.43	text	Jeśli panienka przysięgnie, że zostanie seksualną zabawką wyłącznie do moich doświadczeń, mogę łaskawie darować życie jej chłopcu z Toanu.
+m158.46	text	Murakumo: „Nie, Yuki! Nie daj im się nabrać!!”
+m158.48	text	Kusanagi naciera na Yuki jeszcze mocniej, jeszcze gwałtowniej. Jego dwugłowy penis miesza w niej w jedno rozkosz samoponiżenia i jej uczucie do mnie.
+m159.0	text	Yuki: „Ach, panie Murakumo, przepraszam... Proszę wybaczyć Yuki.
+m159.2	text	       Yuki... Yuki zostanie niewolnicą...\n       niewolnicą seksualną... przy... przysięga...\n       Ach, więc... więc... wię-ę-ęc... aach!”
+m159.7	text	Tak jest. Od tej chwili będziesz żyła po to, by rozładowywać stres i popęd płciowy lalek bojowych!\nPóźniej łaskawie przerobię ci ciało, żeby było jeszcze bardziej lubieżne.
+m159.12	text	Aa-ach, Yuki już... pro... proszę-ę...\n...błagam... tylko nie pana Murakumo... aaaach...
+m159.16	text	He, he, he...\nDobrze! Połykaj lubieżnie mój penis i dojdź.
+m159.19	text	Umazane płynami ciało Yuki wygina się w łuk, jakby nim szarpnęło.
+m159.21	text	Yuki: „Aa-ach, dochodzę, dochodzę, dochodzę, dochodzę,\n       dochodzę-ę-ę-ę!!”
+m160.0	text	Kusanagi z mlaśnięciem wyciąga swój oręż z ciała otępiałej Yuki; pi○da i anu○ zostają na pół rozwarte, ziejące. Obraca bezwładne kobiece ciało na wznak i podsuwa ślicznej seksualnej niewolnicy pod oczy dwugłowy penis ociekający wydzieliną Yuki.
+m160.5	text	Otworki na żołędziach rozwierają się jak usta i strugą za strugą chlustają na twarz i piersi Yuki gęstym, cuchnącym, mętnobiałym plugastwem.
+m161.0	text	Yuki, wyniesiona na sam szczyt, cała tonie w spermie.
+m161.2	text	Kusanagi: „No już, oczyść ustami mój penis, ubrudzony twoimi\n           płynami!”
+m161.4	text	Yuki patrzy pustym wzrokiem; nie potrafi już trzeźwo osądzać. Posłuszna jedynie rozkazowi Kusanagiego, nieśmiało przybliża usta do dwóch penisów, które przed chwilą gwałciły jej pochwę i odbyt.
+m161.8	text	Yuki: „Cmok, cmok, cmok!”
+m161.10	text	Bez cienia wahania, czule, Yuki, cała w spermie i pocie, oczyszcza ślicznymi ustami i językiem dwugłowego potwora...
+m161.13	text	Na koniec Yuki próbuje wyssać nawet nasienie, które zostało w cewce, a Kusanagi i Reiko przyglądają się temu z zadowoleniem.
+m161.16	text	Yuki, z której uszły wszystkie siły, traci przytomność i powoli osuwa się...
+m162.0	text	Leżę na podłodze jak zużyta szmata, a ten drań Kusanagi zwraca się do mnie.
+m162.4	text	No cóż, panie Murakumo, panienka przysięgła, że w zamian za pańskie życie zostanie naszą seksualną zabawką.\nZależnie od pańskiej postawy mogę panu nawet darować życie, zapewniam pana.
+m162.8	text	Murakumo: „...Szlag.”
+m162.10	text	Kusanagi wyjmuje z kieszeni jakąś kapsułkę i mówi triumfalnie. Co to, u licha, za środek?
+m162.13	text	Kusanagi: „Jeśli połknie pan ten środek, przez wzgląd na tę\n           seksualną zabawkę daruję panu życie.”
+m162.15	text	Powiedziawszy to, wodzi palcami po na pół rozwartej kobiecości Yuki, która jeszcze przed chwilą połykała obce ciało, a teraz ocieka gęstym śluzem.
+m163.0	text	Biorę od Kusanagiego środek i wkładam go do ust. Kapsułka nie ma żadnego smaku...\nNie, w ustach rozlewa mi się smak porażki.
+m163.4	text	Świadomość powoli odpływa, przed oczami robi się ciemno.
+m164.0	text	Murakumo: „Gnoje! Pozabijam! Prędzej zdechnę, niż to połknę!”
+m164.2	text	Po tym, co zrobili Yuki, nie posłucham tych drani, choćbym miał zdechnąć!!
+m165.0	text	Reiko: „Co za impertynencja wobec doktora! Pertraktacje uważam za\n        zakończone!”
+m165.2	text	Rzuciwszy te słowa, Reiko rusza na mnie pełnym pędem!!
+m165.4	text	Nie wiem, co mi teraz zrobi, ale następny cios na pewno mnie zabije.\n„Nie dam się tak zabić!!” Instynktownie rozglądam się dookoła.
+m165.7	text	Murakumo: „!!”
+m165.9	text	Jest! Pod biurkiem tuż przede mną leży mój pistolet.
+m165.11	text	Murakumo: „Nic z tego! Za ciasno, ręka nie wejdzie!”
+m165.13	text	Rozwścieczona metalowa baba jest już tuż-tuż. Bierze szeroki zamach, na twarzy ma radość i jawną żądzę mordu.\nZaciskając zęby z bólu, przekręcam się i chowam za biurkiem.
+m165.17	text	Reiko: „Ach?! Zabawa w chowanego, w tym wieku? Żeby się tak\n        czepiać życia, to już przesada.”
+m165.19	text	Traaaaaaach!!
+m165.21	text	Reiko, zniecierpliwiona, kopniakiem wyrzuca w górę biurko, które nas dzieli!
+m165.23	text	Murakumo: „Okazja!!”
+m165.25	text	Zapominam o bólu, który zawładnął całym ciałem, chwytam pistolet z podłogi i leżąc na brzuchu, składam się do strzału.\nObok biurko z hukiem wali o podłogę.
+m165.29	text	Reiko: „?!”
+m165.31	text	Metalowa baba na moment wytrzeszcza oczy ze zdumienia, ale...
+m165.34	text	Aha-a, więc schowałeś się za biurkiem specjalnie po to, żeby podnieść tę zabawkę☆\nTylko co ci to niby da????
+m165.38	text	Murakumo: „Chcesz sprawdzić?” (uśmieszek)
+m165.40	text	Z zimnym uśmiechem, w którym miesza się pożegnanie z litością, Reiko z rozmachem wymierza mi, leżącemu na podłodze, dobijający cios.\nW tej samej chwili ściągam spust mojej wiernej czterdziestkipiątki!!
+m166.0	text	Murakumo: „Gnoje! Pozabijam! Prędzej zdechnę, niż to połknę!”
+m166.2	text	Po tym, co zrobili Yuki, nie posłucham tych drani, choćbym miał zdechnąć!!
+m167.0	text	Reiko: „Co za impertynencja wobec doktora! Pertraktacje uważam za\n        zakończone!”
+m167.2	text	Rzuciwszy te słowa, Reiko rusza na mnie pełnym pędem!!
+m167.4	text	Nie wiem, co mi teraz zrobi, ale następny cios na pewno mnie zabije.\n„Nie dam się tak zabić!!” Instynktownie rozglądam się dookoła.
+m167.7	text	Murakumo: „!!!”
+m167.9	text	Jest! Pod biurkiem, które stoi między mną a Reiko, leży mój pistolet.
+m167.12	text	Nic z tego! Tam za ciasno, ręka nie wejdzie! I do tego za daleko.
+m167.14	text	Rozwścieczona metalowa baba jest już tuż-tuż.
+m167.16	text	Zaciskając zęby z bólu złamanej nogi, rzucam się na Reiko.
+m167.18	text	Reiko: „Phi! Co za lekkomyślność. Ale cóż, możesz się na mnie\n        rzucić tylko z gołymi rękami☆”
+m167.20	text	Bierze szeroki zamach, na twarzy ma radość i jawną żądzę mordu.
+m167.22	text	Ale to tylko zwód: przekręcam się, przetaczam i chowam za biurkiem.
+m167.24	text	Reiko: „Ach?! Zabawa w chowanego, w tym wieku? Żeby się tak\n        czepiać życia, to już przesada.”
+m167.26	text	Traaaaaaach!!
+m167.28	text	Reiko, zniecierpliwiona, kopniakiem wyrzuca w górę biurko, które nas dzieli!
+m167.30	text	Murakumo: „Okazja!!”
+m167.32	text	Zapominam o bólu, który zawładnął całym ciałem, chwytam pistolet z podłogi i leżąc na brzuchu, składam się do strzału.\nObok biurko z hukiem wali o podłogę.
+m167.36	text	Reiko: „?!”
+m167.38	text	Metalowa baba na moment wytrzeszcza oczy ze zdumienia, ale...
+m167.41	text	Aha-a, więc schowałeś się za biurkiem specjalnie po to, żeby podnieść tę zabawkę☆\nTylko co ci to da????
+m167.45	text	Murakumo: „Chcesz sprawdzić?” (uśmieszek)
+m167.47	text	Z zimnym uśmiechem, w którym miesza się pożegnanie z litością, Reiko z rozmachem wymierza mi, leżącemu na podłodze, dobijający cios.\nW tej samej chwili ściągam spust mojej wiernej czterdziestkipiątki!!
+m168.0	text	Bach!!
+m168.2	text	Z lufy bucha błysk i wylatuje garść kulek łożyskowych.\nCios metalowej baby jest już tuż przed moją twarzą.
+m168.5	text	Reiko: „Aaaaaargh!”
+m168.7	text	Tra-a-ach!
+m168.9	text	Siła śrutu odrzuca Reiko aż na stalowy regał ze sprzętem laboratoryjnym za jej plecami, a wokół rozchodzi się swąd prochu.
+m168.12	text	Murakumo: „Mam cię!”
+m168.14	text	Ale ze szczątków regału powoli podnosi się Reiko, lalka bojowa...\nCzęść sztucznej skóry odpadła, odsłaniając pancerz z lekkiego tytanu.
+m168.18	text	Reiko: „...ŁADNIE MNIE URZĄDZIŁEŚ”
+m168.20	text	Zasypuję zbliżającą się powoli lalkę bojową śrutem, strzał za strzałem, ale ona nie zwalnia kroku...
+m169.0	text	Łup...!
+m170.0	text	Bum! Bum! Bum! Bum!
+m170.2	text	Pruję z czterdziestkipiątki pociskami przeciwpancernymi: przebiją nawet lekki tytan. Odrzut jest potężny, strzelam niemal na ślepo.
+m170.5	text	Trach, trach, trach, trach.
+m170.7	text	Reiko: „Mmh!!”
+m170.9	text	Nawet słynny pancerz z lekkiego tytanu dostaje dziury na wylot.\nAle duża przebijalność obraca się przeciwko mnie: lalka bojowa ani trochę nie zwalnia. Niebieskobiało rozjarzone knykcie są już tuż przed moją twarzą...!
+m170.13	text	Pstryk... pstryk, pstryk...
+m170.15	text	W chwili, gdy myślę: szlag!...\nciało Reiko zaczyna się ruszać, jakby tańczyło jakiś bezładny taniec.
+m170.18	text	Pach!... trzask, trzask...\nZ przegubów Reiko sypią się drobne iskry. Przeciążenie!!
+m170.21	text	Reiko: „Uaaaaaa!”
+m170.23	text	Jeden z pocisków chyba zniszczył SI sterującą przegubami.\nReiko, jakby w ludzkich drgawkach, wali się na podłogę obok mnie.\nWpycham czterdziestkępiątkę w jej na wpół otwarte usta.
+m170.27	text	Murakumo: „Jakbyś mi robiła laskę!”
+m170.29	text	Ściągnąłem spust i spuściłem jej w mózg pocisk przeciwpancerny...\nMózg jak budyń rozpryskuje się na wszystkie strony.
+m171.0	text	Bziuuuu!!
+m171.2	text	Cząstki wiązki wylatują, tnąc powietrze... Gdy błysk dotyka ciała Reiko, świetliste cząstki rozpraszają się na wszystkie strony, a ona wygląda niemal jak bogini światła.
+m171.5	text	Powłoka chroniąca przed bronią optyczną przekreśliła moją szansę na kontratak.
+m171.7	text	Murakumo: „...Ach.”
+m172.0	text	W następnej chwili, gdy wpatruję się urzeczony w to oszałamiające piękno, bogini światła zadaje mi bezlitosny cios...
+m173.0	text	Pff!
+m173.2	text	Kiedy Reiko nachyla się nade mną z ciosem, wystrzelona kapsuła z ciekłym azotem trafia ją w bark.
+m173.5	text	Reiko: „Ach...”
+m173.7	text	Psssssss...\nCiągnie chłodem. Płyn wsiąka przez przeguby i zamraża złącza prawego ramienia i szyi...
+m174.0	text	Murakumo: „A teraz pozwól, że ci się odwdzięczę za wszystko...”
+m174.2	text	Bum! Bum! Bum! Bum!
+m174.4	text	Czterdziestkapiątka sypie iskrami, strzał za strzałem. Przeguby, które straciły giętkość, nie wytrzymują naporu ołowianych kul: odrywa się ręka, bark, a w końcu szyja.
+m174.7	text	Głowa Reiko toczy się tuż przed moimi oczami.\nWpycham czterdziestkępiątkę w jej na wpół otwarte usta.
+m174.10	text	Murakumo: „Jakbyś mi robiła laskę!”
+m175.0	text	Ściągnąłem spust i spuściłem jej w mózg ołów...\nMózg jak budyń rozpryskuje się na wszystkie strony.
+m176.0	text	Przezwyciężając ból, powoli dźwigam się na kolana...
+m176.3	text	No i zabawka, którą tak się chwalił doktor Kusanagi, to już tylko złom.\nHe, he, he, he...
+m176.7	text	He, he, he...\nNo, no, jestem pod wrażeniem. Kto by pomyślał, że pokona pan Reiko...
+m176.10	text	Widzę, jak Kusanagi wsuwa rękę do kieszeni kitla.\nChcę zareagować, ale ból mnie spowalnia.\nMały pistolet, ściśnięty w dłoni w kieszeni, z cichym pyknięciem pluje ogniem.
+m176.14	text	Murakumo: „Aaaaaargh!”
+m176.16	text	Niezliczone igły, wyrzucone z lufy jak z prysznica, wbijają mi się jedna po drugiej w prawą rękę.
+m176.19	text	Kusanagi: „To się nazywa pistolet igłowy. Z tego trafi nawet taki\n           amator jak ja.”
+m176.21	text	Skóra pęka, jaskrawoczerwona krew kapie kropla po kropli, a z dłoni, która straciła siłę, omal nie wypada mi czterdziestkapiątka.
+m176.25	text	Owszem, utracić Reiko to niemała szkoda.\nAle mam jeszcze trzy lalki bojowe w trakcie dostrajania, więc na sam plan nie ma to najmniejszego wpływu.
+m176.29	text	Murakumo: „Plan?... «Projekt Uroboros – konferencja w Urawie –\n           plan ataku»...”
+m176.32	text	Ależ pan mnie zaskoczył. Toan to jednak Toan.\nAle na tym koniec. Firmy i politycy, którzy za mną stoją, wywrą nacisk i «jutro w południe»...\nśledztwo zostanie przerwane.
+m176.37	text	Murakumo: „Jutro w południe?!”
+m176.39	text	Na moment staje mi przed oczami twarz jak maska, której najbardziej na świecie nie cierpię.
+m176.41	text	Kusanagi: „Godne podziwu, że nie wypuszcza pan broni, choć nie\n           może pan ruszyć nawet palcem...”
+m176.43	text	Drżącą w skurczach prawą ręką próbuję wycelować w Kusanagiego...\nRęka mi ciąży, w oczach się mgli, zaraz stracę przytomność.
+m176.47	text	Niech pan się podda... Na spust zabraknie już panu sił.\nHa, ha, ha, ha, ha... Przegrał pan.
+m176.50	text	Murakumo: „Aaaaaa! Tak to się nie skończy-y!!”
+m176.52	text	Bum!!\nZdrętwiały, bezwładny palec cudem pociąga za spust.
+m176.55	text	Odrzut boli tak, jakby urywał mi rękę, a broń leci z dłoni do tyłu.\nZabójcza kula trafia Kusanagiego w twarz!!
+m176.58	text	Kusanagi: „Aaaaaaargh...”
+m176.60	text	Mam go! Widzę, jak Kusanagi odgina się do tyłu i wali na podłogę.
+m176.62	text	Murakumo: „Masz nauczkę, ty konowale!!”
+m176.64	text	Ale... w następnej chwili sam dostaję nauczkę: życie nie jest takie proste.
+m176.66	text	Kusanagi: „Aaaaaa! Twarz! Ooooo, moja twarz! N-nie daruję tego!”
+m176.68	text	Kusanagi, trzymając się za policzek, wstaje i szaleje z wściekłości.\nMoja zabójcza kula trafiła go w twarz, ale zdołała tylko wyszarpać mu mięso z policzka i odsłonić dziąsła...\nTfu! W filmie po takim strzale Kusanagi by już nie żył...
+m176.74	text	Ty! Moja twarz! Twarz genialnego lekarza! Tak ją oszpecić!!\nZabiję cię, zaraz cię zabiję-ę-ę-ę!!
+m176.77	text	Murakumo: „Otwórz gabinet dentystyczny. Twoja gęba nada się na\n           eksponat.”
+m176.79	text	Stać mnie już tylko na takie nadrabianie miną...\nKusanagi, ciskając wściekłe spojrzenia, celuje mi w głowę.\nŻebra potłuczone, noga złamana, prawa ręka nie utrzyma broni...\nA i samej broni już nie mam.
+m176.84	text	Spoglądam na Yuki: leży nieprzytomna na łóżku...\nKiedy myślę, co z nią będzie po mojej śmierci, ogarnia mnie żal.\nW kałuży krwi rozlewającej się po podłodze mimowolnie zamykam oczy i szepczę w duchu...
+m177.0	text	Murakumo: (Yuki, przepraszam... W końcu chyba nie zdołam cię\n           uratować. Jeśli będzie jakiś następny raz, poświęcę ci\n           całego siebie, Yuki...)
+m178.0	text	Ratatatam... ratatatata... tatatam...
+m178.2	text	Stuk, stuk, stuk.
+m178.4	text	Za moimi plecami zbliżają się kroki. A potem słyszę głos człowieka, którego najbardziej na świecie nie cierpię.
+m178.6	text	Sasame: „Dobra robota, mój drogi Murakumo.”
+m178.8	text	Na dźwięk tego głosu otwieram oczy...
+m179.0	text	Doktora Kusanagiego kule podziurawiły jak sito.\nOglądam się: w samym środku Specjalnego Oddziału Szturmowego, chluby policji stołecznej, stoi szef Sasame.
+m179.5	text	«Dobra robota»?! Szefie! Pan chyba jeszcze śpi!\nPatrzy pan na tę jatkę i tylko tyle ma pan do powiedzenia?\nJa i Yuki...
+m179.10	text	Ależ skąd.\nW drodze tutaj starliśmy się z trzema lalkami bojowymi i straciliśmy dwie kompanie.\nCieszę się, że zdołałeś przeżyć.
+m179.15	text	Mówiąc to, wyciąga do mnie rękę.
+m179.18	text	Tss, no jasne...\nKoniec końców to ty mnie wrobiłeś.\nKiedy Kusanagi powiedział, że «jutro w południe śledztwo zostanie przerwane», zrobiło mi się nieswojo.
+m179.23	text	Murakumo: „Skłamał pan, żebym siłą wywlókł na światło dzienne\n           sekrety tego szpitala!!”
+m179.26	text	Nie pomyliłem się co do ciebie.\nZakładałem, że jeśli śledztwo zostanie przerwane, ty, jak to ty, wejdziesz tam sam.\nKazałem więc śledzić cię z satelity geostacjonarnego.
+m179.31	text	Odtrącam z plaskiem jego dłoń i ociężale wstaję o własnych siłach.
+m179.34	text	Szefie! Niech pan dziękuje Bogu, że akurat nie władam prawą ręką!
+m179.37	text	Ludzie ze Specjalnego Oddziału Szturmowego zaczynają zabezpieczać dowody, a ja, powłócząc nogą, idę do łóżka, na którym leży Yuki.
+m180.0	text	Murakumo: „Yuki?... Nie śpisz?”
+m180.2	text	Yuki: „......Pa... panie Muraku... mo?”
+m180.4	text	Murakumo: „...”
+m180.7	text	Uuu... panie Murakumo... przepraszam... ja... ja... aaa...\nUaaa... uaaa... uaaa...
+m181.0	text	Ramiona Yuki drżą drobno, z oczu płyną jej wielkie łzy, a ona kurczowo się do mnie tuli.
+m181.4	text	Uaaa... uaaa... uaaa...\nJa... ja... że coś takiego... mnie spotkało...
+m181.7	text	Murakumo: „Yuki. Nie musisz już nic mówić.”
+m181.9	text	Sprawną lewą ręką przygarniam do siebie jej drobne, drżące ciało.\nKurczowo trzymając się mojego ubrania, zdaje się zmywać potokami łez wszystkie złe wspomnienia.
+m181.13	text	Murakumo: „...”
+m181.15	text	Zgwałcono ją okrutnie na moich oczach, a ona, choć to przez narkotyk, wiła się przy tym. Na pewno przeklina za to samą siebie.\nJej smutek wsącza się we mnie i łagodnie, cicho ściska mi serce.
+m181.19	text	Yuki: „...Panie Murakumo, ta rana na pana ręce... jaka okropna...”
+m181.21	text	Yuki z przestrachem dostrzega moją prawą rękę: skórę rozoraną przez pistolet igłowy, całą we krwi.
+m181.24	text	Murakumo: „To nic takiego...”
+m181.26	text	Yuki: „Wcale nie! To przeze mnie pana to spotkało...”
+m181.28	text	Yuki wyciąga igły, które utkwiły mi w ręce, a te, które weszły głęboko, próbuje wyssać ustami. Ostry ból szarpie mi nerwy.
+m181.31	text	Murakumo: „Nie, nie rób tego. Pokaleczysz sobie usta.”
+m181.34	text	Przecież pan tak bardzo dla mnie ucierpiał, panie Murakumo.\nNiech mi pan pozwoli zrobić chociaż tyle...
+m181.37	text	Ściska mnie w piersi z miłości, której nie da się wyrazić słowami. A potem...
+m181.39	text	...Po prostu tulę Yuki.\nI pragnę, żeby ta potworność, która rozdarła jej serce, jak najprędzej stała się przeszłością.
+m182.0	text	Szef pewnie dopilnuje, żeby ta sprawa nigdy nie trafiła do mediów.\nAle mnie ta sprawa
+m182.3	text	wyryła w sercu coś, czego nie zatrze całe życie...
+m182.5	text	Głęboko... A w niej, tulonej w moich ramionach, jeszcze głębiej...
+m183.0	text	Cztery tygodnie leczenia w szpitalu – i oto pierwszy raz od półtora miesiąca przekroczyłem próg Wydziału Praw Człowieka, żeby zobaczyć się z szefem Maską.\nNa szczęście poza szefem nie było nikogo...
+m183.4	text	Sasame: „Gratuluję wyjścia ze szpitala, mój drogi Murakumo.”
+m183.6	text	Murakumo: „Szefie, mam panu coś do powiedzenia.”
+m183.8	text	Sasame: „...”
+m183.10	text	Murakumo: „Z dniem dzisiejszym rezygnuję z funkcji agenta\n           Stołecznego Biura Ochrony Publicznej.”
+m183.13	text	O ile wiem, nasza umowa jeszcze nie wygasła.\nJeśli odchodzisz ze Stołecznego Biura Ochrony Publicznej, czy mam rozumieć, że wracasz do więzienia?
+m183.17	text	Wyciągnąłem pistolet z kabury i wycelowałem w szefa, prosto w jego twarz jak maska.
+m183.19	text	Murakumo: „Po tym, co się stało, chcę poświęcić jednej\n           kobiecie...\n           resztę życia.
+m183.22	text	           Choćbym miał tu pana zabić, szefie, zdobędę wolność!\n           ...Przyszedłem tu tylko po to, żeby to powiedzieć.”
+m183.25	text	Sasame: „Chodzi o Yasaka Yuki, dawniej z Wydziału Informacji,\n         prawda?”
+m183.27	text	Murakumo: „Tak.”
+m183.30	text	Nawet jeśli wyjdziesz z tego pokoju żywy, od tej samej chwili będziesz poszukiwany listem gończym.
+m183.33	text	Murakumo: „Wiem... A teraz żegnam pana, szefie.”
+m183.35	text	Gdy odwróciłem się do wyjścia, szef odezwał się za moimi plecami...
+m183.37	text	Sasame: „Mój drogi Murakumo, prezent pożegnalny ode mnie.\n         Zechciej go wziąć.”
+m183.39	text	Z tymi słowami szef Sasame położył na biurku kopertę.
+m183.41	text	Sasame: „Odejście tak znakomitego pracownika jak ty to wielka\n         strata.”
+m183.43	text	Z rozczarowaniem w głosie szef wstał z krzesła, odwrócił się do mnie plecami, rozchylił listewki żaluzji i zapatrzył się w nocne Tokio.
+m183.46	text	Wziąłem do ręki nijaką brązową kopertę i otworzyłem ją.
+m183.48	text	Murakumo: „Co... co to jest?!
+m183.50	text	           Akt zgonu Amano Murakumo i nowy wpis do rejestru\n           rodzinnego! A do tego... nowe prawo jazdy i licencja\n           leśniczego drugiego stopnia.\n           ...Ten szef...”
+m183.55	text	Idź. Nie jestem już twoim szefem ani przełożonym.\nJestem dla ciebie obcym człowiekiem.
+m184.0	text	...I minęło kilka miesięcy.
+m184.2	text	Yuki i ja zaczęliśmy nowe życie w cichej chacie na Hokkaido.\nRany w sercu Yuki jeszcze się nie zagoiły.\nWciąż nie daje jej spokoju to, że ją „zbrukano”.
+m184.6	text	Właśnie dlatego postanowiłem, choćby trochę na siłę, ożenić się z Yuki.
+m184.8	text	Ohydztwo, które wszczepił jej Kusanagi, zdołał usunąć chirurg plastyczny, którego załatwiła nam Shinobu, ale...\nTamta potworność zostawiła głębokie blizny: zdarzają się noce, kiedy Yuki, dręczona koszmarami, nie może zasnąć...
+m184.13	text	W takie noce obejmuję ją i trzymam, dopóki nie zaśnie ze zmęczenia.\nRzecz jasna, od tamtej pory Yuki podświadomie wciąż broni się przed cielesną bliskością ze mną...
+m184.17	text	Kiedy już przywykłem do pracy leśniczego, wzięliśmy ślub w obecności zaledwie kilku sąsiadów. Wprawdzie nie wpisaliśmy małżeństwa do rejestru rodzinnego, ale teraz Yuki chyba choć trochę się uspokoi.\nWłaśnie wróciliśmy z tego ślubu.
+m184.22	text	Rozpalam ogień w kominku...
+m184.25	text	Yuki, czemu nawet w domu nie zdejmujesz sukni ślubnej?
+m184.29	text	No bo... ja tak się cieszę...\nŻe w takiej pięknej sukni mogę wyjść za kogoś, kto mnie obronił...
+m184.33	text	Delikatnie obejmuję Yuki za ramiona.
+m184.36	text	Słuchaj... panie Murakumo, naprawdę chcesz właśnie mnie?\nPrzecież... przecież ja...\n...ja nie jestem zwykłą dziewczy... mmm
+m184.40	text	Zanim Yuki zdąży dokończyć, zamykam jej usta pocałunkiem.\nOd razu oplatam jej język jak wisienka.
+m184.43	text	Yuki: „W-wstyd mi...”
+m184.45	text	Różowe czubki sterczą zadziornie, dziewczęcy zapach rozgrzanego ciała łaskocze mnie w nozdrza. W piersi robi mi się gorąco.
+m184.48	text	Murakumo: „Cudownie wyglądasz, Yuki... Jesteś taka piękna.”
+m184.50	text	Yuki kręci głową, jakby mówiła „nie, nie”, i się szamocze, ale ja mocno przygarniam ją do siebie, podwijam brzeg sukni ślubnej, wsuwam pod spód prawą rękę i gładzę wilgotne wnętrze ud.
+m185.0	text	Yuki: „Ach... jednak... nie... Odpuść mi, Murakumo.”
+m185.2	text	Yuki szamocze się w moich ramionach i błaga.\nPatrzę w jej przestraszone oczy i więżę ją spojrzeniem.
+m185.5	text	Murakumo: „Nie odpuszczę, Yuki... Już nie mogę czekać!”
+m185.7	text	Yuki: „Aa-ach... ale...”
+m185.9	text	Dotykam kroku jedwabnych majteczek, gładko opinających jej kobiecość.\nWsunięta dłoń robi się wilgotna, a na jedwabiu rośnie plama.\nNieco wyżej opuszki palców trafiają na ślad po szwach.
+m185.13	text	Yuki w popłochu cofa biodra i ucieka, żebym nie wyczuł blizny ukrytej pod miękkimi włoskami łona.
+m185.17	text	Jednak nie! Proszę, niech pan przestanie! Niech pan mnie nie dotyka!!\n...Przecież nie jestem zwykłą dziewczyną!\nTak mi zbrukali ciało...
+m185.22	text	Ty też, panie Murakumo! Tak naprawdę o mnie... o mnie...!\n...Kobieta, a musiałam tryskać! Gwałcona, czułam rozkosz...
+m185.25	text	Myślisz, że jestem odrażającą, zdeformowaną kobietą!!
+m185.28	text	Yuki! Przestań się wreszcie obwiniać!\nCiebie kocham, rozumiesz?!\nJak raz to za mało, mogę to powtarzać sto razy, tysiąc razy!
+m185.33	text	Kiedy cię poznałem, już miałem piersi i ubierałem się jak kobieta.\nA ty i tak mnie pokochałaś.\nNie chodzi o wygląd ani o strój...
+m185.38	text	Yuki: „...Słowami to można wszystko powiedzieć!”
+m185.40	text	Twarz ma niemal gniewną, a w głębi oczu, jakich u niej nie znałem, łzy. Nie mogąc na mnie spojrzeć, odruchowo odwraca się plecami.
+m185.43	text	Czuję, że jeśli ją teraz puszczę, nigdy już do mnie nie wróci. Odruchowo kładę jej dłoń na ramieniu... ale słowa więzną w gardle.
+m185.46	text	Murakumo: „......”
+m185.48	text	Łzy płyną jej po policzkach wodospadem i moczą mi rękę. Nagle Yuki patrzy na obejmujące ją ramię i gwałtownie wstrzymuje oddech.
+m185.51	text	Yuki: „!! Panie Murakumo, twoja ręka!”
+m185.53	text	Yuki zdumiała się, bo na mojej prawej ręce wystąpiło wyraźne znamię jak pnącze cierni. To ślad po leczeniu ran od pistoletu igłowego: gdy się podniecę albo rozgrzeję, sztuczna skóra czasem reaguje i znamię wychodzi na wierzch.
+m185.58	text	Murakumo: „To tylko znamię. Ważniejsza jesteś ty, Yuki!”
+m185.60	text	Yuki: (To wcale nie jest tylko znamię...)
+m185.63	text	Wiesz, kiedy Kusanagi o mało mnie nie zabił, poczułem to.\nTam, na krawędzi, na pewno... myślałem tylko o tobie.
+m185.66	text	Yuki: (Ja też... nawet gwałcona myślałam tylko o panu Murakumo.)
+m185.68	text	Murakumo: „Chcę, żeby choć tysięczna część twoich ran była moja.”
+m185.70	text	Yuki: (Nieprawda! Pan Murakumo też cały się dla mnie poranił...)
+m185.73	text	...Wybacz, spieszyłem się... Nie będę cię już zmuszał...\nTylko pozwól mi jeszcze chwilę tak czuć twoje ciepło...
+m185.76	text	Yuki: „Ja... ja też chcę ci udowodnić, że kocham cię nad życie...”
+m185.78	text	Odwrócona do mnie plecami Yuki coś szepnęła... zbyt cichutko...
+m185.80	text	Murakumo: „...??? Co się stało, Yuki?”
+m185.82	text	Ramiona Yuki drgają w moich objęciach i słychać ciche łkanie...
+m185.85	text	Przepraszam. Murakumo... przepraszam...\n...Uaaa... uaaa... uaaa...
+m185.88	text	Yuki z płaczem rzuca mi się na pierś. Delikatnie ją obejmuję.
+m185.91	text	Murakumo-oo... na... naprawdę przepraszam.\nMyślałam, że tylko mnie zraniono. A przecież...\nty też zostałeś zraniony.\nCały się poraniłeś... żeby mnie uratować...
+m185.97	text	Już dobrze, Yuki... Wypłacz się i zapomnijmy o wszystkim.\nNiech to wszystko będzie już za nami...
+m185.100	text	Tulę płaczącą Yuki czule i ostrożnie, żeby mi się nie rozsypała.
+m185.102	text	Naszą chwilę wypełniają tylko trzask ognia w kominku i płacz Yuki.
+m185.104	text	W końcu Yuki przestaje płakać, a jej wargi drżą lekko, jakby chciała coś powiedzieć...\nI cichutko szepcze...
+m185.107	text	Yuki: „Panie Murakumo... weź mnie...”
+m185.109	text	Murakumo: „Nie musisz się tak spieszyć... Yuki.”
+m185.112	text	Nie, teraz mogę ci się oddać. Proszę.\nJa też chcę sercem i ciałem udowodnić, że kocham cię nad życie, Murakumo...\nKochaj mnie tak, żebym o wszystkim zapomniała...
+m185.117	text	Zawładnij Yuki. Serce, ciało, wszystko jest tylko twoje, Murakumo!\nWypędź ze mnie wszystko, co nie jest tobą.\nMurakumo-o...
+m186.0	text	Całując ją, biorę Yuki na ręce, zanoszę do łóżka i cicho układam piękną dziewczynę w sukni ślubnej na puchowej kołdrze.\nZarumieniona, zawstydzona Yuki zasłania krągłości piersi.
+m186.4	text	Murakumo: „Yuki, już nigdy nie pozwolę ci się smucić.”
+m186.6	text	Yuki: „Ach... jak się cieszę.”
+m187.0	text	Całuję drżące usta Yuki, wodzę językiem od miejsca za uchem po białą szyję.\nYuki jęczy i wije się, lekko zroszona potem.
+m187.3	text	Yuki: „Haa... ooo-och...”
+m187.5	text	Gładzę krągłe piersi i ssę sterczące różowe sutki.\nPodciągam suknię ślubną i w blasku kominka odsłaniają się dwie smukłe nogi i jedwabne majteczki.
+m187.9	text	Yuki: „Aach, to...”
+m187.11	text	Wsuwam dłoń w jedwabne majteczki: włoski na łonie są całe mokre.\nZwarta szparka Yuki zaczyna się rozchylać i sączy się z niej śliska wilgoć.\nPowoli zsuwam z niej majteczki.
+m187.15	text	Yuki: „Ach... haaa...”
+m187.17	text	Murakumo: „Spokojnie. Nie ma się czego wstydzić. Jesteś cudowna,\n           Yuki.”
+m187.19	text	Całuję kobiecość Yuki.\nWargami i językiem odkrywam i smakuję koralowe ziarenko, różowe płatki i źródło miłości...\nYuki przygryza palec i jęczy.
+m187.24	text	Podnoszę głowę i zaglądam Yuki w oczy, a ona, jakby się na coś zdecydowała, zamyka powieki.
+m187.26	text	Murakumo: „......”
+m187.28	text	Yuki: „...”
+m187.30	text	Przywieramy do siebie skórą przy skórze, ciało przy ciele...
+m188.0	text	Szparka Yuki, do której przykładam swoją męskość, jest tak mokra, że aż z niej kapie, a perłowe ziarenko nabiegło krwią tak, że pulsuje niemal boleśnie.\nPowoli, jak najczulej, wsuwam w nią męski klin...
+m188.4	text	Yuki: „Aach... boję się.”
+m188.6	text	Część mojego ciała z oporem rozpycha mięsiste ścianki w głębi płatków Yuki... Jest tam wąsko i ciasno, a ścianki mocno się na mnie zaciskają.
+m188.10	text	Yuki z całych sił zaciska powieki, z drgnięciem wygina się w łuk i łka...
+m188.12	text	Yuki: „Aaaaach... mmm... b... boli!”
+m188.14	text	Czując w sobie coś obcego, Yuki mimowolnie krzyczy. Nie jest już dziewicą, ale to dopiero jej drugi raz, a czułe zbliżenie przeżywa pierwszy raz w życiu. Jaka jest kochana, gdy dla mnie znosi ten obcy ucisk w podbrzuszu...
+m188.19	text	Murakumo: „Boli?”
+m188.21	text	Czerwieni się i lekko kręci głową.
+m188.23	text	Yuki: „Panie Murakumo, to takie... mocne... więc bądź\n       delikatny...”
+m188.26	text	Tak, wiem.\nNie jesteś tak lubieżna ani odrażająca, jak myślisz. Spokojnie, jesteś śliczną, piękną dziewczyną... Trochę zaboli, wytrzymaj.
+m188.30	text	Yuki: „Jak się cieszę... Tylko ty mówisz mi takie rzeczy, panie\n       Murakumo.”
+m188.32	text	Powoli wsuwam się w Yuki.\nW ciasnym wnętrzu miękkie fałdki ocierają się o mnie, przywierają i otulają moją żołądź, jakby nie chciały jej puścić.
+m188.36	text	Yuki: „Aaa-ach! To... to niesamowite... Murakumo jest w Yuki-i.”
+m188.38	text	Yuki odruchowo czepia się moich pleców i wbija w nie paznokcie.\nTo, co weszło w nią po nasadę, wysuwam powoli aż do wejścia, całe oblepione sokami, i wsuwam głęboko, jakbym smakował każdą fałdkę – raz za razem.
+m188.42	text	Yuki: „Aach. Ja... właśnie staję się twoja, Murakumo.”
+m188.44	text	Całuję szyję kurczowo wtulonej we mnie Yuki, a ona aż drga.\nNa białej szyi rozsypują się płatki wiśni.
+m188.47	text	Murakumo: „Jesteś moja, Yuki. Nikomu cię nie oddam!”
+m188.49	text	Odsuwam się trochę, biorę między palce różowe czubki piersi, falujących w rytm płytkiego oddechu, i ugniatam je czule.
+m188.52	text	Yuki: „Aa-ach... aach, jak się cieszę...”
+m188.54	text	Różowe czubki ściśnięte między palcami zaczynają twardnieć, a ja czuję żar jej rozpalonego ciała.
+m188.57	text	Biodra Yuki unoszą się i przywierają do mnie, jakby chciały mnie wessać.
+m188.59	text	Yuki: „Murakumo... pocałuj Yuki...”
+m188.61	text	Wpijam się zachłannie w usta Yuki, a jej język jak wisienka oplata mój.\nPiersi barwią się na różowo i falują w rytm oddechu.\nKradnąc sobie nawzajem pocałunki, wchodzę w nią mocnym pchnięciem.
+m188.65	text	Yuki: „Ach... mmm. Och... oo-och... haa-ach...”
+m188.67	text	Łechtaczka nabrzmiewa jak czerwona perła i lśni od soków, a z głębi Yuki wypływa ich tyle, że na prześcieradle rośnie wielka plama.
+m188.71	text	Wiesz, Yuki...\nKocham cię od pierwszego spotkania.\nMoże od zawsze chciałem kochać taką prostolinijną dziewczynę jak ty...
+m188.77	text	Aa-ach, jakie to... cudowne.\nMurakumo, wolno mi być szczęśliwą... ha... aa-ach
+m188.80	text	Murakumo: „Tak, bądźmy razem szczęśliwi. Już zawsze razem!”
+m188.82	text	Yuki, wtulona we mnie, drży całym ciałem i zaciska ramiona, szukając jeszcze ciaśniejszej bliskości.\nGdy stykamy się śliską od potu skórą, wyraźnie czuję jej przyspieszony oddech, a nawet bicie serca.
+m188.87	text	Szparka i łechtaczka Yuki, oblepione obfitym miodem, lśnią w blasku ognia z kominka.\nLabia otulają mojego penisa, który zanurzył się w niej aż po nasadę.
+m188.91	text	Zdaje się, że uczucie obcego ciała w podbrzuszu Yuki gdzieś zniknęło.\nZ jej twarzy schodzi cień bólu, a w opuszczonych brwiach i odchylonej do tyłu białej szyi widać już nawet upojenie.
+m188.95	text	Yuki: „Aaach... Murakumo jest we mnie... nie chcę się odrywać...”
+m188.97	text	Smukłe nogi Yuki instynktownie oplatają mi biodra, jakby chciały wciągnąć mnie choć trochę dalej, we wnętrze mokre od miodu.
+m188.100	text	Nasze złączone ciała topnieją i mieszają się ze sobą...\njak jedno zwierzę, które pragnie rozkoszy, wydziera ją sobie i zarazem nią obdarowuje.
+m188.103	text	Murakumo: „Niesamowite! Chcę cię czuć jeszcze mocniej, Yuki,\n           chcę, żebyś w moich ramionach czuła rozkosz!”
+m188.105	text	Ciało płonie żarem. Zdyszane jęki Yuki palą mi serce.
+m188.108	text	Yuki też czuje-e... aaa-ach, jeszcze, jeszcze, chcę czuć Murakumo,\ntylko Murakumo-o-o!!
+m188.111	text	Jej oblepione miodem pośladki napinają się, a ona zaciska się na mnie jeszcze mocniej.\nUsta ma na wpół otwarte, widać białe zęby, a oczy straciły ostrość i patrzą tylko na mnie.
+m188.115	text	Ach, aach, Yuki jest... Yuki jest twoja, Murakumo...\nMurakumo-o, aaach! Murakumo-o! Haa-ach, aa-ach...
+m188.118	text	Murakumo: „Ach... Yuki, jaka ty jesteś cudowna...”
+m188.120	text	Każdy mój ruch rozbłyska w ciele Yuki i zamienia się w rozkosz, a jej miękki uścisk roztapia mnie...\nMiędzy jej brwiami rysuje się zmarszczka, twarz nabiera wyrazu upojenia: Yuki jest pijana rozkoszą.
+m188.125	text	Ciałem i duszą Yuki jest twoja, Murakumo, oddaję ci całą siebie...\nZawładnij całą Yuki.
+m188.128	text	Yuki przywiera do mojej prawej ręki ze znamieniem i wodzi językiem jak wisienka po wzorze cierni. Od tej zmysłowości mam dreszcze.
+m188.131	text	Yuki: „Murakumo-oo, wolno mi... kochać cię nad życie...??”
+m188.133	text	Murakumo: „Wolno ci, Yuki! Ja też kocham cię nad życie, kocham\n           cię, słyszysz?!!”
+m188.135	text	Wbijam się w Yuki gwałtownie i pcham ją coraz bliżej szczytu.\nMięsiste fałdki oplatają mnie, a pochwa z kobiecego instynktu zaciska się rytmicznie na mojej męskości, oblepionej miodem Yuki, jakby chciała doprowadzić ją do wytrysku...
+m188.140	text	Haa, haa, haa, haa... Murakumo... czuję... aa-ach,\nwe mnie jest coraz więcej Murakumo-o-o...
+m188.143	text	Murakumo: „Aach... Yuki, czuję cię...”
+m188.145	text	Yuki: „Ja... chcę mieć z tobą dziecko, Murakumo...”
+m188.147	text	Murakumo: „Yuki! Aa-aach! Już cię nie puszczę, Yuki, moja Yuki,\n           tylko moja!!”
+m188.149	text	Bezwiednie ściskam Yuki tak mocno, że mogłaby się złamać.
+m189.1	text	Mmm-och... ja... ja też czuję-ę! Murakumo-o!\nCzuję, czuję, co... coś... aaaaach!\nProszę-ę, dojdź we mnie! Dojdź w moim ciele-e...!!
+m189.6	text	Aaaach, Yuki! Kocham cię nad życie!\nJesteś moja, Yuki. Nikomu cię nie oddam! Już nigdy cię nie puszczę!\nYuki, Yuki, Yuki-i...
+m189.10	text	Po plecach przebiega mi dreszcz i wlewam w Yuki gorące uczucie.\nBije prosto w samą głąb jej łona.\nYuki wygina się w łuk, a pot pryska z niej jak mgiełka.\nPodbrzusze drży w skurczach i tryskają z niej obfite soki.
+m189.16	text	Ach, kochany... jak się cieszę, aa-ach! Kochaj mnie jeszcze, kochaj...\nDochodzę... dochodzę-ę! Murakumo, kocham cię nad życie!\nKo... kocham cię nad życie-e! Aaaaaaach! Murakumo-o!!
+m190.0	text	Yuki: „Murakumo, nigdy więcej mnie nie puszczaj...”
+m191.0	text	Leżymy owinięci jednym prześcieradłem, skóra przy skórze, a Yuki w moich ramionach rozkoszuje się jeszcze ciepłem tej miłosnej chwili...\nPoprawiam jej potargane, przyklejone potem kosmyki.
+m191.4	text	Yuki: „Hm?”
+m191.6	text	Ogień w kominku powoli przygasa...
+m191.8	text	Murakumo: „Myślisz, że polubisz tutejsze życie?”
+m191.11	text	Ja... lubię tu być.\nBo ta okolica przypomina mi tamto miejsce☆
+m191.14	text	Murakumo: „Tamto miejsce?”
+m191.16	text	Domyślam się, o czym Yuki myśli,\nale celowo udaję, że nie wiem.
+m191.19	text	Yuki: „Co?! Zapomniałeś?!”
+m191.21	text	Yuki zerka na mnie spod rzęs z figlarną złością.
+m191.23	text	Murakumo: „Z taką minką też jesteś śliczna, Yuki☆”
+m191.25	text	Yuki: „Oj, ty! Zawsze się tak wykręcasz...!”
+m191.27	text	Nadyma się lekko i szczypie mnie w rękę.
+m191.29	text	Murakumo: „Yuki... au, au!”
+m191.31	text	Murakumo: „Ale wiesz, Yuki, najśliczniejsza byłaś...”
+m191.33	text	Yuki patrzy na mnie zdziwiona, szeroko otwierając okrągłe oczy.
+m191.35	text	Murakumo: „Tak naprawdę wtedy, kiedy pierwszy raz cię\n           pocałowałem☆”
+m191.37	text	Yuki: „Złośliwiec... To nie fair.”
+m191.39	text	Bezwiednie przywiera do mojej piersi i, cała czerwona, spuszcza głowę.
+m191.42	text	Ja też, wiesz. Wybrałem to miejsce, bo przypominało mi tamten mały domek z bali w parku leśnym.
+m191.45	text	Yuki, jakby coś sobie uświadomiła, zaciska palce na prześcieradle.
+m191.48	text	Więź naszych serc zaczęła się właśnie od tamtej chwili.\n...Yuki, co się stało? Pokaż mi buzię.
+m191.51	text	Biorę Yuki pod brodę i delikatnie unoszę jej twarz...
+m191.53	text	Yuki: „Ach...”
+m191.55	text	Z oczu Yuki, zwróconych ku mnie, spływają po policzkach wielkie łzy...\nOd razu widać, że to nie są łzy smutku.
+m191.58	text	Yuki: „Więź naszych serc zaczęła się właśnie tam, prawda?
+m191.60	text	       ...Murakumo, pocałuj mnie...”
+m191.62	text	Jaka ona jest kochana, kiedy tak prosi o pocałunek.
+m191.64	text	Yuki zamyka oczy, a ja przykładam wargi do jej warg.\nPowoli, cicho, żeby ta chwila nigdy się nie skończyła...
+m192.0	text	Murakumo: „...Hm?”
+m192.2	text	Odzyskałem przytomność w tępym, ćmiącym bólu...\nRęce i nogi nie chciały się ruszyć. W piersi dziwnie brakowało mi tchu...\nPowoli uniosłem powieki, ciężkie jak z ołowiu, i...
+m192.6	text	Zobaczyłem mroczny betonowy sufit. Ręce i nogi, jak można się było spodziewać, miałem unieruchomione czymś w rodzaju pasów.\nLeżałem na łóżku z regulowanym oparciem, w samej cienkiej szpitalnej koszuli...
+m192.10	text	Po jakimś czasie...\nDrzwi naprzeciwko otworzyły się i do ciasnego betonowego pokoiku weszli mężczyzna i kobieta.
+m193.0	text	Murakumo: „Konował Kusanagi i metalowa baba Reiko!”
+m193.2	text	No tak... Czyli dałem się złapać.
+m193.5	text	Proszę, proszę. Zaskakująco dobrze się trzymasz.\nDoktor zadał sobie trud, żeby cię wyleczyć, a ty jak zawsze niegrzeczny.
+m193.8	text	Żebra i nogę miałem wyleczone.\nAle kiedy dobrze się przyjrzałem, zobaczyłem, że pierś mam jakoś nienormalnie nabrzmiałą!
+m193.11	text	Murakumo: „Jeszcze gorzko pożałujecie, że mnie nie zabiliście☆”
+m193.14	text	Rzecz w tym, że dostrajane lalki bojowe zgwałciły na śmierć nasze panienki, żywe narkotyki,\ni teraz jest ich za mało...
+m193.18	text	Murakumo: „Pewnie chcecie mnie do czegoś zaprząc, ale ja\n           grzecznie podziękuję.”
+m193.20	text	Reiko: „Na pomoc czeka pan na próżno. Ta sprawa wyszła już z rąk\n        Toanu i trafiła do ludzi z policji stołecznej, których\n        mamy w kieszeni.
+m193.23	text	        Pewnie już zrobili sprawcę z byle jakiego bandziorka i\n        sprawa rozwiązana.”
+m193.26	text	Murakumo: „Tss.”
+m193.29	text	A poza tym twoje ciało jest już w połowie przerobione tak, jak nam wygodnie.
+m193.32	text	Mówiąc to, Reiko zdarła ze mnie szpitalną koszulę.\nPod spodem nie miałem nawet majtek: byłem zupełnie nagi.
+m193.35	text	Murakumo: „A to co?!”
+m193.37	text	Piersi miałem już wcześniej, bo brałem zastrzyki z żeńskich hormonów i tak dalej...\nAle teraz miałem tam olbrzymi biust jak dwie piłki do koszykówki.\nW sutkach wielkości małego palca tkwiły kolczyki.
+m193.42	text	Ha, ha, ha, ha!\nZ takimi nie da się nawet założyć rąk na piersi.\nA te kółeczka są do podwieszania pod sufitem, żeby nie obwisły?
+m193.46	text	Kusanagi: „Jak można się było spodziewać, takie drobiazgi go nie\n           ruszają.”
+m193.49	text	Teraz jeszcze operacja, która zrobi z ciebie żywy narkotyk, i będziemy mieli gotową seksualną zabawkę wyłącznie do oralu, hiszpanki i ana○u☆
+m193.53	text	No cóż. Choćby był pan nie wiadomo jak twardy psychicznie, kiedy się z nią zobaczy, pewnie zmieni pan zdanie.
+m193.56	text	Kusanagi z trzaskiem pstryknął palcami.
+m193.58	text	W drzwiach ukazała się jakaś kobieta...
+m194.0	text	Murakumo: „Yuki?”
+m194.2	text	Yuki powoli weszła do pokoju. Wyglądała na trochę wymizerowaną, a kaftan bezpieczeństwa z wycięciami na piersi i krocze kusił zmysłowo. Przymocowany sztuczny penis, nabrzmiały wypukłymi żyłami, sterczał wściekle.
+m194.7	text	Murakumo: „Hej, Yuki! Ocknij się!!”
+m194.9	text	Yuki: „Murakumo-o... Ze mną... wszystko dobrze-e.”
+m194.11	text	Osłupiałem, słysząc te słowa z ust Yuki, która patrzyła pustym wzrokiem...
+m194.13	text	Kusanagi: „Yuki, pora na posiłek. Częstuj się panem Murakumo.”
+m194.15	text	Yuki: „...Tak... mój panie.”
+m194.17	text	Yuki podeszła chwiejnie, oblizując się, i bez cienia wahania wzięła mój penis do ust.\nDawnej Yuki nie dałoby się w takiej scenie nawet wyobrazić...
+m195.0	text	Yuki lizała mnie z mlaskaniem, a w głowie powoli mi się mąciło.
+m195.2	text	Murakumo: „Wy gnoje! Coście zrobili Yuki?!!”
+m195.5	text	Poprosiłam doktora, żeby przerobił ją na mój osobisty żywy narkotyk☆
+m195.8	text	Moja świadomość była już w niewoli Virgin Angel, który wydzielały usta Yuki.\nCzy mnie też, tak jak Yuki, przerobią na żywy narkotyk??\nPomoc raczej nie nadejdzie, a ucieczka wygląda na trudną...\n...Myślałem o tym tępo, jak otumaniony.
+m195.14	text	Świadomość z wolna odpływała i coraz mniej chciało mi się o tym nawet myśleć...
+m196.0	text	Yuki: „Mmm-m... Cmok, cmok, cmok...”
+m196.2	text	Z bezwstydnym mlaskaniem drobne usteczka Yuki ssały mój penis, który jeszcze nie stanął.
+m196.5	text	Murakumo: „Hej, Yuki, oprzytomniej!”
+m196.7	text	Yuki: „Mmm-mmm... Liz, liz, liz... Mmmf...”
+m196.9	text	Yuki w ogóle nie słuchała, co mówię: w zapamiętaniu ugniatała mi jądra, wodziła językiem jak wisienka po trzonie, to znów brała żołądź do ust i obracała ją w nich językiem...
+m196.13	text	Yuki: „Aa-ach... fiu○ek Murakumo robi się twardy-y.”
+m196.15	text	Yuki usługiwała mi ustami tak podniecająco, że mimo woli się wiłem.\nMęski instynkt powoli podnosił głowę.\nNie wytrzymałem i wrzasnąłem na cały głos.
+m196.19	text	Murakumo: „Nie, Yuki!! Przestań! Dość tego, przestań wreszcie!!”
+m196.21	text	Jeszcze przed chwilą mlaskała bezwstydnie.\nTeraz oderwała usta od mojego penisa i spojrzała mi w twarz...\nW jej wilgotnych oczach zebrały się łzy i spłynęły perłowymi kroplami.
+m196.25	text	Yuki oprzytomniała!
+m196.27	text	Murakumo: „Yuki?! Oprzytomniałaś?”
+m196.30	text	Murakumo, nie lubisz mnie?\nA Yuki bardzo cię kocha, Murakumo, kocha cię nad życie...\nWięc wiesz, ja...
+m196.34	text	Yuki: „...Chcę się napić spermy Murakumo...”
+m196.36	text	Murakumo: „...Yuki.”
+m196.39	text	Przed chwilą piłam spermę wielu ludzi... ale chcę się napić spermy Murakumo, którego kocham najbardziej na świecie. Na pewno jest najsmaczniejsza na świecie...☆\nNo, daj mi spermy-y.
+m196.44	text	To mówiąc, białymi palcami szybko obrabiała mój penis, a potem znów wessała go w głąb gardła, aż po nasadę.\nZaciskała żołądź języczkiem.
+m196.49	text	Mgh, mgh, mgh, mmm, mmm, mmm... haa-ach\nCmok, cmok, daj Yuki spermy-y-y
+m196.52	text	Z wprawą prostytutki doprowadzała mnie do wytrysku.\nTamtej Yasaka Yuki, czystej, nieprzystępnej i tak poważnie oddanej pracy, już tam nie było.
+m196.56	text	Murakumo: „Yuki, proszę cię... oprzytomniej...”
+m196.59	text	Proszę dać sobie spokój, panie Murakumo.\nTej dziewczynie wszczepiono w mózg bioczip SI do kontroli umysłu.
+m196.63	text	Murakumo: „Ty gnoju! Żeby tej dziewczynie zrobić nawet coś\n           takiego...”
+m196.66	text	Dla niej jedzenie i wydalanie wiążą się teraz wyłącznie z seksem. Przez trzy dni, kiedy byłeś nieprzytomny, nie miała w ustach niczego poza ejakulatem dostrajanych lalek bojowych i moją wydzieliną... Hi, hi, hi
+m196.71	text	Kiedy słuchałem obłąkanych wywodów Kusanagiego i spółki, chwilami mąciło mi się w głowie i odpływała mi świadomość.
+m196.75	text	Cmok... Fi○t Murakumo tak cudnie drga-a-a,\nno-o, daj szybko Yuki do buzi\nspermy Murakumo... Mmmf
+m196.79	text	Murakumo: „Ach!”
+m196.81	text	Mój anu○ przeszyło nagłe doznanie.\nGibkie, białe palce Yuki wdzierały się w zaciśniętą dziurkę.\nKiedy patrzyłem, jak Yuki ze sprośną miną ssie mój członek i jak ten, oślizgły od śliny, wsuwa się i wysuwa z jej ust,
+m196.86	text	miałem ochotę dać się wciągnąć w ten wir doznań.
+m196.88	text	Yuki: „Siorb, siorb, siorb, siorb...”
+m196.90	text	Coraz gwałtowniej poruszała głową w górę i w dół i bezwstydnie pchała mnie coraz bliżej szczytu.\nWzdłuż kręgosłupa przeszedł mnie dreszcz.
+m196.93	text	Murakumo: „Och... mmh! Aaaaaaa!!”
+m196.95	text	Drg! Drg! Drrg!!
+m196.97	text	Eksplodowałem gwałtownie w ustach Yuki i trysnąłem obficie.\nCały mętnobiały, lepki płyn\nprzyjęła gardłem i przełknęła głośno, haust za haustem.
+m196.101	text	A potem, z ekstazą na twarzy, cmokając, ssała otworek na czubku, żeby wyssać nawet resztki ejakulatu z głębi cewki.
+m196.104	text	Murakumo: „Haa, haa, haa, haa...”
+m196.107	text	Cmok!\nMurakumo-o, kochany, twoja sperma jednak smakowała najlepiej.
+m196.110	text	Murakumo: „...Yuki.”
+m197.0	text	Yuki weszła na łóżko i stanęła nade mną okrakiem. Z półotwartej, pionowo rozciętej mięsnej dziury kapał półprzezroczysty płyn.\nChoć przed chwilą tak gwałtownie wytrysnąłem, to – dlaczego? – moja męskość znów stała twardo.
+m197.5	text	Yuki: „Ach... A teraz daj mi do pi○dy.”
+m197.7	text	Rozchylając palcami swój lubieżny otwór, opuściła biodra.
+m198.0	text	Chlup, chlup, chlup, chlup...
+m198.2	text	Zaczerwienione, otarte do żywego podbrzusze Yuki, wydzielające sprośną woń, otuliło moją żołądź...\nTamta różowa jak kwiat wiśni, niewinna, szczelnie zamknięta szparka należała już do przeszłości.
+m198.6	text	Kiedy pomyślałem, co ją spotkało przez te trzy dni, gdy byłem nieprzytomny,\nścisnęło mi się serce...
+m198.10	text	Aa-ach, Murakumo-o, cudownie-e... kocham cię nad życie-e...\nProszę,\nniech Yuki dojdzie, niech dojdzie na fiu○ku Murakumo-o
+m198.14	text	Wijąc się, ocierała się łech○aczką i kołysała biodrami w przód i w tył.
+m198.17	text	Nie, Yuki... Przecież ty nie jesteś taka...\nJeszcze nie jest za późno. Prze... przestańmy już.
+m198.21	text	Nieprawda-a, Murakumo-o...\nJa uwielbiam seks. Uwielbiam, jak mi dobrze-e.\nUwielbiam lizać fi○ty, uwielbiam, jak mnie pieprzą, uwielbiam świństwa.
+m198.26	text	Hi, hi, hi... Nic z tego. Ta dziewczyna zrobiła się już całkiem zabawką do seksu.\nA i na ciebie Virgin Angel chyba już zaczyna działać, nieprawdaż?
+m198.31	text	To przez to chwilami mąciło mi się w głowie i chciałem poddać się tym doznaniom...!\nPiękny żywy narkotyk wił się w szale rozkoszy, a jej piersi gwałtownie podskakiwały.
+m198.35	text	Murakumo: „Wy dranie! Przerobiliście Yuki... na żywy narkotyk...!”
+m198.38	text	Kiedy obiecałem, że daruję panu życie, bez namysłu poddała się operacji przerabiającej ciało.
+m198.42	text	Ma w sobie coś uroczego, ta dziewczyna.\nKiedy zagroziłam, że cię zabijemy, uczyła się oralu i ana○u jak opętana. Tyle że teraz ma w głowie tylko seks, aż po najgłębsze zakamarki.
+m198.46	text	Murakumo: „...Yuki.”
+m198.49	text	No-o, mniejsza z tym... Spuść się w Yuki, w samą pi○dę,\ni niech Yuki dojdzie-e, no-o, Murakumo-o
+m198.52	text	Yuki obrabiała na pokaz ręką groteskowo nabrzmiały sztuczny penis, wszczepiony w jej krocze,\ni próbowała wciągnąć mnie do obłąkanego świata.
+m198.56	text	Może przez narkotyk nie potrafiłem już trzeźwo osądzać...\nTylko że Yuki, która dla mnie stoczyła się w świat rozpusty,\nz wolna stawała mi się coraz droższa...
+m198.61	text	Aa-ach, czuję to-o... z fiu○kiem Murakumo jest mi tak dobrze...\nAaach, dochodzę, dochodzę, dochodzę, dochodzę, dochodzę-ę-ę
+m198.64	text	W chwili, gdy pomyślałem, że Yuki jest mi droga,\nserce zaczęło mi walić jak młotem.
+m198.67	text	Murakumo: „Ha-aa, haa, haa, haa...”
+m198.70	text	Jak się cieszę... Murakumo, tobie jest dobrze z moim ciałem...\nAch, razem... dojdź razem ze mną... haaa-ach!\nAaaach! Do... dochodzę! Dochodzę-ę-ę!!
+m198.74	text	Lubieżny otwór Yuki zacisnął się jak imadło i doprowadził mnie do drugiego wytrysku...\nPo plecach przeszedł mi dreszcz rozkoszy i mimowolnie pchnąłem biodrami w górę.
+m198.77	text	Murakumo: „Ach... n-nie... nie wytrzymam... och... mmmmmh!!”
+m198.79	text	Łup!
+m198.81	text	Łup! Łup! Łup!
+m198.83	text	Biodra spoconej Yuki zwiotczały i jej ciało osunęło się na mnie.
+m199.0	text	Yuki, dysząc ciężko, z mlaśnięciem wysunęła mój członek ze swojej kobiecości. Z jej na wpół rozwartego lubieżnego otworu po udach spływał biały śluz: wydzielina Yuki zmieszana z moim ejakulatem.\nReiko przyglądała się temu z uśmieszkiem.
+m199.6	text	Szczęściara z ciebie, Yuki. Mogłaś uprawiać seks z ukochanym.\nA teraz, dla odmiany, zgwałćże Murakumo.
+m199.9	text	Yuki skinęła głową.
+m199.11	text	Reiko: „Jak mówi doktor, czułość nerwów w jego cycuszkach\n        ustawiono tak, że piersi czują jak labia, a sutki jak\n        łech○aczka.
+m199.14	text	        To, co ma na piersi, to jedna wielka pi○da. Podręcz ją\n        swoim penisem, Yuki, niech ma.”
+m199.17	text	Yuki posłusznie wsunęła sztuczny penis między olbrzymie piersi, które mi przyprawiono.\nI powoli się ocierając, zaczęła robić mi hiszpankę.
+m199.21	text	Murakumo: „Ach...”
+m199.23	text	Cycki czuły to samo co wagina i mimo woli zacząłem się wić.\nA w następnej chwili!!
+m200.0	text	Pryy-y-ysk!\nZ sutków moich podrażnionych olbrzymich piersi trysnął półprzezroczysty śluz.
+m200.3	text	Murakumo: „Och... Aaaaaaa!!”
+m200.5	text	Porażony tym, co się stało, i rozpaczliwą rozkoszą, która przeszyła mnie całego, wrzasnąłem. Ciało samo wygięło się w łuk i wiło.\nYuki, posłuszna swojej żądzy, obrabiała sztuczny penis moim olbrzymim biustem.
+m200.9	text	Prysk, prysk, pryy-ysk!
+m200.11	text	Za każdym razem, gdy z czubków ogromnych, przekłutych kolczykami sutków tryskało bez końca coś jak żel nawilżający, miotałem się w drgawkach i krzyczałem bezwstydnie.
+m200.15	text	Murakumo: „Aaach!! C-co to... mmaaach!!”
+m200.17	text	Yuki: „Haa-ach! Cycki Murakumo są nie... niesamowi-i-ite!”
+m200.19	text	Cały umazany tryskającym bez końca żelem, wspominałem chwilę, gdy Reiko pierwszy raz zmusiła Yuki do wytrysku.
+m200.22	text	Czy Yuki czuła wtedy ten sam niepokój co ja teraz, jakby ziemia usuwała się spod nóg, gdy ktoś zmienia cię w potwora, którego sam nie znasz?
+m200.25	text	Myślałem o tym,\ngwałcony przez Yuki i przez Virgin Angel...
+m200.28	text	Przez narkotyk coraz mniej chciało mi się o tym nawet myśleć...
+m200.30	text	Kiedy pieściła mi piersi albo dręczyła sutki z kolczykami, ciało przeszywały doznania, od których można było oszaleć. Przygnieciony przez Yuki, za każdym razem, gdy przeszywał mnie ten paraliżujący wstrząs, tryskałem raz za razem, drżałem i szlochałem na głos.
+m200.35	text	Gwałcony przez narkotyk, z umysłem tonącym w chaosie niewiarygodnej rozkoszy...
+m200.37	text	sam nie wiem kiedy, zacząłem pragnąć już tylko jednego: czuć Yuki.
+m200.40	text	Haa, haa, haa, cycki Murakumo są takie gładziutkie, cudowne-e...\nFiu○ek Yuki robi się coraz większy-y!
+m200.44	text	Aach, aach, Yu... Yuki, Yuki, Yuki!!\nTo ty jesteś cudowna... Z twoim ciałem, Yuki, jest mi tak dobrze-e...
+m200.47	text	Yuki: „Haa-aach, Murakumo-o, jak się cieszę...”
+m200.49	text	Nasze ciała były już całe umazane żelem, który trysnął z moich sutków; zwłaszcza sztuczny penis Yuki, ciasno wciśnięty między piersi, lśnił od żelu, a jego żołądź nabrzmiała do granic.
+m200.53	text	...Ani się obejrzałem, jak zdjęto mi kajdany z rąk i nóg i postawiono mnie na czworakach.\nWciąż targany falami rozkoszy, trząsłem się cały i ledwo mogłem się utrzymać.
+m200.57	text	Yuki chwyciła mnie od tyłu\ni zaczęła ocierać umazany żelem sztuczny penis o mój anu○.
+m200.60	text	Yuki: „Murakumo-o, spodoba ci się mój fiu○ek?”
+m201.0	text	To mówiąc, Yuki wbiła się we mnie jednym pchnięciem.\nUmazany żelem penis wdarł się w mój anu○.
+m201.3	text	Chlup!!
+m201.5	text	Murakumo: „Ha... ach... aaach... aaach...”
+m201.7	text	Odruchowo zacisnąłem mięśnie odbytu na wepchniętym we mnie obcym ciele.\nZakleszczyłem penis Yuki.
+m201.10	text	Murakumo: „T... tam nie... aach!”
+m201.13	text	Ach... aa-ach,\ntyłeczek Murakumo tak mnie ściska-a... aach, cudownie.
+m201.16	text	Yuki, jakby się delektowała, wsuwała go aż po nasadę, a potem powoli wysuwała, aż żołądź zaczepiła o zwieracz.\nTak mój odbyt obrabiał jej trzon.
+m201.21	text	Haa-ach, nie, Murakumo-o, jak tak mocno ściskasz...\nfiu○kowi Yuki jest za dobrze,\nzaraz dojdę-ę-ę...
+m201.26	text	We... we mnie... aaach... wcho... wchodzi...\nmm, wchodzi... coś takiego... mmmh! Ach! Aaach!
+m201.29	text	Część Yuki pulsowała we mnie, drgając raz po raz.\nW rytm tych uderzeń kręgosłup przeszywały mi mrowiące dreszcze.
+m201.32	text	Murakumo: „Haa... aaach... Yuki...”
+m201.35	text	Aach, aach, aach, aach... Murakumo, ty też to czujesz...\nKocham cię-ę... Murakumo... zrób, żebym doszła-a
+m201.38	text	Zaczęła jeszcze gwałtowniej kołysać biodrami.\nKusanagi i Reiko przyglądali się nam i o czymś rozmawiali.
+m201.41	text	Wyglądało na to, że naradzają się, jaką seksualną zabawkę ze mnie zrobić.\nAle w głowie miałem już taką roztopioną papkę, że było mi wszystko jedno.
+m201.45	text	Aaaach... Proszę, Murakumo-o, kochany, kocham cię,\ntak bardzo cię kocham, więc wypij moją spermę dziurką w pupie...\nProszę!!
+m201.49	text	Wyginałem plecy pod doznaniami, które dawał mi olbrzymi penis Yuki, a mój mózg przez Virgin Angel całkiem się już roztopił.
+m201.52	text	I dlatego mimowolnie, drżącym głosem, wyrzuciłem z siebie:
+m201.55	text	Yuki, ja też cię kocham!\nAaaaa, Yuki, Yuki, Yuki!!
+m202.0	text	Yuki: „Aach, jak się cieszę... Murakumo powiedział... że mnie\n       kocha, że kocha... powiedział, że mnie kocha, mnie,\n       taką...
+m202.4	text	       mnie, która zrobiła się zabawką tylko do seksu... Aaaaach,\n       Murakumo-o-o-o!”
+m202.7	text	Poczułem, że twarz mi płonie...\nYuki ani trochę się nie zmieniła...\nSprośne słowa, bezwstydne kuszenie mężczyzn – po prostu tańczyła, jak jej zagrał narkotyk.
+m202.11	text	Sama Yuki też była zraniona tym, w co się zmieniła.\nW chwili, gdy to zrozumiałem,\nYuki wydała mi się aniołem o połamanych skrzydłach, całym poranionym...
+m202.16	text	Ciebie kocham, rozumiesz?! Jak raz to za mało, będę to powtarzał sto razy, tysiąc razy!
+m202.19	text	Yuki: „Aaaaaaach...”
+m202.21	text	Drg, drg, drg.
+m202.23	text	Poraniony anioł eksplodował we mnie.\nKrzyk Yuki wsiąkał we mnie i rozpuszczał się w całym moim ciele...
+m203.0	text	A gdy szczyt minie, oboje spowije czarna jak smoła rzeczywistość...
 m204.0	text	Zapisać grę?
 m205.0	text	Nieprawidłowy zapis.
-m206.0	text	
-m206.2	text	
-m206.4	text	
-m206.7	text	
-m206.9	text	
-m206.13	text	
-m206.17	text	
-m206.19	text	
-m206.21	text	
-m206.25	text	
-m206.28	text	
-m207.0	text	
-m207.3	text	
-m207.5	text	
-m207.7	text	
-m207.9	text	
-m207.11	text	
-m207.13	text	
-m207.16	text	
-m207.20	text	
-m207.23	text	
-m207.25	text	
-m207.29	text	
-m207.31	text	
-m207.35	text	
-m207.37	text	
-m207.39	text	
-m207.41	text	
-m207.43	text	
-m207.46	text	
-m208.0	text	
-m208.3	text	
-m208.5	text	
-m208.8	text	
-m208.11	text	
-m208.15	text	
-m208.18	text	
-m208.21	text	
-m208.23	text	
-m208.25	text	
-m208.28	text	
-m208.30	text	
-m208.32	text	
-m208.36	text	
-m208.38	text	
-m208.40	text	
-m208.42	text	
-m208.45	text	
-m208.47	text	
-m208.52	text	
-m208.54	text	
-m208.56	text	
-m208.58	text	
-m208.61	text	
-m208.64	text	
-m208.66	text	
-m208.69	text	
-m209.0	text	
-m209.2	text	
-m209.6	text	
-m209.8	text	
-m209.11	text	
-m209.13	text	
-m209.15	text	
-m209.17	text	
-m209.19	text	
-m209.21	text	
-m209.23	text	
-m209.25	text	
-m209.28	text	
-m209.31	text	
-m209.36	text	
-m209.39	text	
-m209.41	text	
-m209.44	text	
+m206.0	text	Dziewczyna: „B-błagam... Niech mnie pani puści...”
+m206.2	text	Kobieta: „......”
+m206.4	text	Dziewczyna: „Nigdy nikomu nie zdradzę tajemnicy! Dlatego...\n             błagam, niech mnie pani puści!”
+m206.7	text	Kobieta: „......”
+m206.9	text	Dziewczyna: „Jeśli codziennie... codziennie będą mnie zmuszać do\n             seksu z tymi mężczyznami jak potwory, to ja... ja\n             oszaleję. Nie chcę już tego!”
+m206.13	text	Kobieta: „Ach tak? Czyżby...? Czy aby nie marzysz po cichu, żeby\n          gwałciło cię mnóstwo penisów, i dlatego masz pi○dę\n          mokrą, aż się lepi?”
+m206.17	text	Dziewczyna: „N-nie... to nieprawda!”
+m206.19	text	Kobieta: „Kłamiesz! Pokażże mi tę lepką, umazaną pi○dę!”
+m206.21	text	Kobieta ma około 180 cm wzrostu. Jej bujne ciało opina skórzany kombinezon.\nDziewczyna to piękna młoda kobieta, niewiele po dwudziestce.
+m206.25	text	Kobieta chwyta garścią kołnierz złocistożółtej sukienki dziewczyny, a gdy ta się szarpie i opiera, od niechcenia wymierza jej siarczysty policzek...
+m206.28	text	Sparaliżowana strachem dziewczyna kuli się\njak małe zwierzątko w szponach jastrzębia...
+m207.0	text	Trrrach! Trrrrrrrach!! Odgłos rozdzieranego materiału niesie się po „slumsach Trzynastki”, przez które biegnie trasa 357...
+m207.3	text	Dziewczyna: „Aaaaaaa!”
+m207.5	text	Bezdomny A: „Co... co jest, ludzie?”
+m207.7	text	Bezdomny B: „Eeej... Patrzajcie no tam!”
+m207.9	text	Bezdomna C: „Ejże! Przecież ta dziewucha jest goła-a!”
+m207.11	text	Bezdomny A: „Ho, ho, ale gratka. Popatrzym se troszkę, co?”
+m207.13	text	Bezdomni, którzy tu i ówdzie grzali się przy ogniskach w beczkach, słyszą krzyk i schodzą się zewsząd.
+m207.16	text	Dziewczyna, z której zdarto wszystko oprócz drogiej koronkowej bielizny, kuli się na ziemi.\nNad nią góruje wysoka kobieta.
+m207.20	text	Kobieta: „I jak? Takiej niewolnicy seksualnej jak ty do twarzy w\n          takim stroju. Hi, hi, hi, hi...”
+m207.23	text	Dziewczyna: „Już dość... niech mnie pani nie poniża, błagam!”
+m207.25	text	Kobieta: „Ach tak?... Czyżby? Tak ci przerobili pi○dę, że im\n          bardziej się wstydzisz, tym mocniej się podniecasz i\n          tym obficiej ciekną z niej soki miłości☆”
+m207.29	text	Dziewczyna: „Nie-e... mmm...”
+m207.31	text	Z pogardą pastwi się butem nad najczulszym kielichem dziewczyny.\nCzubek buta zagłębia się między ścianki... wylewa się gęsta ciecz!\nRozlega się obleśne mlaskanie, tak głośne, że słyszy je nawet ona.
+m207.35	text	Dziewczyna: „Ach... mmm. Nie, nie-e...”
+m207.37	text	Kobieta: „Hm? Przyjemnie ci, prawda?”
+m207.39	text	Dziewczyna: „N-nie, to... nieprawda.”
+m207.41	text	Kobieta: „Proszę nie kłamać! Już ponad połowę czubka buta\n          połknęłaś.”
+m207.43	text	Wpycha but coraz mocniej, coraz głębiej.\nDziewczyna wygina plecy w łuk i krzyczy, przeszyta gwałtownym doznaniem.
+m207.46	text	Dziewczyna: „Hii... aaaaaaa-ach!!!”
+m208.0	text	Kobieta bez wysiłku, jedną ręką, chwyta dziewczynę i podnosi, wskakuje razem z nią na maskę taksówki zaparkowanej nieopodal i czule szepcze jej do ucha...
+m208.3	text	Bezdomni, którzy zaczynają się zbierać dookoła, gwałcą wzrokiem wyuzdaną dziewczynę.
+m208.5	text	Kobieta: „Słuchaj... niechże ci brudni mężczyźni zobaczą, jaka z\n          ciebie bezwstydnica... Hi, hi, hi, hi...”
+m208.8	text	Dziewczyna: „Dla... dlaczego pani robi mi same takie... okrutne\n             rze... czy?! Bła... gam! Proszę już przestać...\n             b-błagam!”
+m208.11	text	Kobieta: „Nic z tego. Stres mnie rozdrażnił!! Muszę cię upokorzyć\n          i zamęczyć na śmierć, inaczej mi nie przejdzie!!\n          ...Hi, hi... Hm, hm, hm, hm, hm...... Szykuj się.”
+m208.15	text	Na masce samochodu kobieta brutalnie przyciąga dziewczynę od tyłu, wpija się w jej usta i lepko, natarczywie atakuje językiem ich wnętrze.
+m208.18	text	Dziewczyna z początku cała drżała... ale pod diabelskim pocałunkiem stopniowo się rumieni, a jej twarz przybiera wyraz rozmarzenia.
+m208.21	text	Kobieta: „No pro-oszę, chyba robi się coraz przyje-e-emniej,\n          nieprawdaż?”
+m208.23	text	Dziewczyna: „Aaa-ach...”
+m208.25	text	Kobieta odrywa usta od jej warg, obejmuje ją od tyłu i gładzi okrągłe wypukłości. Palce chwytają różowe czubki i powoli, sprężyście trącają je jak struny.
+m208.28	text	Kobieta: „Proszę, proszę, jakie twarde, sterczące sutki. Ależ z\n          ciebie bezwstydnica.”
+m208.30	text	Dziewczyna: „...Mm... mmmh...”
+m208.32	text	Ciało dziewczyny topnieje, nie jest już w stanie stawiać oporu.\nWzrok ma pusty i sama, sobie na hańbę, cichutko sięga ręką do krocza, które zaczyna już mięknąć od soków.
+m208.36	text	Kobieta: „Co ty wyprawiasz!”
+m208.38	text	Dziewczyna: „Hii!!”
+m208.40	text	Kobieta bystro wypatruje, co robi dziewczyna, i szczypie ją w sterczący sutek.
+m208.42	text	Kobieta: „Co za nieobyczajna dziewczyna. Skoro tak bardzo chcesz\n          się dotykać, to ja cię zgwałcę palcami, aż ci się w\n          głowie pomiesza☆”
+m208.45	text	Dziewczyna: „N-nie... nieee!”
+m208.47	text	Kobieta wykręca jej rękę i ją unieruchamia.\nOd tyłu, jakby gładziła pośladki, przesuwa dłoń między nogi.\nRozkoszując się sprężystym ciałem łona,\nwsuwa w mokry otwór jeden palec... potem drugi.
+m208.52	text	Dziewczyna: „Haa... ooo-och...”
+m208.54	text	Kobieta: „Przyjemnie ci, prawda? No, powiedzże to wyraźnie!”
+m208.56	text	Dziewczyna: „Haa... t-tak... przyjemnie mi-i...”
+m208.58	text	Bezdomni, którzy gwałcą ją wzrokiem, wytrzeszczają oczy i przechodzi przez nich szmer: „Oooch!”
+m208.61	text	Co za bezwstydnica. Przy tylu ludziach ciekną ci z pi○dy lepkie soki miłości, a ty jeszcze mówisz «przyjemnie mi»...
+m208.64	text	Na taką rozwiązłą dziewczynę jest sposób! O, tak!
+m208.66	text	Kobieta z mokrym mlaśnięciem wbija siłą w kielich dziewczyny pozostałe trzy palce.
+m208.69	text	...Nocne slumsy przeszywa krzyk...
+m209.0	text	Dziewczyna: „Aaaaaaaaa...!!”
+m209.2	text	Bezlitośnie rozwarta mięsna dziura, sącząc soki miłości, z mlaskaniem połyka dłoń kobiety aż po nadgarstek.\nBezdomni szemrzą na widok tak ostrego pokazu rozpusty.
+m209.6	text	Kobieta: „Chcesz mocniejszych podniet, nieprawdaż?”
+m209.8	text	Nie wyjmując ręki spomiędzy jej nóg, z niewiarygodną siłą unosi dziewczynę na jednym ramieniu i nabija ją kielichem na swoją rękę jak na pal.
+m209.11	text	Dziewczyna: „Aa-och... haa, aoch... aoch... mmaaaaaach!!”
+m209.13	text	Od tak gwałtownych doznań...
+m209.15	text	Ciurk... ciurk... ciurk, ciurk, ciurk... Szszszszszsz
+m209.17	text	Z cewki moczowej wypływają złote krople.
+m209.19	text	Kobieta: „Ach, tak ci przyjemnie, że aż się zsiusiałaś?”
+m209.21	text	Dziewczyna: „......”
+m209.23	text	Kobieta: „A odpowiedź?”
+m209.25	text	Napina wbitą rękę i jednym szarpnięciem pcha w górę: pośladki się unoszą i opadają pod własnym ciężarem.
+m209.28	text	I wtedy spada na nie kolejne pchnięcie.
+m209.31	text	Hiii!!!\nAch! P-przyjemnie mi-i! Hiaa, m-mocniej... p-proszę pchać mocnie-e-ej!
+m209.36	text	Rozumiesz już? Tak ci przerobili ciało, że ani zwykłe życie, ani zwykły seks już nigdy cię nie zaspokoją☆
+m209.39	text	Dziewczyna: „Uaaach... do... dochodzę... zaraz dojdę-ę...!”
+m209.41	text	Skuta kajdankami, ledwie dotykając ziemi czubkami palców, w tej niewygodnej pozie dziewczyna jęczy i zaczyna kołysać biodrami...
+m209.44	text	Chlup!... Chlup!... Chlup!... Chlup!...
 m210.0	text	
 m211.0	text	
 m212.0	text	
@@ -1989,84 +1989,84 @@ menu06.1	menu	Nie mogę jej tak zostawić, zostaję jeszcze chwilę
 menu06.2	menu	Zostawiam ją samą, idę zobaczyć, jak idzie rekonstrukcja twarzy
 menu07.1	menu	Idę prosto do Praw Człowieka napisać raport
 menu07.2	menu	Zaglądam do Shinobu, potem idę do Praw Człowieka
-menu08.1	menu	
-menu08.2	menu	
-menu09.1	menu	
-menu09.2	menu	
-menu09.3	menu	
-menu10.1	menu	
-menu10.2	menu	
-menu11.1	menu	
-menu11.2	menu	
-menu12.1	menu	
-menu12.2	menu	
-menu13.1	menu	
-menu13.2	menu	
-menu14.1	menu	
-menu14.2	menu	
-menu15.1	menu	
-menu15.2	menu	
-menu15.3	menu	
-menu16.1	menu	
-menu16.2	menu	
-menu16.3	menu	
-menu16.4	menu	
-menu17.1	menu	
-menu17.2	menu	
-menu18.1	menu	
-menu18.2	menu	
-menu19.1	menu	
-menu19.2	menu	
-menu19.3	menu	
-menu19.4	menu	
-menu20.1	menu	
-menu20.2	menu	
-menu21.1	menu	
-menu21.2	menu	
-menu22.1	menu	
-menu22.2	menu	
-menu22.3	menu	
-menu22.4	menu	
-menu23.1	menu	
-menu23.2	menu	
-menu23.3	menu	
-menu23.4	menu	
-menu24.1	menu	
-menu25.1	menu	
-menu26.1	menu	
-menu27.1	menu	
-menu28.1	menu	
-menu28.2	menu	
-menu28.3	menu	
-menu29.1	menu	
-menu29.2	menu	
-menu29.3	menu	
-menu30.1	menu	
-menu30.2	menu	
-menu30.3	menu	
-menu31.1	menu	
-menu31.2	menu	
-menu31.3	menu	
-menu32.1	menu	
-menu32.2	menu	
-menu33.1	menu	
-menu33.2	menu	
-menu34.1	menu	
-menu34.2	menu	
-menu35.1	menu	
-menu35.2	menu	
-menu36.1	menu	
-menu36.2	menu	
-menu37.1	menu	
-menu37.2	menu	
-menu38.1	menu	
-menu38.2	menu	
-menu38.3	menu	
-menu38.4	menu	
-menu39.1	menu	
-menu39.2	menu	
-menu40.1	menu	
-menu40.2	menu	
+menu08.1	menu	Biorę klucz i zaglądam do zbrojowni
+menu08.2	menu	Kładę klucz na biurku szefa i idę po Yuki do Wydziału Informacji
+menu09.1	menu	Jadę prosto do szpitala Kusanagi
+menu09.2	menu	Zaglądam do kryminalistyki, potem jadę do szpitala Kusanagi
+menu09.3	menu	Zaglądam do Yuki, potem jadę do szpitala Kusanagi
+menu10.1	menu	Idę prosto do Wydziału Kryminalistyki
+menu10.2	menu	Zaglądam na chwilkę do Yuki, potem idę do kryminalistyki
+menu11.1	menu	Cnota w niebezpieczeństwie! Udaję, że nie słyszę, i się zmywam
+menu11.2	menu	Jak zwykle wdzięczę się i droczę z Kenzō
+menu12.1	menu	Przeklinam swój błąd, ale migiem załatwiam tych dwóch przede mną
+menu12.2	menu	Wdzieram się siłą między Goryla a Yukinkę
+menu13.1	menu	Liczy się ułamek sekundy: rozstrzygam to szybkim strzałem!
+menu13.2	menu	Na razie robię unik, skręcając tułów
+menu14.1	menu	Całuję jej sutek
+menu14.2	menu	Delikatnie gładzę jej biuścik
+menu15.1	menu	Pieszczę jej piersi
+menu15.2	menu	Wsuwam rękę pod spódniczkę
+menu15.3	menu	Całuję ją
+menu16.1	menu	Pieszczę jej piersi
+menu16.2	menu	Wsuwam rękę pod spódniczkę
+menu16.3	menu	Całuję ją
+menu16.4	menu	Pieszczę ją pod majteczkami
+menu17.1	menu	Idę do Wydziału Informacji zobaczyć, co z Yuki
+menu17.2	menu	Idę do kryminalistyki poradzić się Shinobu co do przeszczepu mózgu
+menu18.1	menu	Biorę sprzęt ze zbrojowni i jadę do szpitala
+menu18.2	menu	Jak najszybciej jadę do szpitala Kusanagi
+menu19.1	menu	Pancerz kuloodporny
+menu19.2	menu	Pancerz do walki wręcz
+menu19.3	menu	Pancerz antywiązkowy
+menu19.4	menu	Kombinezon izolacyjny
+menu20.1	menu	Chowam się w cieniu i patrzę, co będzie
+menu20.2	menu	Staję w martwym polu przy drzwiach i atakuję, gdy ktoś wejdzie
+menu21.1	menu	Tu jest za niebezpiecznie. Każę jej wracać i zostawić to mnie
+menu21.2	menu	Yuki jest zdecydowana. Prowadzimy śledztwo razem
+menu22.1	menu	Sprawdzam biały krystaliczny proszek
+menu22.2	menu	Sprawdzam czerwony plik danych
+menu22.3	menu	Sprawdzam czarny plik danych
+menu22.4	menu	Sprawdzam tablicę na ścianie
+menu23.1	menu	Sprawdzam biały krystaliczny proszek
+menu23.2	menu	Sprawdzam czerwony plik danych
+menu23.3	menu	Sprawdzam czarny plik danych
+menu23.4	menu	Sprawdzam tablicę na ścianie
+menu24.1	menu	Sprawdzam biały krystaliczny proszek
+menu25.1	menu	Sprawdzam czerwony plik danych
+menu26.1	menu	Sprawdzam czarny plik danych
+menu27.1	menu	Sprawdzam tablicę na ścianie
+menu28.1	menu	Sprawdzam biały krystaliczny proszek
+menu28.2	menu	Sprawdzam czerwony plik danych
+menu28.3	menu	Sprawdzam czarny plik danych
+menu29.1	menu	Sprawdzam biały krystaliczny proszek
+menu29.2	menu	Sprawdzam czerwony plik danych
+menu29.3	menu	Sprawdzam tablicę na ścianie
+menu30.1	menu	Sprawdzam biały krystaliczny proszek
+menu30.2	menu	Sprawdzam czarny plik danych
+menu30.3	menu	Sprawdzam tablicę na ścianie
+menu31.1	menu	Sprawdzam czerwony plik danych
+menu31.2	menu	Sprawdzam czarny plik danych
+menu31.3	menu	Sprawdzam tablicę na ścianie
+menu32.1	menu	Sprawdzam biały krystaliczny proszek
+menu32.2	menu	Sprawdzam czerwony plik danych
+menu33.1	menu	Sprawdzam biały krystaliczny proszek
+menu33.2	menu	Sprawdzam czarny plik danych
+menu34.1	menu	Sprawdzam biały krystaliczny proszek
+menu34.2	menu	Sprawdzam tablicę na ścianie
+menu35.1	menu	Sprawdzam czerwony plik danych
+menu35.2	menu	Sprawdzam czarny plik danych
+menu36.1	menu	Sprawdzam czerwony plik danych
+menu36.2	menu	Sprawdzam tablicę na ścianie
+menu37.1	menu	Sprawdzam czarny plik danych
+menu37.2	menu	Sprawdzam tablicę na ścianie
+menu38.1	menu	Ładuję śrut
+menu38.2	menu	Ładuję pociski przeciwpancerne
+menu38.3	menu	Ładuję pociski wiązkowe
+menu38.4	menu	Ładuję pocisk zamrażający
+menu39.1	menu	Nie pozwolę! Wyskakuję, żeby ich powstrzymać!!
+menu39.2	menu	Zgrzytam zębami, ale teraz nie mam szans. Czekam na okazję.
+menu40.1	menu	Połykam środek i czekam na okazję
+menu40.2	menu	Gnoje! Pozabijam! Prędzej zdechnę, niż to połknę!
 menu41.1	menu	Zapisz w miejscu 1
 menu41.2	menu	Zapisz w miejscu 2
 menu41.3	menu	Zapisz w miejscu 3
@@ -2083,43 +2083,43 @@ bi.prologue.0	bi	Lata osiemdziesiąte XXI wieku. Tokio, stolica Japonii,\nboryka
 bi.prologue.1	bi	Był też mroczny owoc zbyt daleko posuniętej techniki przeróbki ciała...\n„Żywe narkotyki”.\nTo ludzie, których poddano jednej z surowo zakazanych prawem operacji:\nich jądra, jajniki, ślinianki i inne narządy wytwarzają narkotyk\ni wydzielają go z płynami ustrojowymi.\nPodczas stosunku partner wchłania narkotyk\nprzez błony śluzowe i narządy płciowe.\nNazywa się ich też seks-narkotykami.
 bi.prologue.2	bi	Moda na narkotyki tego rodzaju\n...gwałtownie pomnożyła porwania i handel ludźmi,\na na targach niewolników ludzie o ciałach przerobionych do seksu\ni zmanipulowanych umysłach osiągali wysokie ceny.
 bi.prologue.3	bi	W odpowiedzi na te problemy rząd powołał w regionie stołecznym\nniezależną, nieliczną i elitarną formację, która zapobiega\nwielkiej przestępczości zorganizowanej i zbrodniom groźnym dla obywateli,\nściga je, a w razie potrzeby sięga po siłę...\n„Stołeczne Biuro Ochrony Publicznej... w skrócie Toan”.
-bi.staff.0	bi	
-bi.staff.1	bi	
-bi.staff.2	bi	
-bi.staff.3	bi	
-bi.staff.4	bi	
-bi.staff.5	bi	
-bi.staff.6	bi	
-bi.staff.7	bi	
-bi.staff.8	bi	
-bi.staff.9	bi	
-bi.staff.10	bi	
-bi.music.heading	bi	
-bi.music.help	bi	
-bi.music.0	bi	
-bi.music.1	bi	
-bi.music.2	bi	
-bi.music.3	bi	
-bi.music.4	bi	
-bi.music.5	bi	
-bi.music.6	bi	
-bi.music.7	bi	
-bi.music.8	bi	
-bi.music.9	bi	
-bi.music.10	bi	
-bi.music.11	bi	
-bi.music.12	bi	
-bi.music.13	bi	
-bi.music.14	bi	
-bi.music.15	bi	
-bi.music.16	bi	
-bi.music.17	bi	
-bi.announce.missing	bi	
-bi.announce.prompt	bi	
-bi.announce.last	bi	
-announce.0	announce	
-announce.1	announce	
-announce.2	announce	
+bi.staff.0	bi	\n             Twórcy\n\n
+bi.staff.1	bi	Pomysł i produkcja\n\n                  鈴木　憲一\n                (CRYSTAL SOFT)
+bi.staff.2	bi	Scenariusz\n\n                  飯縄　誠\n
+bi.staff.3	bi	Projekt postaci\n\n                  中村　錦\n
+bi.staff.4	bi	Program\n  PC-9801/FM-TOWNS\n\n                  宮本　正城
+bi.staff.5	bi	Rysunki\n\n                  中村　錦\n
+bi.staff.6	bi	Grafika komputerowa\n\n                  ＰＲＯＰＥＲ\n
+bi.staff.7	bi	Muzyka i aranżacja\n\n                  柴田　泉\n
+bi.staff.8	bi	Podziękowania\n\n       MusicDriver  Ｐ．Ｍ．Ｄ．\n                  梶原　正裕
+bi.staff.9	bi	Podziękowania\n\n     LZH Extract Utility ＬＨＥ\n                  ＴＥＡ
+bi.staff.10	bi	          Copyright(c)          \n\n       1995　CRYSTAL SOFT       \n
+bi.music.heading	bi	★ ☆ ★  Muzyka  ★ ☆ ★
+bi.music.help	bi	Wybór: kursor góra/dół   Odtwarzanie: spacja lub Return   Koniec: ESC
+bi.music.0	bi	Tytuł
+bi.music.1	bi	Murakumo
+bi.music.2	bi	Yuki
+bi.music.3	bi	Shinobu
+bi.music.4	bi	Reiko
+bi.music.5	bi	Sasame
+bi.music.6	bi	Śledztwo
+bi.music.7	bi	Negocjacje
+bi.music.8	bi	Walka
+bi.music.9	bi	Szpital 1
+bi.music.10	bi	Szpital 2
+bi.music.11	bi	Figle 1
+bi.music.12	bi	Figle 2
+bi.music.13	bi	Czołówka 1
+bi.music.14	bi	Czołówka 2
+bi.music.15	bi	Zakończenie 1
+bi.music.16	bi	Zakończenie 2
+bi.music.17	bi	Napisy końcowe
+bi.announce.missing	bi	Nie znaleziono pliku z komunikatem
+bi.announce.prompt	bi	Naciśnij przycisk myszy lub klawisz
+bi.announce.last	bi	Naciśnij przycisk myszy lub klawisz
+announce.0	announce	\n\n　 　·-+*＊☆★☆＊*+-·-+*＊☆★☆＊*+-·-+*＊☆★☆＊*+-·-+*＊☆★☆＊*+-·\n                            Komunikat Crystal Soft\n　 　·-+*＊☆★☆＊*+-·-+*＊☆★☆＊*+-·-+*＊☆★☆＊*+-·-+*＊☆★☆＊*+-·\n\n  Dziękujemy za zakup gry Virgin Angel.\n  Virgin Angel jest chroniona prawem autorskim. Nielegalne kopiowanie\n  i nielegalne umieszczanie jej w sieci są zabronione. W razie wykrycia\n  takich naruszeń bez wyjątku kierujemy sprawę do sądu.\n\n  Jeśli zauważą Państwo takie naruszenie, prosimy o kontakt z CRYSTAL SOFT.\n  Za informacje, które doprowadzą do ujęcia sprawców, przewidujemy nagrodę.
+announce.1	announce	\n\n　 　·-+*＊☆★☆＊*+-·-+*＊☆★☆＊*+-·-+*＊☆★☆＊*+-·-+*＊☆★☆＊*+-·\n                                  Zapowiedzi\n　 　·-+*＊☆★☆＊*+-·-+*＊☆★☆＊*+-·-+*＊☆★☆＊*+-·-+*＊☆★☆＊*+-·\n\n    Koniec marca: w sprzedaży zbiór grafik „EXCELLENT”\n    na PC-9801, X68000 i FM TOWNS\n\n    Ilustracja na pudełku: 牧野竜一\n    Rysunki:               香月かほ\n                           豊島ちはや\n                           中村　錦\n                           牧野竜一\n    Grafika komputerowa:   ＰＲＯＰＥＲ\n                    (bez tytułów grzecznościowych, w kolejności sylabariusza)\n\n    Zarejestrowani użytkownicy mogą kupić wcześniej.
+announce.2	announce	\n\n　 　·-+*＊☆★☆＊*+-·-+*＊☆★☆＊*+-·-+*＊☆★☆＊*+-·-+*＊☆★☆＊*+-·\n                            BBS pomocy technicznej\n　 　·-+*＊☆★☆＊*+-·-+*＊☆★☆＊*+-·-+*＊☆★☆＊*+-·-+*＊☆★☆＊*+-·\n\n    3856-6028   300–28800 bps   5 linii   całą dobę   bezpłatnie\n\n    Prowadzimy tam pomoc techniczną Crystal Soft.\n
 con.ask	con	Czy używać myszy? [Y/N]
 con.yes	con	Mysz będzie używana.
 con.no	con	Mysz nie będzie używana.
