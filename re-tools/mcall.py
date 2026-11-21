@@ -53,9 +53,7 @@ class M:
         self.files = files
         self.uc = uc = Uc(UC_ARCH_X86, UC_MODE_16)
         uc.mem_map(0, 0xA8000)
-        uc.mmio_map(0xA8000, 0x18000, self._vr, None, self._vw, None)
         uc.mem_map(0xC0000, 0x20000)
-        uc.mmio_map(0xE0000, 0x8000, self._vr_e, None, self._vw_e, None)
         uc.mem_map(0xE8000, 0x18000)
         self.stdout = bytearray()
         self.ints = []
@@ -109,6 +107,8 @@ class M:
         self.pages = [[bytearray(32768) for _ in range(4)] for _ in range(2)]
         self.draw_page = 0
         self.disp_page = 0
+        self._vram_plain = None
+        self._map_vram()
         self.dac = [[0, 0, 0] for _ in range(16)]
         self.dac_i = 0
         self.ds = DGROUP + base
@@ -202,6 +202,61 @@ class M:
             return 3, lin - 0xE0000
         return (lin - 0xA8000) >> 15, (lin - 0xA8000) & 0x7FFF
 
+    # VRAM: the draw page's planes at A8000-BFFFF (B, R, G) and E0000-E7FFF (I). They are the
+    # emulator's plain memory while nothing but plain writes can happen (the GRCG off, and no
+    # subclass that sees every access through _vread/_vwrite), else MMIO, where the GRCG is
+    # modelled; self.pages holds the pages, the draw page's own copy brought up to date from
+    # plain memory when it is read and written back when it changes: code outside that reads
+    # self.pages calls sync_pages() first, code that writes it pages_written() after.
+    # The GRCG and the draw page change a few hundred times in a run, the planes millions.
+    VRAM_BLOCKS = ((0xA8000, 0x18000), (0xE0000, 0x8000))
+
+    def _plain_ok(self):
+        return (not self.grcg_mode & 0x80 and type(self)._vwrite is M._vwrite
+                and type(self)._vread is M._vread)
+
+    def _sync_vram(self):
+        """plain memory -> the draw page in self.pages"""
+        if self._vram_plain:
+            pg = self.pages[self.draw_page]
+            low = self.uc.mem_read(0xA8000, 0x18000)
+            for p in range(3):
+                pg[p][:] = low[p * 0x8000:(p + 1) * 0x8000]
+            pg[3][:] = self.uc.mem_read(0xE0000, 0x8000)
+
+    def _push_vram(self):
+        """the draw page in self.pages -> plain memory"""
+        if self._vram_plain:
+            pg = self.pages[self.draw_page]
+            self.uc.mem_write(0xA8000, bytes(pg[0]) + bytes(pg[1]) + bytes(pg[2]))
+            self.uc.mem_write(0xE0000, bytes(pg[3]))
+
+    def sync_pages(self):
+        """before reading self.pages: the draw page brought up to date"""
+        self._sync_vram()
+
+    def pages_written(self):
+        """after writing self.pages: the draw page's planes as the emulated program sees them"""
+        self._push_vram()
+
+    def _map_vram(self):
+        plain = self._plain_ok()
+        if self._vram_plain is plain:
+            return
+        uc = self.uc
+        if self._vram_plain is not None:
+            self._sync_vram()
+            for base, size in self.VRAM_BLOCKS:
+                uc.mem_unmap(base, size)
+        if plain:
+            for base, size in self.VRAM_BLOCKS:
+                uc.mem_map(base, size)
+        else:
+            uc.mmio_map(0xA8000, 0x18000, self._vr, None, self._vw, None)
+            uc.mmio_map(0xE0000, 0x8000, self._vr_e, None, self._vw_e, None)
+        self._vram_plain = plain
+        self._push_vram()
+
     def _vr(self, uc, off, size, ud):
         return self._vread(0xA8000 + off, size)
 
@@ -257,7 +312,10 @@ class M:
 
     def _out(self, uc, port, size, value, ud):
         if port == 0xA6:
-            self.draw_page = value & 1
+            if (value & 1) != self.draw_page:
+                self._sync_vram()
+                self.draw_page = value & 1
+                self._push_vram()
         elif port == 0xA4:
             self.disp_page = value & 1
         elif port == 0xA8:
@@ -267,6 +325,7 @@ class M:
         elif port == 0x7C:
             self.grcg_mode = value & 0xFF
             self.grcg_i = 0
+            self._map_vram()
         elif port == 0x7E:
             self.grcg_tile[self.grcg_i & 3] = value & 0xFF
             self.grcg_i += 1
@@ -275,6 +334,7 @@ class M:
 
     def vram(self, page=None):
         """The four planes (B, R, G, I) of a page (default: the displayed one), 32000 bytes each."""
+        self._sync_vram()
         pg = self.pages[self.disp_page if page is None else page]
         return [bytes(p[:32000]) for p in pg]
 

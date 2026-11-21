@@ -69,8 +69,10 @@ class Original:
             for s, p in zip(self._mem_planes(), planes):
                 m.poke(s, 0, p)
         else:
+            m.sync_pages()
             for q in range(4):
                 m.pages[buf - 10][q][:PLANE] = planes[q]
+            m.pages_written()
         blk = bytearray(0x16)
         base = name.rsplit('.', 1)[0].encode('ascii')
         blk[0:len(base)] = base
@@ -81,6 +83,7 @@ class Original:
             raise RuntimeError('pic_load(%s) returned %d' % (name, r))
         if buf == 12:
             return b''.join(bytes(m.mem(s, 0, PLANE)) for s in self._mem_planes())
+        m.sync_pages()
         return b''.join(bytes(m.pages[buf - 10][q][:PLANE]) for q in range(4))
 
 

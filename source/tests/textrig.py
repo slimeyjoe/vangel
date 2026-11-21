@@ -124,6 +124,7 @@ class Machine(GM):
 
     # ---- the records
     def window_crc(self):
+        self.sync_pages()
         pg = self.pages[0]
         c = 0
         for q in range(4):
@@ -134,6 +135,7 @@ class Machine(GM):
         return c
 
     def page_crc(self):
+        self.sync_pages()
         c = 0
         for q in range(4):
             c = zlib.crc32(bytes(self.pages[0][q][:32000]), c)

@@ -141,6 +141,7 @@ def make_machine(fonts):
 
         # ---- what a VSYNC sees
         def page_crc0(self, page=0):
+            self.sync_pages()
             c = 0
             for q in range(4):
                 c = zlib.crc32(bytes(self.pages[page][q][:32000]), c)

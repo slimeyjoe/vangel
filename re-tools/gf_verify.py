@@ -36,6 +36,7 @@ class GM(M):
     def get_buf(self, buf):
         if buf == 12:
             return [bytearray(self.mem(s, 0, 32000)) for s in self.mem_planes()]
+        self.sync_pages()
         return [bytearray(p[:32000]) for p in self.pages[buf - 10]]
 
     def set_buf(self, buf, planes):
@@ -43,8 +44,10 @@ class GM(M):
             for s, p in zip(self.mem_planes(), planes):
                 self.poke(s, 0, p)
         else:
+            self.sync_pages()
             for q in range(4):
                 self.pages[buf - 10][q][:32000] = planes[q]
+            self.pages_written()
 
 
 def main(argv):
